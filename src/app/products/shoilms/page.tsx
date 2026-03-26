@@ -6,7 +6,7 @@ import { Metadata } from "next";
 const SLUG = "shoilms";
 
 export const metadata: Metadata = {
-    title: "shoiLMS - Showcase | Mithtech",
+    title: "Shoi LMS - Showcase | Mithtech",
     description: "Modern Learning Management System.",
 };
 

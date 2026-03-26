@@ -29,11 +29,11 @@ export interface MegaMenuCategory {
 
 export const MEGA_MENU_DATA: MegaMenuCategory[] = [
     {
-        id: "crm-sales",
-        label: "Customer Management & Sales",
+        id: "customer-relationship",
+        label: "Customer Relationship",
         description: "Engage leads and manage sales pipelines.",
         icon: Users,
-        productSlugs: ["perfex", "frappe-crm", "qu6", "ding", "erpnext-crm"]
+        productSlugs: ["perfex", "frappe-crm", "qu6", "ding", "erpnext-crm", "frappe-helpdesk", "chatwoot"]
     },
     {
         id: "marketing",
@@ -41,13 +41,6 @@ export const MEGA_MENU_DATA: MegaMenuCategory[] = [
         description: "Automate cross-channel marketing growth.",
         icon: Megaphone,
         productSlugs: ["mautic", "listmonk", "n8n", "postiz"]
-    },
-    {
-        id: "support",
-        label: "Customer Support & Helpdesk",
-        description: "Unified support and ticketing platforms.",
-        icon: HelpCircle,
-        productSlugs: ["frappe-helpdesk", "chatwoot"]
     },
     {
         id: "ecommerce",
@@ -71,13 +64,6 @@ export const MEGA_MENU_DATA: MegaMenuCategory[] = [
         productSlugs: ["schedulr", "hospital-management", "2spa", "property", "apartment", "hostel", "parking"]
     },
     {
-        id: "digital-presence",
-        label: "Website & Digital Presence",
-        description: "Custom web and listing platforms.",
-        icon: Globe,
-        productSlugs: ["custom-websites", "listing-sites"]
-    },
-    {
         id: "communication",
         label: "Communication & Collaboration",
         description: "Internal and external talk hubs.",
@@ -89,7 +75,7 @@ export const MEGA_MENU_DATA: MegaMenuCategory[] = [
         label: "Business Intelligence & Analytics",
         description: "Data-driven decision making suites.",
         icon: BarChart3,
-        productSlugs: ["bi-dashboard", "erpnext-finance"]
+        productSlugs: ["frappe-insights", "metabase", "apache-superset", "posthog"]
     },
     {
         id: "finance",
@@ -111,13 +97,6 @@ export const MEGA_MENU_DATA: MegaMenuCategory[] = [
         description: "Smart agents and talent platforms.",
         icon: Cpu,
         productSlugs: ["n8n", "recruitment", "job-board", "qu6"]
-    },
-    {
-        id: "documents",
-        label: "Document Management",
-        description: "Digital agreements and signatures.",
-        icon: FileText,
-        productSlugs: ["documenso"]
     },
     {
         id: "engagement",
@@ -145,6 +124,6 @@ export const MEGA_MENU_DATA: MegaMenuCategory[] = [
         label: "Server & Infrastructure",
         description: "High-performance hosting control.",
         icon: Server,
-        productSlugs: ["cloudpanel"]
+        productSlugs: ["cloudpanel", "docuseal"]
     }
 ];

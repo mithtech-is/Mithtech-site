@@ -13,14 +13,16 @@ export interface UseCase {
 
 export const USE_CASES: UseCase[] = [
   {
-    id: "crm-sales",
-    title: "Customer Management & Sales",
+    id: "customer-relationship",
+    title: "Customer Relationship",
     products: [
       { title: "ERPNext", slug: "erpnext-crm" },
       { title: "Perfex CRM", slug: "perfex" },
       { title: "CRM (Frappe)", slug: "frappe-crm" },
       { title: "Qu6", slug: "qu6" },
       { title: "Ding", slug: "ding" },
+      { title: "Helpdesk (Frappe)", slug: "frappe-helpdesk" },
+      { title: "Chatwoot", slug: "chatwoot" },
     ],
   },
   {
@@ -35,19 +37,11 @@ export const USE_CASES: UseCase[] = [
     ],
   },
   {
-    id: "support",
-    title: "Customer Support & Helpdesk",
-    products: [
-      { title: "Helpdesk (Frappe)", slug: "frappe-helpdesk" },
-      { title: "Chatwoot", slug: "chatwoot" },
-    ],
-  },
-  {
     id: "ecommerce",
     title: "eCommerce & Online Selling",
     products: [
       { title: "Polygin WaStore", slug: "polygin-wastore" },
-      { title: "Medusa B2B", slug: "medusa-b2b" },
+      { title: "B2B", slug: "medusa-b2b" },
       { title: "Medusa js", slug: "medusa-js" },
       { title: "Marketplace", slug: "marketplace" },
     ],
@@ -61,26 +55,17 @@ export const USE_CASES: UseCase[] = [
       { title: "Marely Health", slug: "marely-health" },
       { title: "Frappe Lending", slug: "frappe-lending" },
       { title: "POS Billing", slug: "pos-billing" },
-      { title: "LMS", slug: "shoilms" },
-      { title: "LMS (WordPress)", slug: "lms-wp" },
+      { title: "Shoi LMS", slug: "shoilms" },
       { title: "LMS (Frappe)", slug: "lms-frappe" },
       { title: "Booking & Scheduling", slug: "schedulr" },
       { title: "Doctors & Hospital Management", slug: "hospital-management" },
-      { title: "2spa.in", slug: "2spa" },
       { title: "Property & Facility Management", slug: "property" },
       { title: "Apartment Management", slug: "apartment" },
       { title: "Hostel Setup", slug: "hostel" },
       { title: "Parking", slug: "parking" },
     ],
   },
-  {
-    id: "digital-presence",
-    title: "Website & Digital Presence",
-    products: [
-      { title: "Custom Websites & Landing Pages", slug: "custom-websites" },
-      { title: "Listing Sites", slug: "listing-sites" },
-    ],
-  },
+
   {
     id: "communication",
     title: "Communication & Collaboration",
@@ -95,8 +80,10 @@ export const USE_CASES: UseCase[] = [
     id: "analytics",
     title: "Business Intelligence & Analytics",
     products: [
-      { title: "Business Intelligence", slug: "bi-dashboard" },
-      { title: "ERPNext", slug: "erpnext" },
+      { title: "Frappe Insights", slug: "frappe-insights" },
+      { title: "Metabase", slug: "metabase" },
+      { title: "Apache Superset", slug: "apache-superset" },
+      { title: "Posthog", slug: "posthog" },
     ],
   },
   {
@@ -120,18 +107,12 @@ export const USE_CASES: UseCase[] = [
     id: "hr",
     title: "HR & Recruitment",
     products: [
-      { title: "Recruitment & Job Platforms", slug: "recruitment" },
+      { title: "HRMS", slug: "recruitment" },
       { title: "Job Board", slug: "job-board" },
       { title: "Qu6", slug: "qu6" },
     ],
   },
-  {
-    id: "documents",
-    title: "Document Management",
-    products: [
-      { title: "Documenso", slug: "documenso" },
-    ],
-  },
+
   {
     id: "messaging",
     title: "Customer Engagement & Messaging",
@@ -146,6 +127,7 @@ export const USE_CASES: UseCase[] = [
     products: [
       { title: "Mailinabox", slug: "mailinabox" },
       { title: "CloudPanel", slug: "cloudpanel" },
+      { title: "Docuseal", slug: "docuseal" },
     ],
   },
   {

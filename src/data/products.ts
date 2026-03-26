@@ -41,7 +41,7 @@ export const products: Product[] = [
     },
     {
         slug: "shoilms",
-        title: "shoiLMS",
+        title: "Shoi LMS",
         icon: "/assets/shoiclean.png",
         description: "Modern Learning Management System.",
         longDescription: "shoiLMS is a powerful, flexible learning management system designed for modern educators and corporate trainers. It provides a clean, intuitive interface for course creation, student management, and assessment tracking.",
@@ -188,7 +188,7 @@ export const products: Product[] = [
     {
         slug: "frappe-books",
         title: "Frappe Books",
-        icon: "/assets/erpnext-logo.png",
+        icon: "/assets/frappebooks-logo.png",
         description: "Lightweight Accounting",
         longDescription: "A lightweight yet powerful accounting solution designed for managing invoices, expenses, and financial records with simplicity. It enables businesses to maintain accurate bookkeeping, streamline financial tracking, and operate efficiently without complex systems.",
         features: ["Invoice & Expense Tracking", "Offline Accounting System", "Simple Financial Management"],
@@ -198,9 +198,9 @@ export const products: Product[] = [
         useCase: "Small businesses use Frappe Books for simple, offline-first accounting without complexity."
     },
     {
-        slug: "bi-dashboard",
-        title: "BI Dashboard",
-        icon: "/assets/mithtech-black-logo.png",
+        slug: "frappe-insights",
+        title: "Frappe Insights",
+        icon: "/assets/frappe insights-logo.png",
         description: "Business Intelligence",
         longDescription: "We build custom dashboards that transform raw business data into clear, actionable insights. Monitor KPIs, track performance trends, and gain real-time visibility across departments to support smarter, data-driven decision-making.",
         features: ["Real-Time Data Visualization", "KPI Monitoring", "Performance Analytics"],
@@ -208,6 +208,42 @@ export const products: Product[] = [
         category: "Finance",
         type: "service",
         useCase: "Executives use BI dashboards to track real-time KPIs and operational health."
+    },
+    {
+        slug: "metabase",
+        title: "Metabase",
+        icon: "/assets/metabase-logo.png",
+        description: "Open Source BI Tool",
+        longDescription: "Metabase is the easy, open-source way for everyone in your company to ask questions and learn from data.",
+        features: ["Visual Query Builder", "Interactive Dashboards", "Automated Reporting"],
+        externalHref: "",
+        category: "Analytics",
+        type: "service",
+        useCase: "Data analysts use Metabase to create shared dashboards for various departments."
+    },
+    {
+        slug: "apache-superset",
+        title: "Apache Superset",
+        icon: "/assets/apache-superset-logo.png",
+        description: "Modern Data Exploration",
+        longDescription: "A modern, enterprise-ready business intelligence web application that is fast, lightweight, intuitive, and loaded with options that make it easy for users of all skill sets to explore and visualize their data.",
+        features: ["Rich Data Visualizations", "Granular Security Model", "Direct SQL Lab"],
+        externalHref: "",
+        category: "Analytics",
+        type: "service",
+        useCase: "Enterprises use Apache Superset for large-scale data exploration and visualization across varied databases."
+    },
+    {
+        slug: "posthog",
+        title: "Posthog",
+        icon: "/assets/posthog -logo.png",
+        description: "Product Analytics Suite",
+        longDescription: "The only all-in-one product platform you'll ever need. PostHog provides product analytics, session recording, feature flags, heatmaps, and more.",
+        features: ["Product Analytics", "Session Recording", "Feature Flags"],
+        externalHref: "",
+        category: "Analytics",
+        type: "service",
+        useCase: "Product managers use Posthog to understand user behavior and optimize product flows."
     },
     {
         slug: "loan-management",
@@ -408,7 +444,7 @@ export const products: Product[] = [
     },
     {
         slug: "medusa-b2b",
-        title: "Medusa B2B",
+        title: "B2B",
         icon: "/assets/medusajs-logo.png",
         description: "B2B Commerce System",
         longDescription: "We build B2B commerce solutions with advanced pricing, bulk ordering, and customer-specific workflows. Designed for wholesalers and enterprise sales operations.",
@@ -577,8 +613,8 @@ export const products: Product[] = [
     },
     {
         slug: "recruitment",
-        title: "Recruitment & Job Platforms",
-        icon: "/assets/mithtech-black-logo.png",
+        title: "HRMS",
+        icon: "/assets/hrms-logo.png",
         description: "Talent Acquisition Suite",
         longDescription: "Streamline your hiring process with automated job posting, applicant tracking, and scheduling.",
         features: ["Applicant Tracking", "Job Board Integration", "Interview Manager"],
@@ -646,5 +682,17 @@ export const products: Product[] = [
         category: "Education",
         type: "service",
         useCase: "Schools use this ERP to automate their entire administrative workflow."
+    },
+    {
+        slug: "docuseal",
+        title: "Docuseal",
+        icon: "/assets/docuseal-logo.png",
+        description: "Open Source Document Signing",
+        longDescription: "Docuseal is an open source platform for digital document signing and automation. It provides a secure and legally binding way to sign documents online.",
+        features: ["Digital Signatures", "Document Automation", "Legally Binding"],
+        externalHref: "",
+        category: "Infrastructure",
+        type: "service",
+        useCase: "Legal teams use Docuseal to automate contract signing and management."
     }
 ];
