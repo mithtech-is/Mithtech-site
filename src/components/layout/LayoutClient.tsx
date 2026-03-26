@@ -44,7 +44,7 @@ export function LayoutClient({ children }: { children: React.ReactNode }) {
     >
       <div className={`min-h-screen flex flex-col w-full overflow-x-hidden ${isHome ? 'bg-[#080808]' : 'bg-background'}`}>
         <Navbar />
-        <main className="flex-1 w-full mx-auto relative">
+        <main className="flex-1 w-full mx-auto relative px-4 sm:px-6 lg:px-8 overflow-hidden">
           {children}
         </main>
         <Footer />

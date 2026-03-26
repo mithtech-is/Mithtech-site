@@ -24,7 +24,7 @@ export function CTASection({ title, description, buttonText, buttonHref }: CTASe
                 </div>
             </div>
 
-            <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+            <div className="container relative z-10 mx-auto max-w-7xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

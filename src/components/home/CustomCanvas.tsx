@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from 'react';
+import { DEFS, SCENES } from '@/data/hubs';
 
 interface ProductSelection {
   clusterId: string;
@@ -19,72 +20,6 @@ interface CustomCanvasProps {
     products: { name: string; description: string }[];
   }) => void;
 }
-
-// Data Definitions
-const DEFS = [
-  {
-    id: 'crm', n: 'CRM & Sales', icon: 'crm',
-    desc: 'Customer Management & Sales Growth',
-    prods: [
-      { n: 'Frappe CRM', d: 'Flexible CRM', i: '/assets/FrappeCRM_logo.png' },
-      { n: 'ERPNext (CRM)', d: 'Integrated CRM', i: '/assets/erpnext-logo.png' },
-      { n: 'Smartflo', d: 'Cloud Telephony', i: '/assets/Smartflo-logo.png' },
-      { n: 'Chatwoot', d: 'Customer Support', i: '/assets/chatwoot.png' },
-      { n: 'Ding', d: 'Notifications System', i: '/assets/Ding_logo_(2025).png' }
-    ]
-  },
-  {
-    id: 'mktg', n: 'Marketing', icon: 'mktg',
-    desc: 'Campaigns, Automation & Growth',
-    prods: [
-      { n: 'Mautic', d: 'Marketing Automation', i: '/assets/mautic-logo.png' },
-      { n: 'Listmonk', d: 'Email Marketing', i: '/assets/listmonk-logo.png' },
-      { n: 'Postiz', d: 'Content Scheduling', i: '/assets/postiz-logo.png' },
-      { n: 'Polygin', d: 'Custom Storefront', i: '/assets/polyg.png' }
-    ]
-  },
-  {
-    id: 'ecom', n: 'eCommerce', icon: 'ecom',
-    desc: 'High-Performance Commerce Ecosystem',
-    prods: [
-      { n: 'Polygin Store', d: 'Custom Storefront', i: '/assets/polyg.png' },
-      { n: 'Medusa JS', d: 'Headless Commerce Engine', i: '/assets/medusa-logo.png' },
-      { n: 'Medusa B2B', d: 'B2B Commerce System', i: '/assets/medusa-logo.png' },
-      { n: 'Marketplace', d: 'Multi-Vendor Platform', i: '/assets/marketplace-logo.jpg' },
-      { n: 'POS Billing', d: 'Retail Billing System', i: '/assets/medusa-logo.png' }
-    ]
-  },
-  {
-    id: 'supp', n: 'Support & Chat', icon: 'supp',
-    desc: 'Omnichannel Support & Communication',
-    prods: [
-      { n: 'Chatwoot', d: 'Omnichannel Messaging', i: '/assets/chatwoot.png' },
-      { n: 'Frappe Helpdesk', d: 'Ticket Management', i: '/assets/frappehelpdesk_logo.png' },
-      { n: 'Botpress', d: 'AI Chatbot Builder', i: '/assets/botpress-logo.png' },
-      { n: 'Mattermost', d: 'Team Messaging', i: '/assets/mattermost-logo.png' }
-    ]
-  },
-  {
-    id: 'fin', n: 'Finance & BI', icon: 'fin',
-    desc: 'Financial Intelligence & Business Insights',
-    prods: [
-      { n: 'ERPNext (Finance)', d: 'ERP Finance Suite', i: '/assets/erpnext-logo.png' },
-      { n: 'Frappe Books', d: 'Lightweight Accounting', i: '/assets/erpnext-logo.png' },
-      { n: 'Frappe Insights', d: 'Business Intelligence', i: '/assets/frappe insights-logo.png' },
-      { n: 'Frappe Lending', d: 'Loan & Credit System', i: '/assets/frappelending-logo.png' }
-    ]
-  },
-  {
-    id: 'auto', n: 'Automation & AI', icon: 'auto',
-    desc: 'Automation & Intelligent Systems',
-    prods: [
-      { n: 'n8n', d: 'Workflow Automation', i: '/assets/n8n-logo.png' },
-      { n: 'Documenso', d: 'Digital Signatures', i: '/assets/documenso-icon-logo.png' },
-      { n: 'CloudPanel', d: 'Server Management', i: '/assets/cloudpanel-icon.png' },
-      { n: 'Mail-in-a-Box', d: 'Email Infrastructure', i: '/assets/Mail-in-a-Box-logo.png' }
-    ]
-  },
-];
 
 const CL_ANGS = [210, 150, 90, 330, 270, 30];
 const CLR = 620, PR_DIST = 270, PR_STEP = 72;

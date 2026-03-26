@@ -8,7 +8,7 @@ export default function Industries() {
     return (
         <div className="flex flex-col w-full">
             <section className="bg-primary/5 pt-16 pb-6 sm:pt-20 sm:pb-8 md:pt-24 md:pb-10 lg:pt-32 lg:pb-12">
-                <div className="container mx-auto px-4 sm:px-6 md:px-8">
+                <div className="container mx-auto">
                     <div className="max-w-4xl">
                         <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl text-foreground">
                             Industries Let&apos;s Build Your System

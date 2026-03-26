@@ -24,7 +24,7 @@ export default function Solutions() {
             {/* Hero Section */}
             <section className="relative pt-16 pb-16 sm:pt-20 sm:pb-20 md:pt-24 md:pb-24 lg:pt-32 lg:pb-32 border-b overflow-hidden px-0 mx-0">
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(0,0,0,0.03)_0%,transparent_100%)]" />
-                <div className="container mx-auto px-4 sm:px-6 md:px-8">
+                <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ export default function Solutions() {
 
             {/* Why Mith Section */}
             <section className="py-16 sm:py-20 md:py-24 border-b bg-muted/30 px-0 mx-0">
-                <div className="container mx-auto px-4 sm:px-6 md:px-8">
+                <div className="container mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}

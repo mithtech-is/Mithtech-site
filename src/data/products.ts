@@ -15,10 +15,23 @@ export interface Product {
 export const products: Product[] = [
     {
         slug: "polygin",
-        title: "Polygin Store",
+        title: "Polygin WhatsApp Automation",
         icon: "/assets/polyg.png",
         description: "Custom Storefront",
-        longDescription: "We develop high-performance storefronts tailored to your brand and user experience. Polygin Store ensures fast loading, seamless navigation, and optimized conversion flows for modern eCommerce businesses.",
+        longDescription: "Automate your marketing, sales, and customer support on WhatsApp. Capture leads, run campaigns, and manage conversations from one unified platform built for business growth.",
+        features: ["Custom UI/UX Storefront", "High-Speed Performance", "Conversion Optimization"],
+        externalHref: "https://polyg.in/",
+        category: "Marketing",
+        type: "proprietary",
+        useCase: "Modern eCommerce businesses use Polygin Store to deliver high-performance, custom-tailored shopping experiences.",
+        processHref: "#process"
+    },
+    {
+        slug: "polygin-wastore",
+        title: "Polygin WaStore",
+        icon: "/assets/polyg.png",
+        description: "Custom Storefront",
+        longDescription: "Polygin WaStore turns WhatsApp into a powerful sales channel, enabling businesses to showcase products, automate conversations, and close orders seamlessly in chat.",
         features: ["Custom UI/UX Storefront", "High-Speed Performance", "Conversion Optimization"],
         externalHref: "https://polyg.in/",
         category: "eCommerce",
@@ -175,7 +188,7 @@ export const products: Product[] = [
     {
         slug: "frappe-books",
         title: "Frappe Books",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/erpnext-logo.png",
         description: "Lightweight Accounting",
         longDescription: "A lightweight yet powerful accounting solution designed for managing invoices, expenses, and financial records with simplicity. It enables businesses to maintain accurate bookkeeping, streamline financial tracking, and operate efficiently without complex systems.",
         features: ["Invoice & Expense Tracking", "Offline Accounting System", "Simple Financial Management"],
@@ -199,7 +212,7 @@ export const products: Product[] = [
     {
         slug: "loan-management",
         title: "Loan Management",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/frappelending-logo.png",
         description: "Loan & Credit System",
         longDescription: "We design loan management systems that handle repayment tracking, interest calculations, and financial records with precision. This ensures transparency, reduces manual errors, and provides complete control over lending and credit operations.",
         features: ["Loan Lifecycle Tracking", "Interest Automation", "Financial Transparency"],
@@ -224,7 +237,7 @@ export const products: Product[] = [
     {
         slug: "postiz",
         title: "Postiz",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/postiz-logo.png",
         description: "Content Scheduling",
         longDescription: "A social media automation tool that helps businesses manage posting, engagement, and analytics across platforms. It ensures consistent communication while reducing manual effort in day-to-day social operations. Businesses can manage posts, track engagement, and maintain a streamlined content workflow.",
         features: ["Social Scheduling", "Content Planning", "Engagement Tracking"],
@@ -237,7 +250,7 @@ export const products: Product[] = [
     {
         slug: "frappe-crm",
         title: "Frappe CRM",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/FrappeCRM_logo.png",
         description: "Flexible CRM",
         longDescription: "A flexible CRM solution designed to manage leads, customer interactions, and sales pipelines efficiently. It provides the tools needed to track opportunities, improve engagement, and maintain strong customer relationships.",
         features: ["Lead Tracking", "Sales Pipeline", "Customer Management"],
@@ -273,7 +286,7 @@ export const products: Product[] = [
     {
         slug: "ding",
         title: "Ding",
-        icon: "/assets/Ding_logo_(2025).png",
+        icon: "/assets/ding-logo.png",
         description: "Notifications System",
         longDescription: "A real-time notification system designed to deliver instant alerts and updates across your platform. It ensures timely communication, improves responsiveness, and keeps users and teams informed at all times.",
         features: ["Instant Alerts", "Event-Based Messaging", "System Notifications"],
@@ -285,7 +298,7 @@ export const products: Product[] = [
     {
         slug: "erpnext-crm",
         title: "ERPNext (CRM)",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/erpnext-logo.png",
         description: "Integrated CRM",
         longDescription: "An integrated CRM system within ERPNext that connects customer management with operations and finance. It ensures unified data flow, improved coordination, and streamlined business processes.",
         features: ["Unified Customer Data", "Sales Integration", "Workflow Automation"],
@@ -384,7 +397,7 @@ export const products: Product[] = [
     {
         slug: "medusa-js",
         title: "Medusa JS",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/medusajs-logo.png",
         description: "Headless Commerce Engine",
         longDescription: "We implement Medusa JS as a flexible backend for managing products, orders, and customers. Its headless architecture allows seamless integrations and complete control over your commerce operations.",
         features: ["Headless Architecture", "API-First Commerce", "Scalable Backend System"],
@@ -396,7 +409,7 @@ export const products: Product[] = [
     {
         slug: "medusa-b2b",
         title: "Medusa B2B",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/medusajs-logo.png",
         description: "B2B Commerce System",
         longDescription: "We build B2B commerce solutions with advanced pricing, bulk ordering, and customer-specific workflows. Designed for wholesalers and enterprise sales operations.",
         features: ["Bulk Ordering System", "Custom Pricing Logic", "B2B Workflow Automation"],
@@ -408,7 +421,7 @@ export const products: Product[] = [
     {
         slug: "marketplace",
         title: "Marketplace",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/marketplace-logo.jpg",
         description: "Multi-Vendor Platform",
         longDescription: "We create marketplace platforms that connect multiple vendors, manage listings, and handle transactions in a unified system. Ideal for scaling product ecosystems and expanding revenue streams.",
         features: ["Multi-Vendor Management", "Vendor Dashboards", "Commission & Payout System"],
@@ -420,7 +433,7 @@ export const products: Product[] = [
     {
         slug: "pos-billing",
         title: "POS Billing",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/medusajs-logo.png",
         description: "Retail Billing System",
         longDescription: "We implement POS systems that integrate with your eCommerce backend, enabling seamless offline and online sales synchronization. Manage billing, inventory, and transactions in real time.",
         features: ["Real-Time Billing", "Inventory Sync", "Omni-Channel Sales"],

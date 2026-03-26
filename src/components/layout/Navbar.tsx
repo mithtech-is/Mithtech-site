@@ -24,6 +24,7 @@ export function Navbar() {
     const [isPlatformsOpen, setIsPlatformsOpen] = useState(false);
     const [activeUseCase, setActiveUseCase] = useState<UseCase>(USE_CASES[0]);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [openMobileSubId, setOpenMobileSubId] = useState<string | null>(null);
 
     const productsRef = useRef<HTMLDivElement>(null);
     const platformsRef = useRef<HTMLDivElement>(null);
@@ -239,19 +240,31 @@ export function Navbar() {
                             <div className="flex flex-col min-h-full pt-16">
                                 <div className="flex-1 py-8 px-6 space-y-8 text-2xl font-bold">
                                     <MobileAccordion label="Products">
-                                        <div className="space-y-6 pt-4">
+                                        <div className="space-y-2 pt-4">
                                             {USE_CASES.map((uc) => (
-                                                <div key={uc.id} className="space-y-3">
-                                                    <h4 className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">{uc.title}</h4>
-                                                    <div className="grid grid-cols-1 gap-2 pl-2">
+                                                <MobileSubAccordion 
+                                                    key={uc.id} 
+                                                    label={uc.title}
+                                                    isOpen={openMobileSubId === uc.id}
+                                                    onToggle={() => setOpenMobileSubId(openMobileSubId === uc.id ? null : uc.id)}
+                                                >
+                                                    <div className="grid grid-cols-1 gap-2 pl-4 py-2 border-l border-white/5 ml-2">
                                                         {uc.products.map((p, i) => (
-                                                            <Link key={i} href={p.href || (p.slug ? `/products/${p.slug}` : "/")} onClick={() => setMobileMenuOpen(false)} className="text-sm text-white/60 py-1 hover:text-white flex items-center justify-between">
+                                                            <Link 
+                                                                key={i} 
+                                                                href={p.href || (p.slug ? `/products/${p.slug}` : "/")} 
+                                                                onClick={() => {
+                                                                    setMobileMenuOpen(false);
+                                                                    setOpenMobileSubId(null);
+                                                                }} 
+                                                                className="text-sm text-white/50 py-2 hover:text-white flex items-center justify-between"
+                                                            >
                                                                 {p.title}
-                                                                <ArrowRight className="h-3 w-3 opacity-30" />
+                                                                <ArrowRight className="h-3 w-3 opacity-20" />
                                                             </Link>
                                                         ))}
                                                     </div>
-                                                </div>
+                                                </MobileSubAccordion>
                                             ))}
                                         </div>
                                     </MobileAccordion>
@@ -303,6 +316,24 @@ function MobileAccordion({ label, children }: { label: string; children: React.R
                 <ChevronDown className={cn("h-6 w-6 transition-transform", isOpen && "rotate-180")} />
             </button>
             {isOpen && <div className="animate-in fade-in slide-in-from-top-2 duration-300">{children}</div>}
+        </div>
+    );
+}
+
+function MobileSubAccordion({ label, isOpen, onToggle, children }: { label: string; isOpen: boolean; onToggle: () => void; children: React.ReactNode }) {
+    return (
+        <div className="py-1">
+            <button
+                onClick={onToggle}
+                className={cn(
+                    "flex w-full items-center justify-between py-2 text-base font-medium transition-colors",
+                    isOpen ? "text-primary" : "text-white/70"
+                )}
+            >
+                {label}
+                <ChevronRight className={cn("h-4 w-4 transition-transform", isOpen && "rotate-90")} />
+            </button>
+            {isOpen && <div className="animate-in fade-in slide-in-from-top-1 duration-200">{children}</div>}
         </div>
     );
 }

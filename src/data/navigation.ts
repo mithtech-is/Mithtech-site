@@ -16,17 +16,18 @@ export const USE_CASES: UseCase[] = [
     id: "crm-sales",
     title: "Customer Management & Sales",
     products: [
+      { title: "ERPNext", slug: "erpnext-crm" },
       { title: "Perfex CRM", slug: "perfex" },
       { title: "CRM (Frappe)", slug: "frappe-crm" },
       { title: "Qu6", slug: "qu6" },
       { title: "Ding", slug: "ding" },
-      { title: "ERPNext", slug: "erpnext-crm" },
     ],
   },
   {
     id: "marketing",
     title: "Marketing Automation",
     products: [
+      { title: "Polygin WhatsApp Automation", slug: "polygin" },
       { title: "Mautic", slug: "mautic" },
       { title: "Listmonk", slug: "listmonk" },
       { title: "n8n", slug: "n8n" },
@@ -45,7 +46,7 @@ export const USE_CASES: UseCase[] = [
     id: "ecommerce",
     title: "eCommerce & Online Selling",
     products: [
-      { title: "Polygin WaStore", slug: "polygin" },
+      { title: "Polygin WaStore", slug: "polygin-wastore" },
       { title: "Medusa B2B", slug: "medusa-b2b" },
       { title: "Medusa js", slug: "medusa-js" },
       { title: "Marketplace", slug: "marketplace" },
