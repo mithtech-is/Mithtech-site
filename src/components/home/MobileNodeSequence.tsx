@@ -7,6 +7,7 @@ import { AnimatePresence } from "framer-motion";
 interface NodeDef {
     id: string;
     n: string;
+    icon: string;
     desc: string;
     prods: { n: string; d?: string; i?: string }[];
 }
@@ -35,13 +36,14 @@ export const MobileNodeSequence: React.FC<MobileNodeSequenceProps> = ({
             desc={def.desc}
             prods={def.prods}
             isVisible={curCI === index}
-            iconKey={(def as any).icon}
+            iconKey={def.id}
+            iconPath={def.icon}
             onProductClick={onProductClick}
             onClusterClick={() => onClusterClick({
               clusterId: def.id, 
               clusterName: def.n, 
               clusterDescription: def.desc, 
-              icon: (def as any).icon || "", 
+              icon: def.icon || "", 
               products: def.prods.map(p => ({ name: p.n, description: p.d || "" }))
             })}
             clusterId={def.id}

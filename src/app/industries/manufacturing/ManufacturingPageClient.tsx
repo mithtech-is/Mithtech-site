@@ -159,7 +159,7 @@ export default function ManufacturingPage() {
                         <div className="flex-1">
                             <h2 className="text-5xl font-black mb-8 leading-tight">MAKE MORE.<br />WASTE LESS.</h2>
                             <p className="text-xl text-background/70 mb-10 max-w-md">Manufacturers on our platforms gain real-time visibility into every production step, leading to measurably higher output and lower operational costs.</p>
-                            <Button asChild size="lg" className="h-12 min-h-[48px] w-full rounded-full bg-background px-6 font-bold text-foreground hover:bg-white sm:h-14 sm:w-auto sm:px-10">
+                            <Button asChild size="lg" className="h-12 min-h-[48px] w-full rounded-full border border-foreground bg-background px-6 font-bold text-foreground hover:bg-white sm:h-14 sm:w-auto sm:px-10">
                                 <Link href="/contact">Optimise Your Plant</Link>
                             </Button>
                         </div>

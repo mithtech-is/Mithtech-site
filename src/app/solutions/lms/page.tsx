@@ -42,7 +42,7 @@ export default function LMSSolution() {
                             Build a culture of continuous learning. Modern, scalable education platforms for employee onboarding, customer training, and professional certification.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <Button asChild size="lg" className="h-12 min-h-[48px] w-full rounded-full px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg">
+                            <Button asChild size="lg" className="h-12 min-h-[48px] w-full rounded-full border border-black px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg">
                                 <Link href="/contact">Build Your Academy</Link>
                             </Button>
                         </div>
@@ -99,7 +99,7 @@ export default function LMSSolution() {
                                     <LMSFeature title="Course Authoring Tools" />
                                     <LMSFeature title="SCORM & xAPI Support" />
                                 </div>
-                                <Button asChild size="lg" className="rounded-full px-10 h-14 text-lg">
+                                <Button asChild size="lg" className="rounded-full border border-black px-10 h-14 text-lg">
                                     <Link href="/contact">See ShoiLMS in Action</Link>
                                 </Button>
                             </motion.div>

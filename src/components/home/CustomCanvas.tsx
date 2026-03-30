@@ -146,6 +146,15 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onC
     });
     worldRef.current = { WN, WE };
 
+    // Register cluster icons for loading
+    DEFS.forEach(c => {
+      if (c.icon && !logosRef.current.has(c.icon)) {
+        const clImg = new Image();
+        clImg.src = c.icon;
+        clImg.onload = () => { logosRef.current.set(c.icon, clImg); };
+      }
+    });
+
     // Initialize particles
     const particles: any[] = [];
     WE.forEach((e, idx) => {
@@ -227,9 +236,9 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onC
         }
         break;
       }
-      case 'prod': {
-        const prodDef = DEFS[ci]?.prods[pi];
-        const iconPath = prodDef?.i;
+      case 'prod':
+      case 'cluster': {
+        const iconPath = type === 'prod' ? DEFS[ci]?.prods[pi]?.i : DEFS[ci]?.icon;
         const img = iconPath ? logosRef.current.get(iconPath) : null;
 
         // Dark Box on Left (Width matches passed sz/siw)
@@ -258,42 +267,6 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onC
           g.restore();
         }
         break;
-      }
-      case 'crm': {
-        g.beginPath(); g.arc(ix - s * 0.4, iy - s * 0.05, s * 0.58, 0, Math.PI * 2); g.stroke();
-        g.beginPath(); g.arc(ix + s * 0.4, iy - s * 0.05, s * 0.58, 0, Math.PI * 2); g.fill(); break;
-      }
-      case 'mktg': {
-        g.beginPath(); g.moveTo(ix - s * 0.7, iy - s * 0.48); g.lineTo(ix - s * 0.7, iy + s * 0.48);
-        g.lineTo(ix + s * 0.7, iy + s * 0.04); g.lineTo(ix + s * 0.7, iy - s * 0.04); g.closePath(); g.fill(); break;
-      }
-      case 'ecom': {
-        g.fillRect(ix - s * 0.6, iy - s * 0.1, s * 1.2, s * 0.95);
-        g.fillStyle = 'rgba(0,0,0,0.3)'; g.fillRect(ix - s * 0.6, iy - s * 0.1, s * 1.2, s * 0.22);
-        g.strokeStyle = 'rgba(255,255,255,0.85)';
-        g.beginPath(); g.moveTo(ix - s * 0.26, iy - s * 0.1); g.quadraticCurveTo(ix, iy - s * 0.8, ix + s * 0.26, iy - s * 0.1); g.stroke(); break;
-      }
-      case 'supp': {
-        g.save(); g.beginPath();
-        g.moveTo(ix - s * 0.72, iy - s * 0.55); g.lineTo(ix + s * 0.72, iy - s * 0.55);
-        g.lineTo(ix + s * 0.72, iy + s * 0.38); g.lineTo(ix - s * 0.72, iy + s * 0.38); g.closePath(); g.fill();
-        g.fillStyle = 'rgba(255,255,255,.2)';
-        [ix - s * 0.28, ix, ix + s * 0.28].forEach(bx => { g.beginPath(); g.arc(bx, iy + s * 0.05, s * 0.14, 0, Math.PI * 2); g.fill() });
-        g.fillStyle = 'rgba(0,0,0,.65)';
-        g.beginPath(); g.moveTo(ix - s * 0.22, iy + s * 0.38); g.lineTo(ix - s * 0.52, iy + s * 0.75); g.lineTo(ix + s * 0.18, iy + s * 0.38); g.closePath(); g.fill();
-        g.restore(); break;
-      }
-      case 'fin': {
-        [-s * 0.5, 0, s * 0.5].forEach((ox, bi) => {
-          const bh = [s * 0.55, s * 0.9, s * 0.68][bi];
-          g.fillRect(ix + ox - s * 0.16, iy + s * 0.48 - bh, s * 0.32, bh);
-        }); break;
-      }
-      case 'auto': {
-        g.beginPath();
-        g.moveTo(ix + s * 0.08, iy - s * 0.85); g.lineTo(ix - s * 0.22, iy + s * 0.08); g.lineTo(ix + s * 0.08, iy + s * 0.08);
-        g.lineTo(ix - s * 0.08, iy + s * 0.85); g.lineTo(ix + s * 0.32, iy - s * 0.08); g.lineTo(ix, iy - s * 0.08);
-        g.closePath(); g.fill(); break;
       }
     }
     g.restore();
@@ -432,7 +405,7 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onC
             clusterId: def.id,
             clusterName: def.n,
             clusterDescription: def.desc,
-            icon: `/assets/${def.icon}.png`,
+            icon: def.icon,
             products: def.prods.map((product) => ({
               name: product.n,
               description: product.d,
@@ -688,10 +661,8 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onC
           const def = DEFS[n.ci];
           const isViewActive = n.ci === curCI; // True if this node is in the zoomed cluster view
 
-          if (n.type === 'cluster') {
-            drawIcon(g, def.icon, x + siw / 2, s.y, siw * 0.92, n.ci, -1, hov, isViewActive, { sr });
-          } else if (n.type === 'product') {
-            drawIcon(g, 'prod', x + siw / 2, s.y, siw, n.ci, n.pi, hov, isViewActive, { sr });
+          if (n.type === 'cluster' || n.type === 'product') {
+            drawIcon(g, n.type === 'cluster' ? 'cluster' : 'prod', x + siw / 2, s.y, siw * (n.type === 'cluster' ? 0.92 : 1), n.ci, n.pi, hov, isViewActive, { sr });
           }
 
           g.fillStyle = 'white';

@@ -21,12 +21,12 @@ export function ProductCard({ title, description, href, delay = 0 }: ProductCard
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay }}
-            whileHover={{ y: -10 }}
+            whileHover={{ y: -4 }}
             className="h-full flex flex-col"
         >
-            <Card className="group flex h-full flex-col overflow-hidden rounded-[2rem] border-primary/5 bg-background/50 backdrop-blur-sm transition-all duration-500 hover:border-primary/20 hover:shadow-2xl">
+            <Card className="group flex h-full flex-col overflow-hidden rounded-[2rem] border-primary/5 bg-background/50 backdrop-blur-sm transition-[border-color,box-shadow] duration-300 ease-[var(--ease-out)] hover:border-primary/20 hover:shadow-2xl">
                 <div className="p-6 pb-4 sm:p-8 sm:pb-4">
-                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/5 text-xl font-bold text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-primary-foreground sm:mb-6 sm:h-14 sm:w-14 sm:text-2xl">
+                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/5 text-xl font-bold text-primary transition-[background-color,color] duration-300 ease-[var(--ease-out)] group-hover:bg-primary group-hover:text-primary-foreground sm:mb-6 sm:h-14 sm:w-14 sm:text-2xl">
                         {title.charAt(0)}
                     </div>
                     <h3 className="mb-3 text-xl font-bold sm:text-2xl">{title}</h3>
@@ -37,9 +37,9 @@ export function ProductCard({ title, description, href, delay = 0 }: ProductCard
                     </CardDescription>
                 </CardContent>
                 <CardFooter className="p-6 pt-4 sm:p-8 sm:pt-4">
-                    <Button asChild variant="ghost" className="h-12 min-h-[48px] w-full justify-between rounded-full px-6 transition-all duration-500 group-hover:bg-primary group-hover:text-primary-foreground">
+                    <Button asChild variant="ghost" className="h-12 min-h-[48px] w-full justify-between rounded-full px-6 transition-[background-color,color] duration-300 ease-[var(--ease-out)] group-hover:bg-primary group-hover:text-primary-foreground">
                         <Link href={href} className="flex items-center justify-between w-full">
-                            Explore {title} <ArrowRight className="h-4 w-4" />
+                            Explore {title} <ArrowRight className="h-4 w-4 transition-transform duration-200 ease-[var(--ease-out)] group-hover:translate-x-1" />
                         </Link>
                     </Button>
                 </CardFooter>

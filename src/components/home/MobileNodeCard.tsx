@@ -22,6 +22,7 @@ interface MobileNodeCardProps {
   prods: { n: string; d?: string; i?: string }[]; // Added d for description
   isVisible: boolean;
   iconKey?: string;
+  iconPath?: string;
   onProductClick: (data: { clusterId: string; productName: string; productDescription: string; icon: string }) => void;
   onClusterClick: () => void;
 }
@@ -42,6 +43,7 @@ export const MobileNodeCard: React.FC<MobileNodeCardProps & { clusterId: string 
   prods,
   isVisible,
   iconKey,
+  iconPath,
   onProductClick,
   onClusterClick,
   clusterId,
@@ -73,8 +75,16 @@ export const MobileNodeCard: React.FC<MobileNodeCardProps & { clusterId: string 
         <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/30">
           {num}
         </span>
-        <div className="h-10 w-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center">
-            {Icon ? (
+        <div className="h-10 w-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center p-2.5">
+            {iconPath ? (
+                <Image 
+                    src={iconPath} 
+                    alt={title} 
+                    width={20} 
+                    height={20} 
+                    className="h-full w-full object-contain brightness-0 invert" 
+                />
+            ) : Icon ? (
                 <Icon className="h-4 w-4 text-primary" />
             ) : (
                 <div className="w-1 h-1 rounded-full bg-primary animate-pulse" />
@@ -104,7 +114,7 @@ export const MobileNodeCard: React.FC<MobileNodeCardProps & { clusterId: string 
                 productDescription: p.d || "",
                 icon: p.i || ""
             })}
-            className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2.5 text-[10px] font-bold tracking-wider uppercase text-white/80 transition-all hover:bg-white/10"
+            className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2.5 text-[10px] font-bold tracking-wider uppercase text-white/80 transition-[border-color,background-color] duration-150 ease-[var(--ease-out)] hover:bg-white/10 hover:border-white/20"
           >
             {p.i ? (
               <Image
@@ -128,10 +138,10 @@ export const MobileNodeCard: React.FC<MobileNodeCardProps & { clusterId: string 
       {/* CTA */}
       <button 
         onClick={onClusterClick}
-        className="group mt-2 flex w-full items-center justify-between py-2 text-[10px] font-black tracking-[0.25em] uppercase text-white/40 transition-all hover:text-white"
+        className="group mt-2 flex w-full items-center justify-between py-2 text-[10px] font-black tracking-[0.25em] uppercase text-white/40 transition-[color,transform] duration-150 ease-[var(--ease-out)] hover:text-white active:scale-[0.98]"
       >
-        <span className="group-hover:translate-x-1 transition-transform">EXPLORE PRODUCTS</span>
-        <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+        <span className="transition-transform duration-200 ease-[var(--ease-out)] group-hover:translate-x-1">EXPLORE PRODUCTS</span>
+        <ArrowRight className="h-4 w-4 transition-transform duration-200 ease-[var(--ease-out)] group-hover:translate-x-1" />
       </button>
     </motion.div>
   );

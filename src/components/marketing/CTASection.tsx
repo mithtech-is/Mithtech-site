@@ -39,9 +39,9 @@ export function CTASection({ title, description, buttonText, buttonHref }: CTASe
                         {description}
                     </p>
                     <div className="flex w-full items-center justify-center gap-x-6">
-                        <Button asChild size="lg" className="group h-12 min-h-[48px] w-full rounded-full bg-background px-6 text-base font-semibold text-foreground hover:bg-background/90 sm:h-14 sm:w-auto sm:px-10 sm:text-lg">
+                        <Button asChild size="lg" className="group h-12 min-h-[48px] w-full rounded-full border border-foreground bg-background px-6 text-base font-semibold text-foreground transition-[transform,box-shadow,background-color] duration-150 ease-[var(--ease-out)] hover:bg-background/90 active:scale-[0.97] sm:h-14 sm:w-auto sm:px-10 sm:text-lg">
                             <Link href={buttonHref}>
-                                {buttonText} <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                                {buttonText} <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-[var(--ease-out)] group-hover:translate-x-1.5" />
                             </Link>
                         </Button>
                     </div>

@@ -42,7 +42,7 @@ export default function AnalyticsSolution() {
                             Unlock the story your data is telling. Enterprise-grade business intelligence, real-time visualization, and bespoke reporting dashboards.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <Button asChild size="lg" className="h-12 min-h-[48px] w-full rounded-full px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg">
+                            <Button asChild size="lg" className="h-12 min-h-[48px] w-full rounded-full border border-black px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg">
                                 <Link href="/contact">Visualize Your Data</Link>
                             </Button>
                         </div>
@@ -139,7 +139,7 @@ export default function AnalyticsSolution() {
                         <div className="flex-1">
                             <h2 className="text-5xl font-black mb-8 leading-tight">DECISIONS <br />MADE WITH <br />CERTAINTY.</h2>
                             <p className="text-xl text-background/70 mb-10 max-w-md">Our analytics architecture doesn't just show data—it provides clarity for your most critical business moves.</p>
-                            <Button asChild size="lg" className="h-12 min-h-[48px] w-full rounded-full bg-background px-6 font-bold text-foreground hover:bg-white sm:h-14 sm:w-auto sm:px-10">
+                            <Button asChild size="lg" className="h-12 min-h-[48px] w-full rounded-full border border-foreground bg-background px-6 font-bold text-foreground hover:bg-white sm:h-14 sm:w-auto sm:px-10">
                                 <Link href="/contact">Request a Demo</Link>
                             </Button>
                         </div>

@@ -40,6 +40,18 @@ export const products: Product[] = [
         processHref: "#process"
     },
     {
+        slug: "erpnext",
+        title: "ERPNext",
+        icon: "/assets/erpnext-logo.png",
+        description: "Worlds No.1 Open Source ERP",
+        longDescription: "ERPNext is a comprehensive enterprise resource planning system that helps businesses manage accounting, inventory, CRM, HR, and more in a single unified platform.",
+        features: ["Accounting", "Inventory Management", "CRM & Sales", "HR & Payroll", "Manufacturing"],
+        externalHref: "https://erpnext.com",
+        category: "Operations",
+        type: "service",
+        useCase: "Thousands of businesses worldwide use ERPNext to streamline their operations and manage all departments from a single source of truth."
+    },
+    {
         slug: "shoilms",
         title: "Shoi LMS",
         icon: "/assets/shoiclean.png",
@@ -383,7 +395,7 @@ export const products: Product[] = [
     {
         slug: "focalboard",
         title: "Focalboard",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/focalboard-logo.png",
         description: "Task Management",
         longDescription: "Open-source project management alternative to Trello, Notion, and Asana.",
         features: ["Task Management", "Project Tracking", "Workflow Organization"],
@@ -482,7 +494,7 @@ export const products: Product[] = [
     {
         slug: "marely-health",
         title: "marely Health",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/marley healtcare-logo.png",
         description: "Healthcare Operations ERP",
         longDescription: "A specialized healthcare ERP designed for managing clinics, patient records, and hospital operations with clinical precision.",
         features: ["Patient Records", "Lab Integration", "Clinic Management"],
@@ -506,7 +518,7 @@ export const products: Product[] = [
     {
         slug: "hospital-management",
         title: "Doctors & Hospital Management",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/doctor&hosiptal-logo.png",
         description: "Comprehensive Care ERP",
         longDescription: "Manage doctors, appointments, and hospital infrastructure in a unified platform designed for healthcare excellence.",
         features: ["Doctor Scheduling", "Emergency Management", "Hospital Admin"],
@@ -530,7 +542,7 @@ export const products: Product[] = [
     {
         slug: "property",
         title: "Property & Facility Management",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/property-management.png",
         description: "Real Estate ERP",
         longDescription: "End-to-end management for residential and commercial properties, including maintenance and tenant tracking.",
         features: ["Lease Management", "Maintenance Requests", "Tenant Portal"],
@@ -542,7 +554,7 @@ export const products: Product[] = [
     {
         slug: "apartment",
         title: "Apartment Management",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/aparment-logo.png",
         description: "Community Living App",
         longDescription: "A communication and management platform for gated communities and apartment complexes.",
         features: ["Visitor Management", "Bill Payments", "Community Feed"],
@@ -554,7 +566,7 @@ export const products: Product[] = [
     {
         slug: "hostel",
         title: "Hostel Setup",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/hostel-logo.png",
         description: "Student Housing System",
         longDescription: "Complete management for hostels, including room allocation, mess management, and student records.",
         features: ["Room Allocation", "Mess Billing", "Student IDs"],
@@ -566,7 +578,7 @@ export const products: Product[] = [
     {
         slug: "parking",
         title: "Parking",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/parking-logo.png",
         description: "Smart Parking Solutions",
         longDescription: "Automate parking lot operations with real-time tracking, digital ticketing, and payment integration.",
         features: ["Digital Ticketing", "Real-Time Occupancy", "Payment Gateway Sync"],
@@ -600,9 +612,21 @@ export const products: Product[] = [
         useCase: "Agencies use our listing solutions to showcase thousands of items with filtered search."
     },
     {
+        slug: "automation-ai",
+        title: "Automation Tools & AI Agents",
+        icon: "/assets/automation&ai-logo.png",
+        description: "Custom AI & Automation Solutions",
+        longDescription: "We build bespoke automation workflows and intelligent AI agents that eliminate manual tasks and optimize business intelligence using tools like n8n and LLMs.",
+        features: ["Bespoke AI Agents", "Workflow Engineering", "Process Optimization", "LLM Integration", "Autonomous Task Execution"],
+        externalHref: "",
+        category: "Automation",
+        type: "service",
+        useCase: "Modern enterprises deploy AI agents to handle routine customer inquiries and automate complex data entry across multiple legacy systems."
+    },
+    {
         slug: "frappe-comm",
         title: "Communication Tools (Frappe)",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/communicationtools-logo.png",
         description: "Unified Team Talk",
         longDescription: "A unified platform for team communication, emails, and notifications built on the Frappe framework.",
         features: ["Shared Inboxes", "Team Channels", "Notification Hub"],
@@ -626,7 +650,7 @@ export const products: Product[] = [
     {
         slug: "job-board",
         title: "Job Board",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/jobboard-logo.png",
         description: "Enterprise Job List",
         longDescription: "A dedicated platform for showcasing job openings and managing internal talent pools.",
         features: ["Candidate Profiles", "Easy Apply", "Employer Dashboards"],
@@ -638,7 +662,7 @@ export const products: Product[] = [
     {
         slug: "vikunja",
         title: "Vikunja",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/vikunja.png",
         description: "Open Task Management",
         longDescription: "The open-source to-do app to organize your life. Manage tasks, projects, and teams with ease.",
         features: ["Kanban Boards", "List Views", "Team Collaboration"],
@@ -662,7 +686,7 @@ export const products: Product[] = [
     {
         slug: "lms-frappe",
         title: "LMS (Frappe)",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/frappelms-logo.png",
         description: "Frappe Learning Suite",
         longDescription: "A comprehensive learning management system built on the Frappe framework for enterprise training.",
         features: ["Internal Training", "Certification", "Collaborative Learning"],
@@ -674,7 +698,7 @@ export const products: Product[] = [
     {
         slug: "shoilms-v2",
         title: "School Management System",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/schoolmanagement.png",
         description: "Academic ERP",
         longDescription: "Manage students, teachers, exams, and fees in one unified system designed for schools.",
         features: ["Student Lifecycle", "Exam Management", "Fee Collection"],

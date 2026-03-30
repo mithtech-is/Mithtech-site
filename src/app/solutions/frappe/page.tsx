@@ -42,7 +42,7 @@ export default function FrappeSolution() {
                             The world's most versatile, scalable, and customizable enterprise system. Consolidate your entire operation into a single, cohesive platform.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <Button asChild size="lg" className="h-12 min-h-[48px] w-full rounded-full px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg">
+                            <Button asChild size="lg" className="h-12 min-h-[48px] w-full rounded-full border border-black px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg">
                                 <Link href="/contact">Get Free Consultation</Link>
                             </Button>
                         </div>
@@ -164,7 +164,7 @@ export default function FrappeSolution() {
                                     <h3 className="text-6xl font-black text-background mb-4 text-center">70%</h3>
                                     <p className="text-xl text-background/80 text-center font-medium">Average reduction in TCO compared to Oracle or SAP.</p>
                                 </div>
-                                <Button asChild className="mt-8 h-12 min-h-[48px] w-full rounded-full bg-background text-foreground hover:bg-background/90">
+                                <Button asChild className="mt-8 h-12 min-h-[48px] w-full rounded-full border border-foreground bg-background text-foreground hover:bg-background/90">
                                     <Link href="/contact">Calculate Your Savings</Link>
                                 </Button>
                             </div>

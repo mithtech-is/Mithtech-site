@@ -59,7 +59,7 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
                                     transition={{ delay: 0.3 }}
                                     className="mb-8"
                                 >
-                                    <Button asChild variant="secondary" className="rounded-full shadow-lg h-12 px-8 border border-primary/10 hover:bg-muted transition-all">
+                                    <Button asChild variant="secondary" className="rounded-full shadow-lg h-12 px-8 border border-primary/10 transition-[background-color,box-shadow,transform] duration-150 ease-[var(--ease-out)] hover:bg-muted active:scale-[0.97]">
                                         <a href="#use-case">
                                             <Sparkles className="mr-2 h-5 w-5" /> Explore the Workflow
                                         </a>
@@ -73,19 +73,19 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
 
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 w-full">
                                 {product.externalHref ? (
-                                    <Button asChild size="lg" className="h-14 px-8 rounded-full text-lg font-semibold w-full sm:w-auto">
+                                    <Button asChild size="lg" className="h-14 px-8 rounded-full text-lg font-semibold transition-[transform,box-shadow] duration-150 ease-[var(--ease-out)] active:scale-[0.97] w-full sm:w-auto">
                                         <a href={product.externalHref} target="_blank" rel="noopener noreferrer">
                                             {isProprietary ? `Access ${product.title}` : `Visit Official ${product.title} Site`} <ExternalLink className="ml-2 h-5 w-5" />
                                         </a>
                                     </Button>
                                 ) : (
-                                    <Button asChild size="lg" className="h-14 px-8 rounded-full text-lg font-semibold w-full sm:w-auto shadow-lg shadow-primary/20 hover:shadow-primary/30">
+                                    <Button asChild size="lg" className="h-14 px-8 rounded-full text-lg font-semibold transition-[transform,box-shadow] duration-150 ease-[var(--ease-out)] active:scale-[0.97] w-full sm:w-auto shadow-lg shadow-primary/20 hover:shadow-primary/30">
                                         <Link href="/contact">
                                             {isProprietary ? `Get ${product.title}` : `Deploy ${product.title} for Your Business`} <ArrowRight className="ml-2 h-5 w-5" />
                                         </Link>
                                     </Button>
                                 )}
-                                <Button variant="outline" asChild size="lg" className="h-14 px-8 rounded-full text-lg font-semibold w-full sm:w-auto">
+                                <Button variant="outline" asChild size="lg" className="h-14 px-8 rounded-full text-lg font-semibold transition-[transform,box-shadow,border-color] duration-150 ease-[var(--ease-out)] active:scale-[0.97] w-full sm:w-auto">
                                     <Link href="/contact">
                                         {isProprietary ? 'Consult Our Experts' : `Mithtech Expert Services`} <Zap className="ml-2 h-5 w-5 fill-primary" />
                                     </Link>
@@ -151,8 +151,8 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
                                         initial={{ opacity: 0, x: -20 }}
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
-                                        transition={{ duration: 0.4, delay: index * 0.1 }}
-                                        className="flex items-start gap-4 p-4 rounded-2xl bg-background border shadow-sm hover:shadow-md transition-all"
+                                        transition={{ duration: 0.4, delay: index * 0.08, ease: [0.23, 1, 0.32, 1] }}
+                                        className="flex items-start gap-4 p-4 rounded-2xl bg-background border transition-[box-shadow] duration-200 ease-[var(--ease-out)] hover:shadow-md"
                                     >
                                         <div className="mt-1">
                                             <CheckCircle2 className="h-6 w-6 text-primary shrink-0" />

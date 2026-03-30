@@ -110,7 +110,7 @@ export default function Solutions() {
                     "Asset Management & Lifecycle Tracking"
                 ]}
                 href="/solutions/frappe"
-                image="/assets/ERPnext.png"
+                image="/assets/erpnext-logo.png"
                 reversed={false}
             />
 

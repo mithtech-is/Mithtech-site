@@ -100,7 +100,7 @@ export const USE_CASES: UseCase[] = [
     title: "Workflow Automation & AI",
     products: [
       { title: "n8n", slug: "n8n" },
-      { title: "Automation Tools & AI Agents", description: "Custom AI implementation" },
+      { title: "Automation Tools & AI Agents", slug: "automation-ai", description: "Custom AI implementation" },
     ],
   },
   {
@@ -140,12 +140,11 @@ export const USE_CASES: UseCase[] = [
 ];
 
 export const PLATFORMS = [
-  { title: "Frappe & ERPNext", href: "/solutions/frappe" },
-  { title: "eCommerce", href: "/solutions/commerce" },
-  { title: "Analytics & BI", href: "/solutions/analytics" },
-  { title: "Marketing Automation", href: "/solutions/marketing-automation" },
-  { title: "Education & LMS", href: "/solutions/lms" },
-  { title: "Customer Support", href: "/solutions/customer-support" },
+  { title: "Frappe & ERPNext", href: "/platforms/frappe-erpnext" },
+  { title: "Medusa", href: "/platforms/medusa" },
+  { title: "WordPress", href: "/platforms/wordpress" },
+  { title: "SaaS", href: "/platforms/saas" },
+  { title: "PaaS", href: "/platforms/paas" },
 ];
 
 export const SOLUTIONS = [

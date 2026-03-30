@@ -23,6 +23,7 @@ import {
 import { MobileNodeSequence } from '@/components/home/MobileNodeSequence';
 import { MobileProgressBar } from '@/components/home/MobileProgressBar';
 import { DEFS, SCENES } from '@/data/hubs';
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   const homeSectionRef = React.useRef<HTMLDivElement>(null);
@@ -190,7 +191,10 @@ export default function Home() {
       ref={homeSectionRef}
       className="relative w-full overflow-x-hidden border-b border-white/10 bg-[#080808] shadow-[0_24px_80px_rgba(0,0,0,0.45)]"
     >
-      <div className="fixed inset-0 z-0 hidden md:block">
+      <div
+        className="fixed inset-0 z-0 hidden md:block transition-opacity duration-500"
+        style={{ opacity: scrollProg > 0.88 ? Math.max(0, 1 - (scrollProg - 0.88) / 0.12) : 1, pointerEvents: scrollProg > 0.98 ? 'none' : 'auto' }}
+      >
         <CustomCanvas
           onProductSelect={handleProductSelect}
           onClusterSelect={handleClusterSelect}
@@ -199,72 +203,71 @@ export default function Home() {
       <div className="fixed inset-0 z-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)] md:hidden" />
 
       {/* Main Overlays */}
-      <div className="relative z-10 min-h-screen">
+      <div className={cn("relative z-10 min-h-screen", selectedProduct && "pointer-events-none select-none blur-[2px] transition-all duration-300")}>
         <MobileProgressBar curCI={curCI} isVisible={curCI !== -1} />
         <Hero isVisible={curScene === 'hero'} />
         <div className="hidden md:block">
           <InfoPanel isVisible={curCI !== -1} data={infoData} />
         </div>
-        <MobileNodeSequence 
-          defs={DEFS} 
-          curCI={curCI} 
+        <MobileNodeSequence
+          defs={DEFS}
+          curCI={curCI}
           onProductClick={handleProductSelect}
           onClusterClick={handleClusterSelect}
         />
-      </div>
 
-      {/* Indicators and Hints */}
-      <div className={`fixed bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-3 transition-all duration-500 sm:bottom-12 ${curScene === 'hero' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
-        <div className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/20">Scroll to explore</div>
-        <div className="w-px h-10 bg-gradient-to-b from-white/40 to-transparent sh-l" />
-      </div>
-
-      <div className="fixed bottom-8 left-4 z-20 hidden transition-all duration-500 sm:bottom-12 sm:left-6 lg:block xl:left-12">
-        <div className="text-[10px] font-bold tracking-[0.25em] uppercase text-white/20 mb-3">
-          {SCENES.find(s => s.id === curScene)?.name}
+        {/* Indicators and Hints moved inside the locked container */}
+        <div className={`fixed bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-3 transition-all duration-500 sm:bottom-12 ${curScene === 'hero' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
+          <div className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/20">Scroll to explore</div>
+          <div className="w-px h-10 bg-gradient-to-b from-white/40 to-transparent sh-l" />
         </div>
-        <div className="w-20 h-[1px] bg-white/5 overflow-hidden">
-          <div
-            className="h-full bg-white/50 transition-all duration-300"
-            style={{
-              width: `${((scrollProg - (SCENES.find(s => s.id === curScene)?.r[0] || 0)) / ((SCENES.find(s => s.id === curScene)?.r[1] || 1) - (SCENES.find(s => s.id === curScene)?.r[0] || 0))) * 100}%`
-            }}
-          />
+
+        <div className="fixed bottom-8 left-4 z-20 hidden transition-all duration-500 sm:bottom-12 sm:left-6 lg:block xl:left-12">
+          <div className="text-[10px] font-bold tracking-[0.25em] uppercase text-white/20 mb-3">
+            {SCENES.find(s => s.id === curScene)?.name}
+          </div>
+          <div className="w-20 h-[1px] bg-white/5 overflow-hidden">
+            <div
+              className="h-full bg-white/50 transition-all duration-300"
+              style={{
+                width: `${((scrollProg - (SCENES.find(s => s.id === curScene)?.r[0] || 0)) / ((SCENES.find(s => s.id === curScene)?.r[1] || 1) - (SCENES.find(s => s.id === curScene)?.r[0] || 0))) * 100}%`
+              }}
+            />
+          </div>
+        </div>
+
+        <div className="fixed right-4 top-1/2 z-20 hidden -translate-y-1/2 flex-col gap-3 md:right-6 md:flex lg:right-10 lg:gap-4">
+          {SCENES.map((sc, i) => (
+            <button
+              key={i}
+              className={`w-[4px] h-[4px] rounded-full transition-all duration-500 ${sc.id === curScene ? 'scale-[2.5] bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]' : 'bg-white/20 hover:bg-white/40'}`}
+              title={sc.name}
+              onClick={() => {
+                const homeHeight = homeSectionRef.current?.offsetHeight ?? 0;
+                const maxScroll = Math.max(homeHeight - window.innerHeight, 0);
+                window.scrollTo({
+                  top: ((sc.r[0] + sc.r[1]) / 2) * maxScroll,
+                  behavior: 'smooth',
+                });
+              }}
+            />
+          ))}
         </div>
       </div>
 
-      <div className="fixed right-4 top-1/2 z-20 hidden -translate-y-1/2 flex-col gap-3 md:right-6 md:flex lg:right-10 lg:gap-4">
-        {SCENES.map((sc, i) => (
-          <button
-            key={i}
-            className={`w-[4px] h-[4px] rounded-full transition-all duration-500 ${sc.id === curScene ? 'scale-[2.5] bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]' : 'bg-white/20 hover:bg-white/40'}`}
-            title={sc.name}
-            onClick={() => {
-              const homeHeight = homeSectionRef.current?.offsetHeight ?? 0;
-              const maxScroll = Math.max(homeHeight - window.innerHeight, 0);
-              window.scrollTo({
-                top: ((sc.r[0] + sc.r[1]) / 2) * maxScroll,
-                behavior: 'smooth',
-              });
-            }}
-          />
-        ))}
-      </div>
-
-      <div className="fixed bottom-12 right-8 z-20 hidden text-[10px] font-bold uppercase tracking-[0.2em] text-white/15 xl:right-12 xl:block">
-        Hold & drag nodes to rearrange
-      </div>
 
       {/* Spacer for Scrolling */}
-      <div id="spacer" className="pointer-events-none h-[620vh] sm:h-[720vh] md:h-[820vh]" />
+      <div id="spacer" className="pointer-events-none h-[420vh] sm:h-[480vh] md:h-[520vh]" />
 
-      <div className="relative z-10 flex min-h-screen items-center justify-center bg-transparent">
+      <div className="relative z-10 flex min-h-screen items-center justify-center bg-[#080808]">
+        {/* Top fade to blend the scroll transition cleanly */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#080808]/0 to-[#080808]" />
         <CTA />
       </div>
 
       {selectedProduct && (
         <div
-          className="fixed inset-0 z-40 flex items-center justify-center bg-black/70 px-4 py-6 backdrop-blur-sm"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-4 py-8 backdrop-blur-md"
           onClick={() => setSelectedProduct(null)}
         >
           <div
@@ -319,7 +322,7 @@ export default function Home() {
             </div>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild className="h-12 min-h-[48px] w-full rounded-full bg-white text-black hover:bg-white/90 sm:w-auto">
+              <Button asChild className="h-12 min-h-[48px] w-full rounded-full border border-black bg-white text-black hover:bg-white/90 sm:w-auto">
                 <Link href="/contact">
                   Contact Us <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>

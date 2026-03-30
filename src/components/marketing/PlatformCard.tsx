@@ -28,11 +28,11 @@ export function PlatformCard({ name, imageSrc, href, delay = 0, description, cla
     const content = (
         <Card 
             onMouseMove={handleMouseMove}
-            className={`group relative flex h-full flex-col overflow-hidden rounded-[2rem] bg-background border-primary/5 transition-all duration-500 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5 ${className}`}
+            className={`group relative flex h-full flex-col overflow-hidden rounded-[2rem] bg-background border-primary/5 transition-[border-color,box-shadow] duration-250 ease-[var(--ease-out)] hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5 ${className}`}
         >
             {/* Spotlight effect */}
             <motion.div
-                className="pointer-events-none absolute -inset-px rounded-[2rem] opacity-0 transition duration-300 group-hover:opacity-100"
+                className="pointer-events-none absolute -inset-px rounded-[2rem] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 style={{
                     background: useMotionTemplate`
                         radial-gradient(
@@ -45,14 +45,14 @@ export function PlatformCard({ name, imageSrc, href, delay = 0, description, cla
             />
 
             <CardContent className="relative z-10 flex h-full flex-col p-5 sm:p-6">
-                <div className="relative mb-4 flex h-12 w-full items-center transition-transform duration-500 group-hover:scale-110">
+                <div className="relative mb-4 flex h-12 w-full items-center transition-transform duration-300 ease-[var(--ease-out)] group-hover:scale-105">
                     <div className="relative h-full w-full max-w-[92px] sm:max-w-[100px]">
                          <Image
                             src={imageSrc}
                             alt={name}
                             fill
                             sizes="(max-width: 640px) 92px, 100px"
-                            className="object-contain object-left grayscale group-hover:grayscale-0 transition-all duration-500"
+                            className="object-contain object-left grayscale transition-[filter] duration-300 ease-[var(--ease-out)] group-hover:grayscale-0"
                         />
                     </div>
                 </div>

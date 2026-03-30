@@ -16,10 +16,10 @@ export const CTA: React.FC = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto">
-          <button className="min-h-[48px] w-full bg-white px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-black shadow-xl shadow-white/5 transition-all active:translate-y-0 hover:-translate-y-0.5 hover:bg-neutral-200 sm:w-auto sm:px-10">
+          <button className="min-h-[48px] w-full border border-black bg-white px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-black shadow-xl shadow-white/10 transition-[transform,background-color,box-shadow] duration-150 ease-[var(--ease-out)] active:scale-[0.97] hover:bg-neutral-100 hover:shadow-white/15 sm:w-auto sm:px-10">
             Book a Demo →
           </button>
-          <button className="min-h-[48px] w-full border border-white/10 bg-transparent px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-white/60 transition-all hover:border-white/25 hover:text-white/90 sm:w-auto sm:px-10">
+          <button className="min-h-[48px] w-full border border-white/10 bg-transparent px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-white/60 transition-[border-color,color,transform] duration-150 ease-[var(--ease-out)] active:scale-[0.97] hover:border-white/25 hover:text-white/90 sm:w-auto sm:px-10">
             Browse All Products
           </button>
         </div>

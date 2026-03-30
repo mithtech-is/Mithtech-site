@@ -42,7 +42,7 @@ export default function CommerceSolution() {
                             Power your sales across every channel with modern, flexible commerce systems. From B2B/B2C stores to unified POS and booking engines.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <Button asChild size="lg" className="h-12 min-h-[48px] w-full rounded-full px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg">
+                            <Button asChild size="lg" className="h-12 min-h-[48px] w-full rounded-full border border-black px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg">
                                 <Link href="/contact">Launch Your Store</Link>
                             </Button>
                         </div>

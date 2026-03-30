@@ -17,7 +17,7 @@ export interface HubCluster {
 
 export const DEFS: HubCluster[] = [
   {
-    id: 'crm', n: 'CRM & Sales', icon: 'crm',
+    id: 'crm', n: 'CRM & Sales', icon: '/assets/crm.svg',
     desc: 'Customer Management & Sales Growth',
     longDesc: 'Mithtech builds powerful CRM systems that centralize customer data, streamline sales processes, and improve conversion rates. By combining automation, insights, and seamless integrations, we help businesses manage relationships and scale revenue efficiently.',
     chips: ['Lead & Pipeline Management', 'Sales Automation', 'Customer Insights'],
@@ -30,19 +30,19 @@ export const DEFS: HubCluster[] = [
     ]
   },
   {
-    id: 'mktg', n: 'Marketing', icon: 'mktg',
+    id: 'mktg', n: 'Marketing', icon: '/assets/mktg.svg',
     desc: 'Campaigns, Automation & Growth',
     longDesc: 'Mithtech creates a connected marketing ecosystem that automates campaigns, streamlines workflows, and scales lead generation across multiple channels. By integrating tools and data, we help businesses improve engagement, optimize performance, and achieve measurable growth.',
     chips: ['Campaign Automation', 'Lead Generation Systems', 'Multi-Channel Marketing'],
     prods: [
       { n: 'Polygin WhatsApp', d: 'WhatsApp Automation', i: '/assets/polyg.png' },
-      { n: 'Mautic', d: 'Marketing Automation', i: '/assets/mautic-logo.png' },
+      { n: 'Mautic', d: 'Marketing Automation', i: '/assets/Mautic_Logo_LB.png' },
       { n: 'Listmonk', d: 'Email Marketing', i: '/assets/listmonk-logo.png' },
       { n: 'Postiz', d: 'Content Scheduling', i: '/assets/postiz-logo.png' }
     ]
   },
   {
-    id: 'ecom', n: 'eCommerce', icon: 'ecom',
+    id: 'ecom', n: 'eCommerce', icon: '/assets/ecom.svg',
     desc: 'High-Performance Commerce Ecosystem',
     longDesc: 'Mithtech builds scalable eCommerce systems that unify storefronts, backend operations, and sales channels into one seamless platform. From product management to order processing and payments, we create high-performance commerce experiences designed to increase conversions, streamline operations, and support business growth.',
     chips: ['Scalable Commerce Architecture', 'Multi-Channel Sales Systems', 'Order & Payment Automation'],
@@ -55,7 +55,7 @@ export const DEFS: HubCluster[] = [
     ]
   },
   {
-    id: 'supp', n: 'Support & Chat', icon: 'supp',
+    id: 'supp', n: 'Support & Chat', icon: '/assets/supp.svg',
     desc: 'Omnichannel Support & Communication',
     longDesc: 'Mithtech builds integrated support systems that combine chat, ticketing, and collaboration tools into one unified platform. This enables faster response times, improved customer satisfaction, and seamless communication across all channels.',
     chips: ['Omnichannel Support', 'AI Chatbots', 'Team Collaboration'],
@@ -67,19 +67,19 @@ export const DEFS: HubCluster[] = [
     ]
   },
   {
-    id: 'fin', n: 'Finance & BI', icon: 'fin',
+    id: 'fin', n: 'Finance & BI', icon: '/assets/fin.svg',
     desc: 'Financial Intelligence & Business Insights',
     longDesc: 'Mithtech builds a unified finance and analytics ecosystem that gives you real-time visibility into cash flow, operational performance, and business health. By integrating accounting, reporting, and dashboards, we enable faster decision-making, accurate forecasting, and complete financial control across your organization.',
     chips: ['Real-Time Financial Tracking', 'Advanced Reporting & Analytics', 'KPI Dashboards & Forecasting'],
     prods: [
       { n: 'ERPNext (Finance)', d: 'ERP Finance Suite', i: '/assets/erpnext-logo.png' },
-      { n: 'Frappe Books', d: 'Lightweight Accounting', i: '/assets/erpnext-logo.png' },
+      { n: 'Frappe Books', d: 'Lightweight Accounting', i: '/assets/frappebooks-logo.png' },
       { n: 'Frappe Insights', d: 'Business Intelligence', i: '/assets/frappe insights-logo.png' },
       { n: 'Frappe Lending', d: 'Loan & Credit System', i: '/assets/frappelending-logo.png' }
     ]
   },
   {
-    id: 'auto', n: 'Automation & AI', icon: 'auto',
+    id: 'auto', n: 'Automation & AI', icon: '/assets/auto.svg',
     desc: 'Automation & Intelligent Systems',
     longDesc: 'Mithtech develops intelligent automation systems that eliminate repetitive tasks and connect your tools into a unified workflow. By leveraging AI and no-code automation, we help businesses scale operations efficiently and reduce manual dependency.',
     chips: ['Workflow Automation', 'AI Agents', 'System Integration'],

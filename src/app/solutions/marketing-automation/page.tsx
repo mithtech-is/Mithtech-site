@@ -41,7 +41,7 @@ export default function MarketingAutomationSolution() {
                             Engage your audience at the perfect moment. Automated, data-driven marketing workflows that scale your reach without scaling your effort.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <Button asChild size="lg" className="h-12 min-h-[48px] w-full rounded-full px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg">
+                            <Button asChild size="lg" className="h-12 min-h-[48px] w-full rounded-full border border-black px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg">
                                 <Link href="/contact">Automate Your Marketing</Link>
                             </Button>
                         </div>
