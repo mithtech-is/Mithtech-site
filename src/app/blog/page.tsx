@@ -1,8 +1,5 @@
-"use client";
-
 import { getBlogPosts } from "@/lib/blog";
 import { BlogCard } from "@/components/blog/BlogCard";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
