@@ -25,12 +25,12 @@ export default function About() {
                             <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Our Identity</span>
                         </div>
                         <h1 className="text-5xl font-extrabold tracking-tight text-black sm:text-6xl lg:text-7xl mb-10 leading-[1.1] uppercase">
-                            About <br /> 
-                            <span className="text-[#00aaff]">Mithtech.</span>
+                            About <br />
+                            <span className="text-[#00aaff]">Mithtech</span>
                         </h1>
                         <p className="text-xl leading-loose text-black/50 max-w-3xl mx-auto mb-14 italic font-sans font-medium">
-                            We are a software consultancy providing enterprise-grade ERP, 
-                            eCommerce, and SaaS platforms. We architect foundations 
+                            We are a software consultancy providing enterprise-grade ERP,
+                            eCommerce, and SaaS platforms. We architect foundations
                             that scale with your ambition—not your costs.
                         </p>
                         <div className="flex flex-wrap justify-center gap-6">
@@ -109,8 +109,8 @@ export default function About() {
                     </div>
                     <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
                         {["Frappe", "ERPNext", "MedusaJS", "n8n", "Mautic", "Listmonk", "Schedulr", "Directorist", "Next.js", "Odoo", "Metabase", "Superset"].map(platform => (
-                            <motion.span 
-                                key={platform} 
+                            <motion.span
+                                key={platform}
                                 whileHover={{ scale: 1.05 }}
                                 className="px-10 py-5 rounded-full border border-white/10 bg-white/5 font-extrabold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all cursor-default"
                             >
