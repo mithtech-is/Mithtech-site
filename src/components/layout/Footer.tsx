@@ -23,16 +23,16 @@ export function Footer() {
                             Enterprise Business Systems That Scale. ERP, eCommerce, automation, and analytics solutions based in Bangalore.
                         </p>
                         <div className="flex space-x-5">
-                            <Link href="#" className="text-white/40 transition-[color,transform] duration-150 ease-[var(--ease-out)] hover:text-primary active:scale-[0.9]">
+                            <Link href="#" className="text-white/40 transition-[color,transform] duration-150 ease-[var(--ease-out)] hover:text-white active:scale-[0.9]">
                                 <Facebook className="h-6 w-6" />
                             </Link>
-                            <Link href="#" className="text-white/40 transition-[color,transform] duration-150 ease-[var(--ease-out)] hover:text-primary active:scale-[0.9]">
+                            <Link href="#" className="text-white/40 transition-[color,transform] duration-150 ease-[var(--ease-out)] hover:text-white active:scale-[0.9]">
                                 <Twitter className="h-6 w-6" />
                             </Link>
-                            <Link href="#" className="text-white/40 transition-[color,transform] duration-150 ease-[var(--ease-out)] hover:text-primary active:scale-[0.9]">
+                            <Link href="#" className="text-white/40 transition-[color,transform] duration-150 ease-[var(--ease-out)] hover:text-white active:scale-[0.9]">
                                 <Linkedin className="h-6 w-6" />
                             </Link>
-                            <Link href="#" className="text-white/40 transition-[color,transform] duration-150 ease-[var(--ease-out)] hover:text-primary active:scale-[0.9]">
+                            <Link href="#" className="text-white/40 transition-[color,transform] duration-150 ease-[var(--ease-out)] hover:text-white active:scale-[0.9]">
                                 <Instagram className="h-6 w-6" />
                             </Link>
                         </div>
@@ -41,23 +41,23 @@ export function Footer() {
                     <div>
                         <h3 className="mb-6 text-sm font-bold tracking-[0.2em] uppercase text-white">Platforms</h3>
                         <ul className="space-y-4">
-                            <li><Link href="/solutions/frappe" className="text-white/60 hover:text-primary transition-colors duration-150 text-sm font-medium">Frappe &amp; ERPNext</Link></li>
-                            <li><Link href="/solutions/commerce" className="text-white/60 hover:text-primary transition-colors duration-150 text-sm font-medium">eCommerce</Link></li>
-                            <li><Link href="/solutions/marketing-automation" className="text-white/60 hover:text-primary transition-colors duration-150 text-sm font-medium">Marketing Automation</Link></li>
-                            <li><Link href="/solutions/analytics" className="text-white/60 hover:text-primary transition-colors duration-150 text-sm font-medium">Analytics &amp; BI</Link></li>
-                            <li><Link href="/solutions/lms" className="text-white/60 hover:text-primary transition-colors duration-150 text-sm font-medium">Education &amp; LMS</Link></li>
+                            <li><Link href="/solutions/frappe" className="text-white/60 hover:text-white transition-colors duration-150 text-sm font-medium">Frappe &amp; ERPNext</Link></li>
+                            <li><Link href="/solutions/commerce" className="text-white/60 hover:text-white transition-colors duration-150 text-sm font-medium">eCommerce</Link></li>
+                            <li><Link href="/solutions/marketing-automation" className="text-white/60 hover:text-white transition-colors duration-150 text-sm font-medium">Marketing Automation</Link></li>
+                            <li><Link href="/solutions/analytics" className="text-white/60 hover:text-white transition-colors duration-150 text-sm font-medium">Analytics &amp; BI</Link></li>
+                            <li><Link href="/solutions/lms" className="text-white/60 hover:text-white transition-colors duration-150 text-sm font-medium">Education &amp; LMS</Link></li>
                         </ul>
                     </div>
 
                     <div>
                         <h3 className="mb-6 text-sm font-bold tracking-[0.2em] uppercase text-white">Industries</h3>
                         <ul className="space-y-4">
-                            <li><Link href="/industries/automotive" className="text-white/60 hover:text-primary transition-colors duration-150 text-sm font-medium">Automotive (Car Care)</Link></li>
-                            <li><Link href="/industries/real-estate" className="text-white/60 hover:text-primary transition-colors duration-150 text-sm font-medium">Real Estate</Link></li>
-                            <li><Link href="/industries/healthcare" className="text-white/60 hover:text-primary transition-colors duration-150 text-sm font-medium">Healthcare</Link></li>
-                            <li><Link href="/industries/retail" className="text-white/60 hover:text-primary transition-colors duration-150 text-sm font-medium">Retail</Link></li>
-                            <li><Link href="/industries/manufacturing" className="text-white/60 hover:text-primary transition-colors duration-150 text-sm font-medium">Manufacturing</Link></li>
-                            <li><Link href="/industries/financial-services" className="text-white/60 hover:text-primary transition-colors duration-150 text-sm font-medium">Financial Services / Loans</Link></li>
+                            <li><Link href="/industries/automotive" className="text-white/60 hover:text-white transition-colors duration-150 text-sm font-medium">Automotive (Car Care)</Link></li>
+                            <li><Link href="/industries/real-estate" className="text-white/60 hover:text-white transition-colors duration-150 text-sm font-medium">Real Estate</Link></li>
+                            <li><Link href="/industries/healthcare" className="text-white/60 hover:text-white transition-colors duration-150 text-sm font-medium">Healthcare</Link></li>
+                            <li><Link href="/industries/retail" className="text-white/60 hover:text-white transition-colors duration-150 text-sm font-medium">Retail</Link></li>
+                            <li><Link href="/industries/manufacturing" className="text-white/60 hover:text-white transition-colors duration-150 text-sm font-medium">Manufacturing</Link></li>
+                            <li><Link href="/industries/financial-services" className="text-white/60 hover:text-white transition-colors duration-150 text-sm font-medium">Financial Services / Loans</Link></li>
                         </ul>
                     </div>
 
@@ -75,7 +75,7 @@ export function Footer() {
                             />
                             <Button
                                 type="submit"
-                                className="w-full h-12 font-bold uppercase tracking-wider transition-[transform,background-color] duration-150 ease-[var(--ease-out)] active:scale-[0.97]"
+                                className="w-full h-12 font-bold uppercase tracking-wider bg-white text-black hover:bg-white/90 transition-all duration-150 active:scale-[0.97]"
                             >
                                 <Mail className="mr-2 h-4 w-4" /> Subscribe
                             </Button>
@@ -88,8 +88,8 @@ export function Footer() {
                         © {new Date().getFullYear()} Mithtech Innovative Solutions. All rights reserved.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 sm:gap-8 md:justify-end">
-                        <Link href="/privacy" className="text-sm text-white/40 hover:text-primary transition-colors duration-150">Privacy Policy</Link>
-                        <Link href="/terms" className="text-sm text-white/40 hover:text-primary transition-colors duration-150">Terms of Service</Link>
+                        <Link href="/privacy" className="text-sm text-white/40 hover:text-white transition-colors duration-150">Privacy Policy</Link>
+                        <Link href="/terms" className="text-sm text-white/40 hover:text-white transition-colors duration-150">Terms of Service</Link>
                     </div>
                 </div>
             </div>

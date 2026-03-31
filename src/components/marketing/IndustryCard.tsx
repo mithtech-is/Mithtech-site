@@ -21,15 +21,15 @@ export function IndustryCard({ title, icon: Icon, href, delay = 0 }: IndustryCar
             transition={{ duration: 0.4, delay, ease: [0.23, 1, 0.32, 1] }}
         >
             <Link href={href} className="group block h-full">
-                <Card className="relative h-full overflow-hidden bg-gradient-to-br from-background to-background/50 transition-[border-color,box-shadow,transform] duration-300 ease-[var(--ease-out)] group-hover:-translate-y-1.5 group-hover:border-primary/50 group-hover:shadow-xl active:scale-[0.98]">
-                    <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-primary/5 transition-[background-color,transform] duration-500 ease-[var(--ease-out)] group-hover:bg-primary/10 group-hover:scale-150" />
-                    <CardContent className="relative z-10 flex h-full flex-col justify-between p-6 sm:p-8">
+                <Card className="relative h-full overflow-hidden bg-white border border-black/5 transition-all duration-500 hover:shadow-2xl hover:border-black/20 active:scale-[0.98] rounded-[2rem]">
+                    <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-black/[0.02] transition-transform duration-700 group-hover:scale-150" />
+                    <CardContent className="relative z-10 flex h-full flex-col justify-between p-8 sm:p-10">
                         <div>
-                            <Icon className="mb-5 h-9 w-9 text-primary transition-transform duration-300 ease-[var(--ease-out)] group-hover:scale-110 sm:mb-6 sm:h-10 sm:w-10" />
-                            <h3 className="mb-2 text-lg font-bold tracking-tight sm:text-xl">{title}</h3>
+                            <Icon className="mb-6 h-10 w-10 text-[#00aaff] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3" />
+                            <h3 className="text-xl font-extrabold tracking-tight sm:text-2xl text-black uppercase leading-tight">{title}</h3>
                         </div>
-                        <div className="mt-6 flex items-center gap-1.5 text-sm font-medium text-primary opacity-0 -translate-x-3 transition-[opacity,transform] duration-300 ease-[var(--ease-out)] sm:mt-8 group-hover:opacity-100 group-hover:translate-x-0">
-                            Explore Solutions <ArrowRight className="h-4 w-4" />
+                        <div className="mt-8 flex items-center gap-2 text-xs font-bold text-black uppercase tracking-widest opacity-40 group-hover:opacity-100 transition-opacity">
+                            Explore Industry <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </div>
                     </CardContent>
                 </Card>

@@ -14,17 +14,12 @@ interface CTASectionProps {
 
 export function CTASection({ title, description, buttonText, buttonHref }: CTASectionProps) {
     return (
-        <section className="relative overflow-hidden bg-foreground py-16 text-background sm:py-20 md:py-24 lg:py-32">
-            <div className="absolute inset-0 -z-10 opacity-10">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-background/20 via-transparent to-transparent" />
-                <div className="grid grid-cols-8 h-full w-full gap-4 p-4 opacity-10">
-                    {[...Array(64)].map((_, i) => (
-                        <div key={i} className="border-[0.5px] border-background/20 rounded-sm" />
-                    ))}
-                </div>
+        <section className="relative overflow-hidden bg-white py-24 text-black sm:py-32 border-t border-black/[0.05]">
+            <div className="absolute inset-0 -z-10 opacity-[0.03]">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#000_1px,transparent_1px)] bg-[size:40px_40px]" />
             </div>
 
-            <div className="container relative z-10 mx-auto max-w-7xl">
+            <div className="container relative z-10 mx-auto px-4 max-w-7xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -32,16 +27,23 @@ export function CTASection({ title, description, buttonText, buttonHref }: CTASe
                     transition={{ duration: 0.6 }}
                     className="mx-auto max-w-4xl text-center flex flex-col items-center"
                 >
-                    <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-black/[0.02] px-3 py-1 mb-8">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#00aaff] animate-pulse" />
+                        <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Next Steps</span>
+                    </div>
+                    
+                    <h2 className="mb-8 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl uppercase leading-[1.1]">
                         {title}
                     </h2>
-                    <p className="mx-auto mb-10 mt-4 max-w-2xl text-base leading-7 text-background/80 sm:text-lg md:mb-12 md:mt-6 md:text-xl md:leading-8">
+                    
+                    <p className="mx-auto mb-12 max-w-2xl text-lg leading-loose text-black/50 md:text-xl italic">
                         {description}
                     </p>
+                    
                     <div className="flex w-full items-center justify-center gap-x-6">
-                        <Button asChild size="lg" className="group h-12 min-h-[48px] w-full rounded-full border border-foreground bg-background px-6 text-base font-semibold text-foreground transition-[transform,box-shadow,background-color] duration-150 ease-[var(--ease-out)] hover:bg-background/90 active:scale-[0.97] sm:h-14 sm:w-auto sm:px-10 sm:text-lg">
+                        <Button asChild size="lg" className="group h-14 rounded-full bg-black px-10 text-lg font-bold text-white transition-all hover:bg-black/90 hover:scale-105 active:scale-95 shadow-2xl shadow-black/10">
                             <Link href={buttonHref}>
-                                {buttonText} <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-[var(--ease-out)] group-hover:translate-x-1.5" />
+                                {buttonText} <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-1.5" />
                             </Link>
                         </Button>
                     </div>

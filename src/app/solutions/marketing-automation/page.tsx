@@ -10,92 +10,130 @@ import {
     Target,
     Users,
     BarChart3,
-    Globe
+    Globe,
+    ArrowLeft
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 
+function PillarItem({ icon: Icon, title, description }: { icon: any; title: string; description: string }) {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col gap-6 p-8 rounded-[2rem] border border-black/[0.05] bg-white hover:border-[#00aaff]/20 hover:shadow-xl hover:shadow-[#00aaff]/5 transition-all duration-500 group"
+        >
+            <div className="w-14 h-14 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg shadow-black/5 group-hover:scale-110 transition-transform">
+                <Icon className="w-7 h-7" />
+            </div>
+            <div>
+                <h3 className="text-2xl font-extrabold text-black mb-4 tracking-tight uppercase">{title}</h3>
+                <p className="text-black/50 text-lg leading-loose">{description}</p>
+            </div>
+        </motion.div>
+    );
+}
+
+function FeatureListItem({ title }: { title: string }) {
+    return (
+        <li className="flex items-center gap-4 text-lg">
+            <div className="h-6 w-6 rounded-full bg-[#00aaff]/10 flex items-center justify-center shrink-0">
+                <CheckCircle2 className="w-4 h-4 text-[#00aaff]" />
+            </div>
+            <span className="text-base font-medium text-black/70 leading-loose">{title}</span>
+        </li>
+    );
+}
+
 export default function MarketingAutomationSolution() {
     return (
-        <div className="flex flex-col w-full bg-background overflow-hidden px-0 mx-0">
-            {/* Hero Section */}
-            <section className="relative pt-16 pb-16 sm:pt-20 sm:pb-20 md:pt-24 md:pb-24 lg:pt-32 lg:pb-32 border-b overflow-hidden px-0 mx-0">
-                <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(0,0,0,0.03)_0%,transparent_100%)]" />
-                <div className="container mx-auto px-4 sm:px-6 md:px-8">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="max-w-4xl"
-                    >
-                        <span className="text-sm font-bold tracking-[0.3em] text-muted-foreground uppercase mb-6 block">
-                            OMNICHANNEL GROWTH
-                        </span>
-                        <h1 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl lg:text-8xl text-foreground mb-8 leading-[0.9]">
-                            MARKETING <br />
-                            <span className="text-muted-foreground">AUTOMATION</span>
-                        </h1>
-                        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl mb-10">
-                            Engage your audience at the perfect moment. Automated, data-driven marketing workflows that scale your reach without scaling your effort.
-                        </p>
-                        <div className="flex flex-wrap gap-4">
-                            <Button asChild size="lg" className="h-12 min-h-[48px] w-full rounded-full border border-black px-6 text-base sm:h-14 sm:w-auto sm:px-8 sm:text-lg">
-                                <Link href="/contact">Automate Your Marketing</Link>
-                            </Button>
+        <div className="flex flex-col w-full bg-white overflow-hidden">
+            {/* Back Breadcrumb */}
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-32">
+                <Link href="/solutions" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-black/40 hover:text-[#00aaff] transition-colors">
+                    <ArrowLeft className="w-3 h-3" /> All Solutions
+                </Link>
+            </div>
+
+            {/* Hero Section - Redesigned to White theme (Centered) */}
+            <section className="relative overflow-hidden bg-white pt-12 pb-20 lg:pt-16 lg:pb-32">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-4xl mx-auto text-center">
+                        <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-black/[0.02] px-3 py-1 mb-8">
+                            <span className="h-1.5 w-1.5 rounded-full bg-[#00aaff] animate-pulse" />
+                            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Omnichannel Growth</span>
                         </div>
-                    </motion.div>
+                        <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[1.1] uppercase">
+                            Marketing <br /> 
+                            <span className="text-[#00aaff]">Automation.</span>
+                        </h1>
+                        <p className="text-xl leading-loose text-black/50 max-w-3xl mx-auto mb-12 italic">
+                            Engage your audience at the perfect moment. Automated, 
+                            data-driven marketing workflows that scale your reach 
+                            without scaling your manual effort.
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-black px-8 py-4 text-sm font-bold text-white transition-all hover:bg-black/80 hover:translate-y-[-2px] active:scale-95">
+                                Automate Your Marketing
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             {/* Core Pillars */}
-            <section className="py-16 sm:py-20 md:py-24 border-b px-0 mx-0">
-                <div className="container mx-auto px-4 sm:px-6 md:px-8">
-                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 sm:gap-8">
+            <section className="py-20 lg:py-32 border-y border-black/[0.05] bg-black/[0.01]">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                         <PillarItem
                             icon={Mail}
-                            title="Advanced Email"
-                            description="Personalized, behavioral-triggered email campaigns that drive conversions and engagement."
+                            title="Strategic Email"
+                            description="Personalized, behavioral-triggered email campaigns that drive real conversions."
                         />
                         <PillarItem
                             icon={MessageSquare}
-                            title="WhatsApp & SMS"
-                            description="Reach your customers on their favorite messaging platforms with automated conversational marketing."
+                            title="Direct Sync"
+                            description="Reach customers on WhatsApp & SMS with automated conversational marketing flows."
                         />
                         <PillarItem
                             icon={Zap}
-                            title="Visual Workflows"
-                            description="Build complex automation logic with intuitive, drag-and-drop workflow builders. No coding required."
+                            title="Visual Logic"
+                            description="Build complex automation logic with intuitive, drag-and-drop workflow builders."
                         />
                         <PillarItem
                             icon={Target}
                             title="Lead Scoring"
-                            description="Automatically identify and prioritize high-intent leads based on their interactions with your brand."
+                            description="Identify and prioritize high-intent leads based on real interactions with your brand."
                         />
                     </div>
                 </div>
             </section>
 
             {/* Deep Dive Sections */}
-            <section className="py-16 sm:py-20 md:py-24 px-0 mx-0">
-                <div className="container mx-auto px-4 sm:px-6 md:px-8">
-                    <div className="mx-auto max-w-4xl">
-                        <div className="space-y-12">
+            <section className="py-24 lg:py-32 bg-white">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="mx-auto max-w-5xl">
+                        <div className="grid md:grid-cols-2 gap-16 lg:gap-24">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
+                                className="group p-10 rounded-[2.5rem] border border-black/[0.05] bg-white hover:border-[#00aaff]/20 hover:shadow-xl transition-all duration-500"
                             >
-                                <h2 className="text-4xl font-bold tracking-tight mb-6">Mautic Integration</h2>
-                                <p className="text-lg text-muted-foreground mb-6">
-                                    The world's leading open-source marketing automation platform. Full control over your marketing stack with deep CRM integration.
+                                <div className="w-14 h-14 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg mb-8 group-hover:scale-110 transition-transform">
+                                    <Target className="w-7 h-7" />
+                                </div>
+                                <h2 className="text-5xl font-extrabold text-black mb-8 tracking-tight uppercase">Mautic Integration</h2>
+                                <p className="text-xl text-black/50 mb-10 leading-loose italic max-w-md">
+                                    The world's leading open-source platform. Full control over your stack with deep CRM sync.
                                 </p>
                                 <ul className="space-y-4">
-                                    <FeatureListItem title="Campaign Management" />
-                                    <FeatureListItem title="Contact Segmentation" />
-                                    <FeatureListItem title="Web tracking & Cookies" />
-                                    <FeatureListItem title="Dynamic Content" />
+                                    <FeatureListItem title="Campaign Lifecycle Management" />
+                                    <FeatureListItem title="Granular Contact Segmentation" />
+                                    <FeatureListItem title="Advanced Web Tracking & Cookies" />
+                                    <FeatureListItem title="Dynamic Content Customization" />
                                 </ul>
                             </motion.div>
 
@@ -104,16 +142,20 @@ export default function MarketingAutomationSolution() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.1 }}
+                                className="group p-10 rounded-[2.5rem] border border-black/[0.05] bg-white hover:border-[#00aaff]/20 hover:shadow-xl transition-all duration-500"
                             >
-                                <h2 className="text-4xl font-bold tracking-tight mb-6">WhatsApp & Social</h2>
-                                <p className="text-lg text-muted-foreground mb-6">
-                                    Scale your social presence and instant messaging outreach. Connect with customers where they spend their time.
+                                <div className="w-14 h-14 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg mb-8 group-hover:scale-110 transition-transform">
+                                    <MessageSquare className="w-7 h-7" />
+                                </div>
+                                <h2 className="text-5xl font-extrabold text-black mb-8 tracking-tight uppercase">WhatsApp & Social</h2>
+                                <p className="text-xl text-black/50 mb-10 leading-loose italic max-w-md">
+                                    Scale your presence and instant outreach. Connect with customers where they spend their time.
                                 </p>
                                 <ul className="space-y-4">
-                                    <FeatureListItem title="Automated WA Messaging" />
-                                    <FeatureListItem title="Social Media Scheduling" />
-                                    <FeatureListItem title="Chatbot Automation" />
-                                    <FeatureListItem title="Engagement Analytics" />
+                                    <FeatureListItem title="Automated WA Messaging Flows" />
+                                    <FeatureListItem title="Unified Media Scheduling" />
+                                    <FeatureListItem title="No-Code Chatbot Automation" />
+                                    <FeatureListItem title="Deep Engagement Analytics" />
                                 </ul>
                             </motion.div>
                         </div>
@@ -122,21 +164,21 @@ export default function MarketingAutomationSolution() {
             </section>
 
             {/* Performance Metrics */}
-            <section className="py-16 sm:py-20 md:py-24 border-y bg-muted/30 px-0 mx-0">
-                <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center max-w-4xl mx-auto">
-                    <h2 className="text-4xl font-bold tracking-tight mb-12">Performance that speaks for itself</h2>
+            <section className="py-24 lg:py-32 border-y border-black/[0.05] bg-black text-white">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 className="text-4xl font-extrabold tracking-tight text-white mb-20 tracking-tighter uppercase">Performance Metrics</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                        <div className="p-8 rounded-3xl bg-background border">
-                            <div className="text-4xl font-black mb-2">3x</div>
-                            <p className="text-muted-foreground">Lead Volume</p>
+                        <div className="group p-12 rounded-[3.5rem] bg-white border border-black/5 hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl">
+                            <div className="text-7xl font-extrabold text-[#00aaff] mb-4 group-hover:text-white transition-colors tracking-tighter">3x</div>
+                            <p className="text-xs font-bold uppercase tracking-[0.3em] text-black/30 group-hover:text-white/40 transition-colors leading-tight">Lead Volume Growth</p>
                         </div>
-                        <div className="p-8 rounded-3xl bg-background border">
-                            <div className="text-4xl font-black mb-2">45%</div>
-                            <p className="text-muted-foreground">Higher CTR</p>
+                        <div className="group p-12 rounded-[3.5rem] bg-white border border-black/5 hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl">
+                            <div className="text-7xl font-extrabold text-black mb-4 group-hover:text-white transition-colors tracking-tighter">45%</div>
+                            <p className="text-xs font-bold uppercase tracking-[0.3em] text-black/30 group-hover:text-white/40 transition-colors leading-tight">Higher CTR Avg</p>
                         </div>
-                        <div className="p-8 rounded-3xl bg-background border">
-                            <div className="text-4xl font-black mb-2">-60%</div>
-                            <p className="text-muted-foreground">Manual Effort</p>
+                        <div className="group p-12 rounded-[3.5rem] bg-white border border-black/5 hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl">
+                            <div className="text-7xl font-extrabold text-[#00aaff] mb-4 group-hover:text-white transition-colors tracking-tighter">-60%</div>
+                            <p className="text-xs font-bold uppercase tracking-[0.2em] text-black/30 group-hover:text-white/40 transition-colors leading-tight">Manual Effort Saved</p>
                         </div>
                     </div>
                 </div>
@@ -151,31 +193,3 @@ export default function MarketingAutomationSolution() {
         </div>
     );
 }
-
-function PillarItem({ icon: Icon, title, description }: { icon: any, title: string, description: string }) {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col gap-6 p-10 rounded-[2.5rem] border bg-card hover:border-foreground/20 transition-all duration-500"
-        >
-            <div className="w-12 h-12 rounded-2xl bg-foreground text-background flex items-center justify-center">
-                <Icon className="w-6 h-6" />
-            </div>
-            <h3 className="text-xl font-bold">{title}</h3>
-            <p className="text-muted-foreground text-base leading-relaxed">{description}</p>
-        </motion.div>
-    );
-}
-
-function FeatureListItem({ title }: { title: string }) {
-    return (
-        <li className="flex items-center gap-4 text-lg">
-            <CheckCircle2 className="w-6 h-6 text-foreground shrink-0" />
-            <span>{title}</span>
-        </li>
-    );
-}
-
-

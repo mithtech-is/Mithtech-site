@@ -105,8 +105,8 @@ export function Navbar() {
                                     setIsPlatformsOpen(false);
                                 }}
                                 className={cn(
-                                    "flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-primary",
-                                    isProductsOpen ? "text-primary" : "text-white/80"
+                                    "flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-white",
+                                    isProductsOpen ? "text-white" : "text-white/80"
                                 )}
                             >
                                 Products
@@ -117,6 +117,16 @@ export function Navbar() {
                                 <div className="fixed inset-x-0 top-20 z-50 w-screen bg-black border-b border-white/10 shadow-2xl origin-top animate-in fade-in zoom-in-95 duration-200 ease-[var(--ease-out)]">
                                     <div className="container mx-auto flex h-[600px]" data-lenis-prevent>
                                         <div className="w-[350px] border-r border-white/10 py-8 overflow-y-auto custom-scrollbar">
+                                            <div className="mb-5">
+                                                <Link
+                                                    href="/products"
+                                                    onClick={() => setIsProductsOpen(false)}
+                                                    className="group flex w-full items-center justify-between px-6 py-3 text-sm font-bold text-[#00aaff] transition-all duration-200 hover:opacity-80 active:scale-[0.97]"
+                                                >
+                                                    <span className="relative z-10">View All Products</span>
+                                                    <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                                </Link>
+                                            </div>
                                             <div className="px-6 mb-4">
                                                 <h3 className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/40">Use Cases</h3>
                                             </div>
@@ -204,8 +214,8 @@ export function Navbar() {
                                     setIsProductsOpen(false);
                                 }}
                                 className={cn(
-                                    "flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-primary",
-                                    isPlatformsOpen ? "text-primary" : "text-white/80"
+                                    "flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-white",
+                                    isPlatformsOpen ? "text-white" : "text-white/80"
                                 )}
                             >
                                 Platforms
@@ -257,7 +267,7 @@ export function Navbar() {
 
                         {/* INDUSTRIES */}
                         <div className="relative flex items-center h-full">
-                            <Link href="/industries" className="text-sm font-medium text-white/80 hover:text-primary transition-colors">
+                            <Link href="/industries" className="text-sm font-medium text-white/80 hover:text-white transition-colors">
                                 Industries
                             </Link>
                         </div>

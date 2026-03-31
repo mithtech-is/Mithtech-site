@@ -132,7 +132,7 @@ export default function MedusaPage() {
     }, { scope: containerRef });
 
     return (
-        <div ref={containerRef} className="flex flex-col w-full bg-background overflow-hidden">
+        <div ref={containerRef} className="flex flex-col w-full bg-white overflow-hidden">
             {/* Hero Section */}
             <section className="relative pt-24 pb-20 md:pt-32 md:pb-40 border-b overflow-hidden">
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(0,0,0,0.03)_0%,transparent_100%)]" />
@@ -140,17 +140,17 @@ export default function MedusaPage() {
                     <span className="text-sm font-bold tracking-[0.3em] text-muted-foreground uppercase mb-6 block">
                         HEADLESS COMMERCE ARCHITECTS
                     </span>
-                    <h1 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl lg:text-8xl text-foreground mb-8 leading-[0.9]">
+                    <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase">
                         MEDUSA <br />
-                        <span className="text-muted-foreground">ENGINE</span>
+                        <span className="text-[#00aaff]">ENGINE</span>
                     </h1>
-                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl mb-10">
+                    <p className="text-xl leading-loose text-black/50 max-w-2xl mb-10 italic">
                         The commerce platform for developers. Medusa is an open-source headless engine that gives brands the total control needed for unique digital commerce experiences.
                     </p>
                     <div className="flex flex-wrap gap-4">
-                        <Button asChild size="lg" className="rounded-full border border-black px-8 text-lg h-14 hover:scale-105 active:scale-95 transition-transform">
-                            <Link href="/contact">Schedule Commerce Audit</Link>
-                        </Button>
+                        <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-black px-10 py-5 text-sm font-bold text-white transition-all hover:bg-black/80 hover:translate-y-[-2px] active:scale-95">
+                            Schedule Commerce Audit
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -159,8 +159,8 @@ export default function MedusaPage() {
             <section className="py-24 bg-muted/30 border-b">
                 <div className="container mx-auto px-4">
                     <div className="max-w-3xl mb-16">
-                        <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-6">Modern Commerce, Decoupled</h2>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                        <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Modern Commerce, Decoupled</h2>
+                        <p className="text-xl text-black/40 leading-loose italic max-w-3xl">
                             Medusa is built as a flexible, API-first engine. Unlike monolithic platforms, it separates the backend commerce logic from your frontend presentation.
                         </p>
                     </div>
@@ -188,8 +188,8 @@ export default function MedusaPage() {
             <section className="py-24 border-b">
                 <div className="container mx-auto px-4">
                     <div className="text-center max-w-3xl mx-auto mb-20">
-                        <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6">Medusa Commerce Solutions</h2>
-                        <p className="text-xl text-muted-foreground">We build bespoke commerce experiences that convert, designed around your unique requirements.</p>
+                        <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Medusa Commerce Solutions</h2>
+                        <p className="text-xl text-black/40 leading-loose italic">We build bespoke commerce experiences that convert, designed around your unique requirements.</p>
                     </div>
 
                     <div ref={solutionGridRef} className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -226,8 +226,8 @@ export default function MedusaPage() {
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col lg:flex-row gap-16 items-center">
                         <div className="flex-1">
-                            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-8 italic">Limitless Customization</h2>
-                            <p className="text-xl text-background/80 mb-10 leading-relaxed">
+                            <h2 className="text-5xl font-extrabold tracking-tight text-white mb-8 italic uppercase">Limitless Customization</h2>
+                            <p className="text-xl text-white/50 mb-10 leading-loose italic">
                                 Medusa doesn't lock you into a rigid structure. Every part of the engine is customizable to fit your business workflows perfectly.
                             </p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -268,8 +268,8 @@ export default function MedusaPage() {
             <section ref={comparisonRef} className="py-24 bg-white overflow-hidden border-b">
                 <div className="container mx-auto px-4">
                     <div className="text-center max-w-3xl mx-auto mb-16">
-                        <span className="text-sm font-bold tracking-[0.3em] text-muted-foreground uppercase mb-4 block">WHY MEDUSA WINS</span>
-                        <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6">THE SUPERIOR ENGINE</h2>
+                        <span className="text-sm font-bold tracking-[0.3em] text-black/40 uppercase mb-4 block">WHY MEDUSA WINS</span>
+                        <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">THE SUPERIOR ENGINE</h2>
                     </div>
 
                     <div className="relative max-w-6xl mx-auto">
@@ -353,7 +353,7 @@ export default function MedusaPage() {
                         </div>
                     </div>
 
-                    <p className="text-center mt-12 text-muted-foreground font-medium text-lg">
+                    <p className="text-center mt-12 text-black/40 font-medium text-lg italic">
                         Not just another eCommerce platform — a commerce engine built for scale.
                     </p>
                 </div>
@@ -363,30 +363,30 @@ export default function MedusaPage() {
             <section className="py-24 border-b">
                 <div className="container mx-auto px-4">
                     <div className="text-center max-w-3xl mx-auto mb-20">
-                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Why Mithtech for Medusa?</h2>
-                        <p className="text-lg text-muted-foreground">We combine deep commerce knowledge with high-performance engineering.</p>
+                        <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Why Mithtech for Medusa?</h2>
+                        <p className="text-xl text-black/40 leading-loose italic">We combine deep commerce knowledge with high-performance engineering.</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                         <div className="text-center group">
-                            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                                <Search className="w-8 h-8 text-primary" />
+                            <div className="w-20 h-20 rounded-3xl bg-black border border-black/[0.05] flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform text-[#00aaff] shadow-lg">
+                                <Search className="w-9 h-9" />
                             </div>
-                            <h3 className="text-xl font-bold mb-4">Performance First</h3>
-                            <p className="text-muted-foreground italic">We build storefronts that load in milliseconds, optimized for Core Web Vitals and conversions.</p>
+                            <h3 className="text-2xl font-extrabold text-black mb-4 uppercase">Performance First</h3>
+                            <p className="text-lg text-black/40 leading-loose italic">We build storefronts that load in milliseconds, optimized for Core Web Vitals and conversions.</p>
                         </div>
                         <div className="text-center group">
-                            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                                <Cpu className="w-8 h-8 text-primary" />
+                            <div className="w-20 h-20 rounded-3xl bg-black border border-black/[0.05] flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform text-[#00aaff] shadow-lg">
+                                <Cpu className="w-9 h-9" />
                             </div>
-                            <h3 className="text-xl font-bold mb-4">Custom Integrations</h3>
-                            <p className="text-muted-foreground italic">Experience integrating Medusa with complex ERPs, CRMs, and custom fulfillment logic.</p>
+                            <h3 className="text-2xl font-extrabold text-black mb-4 uppercase">Custom Integrations</h3>
+                            <p className="text-lg text-black/40 leading-loose italic">Experience integrating Medusa with complex ERPs, CRMs, and custom fulfillment logic.</p>
                         </div>
                         <div className="text-center group">
-                            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                                <Zap className="w-8 h-8 text-primary" />
+                            <div className="w-20 h-20 rounded-3xl bg-black border border-black/[0.05] flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform text-[#00aaff] shadow-lg">
+                                <Zap className="w-9 h-9" />
                             </div>
-                            <h3 className="text-xl font-bold mb-4">Agile Delivery</h3>
-                            <p className="text-muted-foreground italic">Rapid prototyping and iterative development to get your commerce engine to market faster.</p>
+                            <h3 className="text-2xl font-extrabold text-black mb-4 uppercase">Agile Delivery</h3>
+                            <p className="text-lg text-black/40 leading-loose italic">Rapid prototyping and iterative development to get your commerce engine to market faster.</p>
                         </div>
                     </div>
                 </div>
@@ -427,38 +427,38 @@ function ComparisonRow({ label, medusa, shopify, woo, magento, isLast }: any) {
 
 function CustomItem({ title, desc }: { title: string, desc: string }) {
     return (
-        <div className="custom-item p-6 rounded-2xl border border-background/20 bg-background/5 hover:bg-background/10 transition-colors">
-            <h4 className="font-bold text-lg mb-2">{title}</h4>
-            <p className="text-sm text-background/60">{desc}</p>
+        <div className="custom-item p-8 rounded-[2rem] border border-white/10 bg-white/5 hover:bg-white transition-all duration-500 group">
+            <h4 className="font-extrabold text-2xl mb-4 text-white group-hover:text-black transition-colors uppercase">{title}</h4>
+            <p className="text-lg text-black/50 group-hover:text-black/70 transition-colors leading-loose">{desc}</p>
         </div>
     );
 }
 
 function FeatureCard({ icon: Icon, title, description }: { icon: any, title: string, description: string }) {
     return (
-        <div className="feature-card flex flex-col gap-4 p-8 rounded-3xl border bg-card/50 hover:shadow-2xl hover:border-foreground/10 transition-all duration-500 group">
-            <div className="w-12 h-12 rounded-2xl bg-foreground text-background flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Icon className="w-6 h-6" />
+        <div className="feature-card flex flex-col gap-6 p-8 rounded-[2rem] border border-black/[0.05] bg-white hover:border-[#00aaff]/20 hover:shadow-xl hover:shadow-[#00aaff]/5 transition-all duration-500 group">
+            <div className="w-14 h-14 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg shadow-black/5 group-hover:scale-110 transition-transform">
+                <Icon className="w-7 h-7" />
             </div>
-            <h3 className="text-xl font-bold">{title}</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
+            <h3 className="text-2xl font-extrabold text-black mb-4 tracking-tight uppercase">{title}</h3>
+            <p className="text-black/50 text-lg leading-loose">{description}</p>
         </div>
     );
 }
 
 function CommerceSolution({ icon: Icon, title, description, features }: { icon: any, title: string, description: string, features: string[] }) {
     return (
-        <div className="commerce-solution flex flex-col gap-6 p-10 rounded-3xl border bg-card/40 hover:bg-card transition-all duration-500 group bg-background/50 backdrop-blur-sm">
-            <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+        <div className="commerce-solution flex flex-col gap-8 p-10 rounded-[3.5rem] border border-black/[0.05] bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl group">
+            <div className="w-14 h-14 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg group-hover:bg-white transition-colors">
                 <Icon className="w-7 h-7" />
             </div>
-            <h3 className="text-2xl font-black tracking-tighter">{title}</h3>
-            <p className="text-muted-foreground font-medium leading-relaxed">{description}</p>
+            <h3 className="text-2xl font-extrabold text-black tracking-tight uppercase group-hover:text-white transition-colors">{title}</h3>
+            <p className="text-black/50 text-lg font-medium leading-loose group-hover:text-white/60 transition-colors italic">{description}</p>
 
-            <ul className="space-y-3 mt-4">
+            <ul className="space-y-4 pt-6 border-t border-black/5 group-hover:border-white/10 transition-colors">
                 {features.map((f, i) => (
-                    <li key={i} className="flex items-center gap-3 text-sm font-medium text-foreground/70">
-                        <CheckCircle2 className="w-4 h-4 text-primary" />
+                    <li key={i} className="flex items-center gap-3 text-base font-medium text-black/70 group-hover:text-white/80 transition-colors">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#00aaff]" />
                         {f}
                     </li>
                 ))}

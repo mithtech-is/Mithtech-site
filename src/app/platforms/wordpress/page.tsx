@@ -109,7 +109,7 @@ export default function WordPressPage() {
     }, { scope: containerRef });
 
     return (
-        <div ref={containerRef} className="flex flex-col w-full bg-background overflow-hidden">
+        <div ref={containerRef} className="flex flex-col w-full bg-white overflow-hidden">
             {/* Hero Section */}
             <section className="relative pt-24 pb-20 md:pt-32 md:pb-40 border-b overflow-hidden">
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(0,0,0,0.03)_0%,transparent_100%)]" />
@@ -117,17 +117,17 @@ export default function WordPressPage() {
                     <span className="text-sm font-bold tracking-[0.3em] text-muted-foreground uppercase mb-6 block">
                         ENTERPRISE CONTENT ECOSYSTEMS
                     </span>
-                    <h1 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl lg:text-8xl text-foreground mb-8 leading-[0.9]">
+                    <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase">
                         WORDPRESS <br />
-                        <span className="text-muted-foreground">EXPERTS</span>
+                        <span className="text-[#00aaff]">EXPERTS</span>
                     </h1>
-                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl mb-10">
+                    <p className="text-xl leading-loose text-black/50 max-w-2xl mb-10 italic">
                         Scalable, secure, and high-performance WordPress solutions for global brands. From bespoke themes to Headless WP architectures, we build content engines that scale.
                     </p>
                     <div className="flex flex-wrap gap-4">
-                        <Button asChild size="lg" className="rounded-full border border-black px-8 text-lg h-14 hover:scale-105 active:scale-95 transition-transform">
-                            <Link href="/contact">Book UX & SEO Audit</Link>
-                        </Button>
+                        <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-black px-10 py-5 text-sm font-bold text-white transition-all hover:bg-black/80 hover:translate-y-[-2px] active:scale-95">
+                            Book UX & SEO Audit
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -136,8 +136,8 @@ export default function WordPressPage() {
             <section className="py-24 bg-muted/30 border-b">
                 <div className="container mx-auto px-4">
                     <div className="max-w-3xl mb-16">
-                        <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-6">The World's Most Powerful CMS</h2>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                        <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">The World's Most Powerful CMS</h2>
+                        <p className="text-xl text-black/40 leading-loose italic max-w-3xl">
                             Powering over 40% of the internet, WordPress offers unparalleled flexibility and a massive ecosystem of tools for enterprise-scale content management.
                         </p>
                     </div>
@@ -170,8 +170,8 @@ export default function WordPressPage() {
             <section className="py-24 border-b">
                 <div className="container mx-auto px-4">
                     <div className="text-center max-w-3xl mx-auto mb-20">
-                        <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6">Enterprise WordPress Solutions</h2>
-                        <p className="text-xl text-muted-foreground">We push the boundaries of WordPress to deliver high-performance, scalable web ecosystems.</p>
+                        <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Enterprise WordPress Solutions</h2>
+                        <p className="text-xl text-black/40 leading-loose italic">We push the boundaries of WordPress to deliver high-performance, scalable web ecosystems.</p>
                     </div>
 
                     <div ref={solutionGridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -220,8 +220,8 @@ export default function WordPressPage() {
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col lg:flex-row gap-16 items-center">
                         <div className="flex-1 trust-content">
-                            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-8 italic">Built for Reliability</h2>
-                            <p className="text-xl text-background/80 mb-10 leading-relaxed">
+                            <h2 className="text-5xl font-extrabold tracking-tight text-white mb-8 italic uppercase">Built for Reliability</h2>
+                            <p className="text-xl text-white/50 mb-10 leading-loose italic">
                                 Our enterprise WordPress stack is designed to handle millions of visitors while maintaining 99.9% uptime and top-tier security.
                             </p>
                             <ul className="space-y-6">
@@ -266,28 +266,28 @@ export default function WordPressPage() {
 
 function FeatureCard({ icon: Icon, title, description }: { icon: any, title: string, description: string }) {
     return (
-        <div className="feature-card flex flex-col gap-4 p-8 rounded-3xl border bg-card/50 hover:shadow-2xl hover:border-foreground/10 transition-all duration-500 group">
-            <div className="w-12 h-12 rounded-2xl bg-foreground text-background flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Icon className="w-6 h-6" />
+        <div className="feature-card flex flex-col gap-6 p-8 rounded-[2rem] border border-black/[0.05] bg-white hover:border-[#00aaff]/20 hover:shadow-xl hover:shadow-[#00aaff]/5 transition-all duration-500 group">
+            <div className="w-14 h-14 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg shadow-black/5 group-hover:scale-110 transition-transform">
+                <Icon className="w-7 h-7" />
             </div>
-            <h3 className="text-xl font-bold">{title}</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
+            <h3 className="text-2xl font-extrabold text-black mb-4 tracking-tight uppercase">{title}</h3>
+            <p className="text-black/50 text-lg leading-loose">{description}</p>
         </div>
     );
 }
 
 function SolutionCategory({ icon: Icon, title, description, features }: { icon: any, title: string, description: string, features: string[] }) {
     return (
-        <div className="solution-category flex flex-col gap-6 p-10 rounded-3xl border bg-card/30 hover:bg-card transition-all duration-500 bg-background/50 backdrop-blur-sm">
-            <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-2">
+        <div className="solution-category flex flex-col gap-8 p-10 rounded-[3.5rem] border border-black/[0.05] bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl group">
+            <div className="w-14 h-14 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg group-hover:bg-white transition-colors">
                 <Icon className="w-7 h-7" />
             </div>
-            <h3 className="text-2xl font-black tracking-tighter">{title}</h3>
-            <p className="text-muted-foreground font-medium text-sm leading-relaxed">{description}</p>
-            <ul className="space-y-3 pt-4">
+            <h3 className="text-2xl font-extrabold text-black tracking-tight uppercase group-hover:text-white transition-colors">{title}</h3>
+            <p className="text-black/50 text-lg font-medium leading-loose group-hover:text-white/60 transition-colors italic">{description}</p>
+            <ul className="space-y-4 pt-6 border-t border-black/5 group-hover:border-white/10 transition-colors">
                 {features.map((f, i) => (
-                    <li key={i} className="flex items-center gap-3 text-xs font-bold text-foreground/50 uppercase tracking-wider">
-                        <div className="w-1 h-1 rounded-full bg-primary" />
+                    <li key={i} className="flex items-center gap-3 text-base font-medium text-black/70 group-hover:text-white/80 transition-colors">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#00aaff]" />
                         {f}
                     </li>
                 ))}

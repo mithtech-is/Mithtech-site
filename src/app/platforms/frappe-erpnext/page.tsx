@@ -84,7 +84,7 @@ export default function FrappeERPNextPage() {
     }, { scope: containerRef });
 
     return (
-        <div ref={containerRef} className="flex flex-col w-full bg-background overflow-hidden">
+        <div ref={containerRef} className="flex flex-col w-full bg-white overflow-hidden">
             {/* Hero Section */}
             <section className="relative pt-24 pb-20 md:pt-32 md:pb-40 border-b overflow-hidden">
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(0,0,0,0.03)_0%,transparent_100%)]" />
@@ -92,17 +92,17 @@ export default function FrappeERPNextPage() {
                     <span className="text-sm font-bold tracking-[0.3em] text-muted-foreground uppercase mb-6 block">
                         ENTERPRISE ECOSYSTEM EXPERTS
                     </span>
-                    <h1 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl lg:text-8xl text-foreground mb-8 leading-[0.9]">
+                    <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase">
                         FRAPPE & <br />
-                        <span className="text-muted-foreground">ERPNEXT</span>
+                        <span className="text-[#00aaff]">ERPNEXT</span>
                     </h1>
-                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl mb-10">
+                    <p className="text-xl leading-loose text-black/50 max-w-2xl mb-10">
                         Build, scale, and automate your entire business on the world's most flexible open-source framework. Mithtech provides expert implementation, customization, and managed hosting for the complete Frappe ecosystem.
                     </p>
                     <div className="flex flex-wrap gap-4">
-                        <Button asChild size="lg" className="rounded-full border border-foreground px-8 text-lg h-14 hover:scale-105 active:scale-95 transition-transform">
-                            <Link href="/contact">Schedule Free Consultation</Link>
-                        </Button>
+                        <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-black px-10 py-5 text-sm font-bold text-white transition-all hover:bg-black/80 hover:translate-y-[-2px] active:scale-95">
+                            Schedule Free Consultation
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -111,8 +111,8 @@ export default function FrappeERPNextPage() {
             <section className="py-24 bg-muted/30 border-b">
                 <div className="container mx-auto px-4">
                     <div className="max-w-3xl mb-16">
-                        <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-6">The Power of the Frappe Ecosystem</h2>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                        <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">The Power of the Frappe Ecosystem</h2>
+                        <p className="text-xl text-black/40 leading-loose max-w-3xl">
                             Frappe isn't just a framework; it's a complete software stack designed for rapid development and enterprise-grade reliability.
                         </p>
                     </div>
@@ -145,8 +145,8 @@ export default function FrappeERPNextPage() {
             <section className="py-24 border-b">
                 <div className="container mx-auto px-4">
                     <div className="text-center max-w-3xl mx-auto mb-20">
-                        <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6">Mithtech Frappe Solutions</h2>
-                        <p className="text-xl text-muted-foreground">We engineer specialized solutions across every business vertical using the Frappe stack.</p>
+                        <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Mithtech Frappe Solutions</h2>
+                        <p className="text-xl text-black/40 leading-loose">We engineer specialized solutions across every business vertical using the Frappe stack.</p>
                     </div>
 
                     <div ref={solutionGridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -242,30 +242,12 @@ export default function FrappeERPNextPage() {
             <section className="py-24 border-b">
                 <div className="container mx-auto px-4">
                     <div className="text-center max-w-3xl mx-auto mb-20">
-                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Why Mithtech for Frappe & ERPNext?</h2>
-                        <p className="text-lg text-muted-foreground">We are more than implementers; we are strategic partners in your digital transformation.</p>
+                        <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Why Mithtech for Frappe & ERPNext?</h2>
+                        <p className="text-xl text-black/40 leading-loose italic">We are more than implementers; we are strategic partners in your digital transformation.</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                         <div className="text-center group">
-                            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                                <ShieldCheck className="w-8 h-8 text-primary" />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4">Deep Technical Expertise</h3>
-                            <p className="text-muted-foreground italic">Over a decade of experience in Python frameworks and enterprise database architecture.</p>
-                        </div>
-                        <div className="text-center group">
-                            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                                <Search className="w-8 h-8 text-primary" />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4">Automation-First Approach</h3>
-                            <p className="text-muted-foreground italic">We don't just replicate your manual processes; we re-engineer them for maximum efficiency.</p>
-                        </div>
-                        <div className="text-center group">
-                            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                                <Globe className="w-8 h-8 text-primary" />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4">Global Implementation</h3>
-                            <p className="text-muted-foreground italic">Successfully deployed Frappe solutions for companies across India, UAE, and Europe.</p>
+                            <p className="text-lg text-black/40 leading-loose">Successfully deployed Frappe solutions for companies across India, UAE, and Europe.</p>
                         </div>
                     </div>
                 </div>
@@ -292,41 +274,41 @@ function DevItem({ title, desc }: { title: string, desc: string }) {
 
 function FeatureCard({ icon: Icon, title, description }: { icon: any, title: string, description: string }) {
     return (
-        <div className="feature-card flex flex-col gap-4 p-8 rounded-3xl border bg-card/50 hover:shadow-2xl hover:border-foreground/10 transition-all duration-500 group">
-            <div className="w-12 h-12 rounded-2xl bg-foreground text-background flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Icon className="w-6 h-6" />
+        <div className="feature-card flex flex-col gap-6 p-8 rounded-[2rem] border border-black/[0.05] bg-white hover:border-[#00aaff]/20 hover:shadow-xl hover:shadow-[#00aaff]/5 transition-all duration-500 group">
+            <div className="w-14 h-14 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg shadow-black/5 group-hover:scale-110 transition-transform">
+                <Icon className="w-7 h-7" />
             </div>
-            <h3 className="text-xl font-bold">{title}</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
+            <h3 className="text-2xl font-extrabold text-black mb-4 tracking-tight uppercase">{title}</h3>
+            <p className="text-black/50 text-lg leading-loose">{description}</p>
         </div>
     );
 }
 
 function SolutionCategory({ icon: Icon, title, description, products, capabilities }: { icon: any, title: string, description: string, products: string[], capabilities: string[] }) {
     return (
-        <div className="solution-category flex flex-col gap-8 p-10 rounded-[2.5rem] border bg-card/30 hover:bg-card transition-all duration-500 border-dashed hover:border-solid hover:border-foreground/20 bg-background/50 backdrop-blur-sm">
+        <div className="solution-category flex flex-col gap-8 p-10 rounded-[3.5rem] border border-black/[0.05] bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl group">
             <div className="flex items-center gap-5">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+                <div className="w-14 h-14 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg group-hover:bg-white transition-colors">
                     <Icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-black tracking-tighter">{title}</h3>
+                <h3 className="text-2xl font-extrabold text-black tracking-tight uppercase group-hover:text-white transition-colors">{title}</h3>
             </div>
 
             <div>
-                <p className="text-muted-foreground mb-6 font-medium leading-relaxed">{description}</p>
+                <p className="text-black/50 mb-6 font-medium leading-loose group-hover:text-white/60 transition-colors">{description}</p>
                 <div className="flex flex-wrap gap-2 mb-8">
                     {products.map((p, i) => (
-                        <span key={i} className="px-3 py-1 rounded-full bg-foreground text-background text-[10px] font-bold uppercase tracking-wider">{p}</span>
+                        <span key={i} className="px-3 py-1 rounded-full bg-black text-[#00aaff] text-[10px] font-bold uppercase tracking-wider group-hover:bg-white group-hover:text-black transition-colors">{p}</span>
                     ))}
                 </div>
             </div>
 
-            <div className="space-y-4 pt-6 border-t border-foreground/5">
-                <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground/40">Core Capabilities</h4>
+            <div className="space-y-4 pt-6 border-t border-black/5 group-hover:border-white/10 transition-colors">
+                <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-black/40 group-hover:text-white/40 transition-colors">Core Capabilities</h4>
                 <ul className="grid grid-cols-1 gap-3">
                     {capabilities.map((c, i) => (
-                        <li key={i} className="flex items-center gap-3 text-sm font-medium text-foreground/70">
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                        <li key={i} className="flex items-center gap-3 text-sm font-medium text-black/70 group-hover:text-white/80 transition-colors">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#00aaff]" />
                             {c}
                         </li>
                     ))}

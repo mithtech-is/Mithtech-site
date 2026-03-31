@@ -64,47 +64,60 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     };
 
     return (
-        <div className="bg-background min-h-screen">
+        <div className="bg-white min-h-screen pt-32 pb-24 lg:pb-32">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
 
-            <article className="container mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-20 md:px-8 md:py-24">
+            <article className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
                 {/* Back to Blog */}
                 <Link
                     href="/blog"
-                    className="group mb-10 inline-flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground sm:mb-12"
+                    className="group mb-12 inline-flex items-center text-[10px] font-bold uppercase tracking-[0.2em] text-black/40 hover:text-[#00aaff] transition-colors"
                 >
                     <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" /> Back to All Articles
                 </Link>
 
                 {/* Header */}
-                <header className="mb-12 sm:mb-16">
-                    <div className="mb-6 flex flex-col gap-3 text-sm text-muted-foreground sm:mb-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
+                <header className="mb-16 lg:mb-24">
+                    <div className="mb-10 flex flex-wrap items-center gap-6">
                         <div className="flex items-center gap-2">
-                            <Calendar className="w-4 h-4" />
-                            <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                            <div className="w-8 h-8 rounded-lg bg-black flex items-center justify-center text-[#00aaff]">
+                                <Calendar className="w-4 h-4" />
+                            </div>
+                            <span className="text-[10px] font-bold uppercase tracking-widest text-black/30">
+                                {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                            </span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <User className="w-4 h-4" />
-                            <span>Mithtech Team</span>
+                            <div className="w-8 h-8 rounded-lg bg-black flex items-center justify-center text-[#00aaff]">
+                                <User className="w-4 h-4" />
+                            </div>
+                            <span className="text-[10px] font-bold uppercase tracking-widest text-black/30">Mithtech Team</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Clock className="w-4 h-4" />
-                            <span>5 min read</span>
+                            <div className="w-8 h-8 rounded-lg bg-black flex items-center justify-center text-[#00aaff]">
+                                <Clock className="w-4 h-4" />
+                            </div>
+                            <span className="text-[10px] font-bold uppercase tracking-widest text-black/30">5 min read</span>
                         </div>
                     </div>
-                    <h1 className="mb-6 text-3xl font-black leading-tight tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl sm:mb-8">
+                    
+                    <h1 className="mb-10 text-6xl font-extrabold leading-[1.1] tracking-tight text-black sm:text-7xl md:text-8xl uppercase">
                         {post.title}
                     </h1>
-                    <p className="border-l-4 border-foreground/10 pl-4 text-base italic leading-relaxed text-muted-foreground sm:pl-6 sm:text-lg md:text-xl lg:text-2xl">
-                        {post.description}
-                    </p>
+                    
+                    <div className="p-8 lg:p-12 rounded-[2.5rem] border border-black/[0.05] bg-black/[0.01] shadow-2xl shadow-black/5 relative overflow-hidden group hover:bg-white transition-all duration-500">
+                        <div className="absolute top-0 left-0 w-2 h-full bg-[#00aaff] opacity-50" />
+                        <p className="text-2xl font-medium leading-loose text-black/50 italic tracking-tight">
+                            {post.description}
+                        </p>
+                    </div>
                 </header>
 
                 {/* Content */}
-                <div className="prose mb-20 max-w-none text-sm prose-headings:font-black prose-headings:tracking-tighter prose-headings:text-foreground prose-li:text-muted-foreground prose-p:text-muted-foreground dark:prose-invert sm:prose-lg md:mb-24">
+                <div className="prose prose-2xl max-w-none text-black/70 prose-headings:font-extrabold prose-headings:tracking-tight prose-headings:text-black prose-headings:uppercase prose-a:text-[#00aaff] prose-a:no-underline hover:prose-a:underline prose-strong:text-black prose-blockquote:border-[#00aaff] prose-blockquote:bg-black/[0.02] prose-blockquote:p-12 prose-blockquote:rounded-[2rem] prose-blockquote:italic prose-img:rounded-[2.5rem] prose-img:shadow-2xl prose-p:leading-[2] prose-p:mb-12">
                     <MDXRemote source={post.content} />
                 </div>
 

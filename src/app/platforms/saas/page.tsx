@@ -137,7 +137,7 @@ export default function SaaSPage() {
     }, { scope: containerRef });
 
     return (
-        <div ref={containerRef} className="flex flex-col w-full bg-background overflow-hidden">
+        <div ref={containerRef} className="flex flex-col w-full bg-white overflow-hidden">
             {/* Hero Section */}
             <section ref={heroRef} className="relative pt-24 pb-20 md:pt-32 md:pb-40 border-b overflow-hidden">
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(0,0,0,0.03)_0%,transparent_100%)]" />
@@ -148,17 +148,17 @@ export default function SaaSPage() {
                     <span className="hero-tag text-sm font-bold tracking-[0.3em] text-muted-foreground uppercase mb-6 block">
                         PROPRIETARY PRODUCT ECOSYSTEM
                     </span>
-                    <h1 className="hero-title text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl lg:text-8xl text-foreground mb-8 leading-[0.9]">
+                    <h1 className="hero-title text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase">
                         MITHTECH <br />
-                        <span className="text-muted-foreground">SAAS SUITE</span>
+                        <span className="text-[#00aaff]">SAAS SUITE</span>
                     </h1>
-                    <p className="hero-desc text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl mb-10">
+                    <p className="hero-desc text-xl leading-loose text-black/50 max-w-2xl mb-10 italic">
                         Enterprise-grade software solutions designed to automate, scale, and transform your business operations. Discover our portfolio of ready-to-deploy SaaS platforms.
                     </p>
                     <div className="hero-btn flex flex-wrap gap-4">
-                        <Button asChild size="lg" className="rounded-full border border-black px-8 text-lg h-14 hover:scale-105 active:scale-95 transition-transform">
-                            <Link href="/contact">Request Product Demo</Link>
-                        </Button>
+                        <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-black px-10 py-5 text-sm font-bold text-white transition-all hover:bg-black/80 hover:translate-y-[-2px] active:scale-95">
+                            Request Product Demo
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -167,8 +167,8 @@ export default function SaaSPage() {
             <section className="py-24 border-b">
                 <div className="container mx-auto px-4">
                     <div className="max-w-3xl mb-16">
-                        <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6 underline decoration-primary/20 underline-offset-8">Featured Products</h2>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                        <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Featured Products</h2>
+                        <p className="text-xl text-black/40 leading-loose italic">
                             Battle-tested platforms serving thousands of users across various industries.
                         </p>
                     </div>
@@ -228,8 +228,8 @@ export default function SaaSPage() {
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col lg:flex-row gap-16 items-center">
                         <div className="flex-1">
-                            <h2 className="advantage-title text-4xl md:text-5xl font-black tracking-tighter mb-8 italic">The Mithtech Advantage</h2>
-                            <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
+                            <h2 className="advantage-title text-5xl font-extrabold tracking-tight text-black mb-8 uppercase italic">The Mithtech Advantage</h2>
+                            <p className="text-xl text-black/40 mb-10 leading-loose italic">
                                 Our SaaS products are built on a shared foundation of security, scalability, and seamless integration.
                             </p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -285,21 +285,21 @@ export default function SaaSPage() {
 
 function AdvantageItem({ icon: Icon, title, desc }: { icon: any, title: string, desc: string }) {
     return (
-        <div className="advantage-item space-y-4">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                <Icon className="w-5 h-5" />
+        <div className="advantage-item space-y-4 group">
+            <div className="w-12 h-12 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg group-hover:scale-110 transition-transform">
+                <Icon className="w-6 h-6" />
             </div>
-            <h4 className="font-bold text-lg">{title}</h4>
-            <p className="text-sm text-muted-foreground italic">{desc}</p>
+            <h4 className="font-extrabold text-xl text-black uppercase tracking-tight">{title}</h4>
+            <p className="text-base text-black/40 italic leading-loose">{desc}</p>
         </div>
     );
 }
 
 function ProductCard({ icon: Icon, logo, logoBg, title, tagline, description, products, stats, href }: { icon?: any, logo?: string, logoBg?: string, title: string, tagline: string, description: string, products: string[], stats: string, href?: string }) {
     return (
-        <div className="product-card flex flex-col gap-8 p-10 rounded-[2.5rem] border bg-card/30 hover:bg-card transition-all duration-500 border-dashed hover:border-solid group relative bg-background/50 backdrop-blur-sm shadow-sm hover:shadow-2xl hover:-translate-y-2">
+        <div className="product-card flex flex-col gap-8 p-10 rounded-[3.5rem] border border-black/[0.05] bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl group">
             <div className="flex justify-between items-start">
-                <div className={`w-16 h-16 rounded-2xl ${logoBg || 'bg-zinc-950'} text-background flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-500 overflow-hidden p-3 shadow-inner border border-foreground/5`}>
+                <div className={`w-20 h-20 rounded-2xl bg-white border border-black/[0.05] flex items-center justify-center group-hover:scale-110 transition-all duration-500 overflow-hidden p-4 shadow-sm group-hover:bg-white`}>
                     {logo ? (
                         <div className="relative w-full h-full">
                             <Image 
@@ -310,35 +310,35 @@ function ProductCard({ icon: Icon, logo, logoBg, title, tagline, description, pr
                             />
                         </div>
                     ) : (
-                        Icon && <Icon className="w-8 h-8" />
+                        Icon && <Icon className="w-8 h-8 text-black" />
                     )}
                 </div>
-                <div className="px-4 py-1.5 rounded-full border border-foreground/10 text-[10px] font-black uppercase tracking-widest bg-muted/50">
+                <div className="px-4 py-1.5 rounded-full border border-black/10 text-[10px] font-black uppercase tracking-widest bg-black/[0.02] text-black/40 group-hover:text-white/40 group-hover:border-white/10 transition-colors">
                     {stats}
                 </div>
             </div>
             
             <div>
-                <span className="text-[10px] font-bold text-primary uppercase tracking-[0.3em] mb-2 block">{tagline}</span>
-                <h3 className="text-3xl font-black tracking-tighter mb-4">{title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-8 h-20 line-clamp-4">{description}</p>
+                <span className="text-[10px] font-bold text-[#00aaff] uppercase tracking-[0.3em] mb-2 block">{tagline}</span>
+                <h3 className="text-3xl font-extrabold tracking-tight mb-4 text-black group-hover:text-white transition-colors uppercase">{title}</h3>
+                <p className="text-black/50 text-base leading-loose mb-8 h-20 line-clamp-3 group-hover:text-white/60 transition-colors italic">{description}</p>
                 
                 <div className="flex flex-wrap gap-2">
                     {products.map((p, i) => (
-                        <span key={i} className="px-3 py-1 rounded-full border bg-background/50 text-[10px] font-bold uppercase tracking-wider">{p}</span>
+                        <span key={i} className="px-3 py-1 rounded-full border border-black/5 bg-black/[0.02] text-black/60 text-[10px] font-bold uppercase tracking-wider group-hover:bg-white/10 group-hover:text-white/80 transition-colors">{p}</span>
                     ))}
                 </div>
             </div>
 
-            <div className="pt-8 mt-auto border-t border-foreground/5 flex items-center justify-between">
+            <div className="pt-8 mt-auto border-t border-black/5 group-hover:border-white/10 flex items-center justify-between transition-colors">
                 {href ? (
-                    <Link href={href} className="flex items-center gap-2 text-sm font-black italic hover:text-primary transition-colors group/link">
+                    <Link href={href} className="flex items-center gap-2 text-sm font-black italic text-black group-hover:text-[#00aaff] transition-colors group/link">
                         View Product <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                     </Link>
                 ) : (
-                    <span className="text-sm font-black italic opacity-30">Coming Soon</span>
+                    <span className="text-sm font-black italic opacity-30 group-hover:text-white/30">Coming Soon</span>
                 )}
-                <MousePointer2 className="w-5 h-5 opacity-5 group-hover:opacity-20 transition-opacity" />
+                <MousePointer2 className="w-5 h-5 opacity-5 group-hover:opacity-20 transition-opacity text-white" />
             </div>
         </div>
     );

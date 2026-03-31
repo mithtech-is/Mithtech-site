@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { submitComment } from "@/app/blog/actions";
 import { Comment } from "@/lib/comments";
+import { motion } from "framer-motion";
 
 interface CommentSectionProps {
     slug: string;
@@ -37,53 +38,67 @@ export function CommentSection({ slug, initialComments }: CommentSectionProps) {
     }
 
     return (
-        <section className="mt-16 pt-16 border-t">
-            <h2 className="text-3xl font-bold mb-10">Comments ({initialComments.length})</h2>
+        <section className="mt-24 pt-24 border-t border-black/[0.05]">
+            <div className="flex items-center gap-4 mb-12">
+                <div className="w-12 h-12 rounded-2xl bg-black flex items-center justify-center text-[#00aaff]">
+                    <CheckCircle2 className="w-6 h-6" />
+                </div>
+                <h2 className="text-3xl font-extrabold tracking-tight text-black uppercase">
+                    Discussion ({initialComments.length})
+                </h2>
+            </div>
 
             {/* Comment Form */}
-            <div className="mb-12 rounded-[2rem] border bg-muted/30 p-5 shadow-inner sm:mb-16 sm:p-8">
-                <h3 className="text-xl font-bold mb-6">Leave a comment</h3>
-                <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="mb-20 p-10 rounded-[2.5rem] border border-black/[0.05] bg-black/[0.01] shadow-2xl shadow-black/5">
+                <div className="mb-10">
+                    <h3 className="text-xl font-extrabold text-black tracking-tight mb-2">Leave a comment</h3>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#00aaff]">Your thoughts matter to us.</p>
+                </div>
+                <form onSubmit={handleSubmit} className="space-y-6">
                     <input type="hidden" name="slug" value={slug} />
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                            <label htmlFor="name" className="text-sm font-medium">Name</label>
+                            <label htmlFor="name" className="text-[10px] font-bold uppercase tracking-widest ml-1 text-black/40">Your Name</label>
                             <Input
                                 id="name"
                                 name="name"
-                                placeholder="Your name"
+                                placeholder="E.g. John Doe"
                                 required
-                                className="bg-background rounded-xl h-12"
+                                className="h-14 w-full bg-white border-black/[0.05] px-6 focus:border-[#00aaff] rounded-2xl transition-all"
                             />
                         </div>
                     </div>
                     <div className="space-y-2">
-                        <label htmlFor="content" className="text-sm font-medium">Comment</label>
+                        <label htmlFor="content" className="text-[10px] font-bold uppercase tracking-widest ml-1 text-black/40">Message</label>
                         <Textarea
                             id="content"
                             name="content"
-                            placeholder="Share your thoughts..."
+                            placeholder="Share your architectural perspective..."
                             required
-                            className="bg-background rounded-2xl min-h-[120px] resize-none"
+                            className="min-h-[140px] w-full rounded-[1.5rem] border-black/[0.05] bg-white px-6 py-4 focus:border-[#00aaff] transition-all"
                         />
                     </div>
 
-                    {error && <p className="text-red-500 text-sm">{error}</p>}
+                    {error && <p className="text-red-500 text-[10px] font-bold uppercase tracking-widest">{error}</p>}
                     {success && (
-                        <div className="flex items-center gap-2 text-green-600 bg-green-50 p-4 rounded-xl border border-green-100">
-                            <CheckCircle2 className="w-5 h-5" />
-                            <p className="text-sm font-medium">Comment submitted successfully! It will appear shortly.</p>
-                        </div>
+                        <motion.div 
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="flex items-center gap-3 text-[#00aaff] bg-[#00aaff]/10 p-5 rounded-2xl border border-[#00aaff]/20"
+                        >
+                            <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
+                            <p className="text-xs font-bold uppercase tracking-widest">Comment submitted for review!</p>
+                        </motion.div>
                     )}
 
                     <Button
                         type="submit"
                         disabled={isSubmitting}
-                        className="h-12 min-h-[48px] w-full gap-2 rounded-full px-6 sm:w-auto sm:px-8"
+                        className="group h-14 w-full gap-3 rounded-full bg-black px-8 text-sm font-bold text-white transition-all hover:bg-black/80 hover:translate-y-[-2px] sm:w-auto"
                     >
-                        {isSubmitting ? "Submitting..." : (
+                        {isSubmitting ? "Processing..." : (
                             <>
-                                <Send className="w-4 h-4" /> Post Comment
+                                Post Comment <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                             </>
                         )}
                     </Button>
@@ -91,19 +106,28 @@ export function CommentSection({ slug, initialComments }: CommentSectionProps) {
             </div>
 
             {/* Comment List */}
-            <div className="space-y-8">
+            <div className="space-y-12">
                 {initialComments.length === 0 ? (
-                    <p className="text-muted-foreground italic text-center py-8">No comments yet. Be the first to join the conversation!</p>
+                    <div className="py-20 text-center rounded-[2.5rem] border border-black/[0.05] bg-black/[0.01]">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-black/20 italic">The architect's silence is broken first by you.</p>
+                    </div>
                 ) : (
-                    initialComments.map((comment) => (
-                        <div key={comment.id} className="flex gap-3 sm:gap-4">
-                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-foreground/5 bg-foreground/5 sm:h-12 sm:w-12">
-                                <User className="w-6 h-6 text-muted-foreground" />
+                    initialComments.map((comment, index) => (
+                        <motion.div 
+                            key={comment.id}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className="flex gap-6 items-start"
+                        >
+                            <div className="hidden sm:flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-black border border-black/[0.05] text-[#00aaff] shadow-lg">
+                                <User className="w-7 h-7" />
                             </div>
-                            <div className="flex-1 space-y-2">
+                            <div className="flex-1 space-y-4">
                                 <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                                    <h4 className="font-bold">{comment.name}</h4>
-                                    <span className="text-xs text-muted-foreground">
+                                    <h4 className="text-lg font-extrabold text-black tracking-tight uppercase">{comment.name}</h4>
+                                    <span className="text-[10px] font-bold uppercase tracking-widest text-black/30">
                                         {new Date(comment.date).toLocaleDateString('en-US', {
                                             month: 'short',
                                             day: 'numeric',
@@ -111,13 +135,13 @@ export function CommentSection({ slug, initialComments }: CommentSectionProps) {
                                         })}
                                     </span>
                                 </div>
-                                <div className="rounded-2xl border border-foreground/[0.03] bg-muted/20 p-4 sm:p-6">
-                                    <p className="text-muted-foreground leading-relaxed italic line-height-relaxed">
-                                        &quot;{comment.content}&quot;
+                                <div className="rounded-[2rem] border border-black/[0.03] bg-black/[0.01] p-8 group hover:bg-white transition-all duration-500">
+                                    <p className="text-black/50 leading-relaxed italic italic-font text-sm">
+                                        "{comment.content}"
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))
                 )}
             </div>

@@ -147,7 +147,7 @@ export default function Home() {
       title: productName,
       description: productDescription,
       longDescription: productDescription,
-      icon: canvasIcon || "/assets/mithtech-black-logo.png",
+      icon: canvasIcon || "/assets/mithtech-white-logo.png",
       category: "Mithtech Product",
       features: ["Tailored implementation", "Deployment support", "Workflow customization"],
     });
@@ -257,9 +257,9 @@ export default function Home() {
 
 
       {/* Spacer for Scrolling */}
-      <div id="spacer" className="pointer-events-none h-[420vh] sm:h-[480vh] md:h-[520vh]" />
+      <div id="spacer" className="pointer-events-none h-[480vh] sm:h-[560vh] md:h-[650vh]" />
 
-      <div className="relative z-10 flex min-h-screen items-center justify-center bg-[#080808]">
+      <div className="relative z-10 flex min-h-[120vh] items-center justify-center bg-[#080808] mt-[30vh]">
         {/* Top fade to blend the scroll transition cleanly */}
         <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#080808]/0 to-[#080808]" />
         <CTA />

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface HeroProps {
   isVisible: boolean;
@@ -26,12 +27,18 @@ export const Hero: React.FC<HeroProps> = ({ isVisible }) => {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto">
-          <button className="min-h-[48px] w-full border border-black bg-white px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-black shadow-xl shadow-white/10 transition-[transform,background-color,box-shadow] duration-150 ease-[var(--ease-out)] active:scale-[0.97] hover:bg-neutral-100 hover:shadow-white/15 sm:w-auto sm:px-8">
-            Explore Ecosystem →
-          </button>
-          <button className="min-h-[48px] w-full border border-white/10 bg-transparent px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-white/60 transition-[border-color,color,transform] duration-150 ease-[var(--ease-out)] active:scale-[0.97] hover:border-white/25 hover:text-white/90 sm:w-auto sm:px-8">
+          <Link
+            href="/contact"
+            className="min-h-[48px] w-full border border-black bg-white px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-black shadow-xl shadow-white/10 transition-[transform,background-color,box-shadow] duration-150 ease-[var(--ease-out)] active:scale-[0.97] hover:bg-neutral-100 hover:shadow-white/15 sm:w-auto sm:px-8 flex items-center justify-center text-center"
+          >
+            Book a Demo →
+          </Link>
+          <Link
+            href="/products"
+            className="min-h-[48px] w-full border border-white/10 bg-transparent px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-white/60 transition-[border-color,color,transform] duration-150 ease-[var(--ease-out)] active:scale-[0.97] hover:border-white/25 hover:text-white/90 sm:w-auto sm:px-8 flex items-center justify-center text-center"
+          >
             View All Products
-          </button>
+          </Link>
         </div>
       </div>
     </div>

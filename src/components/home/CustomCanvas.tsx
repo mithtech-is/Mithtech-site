@@ -391,7 +391,8 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onC
       draggingRef.current = node;
       node.velX = 0; node.velY = 0;
     };
-    window.addEventListener('mousedown', handleMouseDown);
+    const cv = canvasRef.current!;
+    cv.addEventListener('mousedown', handleMouseDown);
 
     const handleMouseUp = (e: MouseEvent) => {
       if (draggingRef.current && Math.hypot(e.clientX - mouseRef.current.x, e.clientY - mouseRef.current.y) < 5) {
@@ -429,7 +430,7 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onC
       }
       draggingRef.current = null;
     };
-    window.addEventListener('mouseup', handleMouseUp);
+    cv.addEventListener('mouseup', handleMouseUp);
 
     const handleMouseMove = (e: MouseEvent) => {
       const mouse = mouseRef.current;
@@ -712,8 +713,8 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onC
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
-      window.removeEventListener('mousedown', handleMouseDown);
-      window.removeEventListener('mouseup', handleMouseUp);
+      cv.removeEventListener('mousedown', handleMouseDown);
+      cv.removeEventListener('mouseup', handleMouseUp);
       window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animationId);
     };

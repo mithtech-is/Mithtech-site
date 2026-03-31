@@ -168,7 +168,7 @@ export const products: Product[] = [
     {
         slug: "socialpuff",
         title: "Socialpuff.in",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/mithtech-white-logo.png",
         description: "Smart Social Media Automation.",
         longDescription: "Socialpuff.in helps you put your social media marketing on autopilot. Schedule posts, analyze performance, and manage multiple networks from one place.",
         features: [
@@ -530,7 +530,7 @@ export const products: Product[] = [
     {
         slug: "2spa",
         title: "2spa.in",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/mithtech-white-logo.png",
         description: "Wellness Booking Platform",
         longDescription: "A dedicated booking and management system for salons, spas, and wellness centers.",
         features: ["Online Booking", "Staff Scheduling", "Member Loyalty"],
@@ -590,7 +590,7 @@ export const products: Product[] = [
     {
         slug: "custom-websites",
         title: "Custom Websites & Landing Pages",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/mithtech-white-logo.png",
         description: "Bespoke Digital Presence",
         longDescription: "We design and build high-performance, custom-coded websites tailored to your brand's unique identity.",
         features: ["Custom Design", "SEO Optimized", "Blazing Fast Performance"],
@@ -602,7 +602,7 @@ export const products: Product[] = [
     {
         slug: "listing-sites",
         title: "Listing Sites",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/mithtech-white-logo.png",
         description: "Directory & Marketplace",
         longDescription: "Build powerful directory and listing websites for real estate, cars, or any service marketplace.",
         features: ["Advanced Search", "User Submissions", "Map Integration"],
@@ -674,7 +674,7 @@ export const products: Product[] = [
     {
         slug: "lms-wp",
         title: "LMS (WordPress)",
-        icon: "/assets/mithtech-black-logo.png",
+        icon: "/assets/mithtech-white-logo.png",
         description: "WordPress Learning",
         longDescription: "Leverage the power of WordPress and LearnDash to create a scalable e-learning platform.",
         features: ["Course Management", "Quiz System", "User Dashboards"],

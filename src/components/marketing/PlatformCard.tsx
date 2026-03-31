@@ -58,7 +58,7 @@ export function PlatformCard({ name, imageSrc, href, delay = 0, description, cla
                 </div>
 
                 <div className="mt-auto">
-                    <h3 className="mb-1 text-lg font-bold tracking-tight transition-colors group-hover:text-primary sm:text-xl">
+                    <h3 className="mb-1 text-lg font-bold tracking-tight transition-colors sm:text-xl">
                         {name}
                     </h3>
                     {description && (

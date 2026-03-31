@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface BlogCardProps {
@@ -17,30 +17,37 @@ export function BlogCard({ title, description, date, slug }: BlogCardProps) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="group relative flex h-full flex-col rounded-3xl border bg-card p-6 shadow-sm transition-all duration-300 hover:bg-muted/50 hover:shadow-md sm:p-8"
+            className="group relative flex h-full flex-col rounded-[2.5rem] border border-black/[0.05] bg-white p-8 transition-all duration-500 hover:border-[#00aaff]/20 hover:shadow-xl hover:shadow-[#00aaff]/5"
         >
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                <Calendar className="w-4 h-4" />
-                <span>{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+            <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center text-[#00aaff]">
+                    <Calendar className="w-5 h-5" />
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-black/30">
+                    {new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </span>
             </div>
-            <h3 className="mb-4 text-xl font-bold leading-tight transition-colors group-hover:text-primary sm:text-2xl">
+            
+            <h3 className="mb-4 text-2xl font-extrabold tracking-tight text-black leading-tight transition-colors">
                 {title}
             </h3>
-            <p className="text-muted-foreground mb-8 flex-grow line-clamp-3">
+            
+            <p className="text-lg font-medium text-black/40 mb-8 flex-grow line-clamp-3 leading-loose italic">
                 {description}
             </p>
+            
             <div className="mt-auto">
                 <Link
                     href={`/blog/${slug}`}
-                    className="inline-flex items-center text-sm font-bold uppercase tracking-wider text-foreground hover:gap-2 transition-all duration-300"
+                    className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-black/50 hover:text-black transition-all group-hover:translate-x-1"
                 >
-                    Read Article <ArrowRight className="ml-2 w-4 h-4" />
+                    Read Article <ArrowRight className="w-3 h-3" />
                 </Link>
             </div>
 
-            {/* Hover decoration */}
-            <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-foreground/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <ArrowRight className="w-4 h-4 rotate-[-45deg]" />
+            {/* Corner Accent */}
+            <div className="absolute top-8 right-8 w-8 h-8 rounded-full bg-black/[0.02] opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center translate-x-2 group-hover:translate-x-0">
+                <BookOpen className="w-3 h-3 text-[#00aaff]" />
             </div>
         </motion.div>
     );
