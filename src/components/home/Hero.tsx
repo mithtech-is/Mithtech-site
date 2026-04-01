@@ -16,13 +16,13 @@ export const Hero: React.FC<HeroProps> = ({ isVisible }) => {
           INTRODUCING THE MITHTECH ECOSYSTEM.
 
         </p>
-        <h1 className="mb-6 text-[clamp(2.4rem,10vw,5.125rem)] font-bold leading-[1.05] tracking-tight text-white sm:mb-8 md:leading-[1]">
+        <h1 className="text-responsive-h1 font-bold tracking-tight text-white/95 text-wrap-balance mb-4 leading-[1.05] sm:mb-8 md:leading-[1]">
           One Ecosystem.<br />
-          <span className="text-white/90 decoration-white/20 [text-wrap:balance]">End-to-End Business.</span>
+          <span className="text-white/90">End-to-End Business.</span>
           <br />
-          <span className="text-white/90 decoration-white/20 [text-wrap:balance]">Infrastructure.</span>
+          <span className="text-white/90">Infrastructure.</span>
         </h1>
-        <p className="mb-10 max-w-xl px-2 text-sm leading-relaxed text-white/40 sm:mb-16 sm:text-base">
+        <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-white/40 sm:mb-16 sm:text-base text-wrap-balance">
           Mithtech designs, deploys and connects enterprise software ecosystems — from CRM to ERP, eCommerce and beyond.
         </p>
 
@@ -35,7 +35,7 @@ export const Hero: React.FC<HeroProps> = ({ isVisible }) => {
           </Link>
           <Link
             href="/products"
-            className="min-h-[48px] w-full border border-white/10 bg-transparent px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-white/60 transition-[border-color,color,transform] duration-150 ease-[var(--ease-out)] active:scale-[0.97] hover:border-white/25 hover:text-white/90 sm:w-auto sm:px-8 flex items-center justify-center text-center"
+            className="min-h-[48px] w-full border border-white/10 bg-black px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-white/80 transition-[border-color,color,transform,background-color] duration-150 ease-[var(--ease-out)] active:scale-[0.97] hover:border-white/25 hover:bg-black hover:text-white sm:w-auto sm:px-8 flex items-center justify-center text-center"
           >
             View All Products
           </Link>

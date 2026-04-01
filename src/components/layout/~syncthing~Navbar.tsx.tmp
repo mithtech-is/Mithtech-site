@@ -25,6 +25,8 @@ export function Navbar() {
     const [activeUseCase, setActiveUseCase] = useState<UseCase>(USE_CASES[0]);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [openMobileSubId, setOpenMobileSubId] = useState<string | null>(null);
+    const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
     const [isTransitioningUseCase, setIsTransitioningUseCase] = useState(false);
 
     const productsRef = useRef<HTMLDivElement>(null);
@@ -44,13 +46,35 @@ export function Navbar() {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-    const containWheelScroll = (event: React.WheelEvent<HTMLDivElement>) => {
-        event.stopPropagation();
-    };
+    // Scroll-to-reveal logic
+    useEffect(() => {
+        function handleScroll() {
+            const currentScrollY = window.scrollY;
+
+            // Don't hide navbar if mobile menu is open
+            if (mobileMenuOpen) return;
+
+            // Hide on scroll down, show on scroll up
+            if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                setIsNavbarVisible(false);
+                setIsProductsOpen(false);
+                setIsPlatformsOpen(false);
+            } else {
+                setIsNavbarVisible(true);
+            }
+
+            setLastScrollY(currentScrollY);
+        }
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [lastScrollY]);
 
     return (
         <header
-            className="sticky top-0 z-50 w-full border-b border-white/10 bg-black text-white"
+            className={cn(
+                "sticky top-0 z-50 w-full border-b border-white/10 bg-black text-white transition-transform duration-300 ease-[var(--ease-out)]",
+                !isNavbarVisible && "-translate-y-full"
+            )}
         >
             <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 md:px-8">
 
@@ -91,8 +115,8 @@ export function Navbar() {
 
                             {isProductsOpen && (
                                 <div className="fixed inset-x-0 top-20 z-50 w-screen bg-black border-b border-white/10 shadow-2xl origin-top animate-in fade-in zoom-in-95 duration-200 ease-[var(--ease-out)]">
-                                    <div className="container mx-auto flex h-[600px]" data-lenis-prevent onWheelCapture={containWheelScroll}>
-                                        <div className="w-[350px] border-r border-white/10 py-8 overflow-y-auto overscroll-contain custom-scrollbar">
+                                    <div className="container mx-auto flex h-[600px]" data-lenis-prevent>
+                                        <div className="w-[350px] border-r border-white/10 py-8 overflow-y-auto custom-scrollbar">
                                             <div className="mb-5">
                                                 <Link
                                                     href="/products"
@@ -137,7 +161,7 @@ export function Navbar() {
                                         </div>
                                         <div
                                             className={cn(
-                                                "flex-1 bg-black py-8 px-10 overflow-y-auto overscroll-contain custom-scrollbar transition-all duration-200",
+                                                "flex-1 bg-black py-8 px-10 overflow-y-auto custom-scrollbar transition-all duration-200",
                                                 isTransitioningUseCase ? "opacity-0 blur-sm scale-[0.99]" : "opacity-100 blur-0 scale-100"
                                             )}
                                             data-lenis-prevent
@@ -200,7 +224,7 @@ export function Navbar() {
 
                             {isPlatformsOpen && (
                                 <div className="fixed inset-x-0 top-20 z-50 w-screen bg-black border-b border-white/10 shadow-2xl origin-top animate-in fade-in zoom-in-95 duration-200 ease-[var(--ease-out)]">
-                                    <div className="container mx-auto max-h-[calc(100vh-5rem)] overflow-y-auto overscroll-contain px-6 py-12" data-lenis-prevent onWheelCapture={containWheelScroll}>
+                                    <div className="container mx-auto px-6 py-12">
                                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                                             <div className="lg:col-span-4">
                                                 <Link
@@ -272,6 +296,22 @@ export function Navbar() {
                                 <div className="flex-1 py-8 px-6 space-y-8 text-2xl font-bold">
                                     <MobileAccordion label="Products">
                                         <div className="space-y-2 pt-4">
+                                            {/* View All Products Link */}
+                                            <div className="mb-4">
+                                                <Link
+                                                    href="/products"
+                                                    onClick={() => setMobileMenuOpen(false)}
+                                                    className="flex items-center justify-between rounded-xl bg-[#00aaff]/10 border border-[#00aaff]/20 px-6 py-5 text-lg font-bold text-[#00aaff] transition-all active:scale-[0.98]"
+                                                >
+                                                    View All Products
+                                                    <ArrowRight className="h-5 w-5" />
+                                                </Link>
+                                            </div>
+
+                                            <div className="px-2 mb-2">
+                                                <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30">Browse by Use Case</h3>
+                                            </div>
+
                                             {USE_CASES.map((uc) => (
                                                 <MobileSubAccordion
                                                     key={uc.id}
@@ -288,7 +328,7 @@ export function Navbar() {
                                                                     setMobileMenuOpen(false);
                                                                     setOpenMobileSubId(null);
                                                                 }}
-                                                                className="text-sm text-white/50 py-2 hover:text-white flex items-center justify-between"
+                                                                className="text-sm text-white/50 py-3 hover:text-white flex items-center justify-between active:text-white"
                                                             >
                                                                 {p.title}
                                                                 <ArrowRight className="h-3 w-3 opacity-20" />
@@ -297,13 +337,6 @@ export function Navbar() {
                                                     </div>
                                                 </MobileSubAccordion>
                                             ))}
-                                            <div className="pt-4 mt-4 border-t border-white/10">
-                                                <Button asChild variant="outline" className="w-full rounded-full border-white/20 bg-white/5 text-white hover:bg-white/10 h-10 text-sm font-bold uppercase tracking-widest">
-                                                    <Link href="/products" onClick={() => setMobileMenuOpen(false)}>
-                                                        View All Products <ArrowRight className="ml-2 h-4 w-4" />
-                                                    </Link>
-                                                </Button>
-                                            </div>
                                         </div>
                                     </MobileAccordion>
 

@@ -17,7 +17,7 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
     return (
         <div className="flex flex-col w-full min-h-screen bg-white">
             {/* Hero Section */}
-            <section className="relative py-24 lg:py-40 overflow-hidden border-b border-black/[0.05]">
+            <section className="relative pt-8 pb-12 sm:pt-12 sm:pb-24 lg:pt-16 lg:pb-32 overflow-hidden border-b border-black/[0.05]">
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(0,0,0,0.02)_0%,transparent_100%)]" />
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col items-center text-center max-w-4xl mx-auto w-full">
@@ -49,7 +49,7 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
                                 </span>
                             </div>
                             
-                            <h1 className="text-5xl font-extrabold tracking-tight text-black sm:text-6xl lg:text-7xl mb-10 leading-[1.1] break-words">
+                            <h1 className="text-4xl font-extrabold tracking-tight text-black sm:text-6xl lg:text-7xl mb-10 leading-[1.1] break-words uppercase">
                                 {product.title}
                             </h1>
 
@@ -99,15 +99,15 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
             </section>
 
             {/* Use Case Section */}
-            <section id="use-case" className="py-24 border-b border-black/[0.05] bg-black/[0.01]">
+            <section id="use-case" className="py-12 sm:py-24 border-b border-black/[0.05] bg-black/[0.01]">
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto">
                         <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-black/[0.02] px-3 py-1 mb-8">
                             <span className="h-1.5 w-1.5 rounded-full bg-[#00aaff] animate-pulse" />
                             <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Real-world Implementation</span>
                         </div>
-                        <h2 className="text-4xl font-extrabold text-black mb-10 tracking-tight uppercase">How it works in action</h2>
-                        <div className="bg-white border border-black/[0.05] rounded-[2.5rem] p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                        <h2 className="text-3xl sm:text-4xl font-extrabold text-black mb-10 tracking-tight uppercase">How it works in action</h2>
+                        <div className="bg-white border border-black/[0.05] rounded-[2.5rem] p-6 sm:p-12 shadow-2xl relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-[#00aaff]/5 rounded-full -translate-y-1/2 translate-x-1/2" />
                             <div className="relative z-10">
                                 <p className="text-2xl sm:text-3xl leading-loose text-black/80 mb-10 italic font-medium">
@@ -140,7 +140,7 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
             </section>
 
             {/* Features Section */}
-            <section className="py-24 lg:py-32 bg-white">
+            <section className="py-12 sm:py-24 lg:py-32 bg-white">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                         <div className="w-full">
@@ -155,7 +155,7 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.4, delay: index * 0.08, ease: [0.23, 1, 0.32, 1] }}
-                                        className="flex items-start gap-4 p-6 rounded-3xl bg-white border border-black/[0.06] transition-all duration-300 hover:border-black/20 hover:shadow-2xl hover:shadow-black/5 font-sans"
+                                        className="flex items-start gap-4 p-5 sm:p-6 rounded-3xl bg-white border border-black/[0.06] transition-all duration-300 hover:border-black/20 hover:shadow-2xl hover:shadow-black/5 font-sans"
                                     >
                                         <div className="mt-1">
                                             <CheckCircle2 className="h-6 w-6 text-[#00aaff] shrink-0" />
@@ -172,10 +172,10 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            className="relative aspect-video rounded-[2.5rem] overflow-hidden border border-black/[0.05] shadow-2xl bg-black flex items-center justify-center group"
+                            className="relative min-h-[450px] py-16 sm:py-20 rounded-[2.5rem] overflow-hidden border border-black/[0.05] shadow-2xl bg-black flex items-center justify-center group"
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-[#00aaff]/20 to-transparent opacity-40 group-hover:opacity-60 transition-opacity" />
-                            <div className="relative z-10 text-center p-8 sm:p-12 w-full">
+                            <div className="relative z-10 text-center p-6 sm:p-12 w-full">
                                 <div className="w-24 h-24 rounded-3xl bg-white/20 flex items-center justify-center mx-auto mb-8 backdrop-blur-sm border border-white/30 shadow-2xl group-hover:scale-110 transition-transform p-4">
                                     <Image
                                         src={product.icon}
@@ -185,10 +185,10 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
                                         className="object-contain"
                                     />
                                 </div>
-                                <h3 className="text-3xl font-extrabold text-white mb-6 tracking-tight uppercase">
+                                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-6 tracking-tight uppercase leading-tight">
                                     {isProprietary ? 'Ready to get started?' : `Need help with ${product.title}?`}
                                 </h3>
-                                <p className="text-white/60 mb-10 max-w-sm mx-auto text-base leading-loose italic">
+                                <p className="text-white/60 mb-10 max-w-md mx-auto text-sm sm:text-base leading-loose italic px-4">
                                     {isProprietary
                                         ? `Join thousands of businesses already using ${product.title} to optimize their operations.`
                                         : `Our experts can help you deploy, customize and automate ${product.title} for your specific needs.`}
@@ -212,7 +212,7 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
             </section>
 
             {/* Redirect Notice */}
-            <section className="py-24 bg-white border-t border-black/[0.05]">
+            <section className="py-12 sm:py-24 bg-white border-t border-black/[0.05]">
                 <div className="container mx-auto text-center px-4">
                     <div className="max-w-2xl mx-auto flex flex-col items-center">
                         <p className="text-black/40 mb-10 italic text-base leading-loose font-sans">

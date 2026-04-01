@@ -101,22 +101,24 @@ export default function About() {
             </section>
 
             {/* Platforms We Champion */}
-            <section className="py-24 lg:py-40 border-y border-black/[0.05] bg-black text-white">
+            <section className="py-24 lg:py-40 bg-white">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-4xl mx-auto mb-20">
-                        <h2 className="text-4xl font-extrabold tracking-tight text-white mb-10 tracking-tighter uppercase">Platforms We <span className="text-[#00aaff]">Champion.</span></h2>
-                        <p className="text-xl text-white/40 leading-loose italic max-w-2xl mx-auto font-sans">We specialize in technologies with proven reliability and rapid development cycles.</p>
-                    </div>
-                    <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
-                        {["Frappe", "ERPNext", "MedusaJS", "n8n", "Mautic", "Listmonk", "Schedulr", "Directorist", "Next.js", "Odoo", "Metabase", "Superset"].map(platform => (
-                            <motion.span
-                                key={platform}
-                                whileHover={{ scale: 1.05 }}
-                                className="px-10 py-5 rounded-full border border-white/10 bg-white/5 font-extrabold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all cursor-default"
-                            >
-                                {platform}
-                            </motion.span>
-                        ))}
+                    <div className="bg-black text-white rounded-[3rem] p-12 lg:p-24 border border-white/10 shadow-2xl overflow-hidden text-center">
+                        <div className="max-w-4xl mx-auto mb-20">
+                            <h2 className="text-4xl font-extrabold tracking-tight text-white mb-10 tracking-tighter uppercase">Platforms We <span className="text-[#00aaff]">Champion.</span></h2>
+                            <p className="text-xl text-white/40 leading-loose italic max-w-2xl mx-auto font-sans">We specialize in technologies with proven reliability and rapid development cycles.</p>
+                        </div>
+                        <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
+                            {["Frappe", "ERPNext", "MedusaJS", "n8n", "Mautic", "Listmonk", "Schedulr", "Directorist", "Next.js", "Odoo", "Metabase", "Superset"].map(platform => (
+                                <motion.span
+                                    key={platform}
+                                    whileHover={{ scale: 1.05 }}
+                                    className="px-10 py-5 rounded-full border border-white/10 bg-white/5 font-extrabold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all cursor-default"
+                                >
+                                    {platform}
+                                </motion.span>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>

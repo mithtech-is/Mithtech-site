@@ -1,4 +1,5 @@
 import { products } from "@/data/products";
+import { USE_CASES } from "@/data/navigation";
 import { CTASection } from "@/components/marketing/CTASection";
 import Image from "next/image";
 import Link from "next/link";
@@ -74,14 +75,14 @@ export default function ProductsPage() {
     return (
         <div className="flex flex-col w-full bg-white">
             {/* Hero Section - Redesigned to White theme (Centered) */}
-            <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-white pt-32 pb-20 lg:pt-40 lg:pb-32">
+            <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-white pt-12 sm:pt-16 lg:pt-24 pb-12 sm:pb-20 lg:pb-32">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="max-w-4xl mx-auto text-center">
                         <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-black/[0.02] px-3 py-1 mb-8">
                             <span className="h-1.5 w-1.5 rounded-full bg-[#00aaff] animate-pulse" />
                             <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Product Suite 2024</span>
                         </div>
-                        <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase">
+                        <h1 className="text-5xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase">
                             All Products in <br /> 
                             <span className="text-[#00aaff]">One Ecosystem.</span>
                         </h1>
@@ -120,30 +121,38 @@ export default function ProductsPage() {
             </div>
 
             {/* Product Catalog Content */}
-            <section id="explore" className="bg-white py-20 lg:py-32">
+            <section id="explore" className="bg-white py-12 sm:py-24 lg:py-32">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    {CATEGORIES.map((category) => {
-                        const categoryProducts = category.slugs
-                            .map(slug => products.find(p => p.slug === slug))
-                            .filter(Boolean);
+                    {(() => {
+                        // Get all slugs from megamenu
+                        const allowedSlugs = new Set(
+                            USE_CASES.flatMap(uc => uc.products.map(p => p.slug)).filter(Boolean)
+                        );
 
-                        if (categoryProducts.length === 0) return null;
+                        return CATEGORIES.map((category) => {
+                            // Filter products to only those in the megamenu
+                            const categoryProducts = category.slugs
+                                .filter(slug => allowedSlugs.has(slug))
+                                .map(slug => products.find(p => p.slug === slug))
+                                .filter(Boolean);
 
-                        return (
-                            <div 
-                                key={category.title} 
-                                id={category.title.toLowerCase().replace(/\s+/g, '-')}
-                                className="mb-24 last:mb-0"
-                            >
-                                <div className="flex items-center justify-between mb-12 border-b border-black/[0.05] pb-6">
-                                    <div>
-                                        <h2 className="text-4xl font-extrabold text-black mb-3 tracking-tight uppercase">{category.title}</h2>
-                                        <p className="text-base text-black/40 leading-loose italic">Discover specialized tools for {category.title.toLowerCase()}.</p>
+                            if (categoryProducts.length === 0) return null;
+
+                            return (
+                                <div 
+                                    key={category.title} 
+                                    id={category.title.toLowerCase().replace(/\s+/g, '-')}
+                                    className="mb-24 last:mb-0"
+                                >
+                                    <div className="flex items-center justify-between mb-12 border-b border-black/[0.05] pb-6">
+                                        <div>
+                                            <h2 className="text-4xl font-extrabold text-black mb-3 tracking-tight uppercase">{category.title}</h2>
+                                            <p className="text-base text-black/40 leading-loose italic">Discover specialized tools for {category.title.toLowerCase()}.</p>
+                                        </div>
+                                        <span className="hidden sm:block text-[10px] font-bold text-black/20 uppercase tracking-widest">
+                                            {categoryProducts.length} Products
+                                        </span>
                                     </div>
-                                    <span className="hidden sm:block text-[10px] font-bold text-black/20 uppercase tracking-widest">
-                                        {categoryProducts.length} Products
-                                    </span>
-                                </div>
 
                                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                                     {categoryProducts.map((product) => (
@@ -151,7 +160,7 @@ export default function ProductsPage() {
                                             <Link
                                                 key={`${category.title}-${product.slug}`}
                                                 href={`/products/${product.slug}`}
-                                                className="group relative flex flex-col rounded-3xl border border-black/[0.06] bg-white p-7 transition-all duration-300 hover:border-black/20 hover:shadow-2xl hover:shadow-black/5"
+                                                className="group relative flex flex-col rounded-3xl border border-black/[0.06] bg-white p-6 sm:p-7 transition-all duration-300 hover:border-black/20 hover:shadow-2xl hover:shadow-black/5 min-h-full"
                                             >
                                                 <div className="mb-8 flex items-start justify-between">
                                                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-black/[0.05] bg-black/[0.02] p-2.5 transition-colors group-hover:border-black/20 group-hover:bg-black/5">
@@ -186,10 +195,11 @@ export default function ProductsPage() {
                                             </Link>
                                         )
                                     ))}
+                                    </div>
                                 </div>
-                            </div>
-                        );
-                    })}
+                            );
+                        });
+                    })()}
                 </div>
             </section>
 

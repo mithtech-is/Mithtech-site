@@ -33,6 +33,58 @@ if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 }
 
+const COMPARISON_CONTENT: Record<string, { label: string; medusa: string; shopify: string; woo: string; magento: string }> = {
+    "Revenue Retention": {
+        label: "Revenue Retention",
+        medusa: "💰 Zero platform commission.",
+        shopify: "💸 Transaction fees reduce margin.",
+        woo: "💰 No fee, but plugins add cost.",
+        magento: "💸 No fee, but overhead is heavy.",
+    },
+    "Business Control": {
+        label: "Cost Efficiency (Long-Term)",
+        medusa: "📈 Predictable long-term costs.",
+        shopify: "💸 Costs rise with growth.",
+        woo: "⚠️ Costs become unstable over time.",
+        magento: "💸 Ownership stays expensive.",
+    },
+    "Scalability": {
+        label: "Ownership & Independence",
+        medusa: "🔥 Full control over platform and data.",
+        shopify: "❌ Tied to Shopify's ecosystem.",
+        woo: "⚠️ Plugin stack affects control.",
+        magento: "⚠️ Often depends on specialists.",
+    },
+    "Customization": {
+        label: "Customization for Sales Workflows",
+        medusa: "🚀 Built for custom sales flows.",
+        shopify: "⚠️ Often limited by apps.",
+        woo: "⚠️ Usually plugin-heavy.",
+        magento: "⚠️ Powerful, but slow and costly.",
+    },
+    "Brand Positioning": {
+        label: "Security & Control",
+        medusa: "🔒 Full control over infra and policies.",
+        shopify: "⚠️ Managed security, limited control.",
+        woo: "⚠️ Depends on hosting and plugins.",
+        magento: "🔒 Strong, but needs active management.",
+    },
+    "Initial Setup Effort": {
+        label: "Initial Setup Investment",
+        medusa: "⚠️ Higher upfront setup.",
+        shopify: "✅ Fastest to launch.",
+        woo: "✅ Easy for simple stores.",
+        magento: "❌ Complex and time-intensive.",
+    },
+    "Technical Dependency": {
+        label: "Technical Dependency",
+        medusa: "⚠️ Best with a capable tech partner.",
+        shopify: "✅ Minimal day-to-day dependency.",
+        woo: "⚠️ Moderate technical reliance.",
+        magento: "❌ High technical dependency.",
+    },
+};
+
 export default function MedusaPage() {
     const containerRef = useRef<HTMLDivElement>(null);
     const featureGridRef = useRef<HTMLDivElement>(null);
@@ -80,36 +132,7 @@ export default function MedusaPage() {
                 }
             );
 
-            // Customization Section
-            gsap.fromTo(".custom-item",
-                { autoAlpha: 0, x: -30 },
-                {
-                    scrollTrigger: {
-                        trigger: customSectionRef.current,
-                        start: "top bottom-=100",
-                    },
-                    autoAlpha: 1,
-                    x: 0,
-                    stagger: 0.2,
-                    duration: 0.8,
-                    ease: "power2.out"
-                }
-            );
-
-            gsap.fromTo(".custom-visual",
-                { autoAlpha: 0, scale: 0.8, rotate: 5 },
-                {
-                    scrollTrigger: {
-                        trigger: customSectionRef.current,
-                        start: "top bottom-=150",
-                    },
-                    autoAlpha: 1,
-                    scale: 1,
-                    rotate: 0,
-                    duration: 1.5,
-                    ease: "elastic.out(1, 0.75)"
-                }
-            );
+            // Customization Section - Animation removed for simultaneous display
 
             // Comparison Table
             gsap.fromTo(".comparison-row",
@@ -134,13 +157,13 @@ export default function MedusaPage() {
     return (
         <div ref={containerRef} className="flex flex-col w-full bg-white overflow-hidden">
             {/* Hero Section */}
-            <section className="relative pt-24 pb-20 md:pt-32 md:pb-40 border-b overflow-hidden">
+            <section className="relative pt-12 pb-20 md:pt-16 md:pb-40 border-b overflow-hidden">
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(0,0,0,0.03)_0%,transparent_100%)]" />
                 <div className="container mx-auto px-4 hero-content">
                     <span className="text-sm font-bold tracking-[0.3em] text-muted-foreground uppercase mb-6 block">
                         HEADLESS COMMERCE ARCHITECTS
                     </span>
-                    <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase">
+                    <h1 className="text-4xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase break-words">
                         MEDUSA <br />
                         <span className="text-[#00aaff]">ENGINE</span>
                     </h1>
@@ -156,7 +179,7 @@ export default function MedusaPage() {
             </section>
 
             {/* What is Medusa Section */}
-            <section className="py-24 bg-muted/30 border-b">
+            <section className="py-12 sm:py-24 bg-muted/30 border-b">
                 <div className="container mx-auto px-4">
                     <div className="max-w-3xl mb-16">
                         <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Modern Commerce, Decoupled</h2>
@@ -185,7 +208,7 @@ export default function MedusaPage() {
             </section>
 
             {/* Mithtech Medusa Solutions */}
-            <section className="py-24 border-b">
+            <section className="py-12 sm:py-24 border-b">
                 <div className="container mx-auto px-4">
                     <div className="text-center max-w-3xl mx-auto mb-20">
                         <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Medusa Commerce Solutions</h2>
@@ -213,21 +236,21 @@ export default function MedusaPage() {
                         />
                         <CommerceSolution
                             icon={Zap}
-                            title="WhatsApp Commerce"
-                            description="Transactional commerce integrated directly into messaging apps."
-                            features={["Polygin WhatsApp integration", "Chat-to-checkout flows", "Automated order updates", "Payment via chat"]}
+                            title="Pricing & Order Engine"
+                            description="Composable pricing, cart, and order workflows designed for multi-region commerce operations."
+                            features={["Region-based pricing control", "Flexible cart and checkout flows", "Order lifecycle automation", "Shipping and tax rule orchestration"]}
                         />
                     </div>
                 </div>
             </section>
 
             {/* Key Capabilities Section */}
-            <section ref={customSectionRef} className="py-24 bg-foreground text-background overflow-hidden relative">
+            <section ref={customSectionRef} className="py-12 sm:py-24 bg-white overflow-hidden relative">
                 <div className="container mx-auto px-4">
-                    <div className="flex flex-col lg:flex-row gap-16 items-center">
+                    <div className="flex flex-col lg:flex-row gap-8 sm:gap-16 items-center">
                         <div className="flex-1">
-                            <h2 className="text-5xl font-extrabold tracking-tight text-white mb-8 italic uppercase">Limitless Customization</h2>
-                            <p className="text-xl text-white/50 mb-10 leading-loose italic">
+                            <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Limitless Customization</h2>
+                            <p className="text-xl text-black/60 mb-10 leading-loose italic">
                                 Medusa doesn't lock you into a rigid structure. Every part of the engine is customizable to fit your business workflows perfectly.
                             </p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -265,15 +288,75 @@ export default function MedusaPage() {
             </section>
 
             {/* Comparison Section */}
-            <section ref={comparisonRef} className="py-24 bg-white overflow-hidden border-b">
+            <section ref={comparisonRef} className="py-12 sm:py-24 bg-white overflow-hidden border-b">
                 <div className="container mx-auto px-4">
                     <div className="text-center max-w-3xl mx-auto mb-16">
                         <span className="text-sm font-bold tracking-[0.3em] text-black/40 uppercase mb-4 block">WHY MEDUSA WINS</span>
                         <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">THE SUPERIOR ENGINE</h2>
                     </div>
 
-                    <div className="relative max-w-6xl mx-auto">
-                        <div className="overflow-x-auto pb-8 -mx-4 px-4 sm:mx-0 sm:px-0">
+                    <div className="md:hidden">
+                        <div className="overflow-hidden rounded-[1.75rem] border border-black/10 bg-white shadow-sm">
+                            <table className="w-full table-fixed border-separate border-spacing-0">
+                                <thead>
+                                    <tr>
+                                        <th className="w-[28%] border-b border-r border-black/10 bg-white px-2 py-3 text-left align-top">
+                                            <span className="text-[8px] font-black uppercase tracking-[0.18em] text-black/45">Platforms</span>
+                                        </th>
+                                        <th className="w-[18%] border-b border-black/10 bg-black px-2 py-3 text-center align-top text-white">
+                                            <span className="text-[10px] font-black uppercase tracking-[0.08em]">Medusa</span>
+                                        </th>
+                                        <th className="w-[18%] border-b border-l border-black/10 bg-[#f5f5f5] px-2 py-3 text-center align-top">
+                                            <span className="text-[10px] font-black uppercase tracking-[0.08em] text-black/75">Shopify</span>
+                                        </th>
+                                        <th className="w-[18%] border-b border-l border-black/10 bg-[#f5f5f5] px-2 py-3 text-center align-top">
+                                            <span className="text-[9px] font-black uppercase tracking-[0.06em] text-black/75">Woo</span>
+                                        </th>
+                                        <th className="w-[18%] border-b border-l border-black/10 bg-[#f5f5f5] px-2 py-3 text-center align-top">
+                                            <span className="text-[10px] font-black uppercase tracking-[0.08em] text-black/75">Magento</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {Object.entries(COMPARISON_CONTENT).map(([key, row], index) => {
+                                        const isLastRow = index === Object.entries(COMPARISON_CONTENT).length - 1;
+                                        return (
+                                            <tr key={key}>
+                                                <td className={`border-r border-black/10 bg-white px-2 py-3 align-top ${!isLastRow ? "border-b border-black/10" : ""}`}>
+                                                    <p className="text-[9px] font-extrabold uppercase leading-4 tracking-[0.03em] text-black">
+                                                        {row.label}
+                                                    </p>
+                                                </td>
+                                                <td className={`bg-black px-2 py-3 align-top text-white ${!isLastRow ? "border-b border-white/10" : ""}`}>
+                                                    <p className="text-[10px] font-medium leading-[1.45] break-words">
+                                                        {row.medusa}
+                                                    </p>
+                                                </td>
+                                                <td className={`border-l border-black/10 bg-[#f5f5f5] px-2 py-3 align-top ${!isLastRow ? "border-b border-black/10" : ""}`}>
+                                                    <p className="text-[10px] leading-[1.45] break-words text-black/80">
+                                                        {row.shopify}
+                                                    </p>
+                                                </td>
+                                                <td className={`border-l border-black/10 bg-[#f5f5f5] px-2 py-3 align-top ${!isLastRow ? "border-b border-black/10" : ""}`}>
+                                                    <p className="text-[10px] leading-[1.45] break-words text-black/80">
+                                                        {row.woo}
+                                                    </p>
+                                                </td>
+                                                <td className={`border-l border-black/10 bg-[#f5f5f5] px-2 py-3 align-top ${!isLastRow ? "border-b border-black/10" : ""}`}>
+                                                    <p className="text-[10px] leading-[1.45] break-words text-black/80">
+                                                        {row.magento}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        );
+                                    })}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div className="relative mx-auto hidden max-w-6xl md:block">
+                        <div className="overflow-x-auto pb-8">
                             <table className="w-full min-w-[800px] border-separate border-spacing-0">
                                 <thead>
                                     <tr className="sticky top-0 z-20">
@@ -299,7 +382,7 @@ export default function MedusaPage() {
                                 </thead>
                                 <tbody>
                                     <ComparisonRow
-                                        label="Profit Retention"
+                                        label="Revenue Retention"
                                         medusa="💰 ₹0 transaction fees → keep maximum margin"
                                         shopify="💸 0.5%–2% per order loss"
                                         woo="💰 No fee but hidden plugin costs"
@@ -360,7 +443,7 @@ export default function MedusaPage() {
             </section>
 
             {/* Why Mithtech */}
-            <section className="py-24 border-b">
+            <section className="py-12 sm:py-24 border-b">
                 <div className="container mx-auto px-4">
                     <div className="text-center max-w-3xl mx-auto mb-20">
                         <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Why Mithtech for Medusa?</h2>
@@ -403,23 +486,25 @@ export default function MedusaPage() {
 }
 
 function ComparisonRow({ label, medusa, shopify, woo, magento, isLast }: any) {
+    const row = COMPARISON_CONTENT[label] ?? { label, medusa, shopify, woo, magento };
+
     return (
         <tr className="comparison-row group">
             <td className={`p-6 border-l border-b bg-white text-sm font-bold text-muted-foreground ${isLast ? 'rounded-bl-3xl' : ''}`}>
-                {label}
+                {row.label}
             </td>
             <td className="p-8 bg-black text-white text-center relative z-10 scale-[1.05] shadow-2xl transition-transform duration-300">
-                <span className="text-sm font-medium">{medusa}</span>
+                <span className="text-sm font-medium">{row.medusa}</span>
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/30" />
             </td>
             <td className="p-6 border-b bg-[#f5f5f5] text-center text-[#333] transition-colors duration-200 group-hover:bg-[#eee]">
-                <span className="text-sm">{shopify}</span>
+                <span className="text-sm">{row.shopify}</span>
             </td>
             <td className="p-6 border-b bg-[#f5f5f5] text-center text-[#333] transition-colors duration-200 group-hover:bg-[#eee]">
-                <span className="text-sm">{woo}</span>
+                <span className="text-sm">{row.woo}</span>
             </td>
             <td className={`p-6 border-b border-r bg-[#f5f5f5] text-center text-[#333] transition-colors duration-200 group-hover:bg-[#eee] ${isLast ? 'rounded-br-3xl' : ''}`}>
-                <span className="text-sm">{magento}</span>
+                <span className="text-sm">{row.magento}</span>
             </td>
         </tr>
     );
@@ -427,9 +512,9 @@ function ComparisonRow({ label, medusa, shopify, woo, magento, isLast }: any) {
 
 function CustomItem({ title, desc }: { title: string, desc: string }) {
     return (
-        <div className="custom-item p-8 rounded-[2rem] border border-white/10 bg-white/5 hover:bg-white transition-all duration-500 group">
-            <h4 className="font-extrabold text-2xl mb-4 text-white group-hover:text-black transition-colors uppercase">{title}</h4>
-            <p className="text-lg text-black/50 group-hover:text-black/70 transition-colors leading-loose">{desc}</p>
+        <div className="custom-item p-6 sm:p-8 rounded-[2rem] border border-black/[0.05] bg-white hover:border-black/10 hover:shadow-2xl hover:shadow-black/[0.03] transition-all duration-300 hover:-translate-y-1 group">
+            <h4 className="font-extrabold text-2xl mb-4 text-black transition-colors uppercase">{title}</h4>
+            <p className="text-lg text-black/60 transition-colors leading-loose">{desc}</p>
         </div>
     );
 }
@@ -448,14 +533,14 @@ function FeatureCard({ icon: Icon, title, description }: { icon: any, title: str
 
 function CommerceSolution({ icon: Icon, title, description, features }: { icon: any, title: string, description: string, features: string[] }) {
     return (
-        <div className="commerce-solution flex flex-col gap-8 p-10 rounded-[3.5rem] border border-black/[0.05] bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl group">
+        <div className="commerce-solution flex flex-col gap-8 p-6 sm:p-10 rounded-[3.5rem] border border-black/[0.05] bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl group min-h-full">
             <div className="w-14 h-14 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg group-hover:bg-white transition-colors">
                 <Icon className="w-7 h-7" />
             </div>
             <h3 className="text-2xl font-extrabold text-black tracking-tight uppercase group-hover:text-white transition-colors">{title}</h3>
             <p className="text-black/50 text-lg font-medium leading-loose group-hover:text-white/60 transition-colors italic">{description}</p>
 
-            <ul className="space-y-4 pt-6 border-t border-black/5 group-hover:border-white/10 transition-colors">
+            <ul className="space-y-4 pt-6 border-t border-black/5 group-hover:border-white/10 transition-colors mt-auto">
                 {features.map((f, i) => (
                     <li key={i} className="flex items-center gap-3 text-base font-medium text-black/70 group-hover:text-white/80 transition-colors">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#00aaff]" />

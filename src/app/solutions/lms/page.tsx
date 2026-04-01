@@ -66,13 +66,13 @@ export default function LMSSolution() {
                             <span className="h-1.5 w-1.5 rounded-full bg-[#00aaff] animate-pulse" />
                             <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Knowledge Empowerment</span>
                         </div>
-                        <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[1.1] uppercase">
-                            Learning <br /> 
+                        <h1 className="text-5xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[1.1] uppercase">
+                            Learning <br />
                             <span className="text-[#00aaff]">Management.</span>
                         </h1>
                         <p className="text-xl leading-loose text-black/50 max-w-3xl mx-auto mb-12 italic">
-                            Build a culture of continuous learning. Modern, scalable platforms 
-                            for employee onboarding, customer training, and professional 
+                            Build a culture of continuous learning. Modern, scalable platforms
+                            for employee onboarding, customer training, and professional
                             certification academies.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
@@ -155,20 +155,22 @@ export default function LMSSolution() {
             </section>
 
             {/* Use Cases */}
-            <section className="py-24 lg:py-32 border-y border-black/[0.05] bg-black text-white">
+            <section className="py-24 lg:py-32 bg-white">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-5xl font-extrabold tracking-tight text-center mb-20 uppercase">Learning for every scenario</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {[
-                            { title: "Employee Onboarding", desc: "Path to productivity with automated onboarding and compliance training." },
-                            { title: "Customer Education", desc: "Reduce support tickets and increase adoption with structured portals." },
-                            { title: "Professional Academy", desc: "Monetize your expertise with a fully-featured, branded online academy." },
-                        ].map((item, i) => (
-                            <div key={i} className="p-10 rounded-[3.5rem] border border-black/5 flex flex-col gap-6 text-center items-center group bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl">
-                                <h4 className="text-2xl font-extrabold text-black group-hover:text-white transition-colors uppercase">{item.title}</h4>
-                                <p className="text-lg font-medium text-black/40 leading-loose group-hover:text-white/50 transition-colors italic">{item.desc}</p>
-                            </div>
-                        ))}
+                    <div className="bg-black text-white rounded-[3rem] p-12 lg:p-24 border border-white/10 shadow-2xl overflow-hidden">
+                        <h2 className="text-5xl font-extrabold tracking-tight text-center mb-20 uppercase">Learning for every scenario</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-black">
+                            {[
+                                { title: "Employee Onboarding", desc: "Path to productivity with automated onboarding and compliance training." },
+                                { title: "Customer Education", desc: "Reduce support tickets and increase adoption with structured portals." },
+                                { title: "Professional Academy", desc: "Monetize your expertise with a fully-featured, branded online academy." },
+                            ].map((item, i) => (
+                                <div key={i} className="p-10 rounded-[3.5rem] border border-black/5 flex flex-col gap-6 text-center items-center group bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl">
+                                    <h4 className="text-2xl font-extrabold text-black group-hover:text-white transition-colors uppercase">{item.title}</h4>
+                                    <p className="text-lg font-medium text-black/40 leading-loose group-hover:text-white/50 transition-colors italic">{item.desc}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
@@ -176,7 +178,7 @@ export default function LMSSolution() {
             <CTASection
                 title="Empower your team with knowledge"
                 description="Our architects will design a learning infrastructure that transforms your institutional knowledge into a competitive advantage."
-                buttonText="Archive Your LMS"
+                buttonText="Architect Your LMS"
                 buttonHref="/contact"
             />
         </div>

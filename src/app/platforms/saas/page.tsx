@@ -121,16 +121,20 @@ export default function SaaSPage() {
         // Mobile Animations (Simpler)
         mm.add("(max-width: 767px)", () => {
             gsap.from(".hero-content > *", { opacity: 0, y: 20, stagger: 0.2, duration: 0.8 });
-            gsap.from(".product-card", {
-                scrollTrigger: {
-                    trigger: gridRef.current,
-                    start: "top 90%",
-                },
-                opacity: 0,
-                y: 30,
-                stagger: 0.1,
-                duration: 0.8
-            });
+            gsap.fromTo(".product-card", 
+                { opacity: 0, y: 30 },
+                {
+                    scrollTrigger: {
+                        trigger: gridRef.current,
+                        start: "top bottom-=50", // Trigger as soon as the grid enters the viewport
+                    },
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.1,
+                    duration: 0.8,
+                    ease: "power2.out"
+                }
+            );
         });
 
         return () => mm.revert();
@@ -139,7 +143,7 @@ export default function SaaSPage() {
     return (
         <div ref={containerRef} className="flex flex-col w-full bg-white overflow-hidden">
             {/* Hero Section */}
-            <section ref={heroRef} className="relative pt-24 pb-20 md:pt-32 md:pb-40 border-b overflow-hidden">
+            <section ref={heroRef} className="relative pt-12 pb-20 md:pt-16 md:pb-40 border-b overflow-hidden">
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(0,0,0,0.03)_0%,transparent_100%)]" />
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -z-10 bg-blob-1" />
                 <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -z-10 bg-blob-2" />
@@ -148,7 +152,7 @@ export default function SaaSPage() {
                     <span className="hero-tag text-sm font-bold tracking-[0.3em] text-muted-foreground uppercase mb-6 block">
                         PROPRIETARY PRODUCT ECOSYSTEM
                     </span>
-                    <h1 className="hero-title text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase">
+                    <h1 className="hero-title text-4xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase break-words">
                         MITHTECH <br />
                         <span className="text-[#00aaff]">SAAS SUITE</span>
                     </h1>
@@ -162,9 +166,34 @@ export default function SaaSPage() {
                     </div>
                 </div>
             </section>
+            
+            {/* Stats Section */}
+            <section className="py-12 border-b bg-black text-white relative overflow-hidden">
+                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(0,170,255,0.2),transparent_70%)]" />
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+                        <div className="text-center">
+                            <div className="text-4xl md:text-5xl font-black text-[#00aaff] mb-2 tracking-tighter">99.9%</div>
+                            <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/40">Uptime SLA</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-4xl md:text-5xl font-black text-[#00aaff] mb-2 tracking-tighter">500k+</div>
+                            <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/40">Active Users</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-4xl md:text-5xl font-black text-[#00aaff] mb-2 tracking-tighter">10k+</div>
+                            <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/40">Daily Events</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-4xl md:text-5xl font-black text-[#00aaff] mb-2 tracking-tighter">24/7</div>
+                            <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/40">Live Support</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* Product Showcase Grid */}
-            <section className="py-24 border-b">
+            <section className="py-12 sm:py-24 border-b">
                 <div className="container mx-auto px-4">
                     <div className="max-w-3xl mb-16">
                         <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Featured Products</h2>
@@ -224,7 +253,7 @@ export default function SaaSPage() {
             </section>
 
             {/* Why Our SaaS Section */}
-            <section ref={advantageRef} className="py-24 bg-muted/30 border-b">
+            <section ref={advantageRef} className="py-12 sm:py-24 bg-muted/30 border-b">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col lg:flex-row gap-16 items-center">
                         <div className="flex-1">
@@ -255,13 +284,13 @@ export default function SaaSPage() {
                                 />
                             </div>
                         </div>
-                        <div className="cloud-card flex-1 w-full bg-foreground border border-background/10 rounded-[3rem] p-16 text-background relative overflow-hidden group">
-                             <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                                <Rocket className="w-48 h-48" />
+                        <div className="cloud-card flex-1 w-full bg-foreground border border-background/10 rounded-[3rem] p-8 sm:p-16 text-background relative overflow-hidden group">
+                             <div className="absolute top-0 right-0 p-4 sm:p-8 opacity-[0.07] sm:opacity-10 group-hover:opacity-20 transition-opacity">
+                                <Rocket className="w-32 h-32 sm:w-48 sm:h-48" />
                              </div>
                              <div className="relative">
-                                <h3 className="text-6xl font-black tracking-tighter mb-6 leading-none italic">BORN IN THE <br /> CLOUD</h3>
-                                <p className="text-xl opacity-60 font-medium mb-12">Every Mithtech product is engineered for zero-maintenance and 99.9% availability.</p>
+                                <h3 className="text-4xl sm:text-6xl font-black tracking-tighter mb-6 leading-none italic uppercase">BORN IN THE <br /> CLOUD</h3>
+                                <p className="text-lg sm:text-xl opacity-60 font-medium mb-12">Every Mithtech product is engineered for zero-maintenance and 99.9% availability.</p>
                                 <ul className="space-y-4">
                                     <li className="flex items-center gap-3 font-bold text-sm uppercase tracking-widest"><div className="w-2 h-2 rounded-full bg-primary" /> Multi-Tenant Architecture</li>
                                     <li className="flex items-center gap-3 font-bold text-sm uppercase tracking-widest"><div className="w-2 h-2 rounded-full bg-primary" /> API-First Philosophy</li>
@@ -297,7 +326,7 @@ function AdvantageItem({ icon: Icon, title, desc }: { icon: any, title: string, 
 
 function ProductCard({ icon: Icon, logo, logoBg, title, tagline, description, products, stats, href }: { icon?: any, logo?: string, logoBg?: string, title: string, tagline: string, description: string, products: string[], stats: string, href?: string }) {
     return (
-        <div className="product-card flex flex-col gap-8 p-10 rounded-[3.5rem] border border-black/[0.05] bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl group">
+        <div className="product-card flex flex-col gap-8 p-6 sm:p-10 rounded-[3.5rem] border border-black/[0.05] bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl group min-h-full">
             <div className="flex justify-between items-start">
                 <div className={`w-20 h-20 rounded-2xl bg-white border border-black/[0.05] flex items-center justify-center group-hover:scale-110 transition-all duration-500 overflow-hidden p-4 shadow-sm group-hover:bg-white`}>
                     {logo ? (
@@ -321,7 +350,7 @@ function ProductCard({ icon: Icon, logo, logoBg, title, tagline, description, pr
             <div>
                 <span className="text-[10px] font-bold text-[#00aaff] uppercase tracking-[0.3em] mb-2 block">{tagline}</span>
                 <h3 className="text-3xl font-extrabold tracking-tight mb-4 text-black group-hover:text-white transition-colors uppercase">{title}</h3>
-                <p className="text-black/50 text-base leading-loose mb-8 h-20 line-clamp-3 group-hover:text-white/60 transition-colors italic">{description}</p>
+                <p className="text-black/50 text-base leading-loose mb-8 min-h-[7.5rem] group-hover:text-white/60 transition-colors italic">{description}</p>
                 
                 <div className="flex flex-wrap gap-2">
                     {products.map((p, i) => (
@@ -330,7 +359,7 @@ function ProductCard({ icon: Icon, logo, logoBg, title, tagline, description, pr
                 </div>
             </div>
 
-            <div className="pt-8 mt-auto border-t border-black/5 group-hover:border-white/10 flex items-center justify-between transition-colors">
+            <div className="pt-8 mt-auto border-t border-black/5 group-hover:border-white/10 flex items-center justify-between transition-colors mt-auto">
                 {href ? (
                     <Link href={href} className="flex items-center gap-2 text-sm font-black italic text-black group-hover:text-[#00aaff] transition-colors group/link">
                         View Product <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />

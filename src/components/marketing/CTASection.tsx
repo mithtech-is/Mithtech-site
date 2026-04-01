@@ -31,15 +31,15 @@ export function CTASection({ title, description, buttonText, buttonHref }: CTASe
                         <span className="h-1.5 w-1.5 rounded-full bg-[#00aaff] animate-pulse" />
                         <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Next Steps</span>
                     </div>
-                    
+
                     <h2 className="mb-8 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl uppercase leading-[1.1]">
                         {title}
                     </h2>
-                    
+
                     <p className="mx-auto mb-12 max-w-2xl text-lg leading-loose text-black/50 md:text-xl italic">
                         {description}
                     </p>
-                    
+
                     <div className="flex w-full items-center justify-center gap-x-6">
                         <Button asChild size="lg" className="group h-14 rounded-full bg-black px-10 text-lg font-bold text-white transition-all hover:bg-black/90 hover:scale-105 active:scale-95 shadow-2xl shadow-black/10">
                             <Link href={buttonHref}>

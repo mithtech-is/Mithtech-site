@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
-import { DEFS, SCENES } from '@/data/hubs';
+import React, { useEffect, useRef } from 'react';
+import { DEFS } from '@/data/hubs';
 
 interface ProductSelection {
   clusterId: string;
@@ -11,6 +11,9 @@ interface ProductSelection {
 }
 
 interface CustomCanvasProps {
+  scrollProg: number;
+  curScene: string;
+  curCI: number;
   onProductSelect?: (selection: ProductSelection) => void;
   onClusterSelect?: (selection: {
     clusterId: string;
@@ -19,6 +22,8 @@ interface CustomCanvasProps {
     icon: string;
     products: { name: string; description: string }[];
   }) => void;
+  onActiveClusterPosition?: (positionY: number | null) => void;
+  className?: string;
 }
 
 const CL_ANGS = [210, 150, 90, 330, 270, 30];
@@ -32,14 +37,19 @@ const HUB_R = 25, PORT_R = 5;
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 const ease = (t: number) => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
 
-export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onClusterSelect }) => {
+export const CustomCanvas: React.FC<CustomCanvasProps> = ({
+  scrollProg,
+  curScene,
+  curCI,
+  onProductSelect,
+  onClusterSelect,
+  onActiveClusterPosition,
+  className,
+}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [scrollProg, setScrollProg] = useState(0);
-  const [curScene, setCurScene] = useState('hero');
-  const [curCI, setCurCI] = useState(-1);
   const worldRef = useRef<{ WN: any[], WE: any[] }>({ WN: [], WE: [] });
   const camRef = useRef({ wx: 0, wy: 0, zoom: 0.8, twx: 0, twy: 0, tz: 0.8 });
-  const mouseRef = useRef({ x: 0, y: 0, vx: 0, vy: 0, px: 0, py: 0, ringX: 0, ringY: 0 });
+  const mouseRef = useRef({ x: 0, y: 0, vx: 0, vy: 0, px: 0, py: 0, ringX: 0, ringY: 0, active: false });
   const trailRef = useRef<any[]>([]);
   const draggingRef = useRef<any>(null);
   const hoveredRef = useRef<any>(null);
@@ -48,6 +58,7 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onC
   const particlesRef = useRef<any[]>([]);
   const faviconRef = useRef<HTMLImageElement | null>(null);
   const logosRef = useRef<Map<string, HTMLImageElement>>(new Map());
+  const lastClusterYRef = useRef<number | null>(null);
 
   // Cubic Bezier interpolation
   const getBezierPoint = (t: number, p0: any, p1: any, p2: any, p3: any) => {
@@ -76,13 +87,6 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onC
     }
     r.push([0.93, 0, 0, 0.5], [1.0, 0, 0, 0.5]);
     return r;
-  })();
-
-  const SCENES = (() => {
-    const s = [{ r: [0, 0.13], id: 'hero', name: 'Ecosystem', ci: -1 }];
-    DEFS.forEach((d, i) => s.push({ r: [0.13 + i * 0.13, 0.13 + i * 0.13 + 0.1], id: d.id, name: d.n, ci: i }));
-    s.push({ r: [0.93, 1.01], id: 'cta', name: 'Full Ecosystem', ci: -1 });
-    return s;
   })();
 
   const camTarget = (s: number) => {
@@ -328,20 +332,6 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onC
       }
     }));
 
-    const handleScroll = () => {
-      const ms = document.body.scrollHeight - window.innerHeight;
-      const prog = ms > 0 ? window.scrollY / ms : 0;
-      setScrollProg(prog);
-      for (const sc of SCENES) {
-        if (prog >= sc.r[0] && prog < sc.r[1]) {
-          setCurScene(sc.id);
-          setCurCI(sc.ci);
-          break;
-        }
-      }
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
     const handleResize = () => {
       if (!canvasRef.current) return;
       const cv = canvasRef.current;
@@ -434,6 +424,7 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onC
 
     const handleMouseMove = (e: MouseEvent) => {
       const mouse = mouseRef.current;
+      mouse.active = true;
       mouse.vx = e.clientX - mouse.x;
       mouse.vy = e.clientY - mouse.y;
       mouse.px = mouse.x; mouse.py = mouse.y;
@@ -453,6 +444,29 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onC
       if (trailRef.current.length > 38) trailRef.current.shift();
     };
     window.addEventListener('mousemove', handleMouseMove);
+
+    const handleMouseLeave = () => {
+      mouseRef.current.active = false;
+    };
+    window.addEventListener('mouseout', handleMouseLeave);
+
+    const handleTouchMove = (e: TouchEvent) => {
+      const touch = e.touches[0];
+      if (!touch) return;
+      mouseRef.current.x = touch.clientX;
+      mouseRef.current.y = touch.clientY;
+      mouseRef.current.ringX = touch.clientX;
+      mouseRef.current.ringY = touch.clientY;
+      mouseRef.current.active = true;
+    };
+
+    const handleTouchEnd = () => {
+      mouseRef.current.active = false;
+    };
+
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('touchstart', handleTouchMove, { passive: true });
+    window.addEventListener('touchend', handleTouchEnd, { passive: true });
 
     let animationId: number;
     const g = canvasRef.current?.getContext('2d');
@@ -478,13 +492,60 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onC
         y: (wy - cam.wy) * cam.zoom + H / 2
       });
 
-      // Dot grid
-      const gs = 48;
+      // Background grid
+      const isHeroScene = curScene === 'hero';
+      const isMobile = W < 768;
+      const gs = 24;
       const ox = ((-cam.wx * cam.zoom + W / 2) % gs + gs) % gs;
       const oy = ((-cam.wy * cam.zoom + H / 2) % gs + gs) % gs;
-      g.fillStyle = 'rgba(255,255,255,.022)';
-      for (let gx = ox - gs; gx < W + gs; gx += gs)
-        for (let gy = oy - gs; gy < H + gs; gy += gs) { g.beginPath(); g.arc(gx, gy, 0.6, 0, Math.PI * 2); g.fill(); }
+
+      g.save();
+      g.strokeStyle = isHeroScene ? 'rgba(255,255,255,0.18)' : 'rgba(255,255,255,0.08)';
+      g.lineWidth = 0.8;
+      for (let gx = ox - gs; gx < W + gs; gx += gs) {
+        g.beginPath();
+        g.moveTo(gx, 0);
+        g.lineTo(gx, H);
+        g.stroke();
+      }
+      for (let gy = oy - gs; gy < H + gs; gy += gs) {
+        g.beginPath();
+        g.moveTo(0, gy);
+        g.lineTo(W, gy);
+        g.stroke();
+      }
+      g.restore();
+
+      if (isHeroScene && (mouseRef.current.active || isMobile)) {
+        const glowX = mouseRef.current.active ? mouseRef.current.x : W / 2;
+        const glowY = mouseRef.current.active ? mouseRef.current.y : H * 0.44;
+        const glow = g.createRadialGradient(
+          glowX,
+          glowY,
+          0,
+          glowX,
+          glowY,
+          Math.min(W, H) * (isMobile ? 0.44 : 0.38)
+        );
+        glow.addColorStop(0, 'rgba(255,255,255,0.13)');
+        glow.addColorStop(0.28, 'rgba(255,255,255,0.08)');
+        glow.addColorStop(0.58, 'rgba(255,255,255,0.035)');
+        glow.addColorStop(1, 'rgba(255,255,255,0)');
+
+        g.save();
+        g.fillStyle = glow;
+        g.fillRect(0, 0, W, H);
+        g.restore();
+      }
+
+      if (isMobile) {
+        if (lastClusterYRef.current !== null) {
+          lastClusterYRef.current = null;
+          onActiveClusterPosition?.(null);
+        }
+        animationId = requestAnimationFrame(render);
+        return;
+      }
 
       // Physics & Hover
       const { WN, WE } = worldRef.current;
@@ -676,18 +737,34 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onC
         }
       });
 
+      if (curCI >= 0) {
+        const activeCluster = WN.find((node) => node.type === 'cluster' && node.ci === curCI);
+        if (activeCluster) {
+          const clusterScreen = w2s(activeCluster.wx, activeCluster.wy);
+          const clampedY = Math.max(144, Math.min(H - 144, clusterScreen.y));
+          if (lastClusterYRef.current === null || Math.abs(lastClusterYRef.current - clampedY) > 2) {
+            lastClusterYRef.current = clampedY;
+            onActiveClusterPosition?.(clampedY);
+          }
+        }
+      } else if (lastClusterYRef.current !== null) {
+        lastClusterYRef.current = null;
+        onActiveClusterPosition?.(null);
+      }
+
       // Trail and Cursor
       mouseRef.current.ringX = lerp(mouseRef.current.ringX, mouseRef.current.x, 0.14);
       mouseRef.current.ringY = lerp(mouseRef.current.ringY, mouseRef.current.y, 0.14);
       trailRef.current.forEach((t, i) => {
         t.life -= 0.038; if (t.life <= 0) return;
+        if (isHeroScene) return;
         g.save(); g.globalAlpha = t.life * 0.28 * (i / trailRef.current.length);
         g.fillStyle = 'rgba(255,255,255,.9)'; g.beginPath(); g.arc(t.x, t.y, t.sz * t.life, 0, Math.PI * 2); g.fill();
         g.restore();
       });
 
       // Draw Cursor (Dot & Ring)
-      if (W > 768) { // Only on desktop
+      if (W > 768 && !isHeroScene) { // Only on desktop, hidden in hero to keep just the glow
         const mx = mouseRef.current.x, my = mouseRef.current.y;
         const rx = mouseRef.current.ringX, ry = mouseRef.current.ringY;
 
@@ -711,18 +788,21 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({ onProductSelect, onC
     animationId = requestAnimationFrame(render);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
       cv.removeEventListener('mousedown', handleMouseDown);
       cv.removeEventListener('mouseup', handleMouseUp);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseout', handleMouseLeave);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchstart', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
       cancelAnimationFrame(animationId);
     };
-  }, [scrollProg, curScene, curCI, onClusterSelect, onProductSelect]);
+  }, [scrollProg, curScene, curCI, onActiveClusterPosition, onClusterSelect, onProductSelect]);
 
   return (
     <>
-      <canvas ref={canvasRef} id="c" className="fixed inset-0 w-screen h-screen z-0" />
+      <canvas ref={canvasRef} id="c" className={className ?? "fixed inset-0 z-0 h-screen w-screen"} />
     </>
   );
 };

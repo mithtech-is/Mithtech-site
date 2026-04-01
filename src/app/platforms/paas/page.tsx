@@ -34,7 +34,6 @@ export default function PaaSPage() {
     const containerRef = useRef<HTMLDivElement>(null);
     const featureGridRef = useRef<HTMLDivElement>(null);
     const solutionGridRef = useRef<HTMLDivElement>(null);
-    const devSectionRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
         const mm = gsap.matchMedia();
@@ -76,35 +75,7 @@ export default function PaaSPage() {
                 }
             );
 
-            // Developer Section
-            gsap.fromTo(".dev-content > *",
-                { autoAlpha: 0, x: -30 },
-                {
-                    scrollTrigger: {
-                        trigger: devSectionRef.current,
-                        start: "top bottom-=100",
-                    },
-                    autoAlpha: 1,
-                    x: 0,
-                    stagger: 0.15,
-                    duration: 0.8,
-                    ease: "power2.out"
-                }
-            );
-
-            gsap.fromTo(".dev-visual",
-                { autoAlpha: 0, scale: 0.8 },
-                {
-                    scrollTrigger: {
-                        trigger: devSectionRef.current,
-                        start: "top bottom-=150",
-                    },
-                    autoAlpha: 1,
-                    scale: 1,
-                    duration: 1.2,
-                    ease: "power3.out"
-                }
-            );
+            // Infrastructure Stack
         });
 
         return () => mm.revert();
@@ -113,13 +84,13 @@ export default function PaaSPage() {
     return (
         <div ref={containerRef} className="flex flex-col w-full bg-white overflow-hidden">
             {/* Hero Section */}
-            <section className="relative pt-24 pb-20 md:pt-32 md:pb-40 border-b overflow-hidden">
+            <section className="relative pt-12 pb-12 sm:pb-20 md:pt-16 md:pb-40 border-b overflow-hidden">
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(0,0,0,0.03)_0%,transparent_100%)]" />
                 <div className="container mx-auto px-4 hero-content">
                     <span className="text-sm font-bold tracking-[0.3em] text-muted-foreground uppercase mb-6 block">
                         PLATFORM INFRASTRUCTURE EXPERTS
                     </span>
-                    <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase">
+                    <h1 className="text-4xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase break-words">
                         PAAS <br />
                         <span className="text-[#00aaff]">ENGINEERING</span>
                     </h1>
@@ -135,7 +106,7 @@ export default function PaaSPage() {
             </section>
 
             {/* Why PaaS Section */}
-            <section className="py-24 bg-muted/30 border-b">
+            <section className="py-12 sm:py-24 bg-muted/30 border-b">
                 <div className="container mx-auto px-4">
                     <div className="max-w-3xl mb-16">
                         <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Zero-Ops Managed Infrastructure</h2>
@@ -169,7 +140,7 @@ export default function PaaSPage() {
             </section>
 
             {/* Solutions Section */}
-            <section className="py-24 border-b">
+            <section className="py-12 sm:py-24 border-b bg-white">
                 <div className="container mx-auto px-4">
                     <div className="text-center max-w-3xl mx-auto mb-20">
                         <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Our Infrastructure Stack</h2>
@@ -178,7 +149,7 @@ export default function PaaSPage() {
 
                     <div ref={solutionGridRef} className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                         {/* CloudPanel Card */}
-                        <div className="product-section flex flex-col gap-8 p-10 rounded-[3.5rem] border border-black/[0.05] bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl group">
+                        <div className="product-section flex flex-col gap-8 p-6 sm:p-10 rounded-[3.5rem] border border-black/[0.05] bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl group min-h-full">
                             <div className="flex justify-between items-start">
                                 <div className="w-16 h-16 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg group-hover:bg-white transition-colors overflow-hidden p-3 shadow-inner">
                                     <div className="relative w-full h-full">
@@ -207,7 +178,7 @@ export default function PaaSPage() {
                         </div>
 
                         {/* Coolify Card */}
-                        <div className="product-section flex flex-col gap-8 p-10 rounded-[3.5rem] border border-black/[0.05] bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl group">
+                        <div className="product-section flex flex-col gap-8 p-6 sm:p-10 rounded-[3.5rem] border border-black/[0.05] bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl group min-h-full">
                             <div className="flex justify-between items-start">
                                 <div className="w-16 h-16 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg group-hover:bg-white transition-colors overflow-hidden p-3 shadow-inner">
                                     <div className="relative w-full h-full">
@@ -238,27 +209,6 @@ export default function PaaSPage() {
                 </div>
             </section>
 
-            {/* Technical Detail */}
-            <section ref={devSectionRef} className="py-24 border-b bg-white text-black overflow-hidden relative">
-                <div className="container mx-auto px-4">
-                    <div className="flex flex-col lg:flex-row gap-16 items-center">
-                        <div className="flex-1 dev-content">
-                            <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 italic uppercase text-shadow-sm">Engineered for Devs</h2>
-                            <p className="text-xl text-black/50 mb-10 leading-loose italic">
-                                Our platform solutions focus on providing the absolute best developer experience, allowing your team to move from idea to production in minutes.
-                            </p>
-                            <div className="flex flex-wrap gap-4">
-                                <div className="px-4 py-2 rounded-full border border-black/10 font-mono text-xs tracking-wider text-black/40">VPC ISOLATION</div>
-                            </div>
-                        </div>
-                        <div className="dev-visual flex-1 w-full flex justify-center lg:justify-end">
-                            <div className="w-full max-w-sm aspect-square border border-background/10 rounded-full flex items-center justify-center p-12 bg-background/5 backdrop-blur-sm">
-                                <Activity className="w-48 h-48 opacity-10 animate-pulse" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <CTASection
                 title="Focus on your code, not servers"
@@ -284,7 +234,7 @@ function FeatureCard({ icon: Icon, title, description }: { icon: any, title: str
 
 function ProductSection({ icon: Icon, title, description, capabilities }: { icon: any, title: string, description: string, capabilities: string[] }) {
     return (
-        <div className="product-section flex flex-col gap-6 p-10 rounded-[2.5rem] border bg-card/40 hover:bg-card transition-all duration-500 group relative bg-background/50 backdrop-blur-sm">
+        <div className="product-section flex flex-col gap-6 p-6 sm:p-10 rounded-[2.5rem] border bg-card/40 hover:bg-card transition-all duration-500 group relative bg-background/50 backdrop-blur-sm min-h-full">
             <div className="flex items-center gap-5 mb-2">
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-background transition-colors">
                     <Icon className="w-7 h-7" />

@@ -24,7 +24,7 @@ function FeatureBox({ icon: Icon, title, description }: { icon: any; title: stri
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col gap-6 p-6 sm:p-8 rounded-[2rem] border border-black/[0.05] bg-white hover:border-[#00aaff]/20 hover:shadow-xl hover:shadow-[#00aaff]/5 transition-all duration-500 group min-h-full"
+            className="flex flex-col gap-6 p-8 rounded-[2rem] border border-black/[0.05] bg-white hover:border-[#00aaff]/20 hover:shadow-xl hover:shadow-[#00aaff]/5 transition-all duration-500 group"
         >
             <div className="w-14 h-14 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg shadow-black/5 group-hover:scale-110 transition-transform">
                 <Icon className="w-7 h-7" />
@@ -52,21 +52,21 @@ export default function ManufacturingPage() {
     return (
         <div className="flex flex-col w-full bg-white overflow-hidden">
             {/* Back Breadcrumb */}
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-32">
                 <Link href="/industries" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-black/40 hover:text-[#00aaff] transition-colors">
                     <ArrowLeft className="w-3 h-3" /> All Industries
                 </Link>
             </div>
 
             {/* Hero Section - Redesigned to White theme (Centered) */}
-            <section className="relative overflow-hidden bg-white pt-4 pb-12 sm:pb-20 lg:pt-6 lg:pb-32">
+            <section className="relative overflow-hidden bg-white pt-12 pb-20 lg:pt-16 lg:pb-32">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="max-w-4xl mx-auto text-center">
                         <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-black/[0.02] px-3 py-1 mb-8">
                             <span className="h-1.5 w-1.5 rounded-full bg-[#00aaff] animate-pulse" />
                             <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Sector: Manufacturing</span>
                         </div>
-                        <h1 className="text-3xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase break-words">
+                        <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase">
                             Make more. <br /> 
                             <span className="text-[#00aaff]">Waste less.</span>
                         </h1>
@@ -88,7 +88,7 @@ export default function ManufacturingPage() {
             </section>
 
             {/* Feature Grid */}
-            <section className="py-12 sm:py-24 border-y border-black/[0.05] bg-black/[0.01]">
+            <section className="py-20 lg:py-32 border-y border-black/[0.05] bg-black/[0.01]">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-20">
                         <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">End-to-end production control</h2>
@@ -104,7 +104,7 @@ export default function ManufacturingPage() {
             </section>
 
             {/* Use Cases - How We Build It */}
-            <section className="py-12 sm:py-24 lg:py-32 bg-white">
+            <section className="py-24 lg:py-32 bg-white">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="mb-20">
                         <h2 className="text-4xl font-extrabold tracking-tight text-black mb-8 uppercase">The Manufacturing OS</h2>
@@ -137,7 +137,7 @@ export default function ManufacturingPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="rounded-[2.5rem] border border-black/[0.05] bg-white p-6 sm:p-10 flex flex-col gap-8 shadow-sm hover:shadow-xl transition-all duration-500 min-h-full"
+                                className="rounded-[2.5rem] border border-black/[0.05] bg-white p-10 flex flex-col gap-8 shadow-sm hover:shadow-xl transition-all duration-500"
                             >
                                 <div className="w-14 h-14 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg shadow-black/5">
                                     <item.icon className="w-7 h-7" />
@@ -156,32 +156,30 @@ export default function ManufacturingPage() {
             </section>
 
             {/* Strategic Value Proposition */}
-            <section className="py-12 sm:py-24 lg:py-32 bg-white">
+            <section className="py-24 lg:py-32 border-y border-black/[0.05] bg-black text-white">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="bg-black text-white rounded-[3rem] p-6 sm:p-12 lg:p-24 border border-white/10 shadow-2xl overflow-hidden">
-                        <div className="flex flex-col lg:flex-row gap-20 items-center">
-                            <div className="flex-1">
-                                <h2 className="text-5xl font-extrabold mb-12 leading-tight tracking-tight">
-                                    Make More. <br /> <span className="text-[#00aaff]">Waste Less.</span>
-                                </h2>
-                                <p className="text-xl text-white/50 mb-12 max-w-md italic">Manufacturers on our platforms gain real-time visibility, leading to higher output and lower costs.</p>
-                                <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#00aaff] px-10 py-5 text-sm font-bold text-black transition-all hover:bg-[#00aaff]/80 hover:translate-y-[-2px] active:scale-95">
-                                    Optimise Your Plant
-                                </Link>
-                            </div>
-                            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 w-full">
-                                {[
-                                    { stat: "30%", label: "Increase in OEE within 6 months of deployment" },
-                                    { stat: "50%", label: "Reduction in manual planning time via automation" },
-                                    { stat: "25%", label: "Lower raw material costs through procurement sync" },
-                                    { stat: "100%", label: "Batch traceability—every component logged" },
-                                ].map((item, i) => (
-                                    <div key={i} className="border border-white/10 rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-10 flex flex-col justify-end bg-white/5 group hover:bg-white transition-all duration-500">
-                                        <div className="text-4xl sm:text-5xl font-extrabold text-white mb-3 group-hover:text-black transition-colors">{item.stat}</div>
-                                        <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-white/30 group-hover:text-black/40 transition-colors leading-tight">{item.label}</p>
-                                    </div>
-                                ))}
-                            </div>
+                    <div className="flex flex-col lg:flex-row gap-20 items-center">
+                        <div className="flex-1">
+                            <h2 className="text-5xl font-extrabold mb-12 leading-tight tracking-tight">
+                                Make More. <br /> <span className="text-[#00aaff]">Waste Less.</span>
+                            </h2>
+                            <p className="text-xl text-white/50 mb-12 max-w-md italic">Manufacturers on our platforms gain real-time visibility, leading to higher output and lower costs.</p>
+                            <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#00aaff] px-10 py-5 text-sm font-bold text-black transition-all hover:bg-[#00aaff]/80 hover:translate-y-[-2px] active:scale-95">
+                                Optimise Your Plant
+                            </Link>
+                        </div>
+                        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
+                            {[
+                                { stat: "30%", label: "Increase in OEE within 6 months of deployment" },
+                                { stat: "50%", label: "Reduction in manual planning time via automation" },
+                                { stat: "25%", label: "Lower raw material costs through procurement sync" },
+                                { stat: "100%", label: "Batch traceability—every component logged" },
+                            ].map((item, i) => (
+                                <div key={i} className="border border-white/10 rounded-[2rem] p-6 sm:p-10 flex flex-col justify-end bg-white/5 group hover:bg-white transition-all duration-500">
+                                    <div className="text-4xl sm:text-5xl font-extrabold text-white mb-3 group-hover:text-black transition-colors">{item.stat}</div>
+                                    <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-white/30 group-hover:text-black/40 transition-colors leading-tight">{item.label}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

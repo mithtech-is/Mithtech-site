@@ -27,13 +27,13 @@ export default function Platforms() {
                             <span className="h-1.5 w-1.5 rounded-full bg-[#00aaff] animate-pulse" />
                             <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">The Technology Stack</span>
                         </div>
-                        <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-10 leading-[0.9] uppercase">
-                            Enterprise <br /> 
+                        <h1 className="text-5xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-10 leading-[0.9] uppercase">
+                            Enterprise <br />
                             <span className="text-[#00aaff]">Platforms.</span>
                         </h1>
                         <p className="text-xl leading-loose text-black/50 max-w-3xl mx-auto mb-14 italic font-sans font-medium">
-                            We architect scalable technology ecosystems using world-class platforms. 
-                            Own your data, customize your workflows, and scale your business with 
+                            We architect scalable technology ecosystems using world-class platforms.
+                            Own your data, customize your workflows, and scale your business with
                             systems built for long-term reliability.
                         </p>
                         <div className="flex flex-wrap justify-center gap-6">
@@ -172,50 +172,52 @@ export default function Platforms() {
             </section>
 
             {/* Technical Excellence */}
-            <section className="py-24 lg:py-40 border-y border-black/[0.05] bg-black text-white">
+            <section className="py-24 lg:py-40 bg-white">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-col lg:flex-row gap-24 items-center">
-                        <div className="flex-1">
-                            <h2 className="text-5xl font-extrabold mb-16 leading-tight tracking-tight uppercase">
-                                The Technical <br /> <span className="text-[#00aaff]">Advantage.</span>
-                            </h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                                <TechPoint
-                                    icon={Code2}
-                                    title="Clean Architecture"
-                                    description="We follow strict engineering standards ensuring maintainable and scalable systems."
-                                />
-                                <TechPoint
-                                    icon={Database}
-                                    title="Data Ownership"
-                                    description="All platforms allow full data ownership and self-hosting capabilities."
-                                />
-                                <TechPoint
-                                    icon={Globe}
-                                    title="Cloud Neutral"
-                                    description="Deploy across AWS, GCP, Azure or your own infrastructure."
-                                />
-                                <TechPoint
-                                    icon={Wrench}
-                                    title="Deep Customization"
-                                    description="We build custom modules and integrations tailored to business workflows."
-                                />
-                            </div>
-                        </div>
-                        <div className="flex-none w-full lg:w-[480px] bg-white/5 border border-white/10 rounded-[3rem] p-16 aspect-square flex flex-col justify-center lg:ml-auto">
-                            <div className="space-y-16">
-                                <div>
-                                    <div className="text-8xl font-black text-[#00aaff] mb-4">0%</div>
-                                    <p className="text-xs font-bold uppercase tracking-[0.3em] text-white/40">
-                                        Vendor Lock-in
-                                    </p>
+                    <div className="bg-black text-white rounded-[3rem] p-12 lg:p-24 border border-white/10 shadow-2xl overflow-hidden">
+                        <div className="flex flex-col lg:flex-row gap-24 items-center">
+                            <div className="flex-1">
+                                <h2 className="text-5xl font-extrabold mb-16 leading-tight tracking-tight uppercase text-white">
+                                    The Technical <br /> <span className="text-[#00aaff]">Advantage.</span>
+                                </h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                                    <TechPoint
+                                        icon={Code2}
+                                        title="Clean Architecture"
+                                        description="We follow strict engineering standards ensuring maintainable and scalable systems."
+                                    />
+                                    <TechPoint
+                                        icon={Database}
+                                        title="Data Ownership"
+                                        description="All platforms allow full data ownership and self-hosting capabilities."
+                                    />
+                                    <TechPoint
+                                        icon={Globe}
+                                        title="Cloud Neutral"
+                                        description="Deploy across AWS, GCP, Azure or your own infrastructure."
+                                    />
+                                    <TechPoint
+                                        icon={Wrench}
+                                        title="Deep Customization"
+                                        description="We build custom modules and integrations tailored to business workflows."
+                                    />
                                 </div>
-                                <div className="h-px bg-white/10 w-full" />
-                                <div>
-                                    <div className="text-8xl font-black text-white mb-4">∞</div>
-                                    <p className="text-xs font-bold uppercase tracking-[0.3em] text-white/40">
-                                        Scalability Potential
-                                    </p>
+                            </div>
+                            <div className="flex-none w-full lg:w-[480px] bg-white/5 border border-white/10 rounded-[3rem] p-16 aspect-square flex flex-col justify-center lg:ml-auto">
+                                <div className="space-y-16">
+                                    <div>
+                                        <div className="text-8xl font-black text-[#00aaff] mb-4 tracking-tighter">0%</div>
+                                        <p className="text-xs font-bold uppercase tracking-[0.3em] text-white/40 leading-none">
+                                            Vendor Lock-in
+                                        </p>
+                                    </div>
+                                    <div className="h-px bg-white/10 w-full" />
+                                    <div>
+                                        <div className="text-8xl font-black text-white mb-4 tracking-tighter">∞</div>
+                                        <p className="text-xs font-bold uppercase tracking-[0.3em] text-white/40 leading-none">
+                                            Scalability Potential
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

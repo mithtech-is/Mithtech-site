@@ -66,12 +66,12 @@ export default function MarketingAutomationSolution() {
                             <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Omnichannel Growth</span>
                         </div>
                         <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[1.1] uppercase">
-                            Marketing <br /> 
+                            Marketing <br />
                             <span className="text-[#00aaff]">Automation.</span>
                         </h1>
                         <p className="text-xl leading-loose text-black/50 max-w-3xl mx-auto mb-12 italic">
-                            Engage your audience at the perfect moment. Automated, 
-                            data-driven marketing workflows that scale your reach 
+                            Engage your audience at the perfect moment. Automated,
+                            data-driven marketing workflows that scale your reach
                             without scaling your manual effort.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
@@ -164,21 +164,25 @@ export default function MarketingAutomationSolution() {
             </section>
 
             {/* Performance Metrics */}
-            <section className="py-24 lg:py-32 border-y border-black/[0.05] bg-black text-white">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-4xl font-extrabold tracking-tight text-white mb-20 tracking-tighter uppercase">Performance Metrics</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                        <div className="group p-12 rounded-[3.5rem] bg-white border border-black/5 hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl">
-                            <div className="text-7xl font-extrabold text-[#00aaff] mb-4 group-hover:text-white transition-colors tracking-tighter">3x</div>
-                            <p className="text-xs font-bold uppercase tracking-[0.3em] text-black/30 group-hover:text-white/40 transition-colors leading-tight">Lead Volume Growth</p>
-                        </div>
-                        <div className="group p-12 rounded-[3.5rem] bg-white border border-black/5 hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl">
-                            <div className="text-7xl font-extrabold text-black mb-4 group-hover:text-white transition-colors tracking-tighter">45%</div>
-                            <p className="text-xs font-bold uppercase tracking-[0.3em] text-black/30 group-hover:text-white/40 transition-colors leading-tight">Higher CTR Avg</p>
-                        </div>
-                        <div className="group p-12 rounded-[3.5rem] bg-white border border-black/5 hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl">
-                            <div className="text-7xl font-extrabold text-[#00aaff] mb-4 group-hover:text-white transition-colors tracking-tighter">-60%</div>
-                            <p className="text-xs font-bold uppercase tracking-[0.2em] text-black/30 group-hover:text-white/40 transition-colors leading-tight">Manual Effort Saved</p>
+            <section className="py-24 lg:py-32 bg-white">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="bg-black text-white rounded-[3rem] p-12 lg:p-24 border border-white/10 shadow-2xl overflow-hidden">
+                        <div className="text-center">
+                            <h2 className="text-4xl font-extrabold tracking-tight text-white mb-20 tracking-tighter uppercase">Performance Metrics</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-black">
+                                <div className="group p-12 rounded-[3.5rem] bg-white border border-black/5 hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl">
+                                    <div className="text-7xl font-extrabold text-[#00aaff] mb-4 group-hover:text-white transition-colors tracking-tighter">3x</div>
+                                    <p className="text-xs font-bold uppercase tracking-[0.3em] text-black/30 group-hover:text-white/40 transition-colors leading-tight">Lead Volume Growth</p>
+                                </div>
+                                <div className="group p-12 rounded-[3.5rem] bg-white border border-black/5 hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl">
+                                    <div className="text-7xl font-extrabold text-black mb-4 group-hover:text-white transition-colors tracking-tighter">45%</div>
+                                    <p className="text-xs font-bold uppercase tracking-[0.3em] text-black/30 group-hover:text-white/40 transition-colors leading-tight">Higher CTR Avg</p>
+                                </div>
+                                <div className="group p-12 rounded-[3.5rem] bg-white border border-black/5 hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl">
+                                    <div className="text-7xl font-extrabold text-[#00aaff] mb-4 group-hover:text-white transition-colors tracking-tighter">-60%</div>
+                                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-black/30 group-hover:text-white/40 transition-colors leading-tight">Manual Effort Saved</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

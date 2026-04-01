@@ -22,14 +22,14 @@ export default function Solutions() {
     return (
         <div className="flex flex-col w-full bg-white overflow-hidden">
             {/* Hero Section */}
-            <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-white pt-32 pb-20 lg:pt-40 lg:pb-32 border-b border-black/[0.05]">
+            <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-white pt-12 pb-20 lg:pt-16 lg:pb-32 border-b border-black/[0.05]">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="max-w-4xl mx-auto text-center">
                         <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-black/[0.02] px-3 py-1 mb-8">
                             <span className="h-1.5 w-1.5 rounded-full bg-[#00aaff] animate-pulse" />
                             <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Enterprise Ecosystems</span>
                         </div>
-                        <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-10 leading-[0.9] uppercase">
+                        <h1 className="text-5xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-10 leading-[0.9] uppercase">
                             Systems that <br /> 
                             <span className="text-[#00aaff]">Scale with You.</span>
                         </h1>

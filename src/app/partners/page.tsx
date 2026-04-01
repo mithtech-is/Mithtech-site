@@ -162,12 +162,12 @@ export default function Partners() {
                             <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Global Network</span>
                         </div>
                         <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[1.1] uppercase">
-                            Partner With <br /> 
+                            Partner With <br />
                             <span className="text-[#00aaff]">Mithtech.</span>
                         </h1>
                         <p className="text-xl leading-loose text-black/50 max-w-3xl mx-auto mb-12 italic">
-                            Join our network of resellers and system integrators. Deliver 
-                            world-class enterprise solutions with our technical support 
+                            Join our network of resellers and system integrators. Deliver
+                            world-class enterprise solutions with our technical support
                             and white-label options.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">

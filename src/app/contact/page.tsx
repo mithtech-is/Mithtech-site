@@ -96,14 +96,14 @@ export default function Contact() {
     return (
         <div className="flex flex-col w-full bg-white overflow-hidden">
             {/* Back Breadcrumb */}
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-32">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12">
                 <Link href="/" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-black/40 hover:text-[#00aaff] transition-colors">
                     <ArrowLeft className="w-3 h-3" /> Home
                 </Link>
             </div>
 
             {/* HERO Section */}
-            <section className="relative overflow-hidden bg-white pt-12 pb-20 lg:pt-16 lg:pb-40 border-b border-black/[0.05]">
+            <section className="relative overflow-hidden bg-white pt-4 pb-20 lg:pt-6 lg:pb-40 border-b border-black/[0.05]">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="max-w-4xl mx-auto text-center">
                         <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-black/[0.02] px-3 py-1 mb-8">

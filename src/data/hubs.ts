@@ -15,6 +15,13 @@ export interface HubCluster {
   prods: HubProduct[];
 }
 
+export interface HubScene {
+  r: [number, number];
+  id: string;
+  name: string;
+  ci: number;
+}
+
 export const DEFS: HubCluster[] = [
   {
     id: 'crm', n: 'CRM & Sales', icon: '/assets/crm.svg',
@@ -92,11 +99,38 @@ export const DEFS: HubCluster[] = [
   },
 ];
 
-export const getScenes = (defs: HubCluster[]) => {
-  const s = [{ r: [0, 0.13], id: 'hero', name: 'Ecosystem', ci: -1 }];
-  defs.forEach((d, i) => s.push({ r: [0.13 + i * 0.13, 0.13 + i * 0.13 + 0.1], id: d.id, name: d.n, ci: i }));
+export const getScenes = (defs: HubCluster[]): HubScene[] => {
+  const heroEnd = 0.1;
+  const s: HubScene[] = [{ r: [0, heroEnd], id: 'hero', name: 'Ecosystem', ci: -1 }];
+  defs.forEach((d, i) => s.push({ r: [heroEnd + i * 0.13, heroEnd + i * 0.13 + 0.1], id: d.id, name: d.n, ci: i }));
   s.push({ r: [0.93, 1.01], id: 'cta', name: 'Full Ecosystem', ci: -1 });
   return s;
 };
 
 export const SCENES = getScenes(DEFS);
+
+export const resolveScene = (prog: number, scenes: HubScene[] = SCENES) => {
+  if (!scenes.length) return null;
+
+  if (prog <= scenes[0].r[1]) {
+    return scenes[0];
+  }
+
+  for (let i = scenes.length - 1; i >= 0; i -= 1) {
+    if (prog >= scenes[i].r[0]) {
+      return scenes[i];
+    }
+  }
+
+  return scenes[0];
+};
+
+export const getSceneScrollProgress = (prog: number, sceneId: string, scenes: HubScene[] = SCENES) => {
+  const index = scenes.findIndex((scene) => scene.id === sceneId);
+  if (index === -1) return 0;
+
+  const start = scenes[index].r[0];
+  const end = index < scenes.length - 1 ? scenes[index + 1].r[0] : scenes[index].r[1];
+  const span = Math.max(end - start, 0.0001);
+  return Math.max(0, Math.min(1, (prog - start) / span));
+};

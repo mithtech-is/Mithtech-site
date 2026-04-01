@@ -19,6 +19,7 @@ import {
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -111,13 +112,13 @@ export default function WordPressPage() {
     return (
         <div ref={containerRef} className="flex flex-col w-full bg-white overflow-hidden">
             {/* Hero Section */}
-            <section className="relative pt-24 pb-20 md:pt-32 md:pb-40 border-b overflow-hidden">
+            <section className="relative pt-12 pb-12 md:pt-16 md:pb-24 border-b overflow-hidden">
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(0,0,0,0.03)_0%,transparent_100%)]" />
                 <div className="container mx-auto px-4 hero-content">
                     <span className="text-sm font-bold tracking-[0.3em] text-muted-foreground uppercase mb-6 block">
                         ENTERPRISE CONTENT ECOSYSTEMS
                     </span>
-                    <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase">
+                    <h1 className="text-4xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase break-words">
                         WORDPRESS <br />
                         <span className="text-[#00aaff]">EXPERTS</span>
                     </h1>
@@ -133,7 +134,7 @@ export default function WordPressPage() {
             </section>
 
             {/* Why WordPress Section */}
-            <section className="py-24 bg-muted/30 border-b">
+            <section className="py-12 sm:py-24 bg-muted/30 border-b">
                 <div className="container mx-auto px-4">
                     <div className="max-w-3xl mb-16">
                         <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">The World's Most Powerful CMS</h2>
@@ -167,7 +168,7 @@ export default function WordPressPage() {
             </section>
 
             {/* WP Solutions Section */}
-            <section className="py-24 border-b">
+            <section className="py-12 sm:py-24 border-b bg-white">
                 <div className="container mx-auto px-4">
                     <div className="text-center max-w-3xl mx-auto mb-20">
                         <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Enterprise WordPress Solutions</h2>
@@ -215,45 +216,6 @@ export default function WordPressPage() {
                 </div>
             </section>
 
-            {/* Trust Section */}
-            <section ref={trustSectionRef} className="py-24 border-b bg-foreground text-background overflow-hidden">
-                <div className="container mx-auto px-4">
-                    <div className="flex flex-col lg:flex-row gap-16 items-center">
-                        <div className="flex-1 trust-content">
-                            <h2 className="text-5xl font-extrabold tracking-tight text-white mb-8 italic uppercase">Built for Reliability</h2>
-                            <p className="text-xl text-white/50 mb-10 leading-loose italic">
-                                Our enterprise WordPress stack is designed to handle millions of visitors while maintaining 99.9% uptime and top-tier security.
-                            </p>
-                            <ul className="space-y-6">
-                                <li className="flex gap-4">
-                                    <ShieldCheck className="w-6 h-6 text-primary shrink-0" />
-                                    <div>
-                                        <h4 className="font-bold text-lg">Managed Security</h4>
-                                        <p className="text-sm text-background/60">Automated updates, constant threat scanning, and deep level hardening.</p>
-                                    </div>
-                                </li>
-                                <li className="flex gap-4">
-                                    <Globe className="w-6 h-6 text-primary shrink-0" />
-                                    <div>
-                                        <h4 className="font-bold text-lg">Global Content Delivery</h4>
-                                        <p className="text-sm text-background/60">Global CDN integration ensuring fast access for users anywhere in the world.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="trust-visual flex-1 w-full bg-background/5 border border-background/10 rounded-3xl p-12 backdrop-blur-sm">
-                             <div className="relative">
-                                <div className="text-center">
-                                    <div className="text-8xl font-black mb-4 tracking-tighter opacity-10">WP</div>
-                                    <div className="text-2xl font-bold italic mb-4">Optimized for Conversion</div>
-                                    <p className="text-background/60 italic">Because a beautiful site that is slow doesn't convert.</p>
-                                </div>
-                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <CTASection 
                 title="Own your digital presence" 
                 description="Scale your content and reach without being tied to restrictive platforms. Let's build your enterprise WordPress solution."
@@ -278,13 +240,13 @@ function FeatureCard({ icon: Icon, title, description }: { icon: any, title: str
 
 function SolutionCategory({ icon: Icon, title, description, features }: { icon: any, title: string, description: string, features: string[] }) {
     return (
-        <div className="solution-category flex flex-col gap-8 p-10 rounded-[3.5rem] border border-black/[0.05] bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl group">
+        <div className="solution-category flex flex-col gap-8 p-6 sm:p-10 rounded-[3.5rem] border border-black/[0.05] bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl group min-h-full">
             <div className="w-14 h-14 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg group-hover:bg-white transition-colors">
                 <Icon className="w-7 h-7" />
             </div>
             <h3 className="text-2xl font-extrabold text-black tracking-tight uppercase group-hover:text-white transition-colors">{title}</h3>
             <p className="text-black/50 text-lg font-medium leading-loose group-hover:text-white/60 transition-colors italic">{description}</p>
-            <ul className="space-y-4 pt-6 border-t border-black/5 group-hover:border-white/10 transition-colors">
+            <ul className="space-y-4 pt-6 border-t border-black/5 group-hover:border-white/10 transition-colors mt-auto">
                 {features.map((f, i) => (
                     <li key={i} className="flex items-center gap-3 text-base font-medium text-black/70 group-hover:text-white/80 transition-colors">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#00aaff]" />

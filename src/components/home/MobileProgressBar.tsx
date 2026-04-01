@@ -2,12 +2,12 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  Users, 
-  Megaphone, 
-  ShoppingCart, 
-  MessageSquare, 
-  BarChart3, 
+import {
+  Users,
+  Megaphone,
+  ShoppingCart,
+  MessageSquare,
+  BarChart3,
   Zap,
   LucideIcon
 } from "lucide-react";
@@ -35,9 +35,9 @@ export const MobileProgressBar: React.FC<MobileProgressBarProps> = ({
     <motion.div
       initial={{ opacity: 0, y: -20 }}
       animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
-      className="fixed top-20 inset-x-0 z-40 mx-auto w-[90%] px-4 md:hidden"
+      className="fixed top-[88px] inset-x-0 z-40 mx-auto w-full px-6 md:hidden"
     >
-      <div className="relative flex items-center justify-between">
+      <div className="relative flex items-center justify-between max-w-[400px] mx-auto">
         {/* Background Line */}
         <div className="absolute left-0 top-1/2 h-[1px] w-full -translate-y-1/2 bg-white/10" />
         
@@ -58,17 +58,17 @@ export const MobileProgressBar: React.FC<MobileProgressBarProps> = ({
             <div key={item.id} className="relative z-10 flex flex-col items-center">
               <motion.div
                 animate={{
-                  scale: isCurrent ? 1.2 : 1,
+                  scale: isCurrent ? 1.15 : 1,
                   backgroundColor: isCurrent ? "rgba(255, 255, 255, 1)" : isActive ? "rgba(255, 255, 255, 0.8)" : "rgba(255, 255, 255, 0.05)",
-                  boxShadow: isCurrent ? "0 0 15px rgba(255, 255, 255, 0.5)" : "none",
+                  boxShadow: isCurrent ? "0 0 20px rgba(255, 255, 255, 0.4)" : "none",
                 }}
                 className={cn(
-                  "flex h-8 w-8 items-center justify-center rounded-full border transition-colors",
+                  "flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border transition-colors",
                   isActive ? "border-white" : "border-white/10"
                 )}
               >
                 <Icon className={cn(
-                    "h-3.5 w-3.5 transition-colors",
+                    "h-3 w-3 sm:h-3.5 sm:w-3.5 transition-colors",
                     isCurrent ? "text-black" : isActive ? "text-black" : "text-white/20"
                 )} />
               </motion.div>
@@ -77,5 +77,6 @@ export const MobileProgressBar: React.FC<MobileProgressBarProps> = ({
         })}
       </div>
     </motion.div>
+
   );
 };

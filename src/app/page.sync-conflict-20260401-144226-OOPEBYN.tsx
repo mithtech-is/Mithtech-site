@@ -278,7 +278,7 @@ export default function Home() {
           onClick={() => setSelectedProduct(null)}
         >
           <div
-            className="relative flex max-h-[min(84vh,46rem)] w-full max-w-2xl touch-pan-y flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-[#111111] p-5 text-white shadow-2xl sm:p-8"
+            className="relative w-full max-w-2xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#111111] p-6 text-white shadow-2xl sm:p-8"
             onClick={(event) => event.stopPropagation()}
           >
             <button
@@ -290,72 +290,67 @@ export default function Home() {
               <X className="h-4 w-4" />
             </button>
 
-            <div className="min-h-0 pr-1 sm:pr-2">
-              <div className="mb-4 flex items-start gap-3 pr-12 sm:mb-6 sm:gap-5">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-2.5 sm:h-20 sm:w-20 sm:p-3">
-                  <Image
-                    src={selectedProduct.icon}
-                    alt={selectedProduct.title}
-                    width={56}
-                    height={56}
-                    className="h-auto w-auto max-h-12 object-contain sm:max-h-14"
-                  />
-                </div>
-                <div className="min-w-0">
-                  <div className="mb-2 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">
-                    {selectedProduct.category}
-                  </div>
-                  <h2 className="text-xl font-bold tracking-tight text-white sm:text-3xl">
-                    {selectedProduct.title}
-                  </h2>
-                  <p className="mt-1.5 text-[13px] leading-relaxed text-white/55 sm:mt-2 sm:text-base">
-                    {selectedProduct.description}
-                  </p>
-                </div>
+            <div className="mb-6 flex items-start gap-4 pr-12 sm:gap-5">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-3 sm:h-20 sm:w-20">
+                <Image
+                  src={selectedProduct.icon}
+                  alt={selectedProduct.title}
+                  width={56}
+                  height={56}
+                  className="h-auto w-auto max-h-12 object-contain sm:max-h-14"
+                />
               </div>
-
-              <div
-                className="max-h-[18vh] overflow-y-auto overscroll-contain pr-1"
-                onWheel={(event) => event.stopPropagation()}
-              >
-                <p className="text-[13px] leading-6 text-white/70 sm:text-[15px] sm:leading-6">
-                  {selectedProduct.longDescription}
+              <div className="min-w-0">
+                <div className="mb-2 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">
+                  {selectedProduct.category}
+                </div>
+                <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                  {selectedProduct.title}
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed text-white/55 sm:text-base">
+                  {selectedProduct.description}
                 </p>
               </div>
+            </div>
 
-              <div className={`mt-4 grid gap-2 ${selectedProduct.type === "cluster" ? "sm:grid-cols-2" : "sm:grid-cols-3"}`}>
-                {selectedProduct.features.map((feature) => (
-                  <div
-                    key={feature}
-                    className="rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-[13px] text-white/75"
-                  >
-                    {feature}
-                  </div>
-                ))}
-              </div>
+            <div className="max-h-[22vh] overflow-y-auto pr-3 scrollbar-thin scrollbar-thumb-white/10 hover:scrollbar-thumb-white/20 transition-all custom-scrollbar">
+              <p className="text-sm leading-7 text-white/70 sm:text-base">
+                {selectedProduct.longDescription}
+              </p>
+            </div>
 
-              <div className="mt-5 flex flex-col gap-2.5 sm:flex-row">
-                <Button asChild className="h-12 min-h-[48px] w-full rounded-full border border-black bg-white text-black hover:bg-white/90 sm:w-auto">
-                  <Link href="/contact">
-                    Contact Us <ArrowRight className="ml-2 h-4 w-4" />
+            <div className={`mt-6 grid gap-3 ${selectedProduct.type === "cluster" ? "sm:grid-cols-2" : "sm:grid-cols-3"}`}>
+              {selectedProduct.features.map((feature) => (
+                <div
+                  key={feature}
+                  className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/75"
+                >
+                  {feature}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button asChild className="h-12 min-h-[48px] w-full rounded-full border border-black bg-white text-black hover:bg-white/90 sm:w-auto">
+                <Link href="/contact">
+                  Contact Us <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              {selectedProduct.type === "product" && selectedProduct.slug && (
+                <Button asChild variant="secondary" className="h-12 min-h-[48px] w-full rounded-full bg-white/10 text-white hover:bg-white/20 sm:w-auto">
+                  <Link href={`/products/${selectedProduct.slug}`}>
+                    View Details <ExternalLink className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                {selectedProduct.type === "product" && selectedProduct.slug && (
-                  <Button asChild variant="secondary" className="h-12 min-h-[48px] w-full rounded-full bg-white/10 text-white hover:bg-white/20 sm:w-auto">
-                    <Link href={`/products/${selectedProduct.slug}`}>
-                      View Details <ExternalLink className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                )}
-                <Button
-                  type="button"
-                  variant="outline"
-                  className="h-12 min-h-[48px] w-full rounded-full border-white/15 bg-transparent text-white hover:bg-white/5 hover:text-white sm:w-auto"
-                  onClick={() => setSelectedProduct(null)}
-                >
-                  Continue Exploring
-                </Button>
-              </div>
+              )}
+              <Button
+                type="button"
+                variant="outline"
+                className="h-12 min-h-[48px] w-full rounded-full border-white/15 bg-transparent text-white hover:bg-white/5 hover:text-white sm:w-auto"
+                onClick={() => setSelectedProduct(null)}
+              >
+                Continue Exploring
+              </Button>
             </div>
           </div>
         </div>

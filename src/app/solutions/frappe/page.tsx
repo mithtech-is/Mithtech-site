@@ -79,12 +79,12 @@ export default function FrappeSolution() {
                             <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Enterprise Resource Planning</span>
                         </div>
                         <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[1.1] uppercase">
-                            Frappe & <br /> 
+                            Frappe & <br />
                             <span className="text-[#00aaff]">ERPNext.</span>
                         </h1>
                         <p className="text-xl leading-loose text-black/50 max-w-3xl mx-auto mb-12 italic">
-                            The world's most versatile, scalable, and customizable enterprise 
-                            framework. Consolidate your entire operation into a single, 
+                            The world's most versatile, scalable, and customizable enterprise
+                            framework. Consolidate your entire operation into a single,
                             cohesive platform built for the future.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">

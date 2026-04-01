@@ -66,13 +66,13 @@ export default function AnalyticsSolution() {
                             <span className="h-1.5 w-1.5 rounded-full bg-[#00aaff] animate-pulse" />
                             <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Data Intelligence & BI</span>
                         </div>
-                        <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[1.1] uppercase">
-                            Analytics & <br /> 
+                        <h1 className="text-5xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[1.1] uppercase">
+                            Analytics & <br />
                             <span className="text-[#00aaff]">Business BI.</span>
                         </h1>
                         <p className="text-xl leading-loose text-black/50 max-w-3xl mx-auto mb-12 italic">
-                            Unlock the story your data is telling. Enterprise-grade business 
-                            intelligence, real-time visualization, and bespoke reporting 
+                            Unlock the story your data is telling. Enterprise-grade business
+                            intelligence, real-time visualization, and bespoke reporting
                             dashboards designed for certainty.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
@@ -167,30 +167,32 @@ export default function AnalyticsSolution() {
             </section>
 
             {/* Strategic Value Proposition */}
-            <section className="py-24 lg:py-32 border-y border-black/[0.05] bg-black text-white">
+            <section className="py-24 lg:py-32 bg-white">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-col lg:flex-row gap-20 items-center">
-                        <div className="flex-1">
-                            <h2 className="text-5xl font-extrabold mb-12 leading-tight tracking-tight">
-                                Decisions <br />Made with <br /><span className="text-[#00aaff]">Certainty.</span>
-                            </h2>
-                            <p className="text-xl text-white/50 mb-12 max-w-md italic">Our analytics architecture doesn't just show data—it provides clarity for your most critical business moves.</p>
-                            <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#00aaff] px-10 py-5 text-sm font-bold text-black transition-all hover:bg-[#00aaff]/80 hover:translate-y-[-2px] active:scale-95">
-                                Request a Demo
-                            </Link>
-                        </div>
-                        <div className="flex-1 grid grid-cols-2 gap-8">
-                            {[
-                                { stat: "95%", label: "Better accuracy in financial forecasting" },
-                                { stat: "40%", label: "Reduction in manual reporting tasks" },
-                                { stat: "10x", label: "Faster time-to-insight for managers" },
-                                { stat: "100%", label: "Ownership of your business intelligence" },
-                            ].map((item, i) => (
-                                <div key={i} className="group border border-white/10 rounded-[2.5rem] p-10 flex flex-col justify-end bg-white/5 hover:bg-white transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl">
-                                    <div className="text-5xl font-extrabold text-white mb-3 group-hover:text-black transition-colors">{item.stat}</div>
-                                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/30 group-hover:text-black/40 transition-colors leading-tight">{item.label}</p>
-                                </div>
-                            ))}
+                    <div className="bg-black text-white rounded-[3rem] p-12 lg:p-24 border border-white/10 shadow-2xl overflow-hidden">
+                        <div className="flex flex-col lg:flex-row gap-20 items-center">
+                            <div className="flex-1 text-center lg:text-left">
+                                <h2 className="text-5xl font-extrabold mb-12 leading-tight tracking-tight uppercase text-white">
+                                    Decisions <br />Made with <br /><span className="text-[#00aaff]">Certainty.</span>
+                                </h2>
+                                <p className="text-xl text-white/50 mb-12 max-w-md italic mx-auto lg:mx-0">Our analytics architecture doesn't just show data—it provides clarity for your most critical business moves.</p>
+                                <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#00aaff] px-10 py-5 text-sm font-bold text-black transition-all hover:bg-[#00aaff]/80 hover:translate-y-[-2px] active:scale-95">
+                                    Request a Demo
+                                </Link>
+                            </div>
+                            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-8 text-black">
+                                {[
+                                    { stat: "95%", label: "Better accuracy in financial forecasting" },
+                                    { stat: "40%", label: "Reduction in manual reporting tasks" },
+                                    { stat: "10x", label: "Faster time-to-insight for managers" },
+                                    { stat: "100%", label: "Ownership of your business intelligence" },
+                                ].map((item, i) => (
+                                    <div key={i} className="group border border-white/10 rounded-[3.5rem] p-10 flex flex-col justify-end bg-white/5 hover:bg-white transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl">
+                                        <div className="text-5xl font-extrabold text-white group-hover:text-black transition-colors mb-2 tracking-tighter">{item.stat}</div>
+                                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/30 group-hover:text-black/40 transition-colors leading-tight">{item.label}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

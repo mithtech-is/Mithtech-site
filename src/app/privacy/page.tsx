@@ -27,7 +27,7 @@ export default function PrivacyPolicy() {
                             <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Legal & Compliance</span>
                         </div>
                         <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[1.1] uppercase">
-                            Privacy <br /> 
+                            Privacy <br />
                             <span className="text-[#00aaff]">Policy.</span>
                         </h1>
                         <p className="text-xl leading-loose text-black/50 max-w-2xl mx-auto mb-10 italic">

@@ -86,13 +86,13 @@ export default function FrappeERPNextPage() {
     return (
         <div ref={containerRef} className="flex flex-col w-full bg-white overflow-hidden">
             {/* Hero Section */}
-            <section className="relative pt-24 pb-20 md:pt-32 md:pb-40 border-b overflow-hidden">
+            <section className="relative pt-12 pb-12 sm:pb-20 md:pt-16 md:pb-40 border-b overflow-hidden">
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(0,0,0,0.03)_0%,transparent_100%)]" />
                 <div className="container mx-auto px-4 hero-content">
                     <span className="text-sm font-bold tracking-[0.3em] text-muted-foreground uppercase mb-6 block">
                         ENTERPRISE ECOSYSTEM EXPERTS
                     </span>
-                    <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase">
+                    <h1 className="text-4xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase break-words">
                         FRAPPE & <br />
                         <span className="text-[#00aaff]">ERPNEXT</span>
                     </h1>
@@ -108,7 +108,7 @@ export default function FrappeERPNextPage() {
             </section>
 
             {/* What is Frappe Section */}
-            <section className="py-24 bg-muted/30 border-b">
+            <section className="py-12 sm:py-24 bg-muted/30 border-b">
                 <div className="container mx-auto px-4">
                     <div className="max-w-3xl mb-16">
                         <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">The Power of the Frappe Ecosystem</h2>
@@ -142,7 +142,7 @@ export default function FrappeERPNextPage() {
             </section>
 
             {/* Mithtech Frappe Solutions - CORE SECTION */}
-            <section className="py-24 border-b">
+            <section className="py-12 sm:py-24 border-b bg-white">
                 <div className="container mx-auto px-4">
                     <div className="text-center max-w-3xl mx-auto mb-20">
                         <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Mithtech Frappe Solutions</h2>
@@ -238,21 +238,6 @@ export default function FrappeERPNextPage() {
                 </div>
             </section>
 
-            {/* Why Mithtech */}
-            <section className="py-24 border-b">
-                <div className="container mx-auto px-4">
-                    <div className="text-center max-w-3xl mx-auto mb-20">
-                        <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">Why Mithtech for Frappe & ERPNext?</h2>
-                        <p className="text-xl text-black/40 leading-loose italic">We are more than implementers; we are strategic partners in your digital transformation.</p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                        <div className="text-center group">
-                            <p className="text-lg text-black/40 leading-loose">Successfully deployed Frappe solutions for companies across India, UAE, and Europe.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <CTASection
                 title="Consolidate your business today"
                 description="Move away from fragmented spreadsheets and expensive proprietary systems. Let's architecture your unified Frappe ecosystem."
@@ -286,16 +271,16 @@ function FeatureCard({ icon: Icon, title, description }: { icon: any, title: str
 
 function SolutionCategory({ icon: Icon, title, description, products, capabilities }: { icon: any, title: string, description: string, products: string[], capabilities: string[] }) {
     return (
-        <div className="solution-category flex flex-col gap-8 p-10 rounded-[3.5rem] border border-black/[0.05] bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl group">
+        <div className="solution-category flex flex-col gap-8 p-6 sm:p-10 rounded-[3.5rem] border border-black/[0.05] bg-white hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl group min-h-full">
             <div className="flex items-center gap-5">
-                <div className="w-14 h-14 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg group-hover:bg-white transition-colors">
+                <div className="w-14 h-14 rounded-2xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-lg group-hover:bg-white transition-colors shrink-0">
                     <Icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-extrabold text-black tracking-tight uppercase group-hover:text-white transition-colors">{title}</h3>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-black tracking-tight uppercase group-hover:text-white transition-colors">{title}</h3>
             </div>
 
-            <div>
-                <p className="text-black/50 mb-6 font-medium leading-loose group-hover:text-white/60 transition-colors">{description}</p>
+            <div className="flex-grow">
+                <p className="text-black/50 mb-6 font-medium leading-loose group-hover:text-white/60 transition-colors italic text-sm sm:text-base">{description}</p>
                 <div className="flex flex-wrap gap-2 mb-8">
                     {products.map((p, i) => (
                         <span key={i} className="px-3 py-1 rounded-full bg-black text-[#00aaff] text-[10px] font-bold uppercase tracking-wider group-hover:bg-white group-hover:text-black transition-colors">{p}</span>
@@ -303,12 +288,12 @@ function SolutionCategory({ icon: Icon, title, description, products, capabiliti
                 </div>
             </div>
 
-            <div className="space-y-4 pt-6 border-t border-black/5 group-hover:border-white/10 transition-colors">
+            <div className="space-y-4 pt-6 border-t border-black/5 group-hover:border-white/10 transition-colors mt-auto">
                 <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-black/40 group-hover:text-white/40 transition-colors">Core Capabilities</h4>
                 <ul className="grid grid-cols-1 gap-3">
                     {capabilities.map((c, i) => (
-                        <li key={i} className="flex items-center gap-3 text-sm font-medium text-black/70 group-hover:text-white/80 transition-colors">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#00aaff]" />
+                        <li key={i} className="flex items-center gap-3 text-[13px] font-medium text-black/70 group-hover:text-white/80 transition-colors">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#00aaff] shrink-0" />
                             {c}
                         </li>
                     ))}
