@@ -17,13 +17,12 @@ export const CTA: React.FC = () => {
       }}
       onMouseLeave={() => setGlowPoint((prev) => ({ ...prev, active: false }))}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] bg-[size:24px_24px]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:24px_24px]" />
       <div
         className="pointer-events-none absolute inset-0 opacity-100 transition-opacity duration-300"
         style={{
-          background: `radial-gradient(circle at ${
-            glowPoint.active ? `${glowPoint.x}px ${glowPoint.y}px` : "50% 42%"
-          }, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.08) 18%, rgba(255,255,255,0.035) 38%, rgba(255,255,255,0) 68%)`,
+          background: `radial-gradient(circle at ${glowPoint.active ? `${glowPoint.x}px ${glowPoint.y}px` : "50% 42%"
+            }, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.08) 18%, rgba(255,255,255,0.035) 38%, rgba(255,255,255,0) 68%)`,
         }}
       />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(8,8,8,0.12),rgba(8,8,8,0.02),rgba(8,8,8,0.12))]" />

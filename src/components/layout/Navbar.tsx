@@ -26,6 +26,8 @@ export function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [openMobileSubId, setOpenMobileSubId] = useState<string | null>(null);
     const [isTransitioningUseCase, setIsTransitioningUseCase] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
     const productsRef = useRef<HTMLDivElement>(null);
     const platformsRef = useRef<HTMLDivElement>(null);
@@ -40,17 +42,37 @@ export function Navbar() {
                 setIsPlatformsOpen(false);
             }
         }
+
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY < 10) {
+                setIsVisible(true);
+            } else if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                setIsVisible(false);
+            } else if (currentScrollY < lastScrollY) {
+                setIsVisible(true);
+            }
+            setLastScrollY(currentScrollY);
+        };
+
         document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [lastScrollY]);
 
     const containWheelScroll = (event: React.WheelEvent<HTMLDivElement>) => {
         event.stopPropagation();
     };
-
     return (
         <header
-            className="sticky top-0 z-50 w-full border-b border-white/10 bg-black text-white"
+            className={cn(
+                "fixed top-0 z-50 w-full border-b border-white/10 bg-black/90 text-white backdrop-blur-md transition-transform duration-300 ease-[var(--ease-out)]",
+                isVisible ? "translate-y-0" : "-translate-y-full"
+            )}
         >
             <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 md:px-8">
 

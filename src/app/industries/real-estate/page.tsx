@@ -2,21 +2,29 @@ import type { Metadata } from "next";
 import RealEstatePage from "./RealEstatePageClient";
 
 export const metadata: Metadata = {
-    title: "Real Estate Industry Solutions | Mith Tech",
-    description:
-        "Digital transformation for real estate agencies, developers, and property managers. Automate listings, lead workflows, document management, and client CRM with enterprise platforms.",
+    title: "Real Estate CRM India | Property Management Software Bangalore",
+    description: "Mith Tech provides the best real estate industry solutions in India. Modernise your agency with property management software, lead automation, and custom CRMs in Bangalore.",
     keywords: [
-        "real estate CRM",
-        "property management software",
-        "real estate ERP",
-        "lead automation real estate",
-        "property listing platform",
+        "real estate CRM India",
+        "property management software Bangalore",
+        "real estate ERP India",
+        "lead automation real estate India",
+        "property listing platform India",
+        "real estate digital transformation Bangalore",
+        "Mith Tech"
     ],
     openGraph: {
-        title: "Real Estate Industry Solutions | Mith Tech",
-        description:
-            "Enterprise-grade platforms for real estate: CRM, listing management, document workflows, and client automation.",
+        title: "Real Estate Industry Solutions India | Mith Tech",
+        description: "Enterprise-grade platforms for real estate: CRM, listing management, and client automation built to scale in Bangalore.",
+        url: "https://mithtech.com/industries/real-estate",
+        siteName: "Mith Tech",
+        locale: "en_IN",
         type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Real Estate ERP & CRM Solutions India | Mith Tech",
+        description: "Scale your real estate business with automated digital workflows.",
     },
 };
 

@@ -500,8 +500,8 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({
       const oy = ((-cam.wy * cam.zoom + H / 2) % gs + gs) % gs;
 
       g.save();
-      g.strokeStyle = isHeroScene ? 'rgba(255,255,255,0.18)' : 'rgba(255,255,255,0.08)';
-      g.lineWidth = 0.8;
+      g.strokeStyle = isHeroScene ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.03)';
+      g.lineWidth = 0.6;
       for (let gx = ox - gs; gx < W + gs; gx += gs) {
         g.beginPath();
         g.moveTo(gx, 0);

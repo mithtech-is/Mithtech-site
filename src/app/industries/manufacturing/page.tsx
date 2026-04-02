@@ -2,21 +2,29 @@ import type { Metadata } from "next";
 import ManufacturingPage from "./ManufacturingPageClient";
 
 export const metadata: Metadata = {
-    title: "Manufacturing Industry Solutions | Mith Tech",
-    description:
-        "Optimise your production floor with Mith Tech's manufacturing platforms. Production planning, BOM management, quality control, and supply chain visibility—all connected in one system.",
+    title: "ERPNext for Manufacturing Company India | Production Planning Software",
+    description: "Mith Tech provides the best ERPNext for manufacturing companies in India. Our production planning software and BOM management solutions optimize shop floors in Bangalore. Reduce TCO by 70%.",
     keywords: [
-        "manufacturing ERP",
-        "production planning software",
-        "BOM management",
-        "quality control system",
-        "supply chain management",
+        "ERPNext for manufacturing company India",
+        "discrete manufacturing ERP software India",
+        "production planning software India",
+        "inventory management for manufacturers India",
+        "BOM management software India",
+        "manufacturing execution system India",
+        "Mith Tech"
     ],
     openGraph: {
-        title: "Manufacturing Industry Solutions | Mith Tech",
-        description:
-            "Enterprise manufacturing platforms: production planning, BOM, quality control, and supply chain management.",
+        title: "Manufacturing ERP & Production Planning Solutions India | Mith Tech",
+        description: "Optimise your production floor. Production planning, BOM management, and supply chain visibility—all connected in one enterprise ERP system in Bangalore.",
+        url: "https://mithtech.com/industries/manufacturing",
+        siteName: "Mith Tech",
+        locale: "en_IN",
         type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "ERPNext for Manufacturing India | Mith Tech",
+        description: "Scale your manufacturing operations with India's most versatile ERP.",
     },
 };
 
