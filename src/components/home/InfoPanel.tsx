@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface InfoPanelProps {
   isVisible: boolean;
@@ -9,22 +10,22 @@ interface InfoPanelProps {
     desc: string;
     prods: { n: string; i?: string }[];
   } | null;
-  anchorY?: number | null;
 }
 
-export const InfoPanel: React.FC<InfoPanelProps> = ({ isVisible, data, anchorY }) => {
+export const InfoPanel: React.FC<InfoPanelProps> = ({ isVisible, data }) => {
   if (!data) return null;
 
   return (
     <div
-      className={`fixed z-20 pointer-events-none transition-all duration-500 ease-in-out md:pointer-events-auto
+      className={`fixed z-20 pointer-events-none transition-all duration-500 ease-in-out
         bottom-24 left-4 right-4 sm:left-6 sm:right-6
-        md:bottom-auto md:left-auto md:right-12 md:w-72 lg:right-16 lg:w-80
+        md:bottom-auto md:left-auto md:right-12 md:top-1/2 md:w-72 md:-translate-y-1/2 lg:right-16 lg:w-80
         ${isVisible ? "opacity-100" : "opacity-0"}
       `}
       style={{
-        top: anchorY ? `clamp(9rem, ${anchorY}px, calc(100vh - 9rem))` : "50%",
-        transform: `translateY(calc(-50% + ${isVisible ? "0px" : "16px"}))`,
+        transform: isVisible
+          ? "translateY(-50%)"
+          : "translateY(calc(-50% + 16px))",
       }}
     >
       <div className="flex max-w-md flex-col items-start rounded-3xl border border-white/10 bg-black/50 p-5 text-left shadow-2xl backdrop-blur-md md:border-0 md:bg-transparent md:p-0 md:shadow-none">
@@ -45,9 +46,11 @@ export const InfoPanel: React.FC<InfoPanelProps> = ({ isVisible, data, anchorY }
               className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-semibold tracking-wider text-white/85"
             >
               {p.i && (
-                <img
+                <Image
                   src={p.i}
                   alt={p.n}
+                  width={14}
+                  height={14}
                   className="h-3.5 w-3.5 object-contain grayscale opacity-70"
                 />
               )}
@@ -60,7 +63,7 @@ export const InfoPanel: React.FC<InfoPanelProps> = ({ isVisible, data, anchorY }
           className="pointer-events-auto inline-flex min-h-[48px] items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all hover:text-white/80 group"
         >
           <span>Explore products</span>
-          <span className="transition-transform group-hover:translate-x-1">→</span>
+          <span className="transition-transform group-hover:translate-x-1">-&gt;</span>
         </Link>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import RetailPage from "./RetailPageClient";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Retail Industry Solutions India | Mith Tech",
         description: "Unified commerce for modern retailers: POS, inventory, loyalty, and eCommerce—all in one stack built in Bangalore.",
-        url: "https://mithtech.com/industries/retail",
+        url: "https://mith.tech/industries/retail",
         siteName: "Mith Tech",
         locale: "en_IN",
         type: "website",

@@ -2,31 +2,8 @@ import React from "react";
 import Link from "next/link";
 
 export const CTA: React.FC = () => {
-  const [glowPoint, setGlowPoint] = React.useState({ x: 0, y: 0, active: false });
-
   return (
-    <section
-      className="relative z-10 flex w-full self-stretch items-center justify-center overflow-hidden bg-transparent px-4 py-32 sm:px-6 md:py-40"
-      onMouseMove={(event) => {
-        const rect = event.currentTarget.getBoundingClientRect();
-        setGlowPoint({
-          x: event.clientX - rect.left,
-          y: event.clientY - rect.top,
-          active: true,
-        });
-      }}
-      onMouseLeave={() => setGlowPoint((prev) => ({ ...prev, active: false }))}
-    >
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:24px_24px]" />
-      <div
-        className="pointer-events-none absolute inset-0 opacity-100 transition-opacity duration-300"
-        style={{
-          background: `radial-gradient(circle at ${glowPoint.active ? `${glowPoint.x}px ${glowPoint.y}px` : "50% 42%"
-            }, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.08) 18%, rgba(255,255,255,0.035) 38%, rgba(255,255,255,0) 68%)`,
-        }}
-      />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(8,8,8,0.12),rgba(8,8,8,0.02),rgba(8,8,8,0.12))]" />
-
+    <section className="relative flex w-full items-center justify-center px-4 py-32 sm:px-6 md:py-40">
       <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
         <p className="mb-5 text-[11px] font-bold uppercase tracking-[0.28em] text-white/30 sm:mb-7 md:text-[13px] md:tracking-[0.34em]">
           The Complete Picture

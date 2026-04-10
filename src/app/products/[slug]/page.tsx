@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title,
             description,
             type: "website",
-            url: `https://mithtech.com/products/${slug}`,
+            url: `https://mith.tech/products/${slug}`,
             siteName,
             locale: "en_IN",
             images: [

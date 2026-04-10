@@ -10,6 +10,7 @@ export interface Product {
     type: 'proprietary' | 'service';
     useCase: string;
     processHref?: string;
+    customFaqs?: { question: string; answer: string; }[];
 }
 
 export const products: Product[] = [
@@ -44,12 +45,30 @@ export const products: Product[] = [
         title: "ERPNext",
         icon: "/assets/erpnext-logo.png",
         description: "Worlds No.1 Open Source ERP",
-        longDescription: "ERPNext is a comprehensive enterprise resource planning system that helps businesses manage accounting, inventory, CRM, HR, and more in a single unified platform.",
+        longDescription: "ERPNext is a comprehensive enterprise resource planning system that helps businesses manage accounting, inventory, CRM, HR, and more in a single unified platform. Known as the best ERP for SMBs in India, it stands proudly as a highly scalable Tally alternative and a cost-effective SAP alternative. Whether you need seamless ERPNext eCommerce integration or are seeking the best ERP for manufacturing in India, ERPNext offers unparalleled small business ERP benefits through maximum open-source flexibility.",
         features: ["Accounting", "Inventory Management", "CRM & Sales", "HR & Payroll", "Manufacturing"],
         externalHref: "https://erpnext.com",
         category: "Operations",
         type: "service",
-        useCase: "Thousands of businesses worldwide use ERPNext to streamline their operations and manage all departments from a single source of truth."
+        useCase: "Thousands of businesses worldwide use ERPNext to streamline their operations and manage all departments from a single source of truth.",
+        customFaqs: [
+            {
+                question: "How does ERPNext compare to Tally or SAP in India?",
+                answer: "When deciding between ERPNext vs Tally in India, ERPNext offers a full-suite ERP beyond basic accounting, making it a superior Tally alternative for growing SMBs. Furthermore, ERPNext serves as a robust SAP alternative in India, providing identical enterprise-grade functionality at a fraction of the ERPNext implementation cost."
+            },
+            {
+                question: "Does ERPNext completely support GST billing and setup?",
+                answer: "Yes, ERPNext GST compliance is built-in out of the box for Indian tax regulations. We easily handle GST billing in ERPNext, including e-invoicing and e-way bill generation. Mithtech provides a holistic ERPNext GST setup guide as part of our integration suite to streamline your monthly tax returns."
+            },
+            {
+                question: "Why is ERPNext the best ERP for manufacturing and small businesses in India?",
+                answer: "ERPNext fundamentally changes small business operations, making it the best ERP for manufacturing in India. From Bill of Materials to complex capacity planning and job cards, the small business ERP benefits are immediate—streamlining shop-floor bottlenecks and expanding capacity."
+            },
+            {
+                question: "What is the expected ERPNext implementation cost?",
+                answer: "Because it relies on an open-source framework, the baseline ERP cost in India is entirely disruptive. You never pay software licensing seat-costs—your only ERPNext implementation cost with Mithtech focuses on meticulous cloud infrastructure deployment, workflow tailoring, and team onboarding."
+            }
+        ]
     },
     {
         slug: "shoilms",

@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import PlatformsPageClient from "./PlatformsPageClient";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Enterprise Open Source Platforms | ERPNext & MedusaJS Stack India",
         description: "Explore our collection of high-performance business applications. Scalable, modular, and customized for your growth.",
-        url: "https://mithtech.com/platforms",
+        url: "https://mith.tech/platforms",
         type: "website",
         images: [{ url: "/assets/og-shared.png", width: 1200, height: 630, alt: "Mith Tech Enterprise Platforms" }]
     },

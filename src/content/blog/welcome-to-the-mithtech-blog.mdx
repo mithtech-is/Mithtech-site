@@ -1,0 +1,53 @@
+---
+title: "Welcome to the Mithtech Blog"
+description: "A quick starter post showing how to add new blog content to the site from one folder."
+date: "2026-04-08"
+slug: "welcome-to-the-mithtech-blog"
+author: "Mithtech Team"
+category: "Announcements"
+coverImage: "/assets/mithtech-white-logo.png"
+readTime: "2 min read"
+featured: true
+---
+
+# Your blog upload folder is ready
+
+Every new `.md` or `.mdx` file you place in `src/content/blog` will appear automatically on the blog page.
+
+## Frontmatter you can use
+
+Add this block at the top of every post:
+
+```md
+---
+title: "Your Post Title"
+description: "Short summary for the blog card and SEO."
+date: "2026-04-08"
+slug: "your-post-slug"
+author: "Author Name"
+category: "Category Name"
+coverImage: "/assets/mithtech-white-logo.png"
+readTime: "4 min read"
+featured: false
+---
+```
+
+## Writing content
+
+Below the frontmatter, write normal Markdown or MDX content:
+
+- headings
+- paragraphs
+- bullet lists
+- links
+- images
+
+## Where to upload blogs
+
+Use this folder:
+
+`src/content/blog`
+
+## Cover images
+
+If you want custom cover images, place the image in `public/assets` and point `coverImage` to it.

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import CommercePageClient from "./CommercePageClient";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Medusa JS & Headless eCommerce Development India | Mith Tech",
         description: "Scale your retail brand with Medusa JS. High-performance, B2B-ready headless commerce architectures built in Bangalore.",
-        url: "https://mithtech.com/solutions/commerce",
+        url: "https://mith.tech/solutions/commerce",
         siteName: "Mith Tech",
         locale: "en_IN",
         type: "website",

@@ -25,6 +25,8 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { ProductFAQ } from "@/components/seo/ProductFAQ";
+import { generatePlatformFaqs } from "@/lib/seo/faq-generator";
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -301,6 +303,30 @@ export default function SaaSPage() {
                     </div>
                 </div>
             </section>
+
+            <ProductFAQ
+                productName="Mithtech SaaS Suite"
+                faqs={generatePlatformFaqs({
+                    name: "Mithtech SaaS Suite",
+                    category: "enterprise SaaS platform suite",
+                    description: "deliver ready-to-deploy software products for operations, collaboration, automation, and digital growth",
+                    features: [
+                        "ready-to-deploy SaaS products",
+                        "enterprise-grade uptime",
+                        "scalable cloud architecture",
+                        "shared security standards",
+                        "integrated product ecosystem",
+                    ],
+                    implementationFocus: "solution matching, deployment, workflow adaptation, onboarding, and integration across Mithtech SaaS products",
+                    integrations: ["CRMs", "ERPs", "WhatsApp workflows", "analytics systems", "internal team operations"],
+                    customFaqs: [
+                        {
+                            question: "Can Mithtech SaaS products be adapted to different business workflows?",
+                            answer: "Yes. Mithtech helps configure the suite around your team structure, approvals, communications, and reporting needs. That makes the products practical for real operations instead of feeling like one-size-fits-all software.",
+                        },
+                    ],
+                })}
+            />
 
             <CTASection 
                 title="Ready to elevate your business?" 

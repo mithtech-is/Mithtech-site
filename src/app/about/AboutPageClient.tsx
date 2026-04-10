@@ -51,10 +51,27 @@ export default function About() {
                             <p className="text-3xl font-extrabold text-black/20 leading-tight uppercase tracking-tighter">
                                 "Democratizing business technology through scalable, open-ecosystems."
                             </p>
-                            <div className="prose prose-xl text-black/50 leading-loose italic font-sans">
-                                <p>
-                                    Our mission is to democratize business technology by leveraging the power of scalable platforms. We architect systems that rival proprietary software—without the crippling per-user licensing fees or vendor lock-in.
+                            <div className="prose prose-xl leading-loose font-sans">
+                                <p className="text-black/60 mb-6 font-medium">
+                                    Our mission is to democratize business technology by leveraging the power of scalable platforms. As a trusted <strong>ERPNext implementation partner in Bangalore</strong> and a leading <strong>Frappe development company in India</strong>, we architect systems that rival proprietary software—without the crippling per-user licensing fees or vendor lock-in.
                                 </p>
+                                <p className="text-black/60 mb-6">
+                                    We bring years of hands-on experience deploying complex business systems across diverse industries including Manufacturing, Healthcare, and Retail. Our team consists of seasoned technical architects who understand that software should adapt to your workflows, not the other way around. By leveraging fully open-source ecosystems like <strong className="text-black font-semibold">ERPNext</strong>, <strong className="text-black font-semibold">Medusa JS</strong>, and <strong className="text-black font-semibold">n8n</strong>, we guarantee comprehensive enterprise ERP solutions tailored for the Indian and global markets.
+                                </p>
+                                <ul className="text-black/60 text-lg space-y-3 mt-8">
+                                    <li className="flex items-start gap-3">
+                                        <CheckCircle2 className="w-6 h-6 text-[#00aaff] shrink-0 mt-1" />
+                                        <span><strong>Proven Expertise:</strong> Over dozens of successful enterprise deployments.</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <CheckCircle2 className="w-6 h-6 text-[#00aaff] shrink-0 mt-1" />
+                                        <span><strong>Transparent Implementation:</strong> No hidden licensing costs, full data ownership.</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <CheckCircle2 className="w-6 h-6 text-[#00aaff] shrink-0 mt-1" />
+                                        <span><strong>Local Support, Global Standards:</strong> Based in Bangalore, providing world-class managed services.</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

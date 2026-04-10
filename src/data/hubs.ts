@@ -103,7 +103,6 @@ export const getScenes = (defs: HubCluster[]): HubScene[] => {
   const heroEnd = 0.1;
   const s: HubScene[] = [{ r: [0, heroEnd], id: 'hero', name: 'Ecosystem', ci: -1 }];
   defs.forEach((d, i) => s.push({ r: [heroEnd + i * 0.13, heroEnd + i * 0.13 + 0.1], id: d.id, name: d.n, ci: i }));
-  s.push({ r: [0.93, 1.01], id: 'cta', name: 'Full Ecosystem', ci: -1 });
   return s;
 };
 

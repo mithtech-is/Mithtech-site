@@ -133,11 +133,15 @@ export default function Contact() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-stretch">
                         <div className="flex flex-col justify-center">
                             <h2 className="text-4xl font-extrabold text-black mb-10 tracking-tight uppercase">Let's build your <span className="text-[#00aaff]">next system.</span></h2>
-                            <p className="text-xl text-black/40 mb-16 leading-loose italic max-w-xl font-sans">
-                                Whether you're looking to replace expensive legacy ERPs, build
-                                complex eCommerce platforms, or automate global marketing—our
-                                architects are ready.
-                            </p>
+                            <div className="prose prose-xl leading-loose font-sans">
+                                <p className="text-black/60 mb-6 font-medium">
+                                    Whether you're looking to replace expensive legacy ERPs, build
+                                    complex eCommerce platforms with <strong>MedusaJS</strong>, or automate global marketing through <strong>n8n</strong> and Open Source tools—our <strong>enterprise software architects in Bangalore</strong> are ready.
+                                </p>
+                                <p className="text-black/60 mb-10 text-lg">
+                                    We partner with businesses across India and internationally to deliver transparent, scalable, and zero-licensing-fee solutions. Don't let proprietary software limits stunt your growth. Get in touch today for a comprehensive technical roadmap.
+                                </p>
+                            </div>
 
                             <div className="grid sm:grid-cols-2 gap-10">
                                 <a 

@@ -27,7 +27,7 @@ interface CustomCanvasProps {
 }
 
 const CL_ANGS = [210, 150, 90, 330, 270, 30];
-const CLR = 620, PR_DIST = 270, PR_STEP = 72;
+const CLR = 620, PR_DIST = 270;
 const NW = 210, NH = 54, ICON_W = 50;
 const PW = 168, PH = 46, PICON_W = 44;
 const HUB_R = 25, PORT_R = 5;
@@ -85,7 +85,6 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({
       const ox = Math.cos(ang) * 90, oy = -Math.sin(ang) * 90;
       r.push([t, cx + ox, cy + oy, 1.6], [t + 0.1, cx + ox, cy + oy, 1.6]);
     }
-    r.push([0.93, 0, 0, 0.5], [1.0, 0, 0, 0.5]);
     return r;
   })();
 
@@ -119,30 +118,42 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({
     DEFS.forEach((def, ci) => {
       const ang = CL_ANGS[ci] * Math.PI / 180;
       const ouX = Math.cos(ang), ouY = -Math.sin(ang);
-      const cwx = ouX * responsiveCLR, cwy = ouY * responsiveCLR;
+      const finClusterShiftX = !isMobile && def.id === 'fin' ? -72 * scale : 0;
+      const cwx = ouX * responsiveCLR + finClusterShiftX, cwy = ouY * responsiveCLR;
       const perX = -ouY, perY = ouX;
+      const ecomDesktopOffsets = !isMobile && def.id === 'ecom'
+        ? [
+            { x: -1.18, y: -0.92 }, // Marketplace
+            { x: -0.2, y: -1.12 },  // Medusa B2B
+            { x: 0.94, y: -1.02 },  // Medusa JS
+            { x: -1.34, y: -0.08 }, // POS Billing
+            { x: 2.04, y: 0.98 },   // POS Billing
+          ]
+        : null;
       WN.push({ id: 'cl' + ci, wx: cwx, wy: cwy, ox: cwx, oy: cwy, type: 'cluster', ci, ouX, ouY, ang: CL_ANGS[ci], dragX: 0, dragY: 0, velX: 0, velY: 0, hoverT: 0 });
       WE.push({ from: 'hub', to: 'cl' + ci, ci });
       const n = def.prods.length;
       def.prods.forEach((pr, pi) => {
-        let pwx: number;
-        let pwy: number;
+        const finSemiArcBoost = !isMobile && def.id === 'fin' ? 0.18 : 0;
+        const semiArc = Math.min(
+          Math.PI * 1.14,
+          Math.max(Math.PI * 0.64, ((n - 1) * responsivePR_STEP) / responsivePR_DIST + finSemiArcBoost)
+        );
+        const startAngle = ang - semiArc / 2;
+        const endAngle = ang + semiArc / 2;
+        const productAngle = n === 1
+          ? ang
+          : startAngle + ((endAngle - startAngle) * pi) / (n - 1);
+        const finRadiusMultiplier = !isMobile && def.id === 'fin' ? 1.12 : 1;
+        const clusterRadius = responsivePR_DIST * (n >= 5 ? 1.02 : 0.94) * finRadiusMultiplier;
+        const tunedOffset = ecomDesktopOffsets?.[pi];
 
-        if (def.id === 'crm' || def.id === 'mktg' || def.id === 'supp') {
-          const clusterRadius = responsivePR_DIST * 0.92;
-          const startAngle = ang - Math.PI * 0.55;
-          const endAngle = ang + Math.PI * 0.55;
-          const productAngle = n === 1
-            ? ang
-            : startAngle + ((endAngle - startAngle) * pi) / (n - 1);
-
-          pwx = cwx + Math.cos(productAngle) * clusterRadius;
-          pwy = cwy - Math.sin(productAngle) * clusterRadius;
-        } else {
-          const off = (pi - (n - 1) / 2) * responsivePR_STEP;
-          pwx = cwx + ouX * responsivePR_DIST + perX * off;
-          pwy = cwy + ouY * responsivePR_DIST + perY * off;
-        }
+        const pwx = tunedOffset
+          ? cwx + tunedOffset.x * responsivePR_DIST
+          : cwx + Math.cos(productAngle) * clusterRadius;
+        const pwy = tunedOffset
+          ? cwy + tunedOffset.y * responsivePR_DIST
+          : cwy - Math.sin(productAngle) * clusterRadius;
 
         WN.push({ id: `p${ci}_${pi}`, wx: pwx, wy: pwy, ox: pwx, oy: pwy, type: 'product', ci, pi, dragX: 0, dragY: 0, velX: 0, velY: 0, hoverT: 0 });
         WE.push({ from: 'cl' + ci, to: `p${ci}_${pi}`, ci });
@@ -482,9 +493,9 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({
 
       // Camera
       const [twx, twy, tz] = camTarget(scrollProg);
-      camRef.current.wx = lerp(camRef.current.wx, twx, 0.07);
-      camRef.current.wy = lerp(camRef.current.wy, twy, 0.07);
-      camRef.current.zoom = lerp(camRef.current.zoom, tz, 0.07);
+      camRef.current.wx = lerp(camRef.current.wx, twx, 0.04);
+      camRef.current.wy = lerp(camRef.current.wy, twy, 0.04);
+      camRef.current.zoom = lerp(camRef.current.zoom, tz, 0.04);
       const cam = camRef.current;
 
       const w2s = (wx: number, wy: number) => ({
@@ -560,9 +571,19 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({
 
         // Target Return Force
         if (n !== draggingRef.current) {
+          if (n.type === 'cluster') {
+            n.wx = n.ox;
+            n.wy = n.oy;
+            n.velX = 0;
+            n.velY = 0;
+            const targetHover = (n === hoveredRef.current) ? 1 : 0;
+            n.hoverT = lerp(n.hoverT, targetHover, 0.12);
+            return;
+          }
+
           const dx = n.ox - n.wx, dy = n.oy - n.wy;
-          n.velX = (n.velX + dx * 0.045) * 0.82;
-          n.velY = (n.velY + dy * 0.045) * 0.82;
+          n.velX = (n.velX + dx * 0.028) * 0.76;
+          n.velY = (n.velY + dy * 0.028) * 0.76;
 
           // Repulsion from other nodes
           WN.forEach(other => {
@@ -573,20 +594,50 @@ export const CustomCanvas: React.FC<CustomCanvasProps> = ({
             const dist = Math.sqrt(distSq) || 1;
 
             if (dist < MIN_DIST) {
-              const force = (MIN_DIST - dist) / MIN_DIST * 0.5;
+              const force = (MIN_DIST - dist) / MIN_DIST * 0.18;
               n.velX += (rdx / dist) * force;
               n.velY += (rdy / dist) * force;
+            }
+
+            // Wide node cards need box-aware separation, not only center-point separation.
+            const nHalfW = (n.type === 'product' ? PW : n.type === 'cluster' ? NW : HUB_R * 2) * 0.5;
+            const nHalfH = (n.type === 'product' ? PH : n.type === 'cluster' ? NH : HUB_R * 2) * 0.5;
+            const otherHalfW = (other.type === 'product' ? PW : other.type === 'cluster' ? NW : HUB_R * 2) * 0.5;
+            const otherHalfH = (other.type === 'product' ? PH : other.type === 'cluster' ? NH : HUB_R * 2) * 0.5;
+            const overlapX = nHalfW + otherHalfW + 18 - Math.abs(rdx);
+            const overlapY = nHalfH + otherHalfH + 14 - Math.abs(rdy);
+
+            if (overlapX > 0 && overlapY > 0) {
+              if (overlapX < overlapY) {
+                const pushX = (rdx === 0 ? (n.pi ?? 0) - (other.pi ?? 0) || 1 : Math.sign(rdx)) * overlapX * 0.018;
+                n.velX += pushX;
+              } else {
+                const pushY = (rdy === 0 ? (n.pi ?? 0) - (other.pi ?? 0) || 1 : Math.sign(rdy)) * overlapY * 0.024;
+                n.velY += pushY;
+              }
             }
           });
 
           n.wx += n.velX; n.wy += n.velY;
+
+          const settledX = Math.abs(dx) < 0.8;
+          const settledY = Math.abs(dy) < 0.8;
+          const settledVel = Math.abs(n.velX) < 0.03 && Math.abs(n.velY) < 0.03;
+          if (settledX && settledY && settledVel) {
+            n.wx = n.ox;
+            n.wy = n.oy;
+            n.velX = 0;
+            n.velY = 0;
+          }
         }
 
         // Viewport Constraint (Clamping)
         // Margin in world space to keep nodes on screen
-        const marginX = (W / 2 - 80) / cam.zoom;
+        const leftMarginX = (W / 2 - 80) / cam.zoom;
+        const rightReservedPx = W >= 1536 ? 560 : W >= 1280 ? 520 : W >= 1024 ? 460 : W >= 768 ? 360 : 80;
+        const rightMarginX = Math.max(80, (W / 2 - rightReservedPx)) / cam.zoom;
         const marginY = (H / 2 - 60) / cam.zoom;
-        n.wx = Math.max(cam.wx - marginX, Math.min(cam.wx + marginX, n.wx));
+        n.wx = Math.max(cam.wx - leftMarginX, Math.min(cam.wx + rightMarginX, n.wx));
         n.wy = Math.max(cam.wy - marginY, Math.min(cam.wy + marginY, n.wy));
 
         const targetHover = (n === hoveredRef.current) ? 1 : 0;

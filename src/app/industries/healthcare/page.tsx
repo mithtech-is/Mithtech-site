@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import HealthcarePage from "./HealthcarePageClient";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Healthcare Industry Solutions India | Mith Tech",
         description: "Enterprise healthcare platforms: appointments, patient records, billing, and teleconsultation—integrated and secure in Bangalore.",
-        url: "https://mithtech.com/industries/healthcare",
+        url: "https://mith.tech/industries/healthcare",
         siteName: "Mith Tech",
         locale: "en_IN",
         type: "website",

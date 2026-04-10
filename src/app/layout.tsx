@@ -15,6 +15,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mith.tech'),
   title: "Mith Tech | Enterprise Open Source ERP & Digital Transformation India",
   description: "Mith Tech is India's leading digital transformation partner, specializing in ERPNext implementation, Medusa JS eCommerce, and high-performance business automation in Bangalore.",
   keywords: [
@@ -66,34 +67,48 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Mith Tech",
-              "alternateName": "Mithtech",
-              "url": "https://mithtech.com",
-              "logo": "https://mithtech.com/assets/logo.png",
-              "sameAs": [
-                "https://linkedin.com/company/mithtech"
-              ],
-              "contactPoint": [
-                {
-                  "@type": "ContactPoint",
-                  "telephone": "+91-8277540332",
-                  "contactType": "sales",
-                  "areaServed": "IN",
-                  "availableLanguage": ["en", "hi", "kn"]
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": ["Organization", "LocalBusiness", "ITUtility"],
+                "name": "Mith Tech",
+                "alternateName": "Mithtech",
+                "url": "https://mith.tech",
+                "logo": "https://mith.tech/assets/logo.png",
+                "sameAs": [
+                  "https://linkedin.com/company/mithtech"
+                ],
+                "contactPoint": [
+                  {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-8277540332",
+                    "contactType": "sales",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en", "hi", "kn"]
+                  }
+                ],
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Rajajinagar",
+                  "addressLocality": "Bangalore",
+                  "addressRegion": "Karnataka",
+                  "postalCode": "560010",
+                  "addressCountry": "IN"
                 }
-              ],
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Rajajinagar",
-                "addressLocality": "Bangalore",
-                "addressRegion": "Karnataka",
-                "postalCode": "560010",
-                "addressCountry": "IN"
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                "name": "Mith Tech Main Navigation",
+                "itemListElement": [
+                  { "@type": "SiteNavigationElement", "position": 1, "name": "About", "url": "https://mith.tech/about" },
+                  { "@type": "SiteNavigationElement", "position": 2, "name": "Products", "url": "https://mith.tech/products" },
+                  { "@type": "SiteNavigationElement", "position": 3, "name": "Solutions", "url": "https://mith.tech/solutions" },
+                  { "@type": "SiteNavigationElement", "position": 4, "name": "Platforms", "url": "https://mith.tech/platforms" },
+                  { "@type": "SiteNavigationElement", "position": 5, "name": "Contact", "url": "https://mith.tech/contact" }
+                ]
               }
-            })
+            ])
           }}
         />
       </head>

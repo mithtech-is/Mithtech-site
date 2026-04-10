@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Product } from "@/data/products";
 
+import { ProductFAQ } from "@/components/seo/ProductFAQ";
+import { generateProductFaqs } from "@/lib/seo/faq-generator";
+
 interface ProductShowcaseProps {
     product: Product;
 }
@@ -29,7 +32,7 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
                         >
                             <Image
                                 src={product.icon}
-                                alt={product.title}
+                                alt={`MithTech ${product.title} Enterprise Business Solution Icon`}
                                 width={64}
                                 height={64}
                                 className="object-contain"
@@ -179,7 +182,7 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
                                 <div className="w-24 h-24 rounded-3xl bg-white/20 flex items-center justify-center mx-auto mb-8 backdrop-blur-sm border border-white/30 shadow-2xl group-hover:scale-110 transition-transform p-4">
                                     <Image
                                         src={product.icon}
-                                        alt={product.title}
+                                        alt={`MithTech ${product.title} Implementation & Automation`}
                                         width={64}
                                         height={64}
                                         className="object-contain"
@@ -211,6 +214,9 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
                 </div>
             </section>
 
+            {/* Product FAQ Section */}
+            <ProductFAQ faqs={generateProductFaqs(product)} productName={product.title} />
+
             {/* Redirect Notice */}
             <section className="py-12 sm:py-24 bg-white border-t border-black/[0.05]">
                 <div className="container mx-auto text-center px-4">
@@ -224,7 +230,7 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
                             <div className="flex items-center gap-2">
                                 <Image
                                     src="/assets/mithtech-white-logo.png"
-                                    alt="Mith.tech Logo"
+                                    alt="Mith.tech - Official Enterprise Digital Transformation Logo India"
                                     width={100}
                                     height={25}
                                     className="opacity-60 grayscale brightness-0"

@@ -1,0 +1,18 @@
+﻿# Mithtech
+> Engineering High-Performance Digital Transformation.
+
+Mithtech is a premier digital strategy and engineering firm specializing in complex integrations, workflow automation, and custom enterprise platforms. We build and implement high-performance solutions across ERP, eCommerce, Marketing Automation, and CRM sectors using both proprietary tools and robust open-source frameworks.
+
+## Key Service Areas
+- `ERPNext Implementation -> https://mith.tech/solutions/erpnext`: World's #1 open-source ERP for manufacturing, accounting, and operations.
+- `Medusa JS eCommerce -> https://mith.tech/platforms/medusa`: Headless commerce engines for scalable, high-conversion brands.
+- `Workflow Automation (n8n) -> https://mith.tech/solutions/marketing-automation`: Boundless connectivity between business systems to eliminate manual silos.
+- `Polygin WhatsApp Marketing -> https://mith.tech/platforms/saas`: Proprietary conversational commerce and marketing automation suite.
+- `Custom Web Engineering -> https://mith.tech/industries/real-estate`: Bespoke digital presence optimized for performance and SEO/GEO.
+
+## For Developers & AI Agents
+Our site provides comprehensive technical context on the integration capabilities of modern business platforms. All FAQs are GEO-optimized (Generative Engine Optimization) to provide citable, fact-based answers for AI search systems.
+
+## Contact Information
+- Website: https://mith.tech
+- Services: Digital Strategy, Custom Development, Managed Infrastructure

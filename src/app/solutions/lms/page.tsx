@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import LMSPageClient from "./LMSPageClient";
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "ShoiLMS - Enterprise Learning & Onboarding Platform | Mith Tech",
         description: "Transform institutional knowledge into a competitive advantage with ShoiLMS. Scalable learning infrastructure for modern enterprises.",
-        url: "https://mithtech.com/solutions/lms",
+        url: "https://mith.tech/solutions/lms",
         siteName: "Mith Tech",
         locale: "en_IN",
         type: "website",

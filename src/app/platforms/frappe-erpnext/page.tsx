@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import FrappeERPNextPageClient from "./FrappeERPNextPageClient";
 
 export const metadata: Metadata = {
@@ -14,10 +14,13 @@ export const metadata: Metadata = {
         "Frappe developer Bangalore",
         "Mith Tech"
     ],
+    alternates: {
+        canonical: "/platforms/frappe-erpnext"
+    },
     openGraph: {
         title: "Frappe & ERPNext Platform Solutions India | Mith Tech",
         description: "Build, scale, and automate your entire business on the world's most flexible open-source framework. Expert implementation in Bangalore.",
-        url: "https://mithtech.com/platforms/frappe-erpnext",
+        url: "https://mith.tech/platforms/frappe-erpnext",
         siteName: "Mith Tech",
         locale: "en_IN",
         type: "website",

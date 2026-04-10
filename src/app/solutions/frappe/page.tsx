@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import FrappePageClient from "./FrappePageClient";
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "ERPNext Implementation Partner Bangalore & India | Mith Tech",
         description: "Scale your enterprise with Frappe & ERPNext. 70% lower TCO than legacy ERPs. Expert implementation in Bangalore.",
-        url: "https://mithtech.com/solutions/frappe",
+        url: "https://mith.tech/solutions/frappe",
         siteName: "Mith Tech",
         locale: "en_IN",
         type: "website",
@@ -46,7 +46,7 @@ export default function Page() {
                         "provider": {
                             "@type": "Organization",
                             "name": "Mith Tech",
-                            "url": "https://mithtech.com"
+                            "url": "https://mith.tech"
                         },
                         "areaServed": {
                             "@type": "Country",

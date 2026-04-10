@@ -13,20 +13,30 @@ export const metadata: Metadata = {
     "enterprise ERP implementation Bangalore",
     "Mith Tech"
   ],
+  alternates: {
+    canonical: "https://mith.tech",
+  },
   openGraph: {
     title: "Mith Tech | ERPNext Implementation Partner Bangalore & India",
     description: "Enterprise Business Systems & Digital Transformation. Specialized in ERPNext, Frappe, and Open Source Business Automation.",
-    url: "https://mithtech.com",
+    url: "https://mith.tech",
     siteName: "Mith Tech",
     locale: "en_IN",
     type: "website",
-    // Space for OpenGraph image
+    images: [
+      {
+        url: "/assets/mithtech-white-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Mith Tech - ERPNext Implementation Partner",
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: "Mith Tech | ERPNext Implementation Partner Bangalore & India",
     description: "Enterprise ERPNext & Frappe Solutions in Bangalore.",
-    // Space for Twitter image
+    images: ["/assets/mithtech-white-logo.png"],
   },
 };
 

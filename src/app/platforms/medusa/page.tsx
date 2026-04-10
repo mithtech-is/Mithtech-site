@@ -28,6 +28,8 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { ProductFAQ } from "@/components/seo/ProductFAQ";
+import { generatePlatformFaqs } from "@/lib/seo/faq-generator";
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -474,6 +476,34 @@ export default function MedusaPage() {
                     </div>
                 </div>
             </section>
+
+            <ProductFAQ
+                productName="Medusa"
+                faqs={generatePlatformFaqs({
+                    name: "Medusa",
+                    category: "headless commerce platform",
+                    description: "power custom storefronts, pricing logic, product management, and multi-channel commerce experiences",
+                    features: [
+                        "headless architecture",
+                        "custom storefront support",
+                        "modular commerce workflows",
+                        "multi-region pricing",
+                        "flexible integrations",
+                    ],
+                    implementationFocus: "Medusa architecture, storefront development, checkout customization, and commerce integrations",
+                    integrations: ["ERP systems", "payment gateways", "shipping providers", "customer platforms", "analytics tools"],
+                    customFaqs: [
+                        {
+                            question: "When should a business choose Medusa over a traditional commerce platform?",
+                            answer: "Medusa is a strong fit when you need more control over storefront behavior, checkout logic, integrations, or multi-channel commerce. It works especially well for brands that want a custom commerce stack without platform lock-in.",
+                        },
+                        {
+                            question: "Why do growing brands choose Medusa instead of platforms like Shopify or other closed commerce systems?",
+                            answer: "Many brands choose Medusa because it gives them full ownership of the commerce stack without platform commissions, restrictive app dependencies, or limits on how the storefront and backend can be customized. Unlike closed platforms such as Shopify, Medusa lets businesses protect margin, control customer experience, and scale on infrastructure that they truly own.",
+                        },
+                    ],
+                })}
+            />
 
             <CTASection
                 title="Future-proof your commerce engine"

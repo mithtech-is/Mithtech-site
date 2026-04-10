@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import FinancialServicesPage from "./FinancialServicesPageClient";
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Financial Services & Lending Industry Solutions India | Mith Tech",
         description: "Modernise your NBFC or financial institution. Loan origination, KYC workflows, and portfolio management—automated and scalable in Bangalore.",
-        url: "https://mithtech.com/industries/financial-services",
+        url: "https://mith.tech/industries/financial-services",
         siteName: "Mith Tech",
         locale: "en_IN",
         type: "website",

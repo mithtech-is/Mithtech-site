@@ -23,6 +23,8 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { ProductFAQ } from "@/components/seo/ProductFAQ";
+import { generatePlatformFaqs } from "@/lib/seo/faq-generator";
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -215,6 +217,30 @@ export default function WordPressPage() {
                     </div>
                 </div>
             </section>
+
+            <ProductFAQ
+                productName="WordPress"
+                faqs={generatePlatformFaqs({
+                    name: "WordPress",
+                    category: "enterprise content management platform",
+                    description: "manage content-rich websites, editorial workflows, SEO-driven pages, and scalable digital experiences",
+                    features: [
+                        "content management flexibility",
+                        "SEO-friendly publishing",
+                        "custom theme and plugin development",
+                        "headless WordPress support",
+                        "performance optimization",
+                    ],
+                    implementationFocus: "WordPress architecture, custom theme development, performance optimization, and enterprise publishing workflows",
+                    integrations: ["marketing tools", "commerce systems", "search platforms", "analytics suites", "custom APIs"],
+                    customFaqs: [
+                        {
+                            question: "Is WordPress still a good choice for enterprise websites?",
+                            answer: "Yes. WordPress remains a strong enterprise option when it is architected properly. With custom development, performance tuning, and the right security controls, it can support large editorial teams, multilingual sites, and high-traffic digital experiences.",
+                        },
+                    ],
+                })}
+            />
 
             <CTASection 
                 title="Own your digital presence" 

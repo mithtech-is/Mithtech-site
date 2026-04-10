@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import AboutPageClient from "./AboutPageClient";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "About Mith Tech | Leading ERPNext & Frappe Partner in India",
         description: "Specializing in scalability, open-source, and zero licensing fees. Discover how Mith Tech transforms enterprise operations from Bangalore.",
-        url: "https://mithtech.com/about",
+        url: "https://mith.tech/about",
         type: "website",
         images: [{ url: "/assets/og-shared.png", width: 1200, height: 630, alt: "About Mith Tech" }]
     },

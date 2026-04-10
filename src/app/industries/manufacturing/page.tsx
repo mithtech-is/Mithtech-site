@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import ManufacturingPage from "./ManufacturingPageClient";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Manufacturing ERP & Production Planning Solutions India | Mith Tech",
         description: "Optimise your production floor. Production planning, BOM management, and supply chain visibility—all connected in one enterprise ERP system in Bangalore.",
-        url: "https://mithtech.com/industries/manufacturing",
+        url: "https://mith.tech/industries/manufacturing",
         siteName: "Mith Tech",
         locale: "en_IN",
         type: "website",

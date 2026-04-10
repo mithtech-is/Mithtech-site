@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import MarketingAutomationPageClient from "./MarketingAutomationPageClient";
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Marketing Automation Solutions India | Mith Tech",
         description: "Engage your audience at the perfect moment. Automated, data-driven marketing workflows using Mautic & WhatsApp in Bangalore.",
-        url: "https://mithtech.com/solutions/marketing-automation",
+        url: "https://mith.tech/solutions/marketing-automation",
         siteName: "Mith Tech",
         locale: "en_IN",
         type: "website",

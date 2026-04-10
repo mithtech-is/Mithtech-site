@@ -7,6 +7,7 @@ export interface Comment {
     id: string;
     slug: string;
     name: string;
+    email?: string;
     content: string;
     date: string;
 }
@@ -27,7 +28,7 @@ export function getComments(slug: string): Comment[] {
     try {
         const comments: Comment[] = JSON.parse(data);
         return comments.filter((c) => c.slug === slug).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-    } catch (e) {
+    } catch {
         return [];
     }
 }
@@ -40,7 +41,7 @@ export function addComment(comment: Omit<Comment, 'id' | 'date'>) {
         try {
             const data = fs.readFileSync(COMMENTS_PATH, 'utf8');
             comments = JSON.parse(data);
-        } catch (e) {
+        } catch {
             comments = [];
         }
     }

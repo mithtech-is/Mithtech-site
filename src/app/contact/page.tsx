@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import ContactPageClient from "./ContactPageClient";
 
 export const metadata: Metadata = {
@@ -11,10 +11,13 @@ export const metadata: Metadata = {
         "MedusaJS developer contact India",
         "business automation experts Bangalore"
     ],
+    alternates: {
+        canonical: "/contact"
+    },
     openGraph: {
         title: "Contact Mith Tech | Enterprise Technology Architects Bangalore",
         description: "Ready to scale? Connect with our architects for a strategic consultation. Based in RajajiNagar, Bangalore.",
-        url: "https://mithtech.com/contact",
+        url: "https://mith.tech/contact",
         type: "website",
         images: [{ url: "/assets/og-shared.png", width: 1200, height: 630, alt: "Contact Mith Tech" }]
     },

@@ -23,6 +23,8 @@ import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { ProductFAQ } from "@/components/seo/ProductFAQ";
+import { generatePlatformFaqs } from "@/lib/seo/faq-generator";
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -152,8 +154,8 @@ export default function FrappeERPNextPageClient() {
                 <div className="container mx-auto px-4">
                     <div className="max-w-3xl mb-16">
                         <h2 className="text-5xl font-extrabold tracking-tight text-black mb-8 uppercase">The Power of the Frappe Ecosystem</h2>
-                        <p className="text-xl text-black/40 leading-loose max-w-3xl">
-                            Frappe isn&apos;t just a framework; it&apos;s a complete software stack designed for rapid development and enterprise-grade reliability.
+                        <p className="text-xl text-black/60 leading-loose max-w-4xl font-medium">
+                            Frappe isn&apos;t just a framework; it&apos;s a complete, <strong>open-source business operating system</strong> designed for rapid development and enterprise-grade reliability. As a leading <strong>Frappe development company in India</strong>, we help organizations transition from costly proprietary ERPs to agile, scalable systems without per-user licensing fees. From <strong>ERPNext implementations</strong> for HR and Payroll to fully customized <strong>Frappe web apps</strong>, you own your data and code.
                         </p>
                     </div>
                     <div ref={featureGridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -277,6 +279,30 @@ export default function FrappeERPNextPageClient() {
                     </div>
                 </div>
             </section>
+
+            <ProductFAQ
+                productName="Frappe & ERPNext"
+                faqs={generatePlatformFaqs({
+                    name: "Frappe & ERPNext",
+                    category: "open-source business operating system",
+                    description: "run finance, HR, sales, operations, support, and custom business apps on a unified framework",
+                    features: [
+                        "ERP and modular app architecture",
+                        "custom workflow automation",
+                        "open-source ownership",
+                        "role-based access and approvals",
+                        "reporting and dashboards",
+                    ],
+                    implementationFocus: "ERPNext implementation, Frappe app development, data migration, managed hosting, and business process customization",
+                    integrations: ["payment gateways", "telephony systems", "commerce storefronts", "marketing tools", "custom internal software"],
+                    customFaqs: [
+                        {
+                            question: "Is Frappe & ERPNext suitable for companies that need customization?",
+                            answer: "Yes. Frappe is especially strong when businesses need custom modules, workflows, approvals, and reports. Mithtech uses that flexibility to shape ERPNext around your actual processes instead of forcing teams into generic software behavior.",
+                        },
+                    ],
+                })}
+            />
 
             <CTASection
                 title="Consolidate your business today"

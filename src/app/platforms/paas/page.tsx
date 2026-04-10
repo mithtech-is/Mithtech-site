@@ -25,6 +25,8 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { ProductFAQ } from "@/components/seo/ProductFAQ";
+import { generatePlatformFaqs } from "@/lib/seo/faq-generator";
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -208,6 +210,30 @@ export default function PaaSPage() {
                     </div>
                 </div>
             </section>
+
+            <ProductFAQ
+                productName="PaaS Engineering"
+                faqs={generatePlatformFaqs({
+                    name: "PaaS Engineering",
+                    category: "managed platform infrastructure solution",
+                    description: "deploy applications, automate infrastructure, and manage scaling without heavy internal DevOps overhead",
+                    features: [
+                        "managed hosting environments",
+                        "deployment automation",
+                        "security hardening",
+                        "auto-scaling infrastructure",
+                        "server and database management",
+                    ],
+                    implementationFocus: "platform architecture, self-hosted PaaS setup, deployment pipelines, and ongoing infrastructure management",
+                    integrations: ["Git-based deployment workflows", "cloud servers", "containers", "databases", "monitoring and backup systems"],
+                    customFaqs: [
+                        {
+                            question: "What is the benefit of Mithtech-managed PaaS over handling DevOps in-house?",
+                            answer: "A managed PaaS setup helps teams ship faster because engineers spend less time maintaining servers, deployment scripts, scaling rules, and patching. Mithtech handles that operational layer so your team can stay focused on product work.",
+                        },
+                    ],
+                })}
+            />
 
 
             <CTASection

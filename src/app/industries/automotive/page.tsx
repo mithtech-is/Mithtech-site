@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import AutomotivePage from "./AutomotivePageClient";
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Automotive & Car Care Industry Solutions India | Mith Tech",
         description: "Streamline your automotive workshop. service booking, parts inventory, and CRM—built to scale in Bangalore.",
-        url: "https://mithtech.com/industries/automotive",
+        url: "https://mith.tech/industries/automotive",
         siteName: "Mith Tech",
         locale: "en_IN",
         type: "website",

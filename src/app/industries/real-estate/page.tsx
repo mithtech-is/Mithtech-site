@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import RealEstatePage from "./RealEstatePageClient";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Real Estate Industry Solutions India | Mith Tech",
         description: "Enterprise-grade platforms for real estate: CRM, listing management, and client automation built to scale in Bangalore.",
-        url: "https://mithtech.com/industries/real-estate",
+        url: "https://mith.tech/industries/real-estate",
         siteName: "Mith Tech",
         locale: "en_IN",
         type: "website",

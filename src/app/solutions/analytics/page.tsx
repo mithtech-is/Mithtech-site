@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import AnalyticsPageClient from "./AnalyticsPageClient";
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Analytics & Business BI Solutions India | Mith Tech",
         description: "Unlock the story your data is telling. Enterprise-grade BI, real-time visualization, and n8n automation services in Bangalore.",
-        url: "https://mithtech.com/solutions/analytics",
+        url: "https://mith.tech/solutions/analytics",
         siteName: "Mith Tech",
         locale: "en_IN",
         type: "website",
