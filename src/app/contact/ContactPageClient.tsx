@@ -108,15 +108,15 @@ export default function Contact() {
                     <div className="max-w-4xl mx-auto text-center">
                         <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-black/[0.02] px-3 py-1 mb-8">
                             <span className="h-1.5 w-1.5 rounded-full bg-[#00aaff] animate-pulse" />
-                            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Connect With Architects</span>
+                            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Start Your Transformation</span>
                         </div>
                         <h1 className="text-5xl font-extrabold tracking-tight text-black sm:text-6xl lg:text-7xl mb-10 leading-[1.1] uppercase">
-                            Contact <br />
-                            <span className="text-[#00aaff]">Mithtech.</span>
+                            Let's Build Your <br />
+                            <span className="text-[#00aaff]">Success Story.</span>
                         </h1>
                         <p className="text-xl leading-loose text-black/50 max-w-3xl mx-auto mb-14 italic font-sans font-medium">
-                            Based in Bangalore. Building globally. Reach out to schedule a
-                            strategic consultation for your enterprise transformation.
+                            Whether you need ERPNext implementation, ERPNext customization, Tally-to-ERPNext migration, or a full cloud ERP deployment,
+                            our certified ERPNext consultants in Bangalore are ready to map your path to measurable growth — at the lowest ERPNext implementation cost in India.
                         </p>
                         <div className="flex flex-wrap justify-center gap-6">
                             <Link href="mailto:hello@mith.tech" className="inline-flex items-center justify-center rounded-full bg-black px-10 py-5 text-sm font-bold text-white transition-all hover:bg-black/90 hover:scale-105 active:scale-95 shadow-xl shadow-black/10 uppercase tracking-widest leading-none">
@@ -132,14 +132,13 @@ export default function Contact() {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-stretch">
                         <div className="flex flex-col justify-center">
-                            <h2 className="text-4xl font-extrabold text-black mb-10 tracking-tight uppercase">Let's build your <span className="text-[#00aaff]">next system.</span></h2>
+                            <h2 className="text-4xl font-extrabold text-black mb-10 tracking-tight uppercase">Your Growth Starts <span className="text-[#00aaff]">Here.</span></h2>
                             <div className="prose prose-xl leading-loose font-sans">
                                 <p className="text-black/60 mb-6 font-medium">
-                                    Whether you're looking to replace expensive legacy ERPs, build
-                                    complex eCommerce platforms with <strong>MedusaJS</strong>, or automate global marketing through <strong>n8n</strong> and Open Source tools—our <strong>enterprise software architects in Bangalore</strong> are ready.
+                                    Ready to eliminate costly licensing fees and take full ownership of your enterprise stack? From <strong>ERPNext implementation</strong> and <strong>ERPNext CRM setup</strong> to <strong>Medusa JS</strong> commerce platforms and intelligent <strong>WhatsApp automation</strong> with <strong>Mautic</strong> and <strong>n8n</strong> — our <strong>certified ERPNext partners in Bangalore</strong> deliver results. Need to <strong>hire an ERPNext developer</strong>? We have got you covered.
                                 </p>
                                 <p className="text-black/60 mb-10 text-lg">
-                                    We partner with businesses across India and internationally to deliver transparent, scalable, and zero-licensing-fee solutions. Don't let proprietary software limits stunt your growth. Get in touch today for a comprehensive technical roadmap.
+                                    We partner with enterprises across India — Mumbai, Delhi NCR, Pune, Ahmedabad, and globally — to deliver open-source <strong>cloud ERP</strong>, <strong>GST-compliant</strong> ERPNext, and zero-licensing-fee solutions on Frappe. Whether you are comparing <strong>ERPNext vs Odoo</strong> or looking to <strong>migrate from Tally</strong>, schedule a free consultation today and get a comprehensive technical roadmap built for your business.
                                 </p>
                             </div>
 
@@ -170,8 +169,8 @@ export default function Contact() {
                             <div className="absolute inset-0 bg-[#00aaff]/10 blur-3xl rounded-[3rem] opacity-30 group-hover:opacity-50 transition-opacity duration-1000" />
                             <div className="relative p-12 rounded-[3.5rem] border border-black/[0.05] bg-white shadow-2xl shadow-black/5">
                                 <div className="mb-12">
-                                    <h3 className="text-3xl font-extrabold text-black tracking-tight mb-4 uppercase">Send a Message</h3>
-                                    <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#00aaff]">Direct Architecture Inquiry</p>
+                                    <h3 className="text-3xl font-extrabold text-black tracking-tight mb-4 uppercase">Get in Touch</h3>
+                                    <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#00aaff]">Strategic Consultation Request</p>
                                 </div>
                                 <ContactForm />
                             </div>
@@ -181,9 +180,9 @@ export default function Contact() {
             </section>
 
             <CTASection
-                title="Check our products"
-                description="Looking for an out-of-the-box solution? View our SaaS platforms ready for deployment."
-                buttonText="Explore SaaS Products"
+                title="Explore Our Product Suite"
+                description="Looking for a ready-to-deploy solution? Discover 70+ enterprise products built on ERPNext and open-source platforms."
+                buttonText="View All Products"
                 buttonHref="/products"
             />
         </div>

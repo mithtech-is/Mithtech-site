@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { products } from "@/data/products";
 import { USE_CASES } from "@/data/navigation";
 import { CTASection } from "@/components/marketing/CTASection";
@@ -5,10 +6,40 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronRight } from "lucide-react";
 
-export const metadata = {
-    title: "Product Suite | Mithtech",
+export const metadata: Metadata = {
+    title: "70+ Enterprise Products | Mith Tech Ecosystem",
     description:
-        "Explore the complete suite of Mithtech products — enterprise-grade platforms, automation tools, and business solutions.",
+        "Explore 70+ enterprise products: ERP, CRM, eCommerce, WhatsApp automation, BI, LMS & more. One ecosystem to transform your entire business operations.",
+    keywords: [
+        "ERPNext products ecosystem",
+        "WhatsApp automation platform India",
+        "open source ERP products India",
+        "ERPNext CRM India",
+        "ERPNext HRMS India",
+        "Polygin WhatsApp automation",
+        "Mautic marketing automation India",
+        "n8n workflow automation India",
+        "Medusa JS eCommerce India",
+        "business automation tools India",
+        "CRM software India",
+        "Mith Tech products"
+    ],
+    alternates: {
+        canonical: "https://mith.tech/products",
+    },
+    openGraph: {
+        title: "70+ Enterprise Products | Mith Tech Ecosystem",
+        description: "One ecosystem. 70+ products. ERP, CRM, eCommerce, automation, BI, and more. Transform every layer of your business with Mith Tech.",
+        url: "https://mith.tech/products",
+        type: "website",
+        images: [{ url: "/assets/og-shared.png", width: 1200, height: 630, alt: "Mith Tech - 70+ Enterprise Products" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "70+ Enterprise Products | Mith Tech",
+        description: "ERP, CRM, eCommerce, WhatsApp automation, BI & more. One ecosystem to transform your entire business.",
+        images: ["/assets/og-shared.png"],
+    },
 };
 
 // Categorization based on Products.md
@@ -80,9 +111,9 @@ export default function ProductsPage() {
                     <div className="max-w-4xl mx-auto text-center">
                         <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-black/[0.02] px-3 py-1 mb-8">
                             <span className="h-1.5 w-1.5 rounded-full bg-[#00aaff] animate-pulse" />
-                            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Product Suite 2024</span>
+                            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Product Suite 2026</span>
                         </div>
-                        <h1 className="text-5xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase">
+                        <h1 className="text-3xl font-extrabold tracking-tight text-black sm:text-5xl md:text-7xl lg:text-8xl mb-8 leading-[0.9] uppercase">
                             All Products in <br /> 
                             <span className="text-[#00aaff]">One Ecosystem.</span>
                         </h1>
@@ -146,7 +177,7 @@ export default function ProductsPage() {
                                 >
                                     <div className="flex items-center justify-between mb-12 border-b border-black/[0.05] pb-6">
                                         <div>
-                                            <h2 className="text-4xl font-extrabold text-black mb-3 tracking-tight uppercase">{category.title}</h2>
+                                            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-black mb-3 tracking-tight uppercase">{category.title}</h2>
                                             <p className="text-base text-black/40 leading-loose italic">Discover specialized tools for {category.title.toLowerCase()}.</p>
                                         </div>
                                         <span className="hidden sm:block text-[10px] font-bold text-black/20 uppercase tracking-widest">

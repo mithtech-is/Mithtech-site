@@ -2,30 +2,37 @@
 import AnalyticsPageClient from "./AnalyticsPageClient";
 
 export const metadata: Metadata = {
-    title: "n8n Automation Services India | Data Visualization & BI Bangalore",
-    description: "Mith Tech provides expert n8n automation services and enterprise data visualization in India. Custom BI dashboards using Metabase & Superset for data-driven decisions in Bangalore.",
+    title: "Business Intelligence & Analytics India | Mith Tech",
+    description: "Drive decisions with real-time BI dashboards, n8n workflow automation, Metabase & Superset. Enterprise analytics that accelerate growth. Based in Bangalore.",
     keywords: [
+        "business intelligence India",
         "n8n automation services India",
-        "data visualization services Bangalore",
-        "enterprise automation n8n India",
-        "custom analytics dashboards India",
+        "data visualization Bangalore",
         "Metabase implementation India",
         "Apache Superset consultant India",
-        "business intelligence solutions Bangalore",
+        "enterprise analytics Bangalore",
+        "workflow automation India",
+        "custom BI dashboards India",
+        "data-driven business India",
         "Mith Tech"
     ],
+    alternates: {
+        canonical: "https://mith.tech/solutions/analytics",
+    },
     openGraph: {
-        title: "Analytics & Business BI Solutions India | Mith Tech",
-        description: "Unlock the story your data is telling. Enterprise-grade BI, real-time visualization, and n8n automation services in Bangalore.",
+        title: "Business Intelligence & Analytics India | Mith Tech",
+        description: "Real-time BI dashboards, n8n automation, and enterprise analytics. Make faster, smarter decisions. Trusted by businesses across India.",
         url: "https://mith.tech/solutions/analytics",
         siteName: "Mith Tech",
         locale: "en_IN",
         type: "website",
+        images: [{ url: "/assets/og-shared.png", width: 1200, height: 630, alt: "Mith Tech - Business Intelligence India" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "n8n Automation & BI Dashboards India | Mith Tech",
-        description: "Scale your business with automated workflows and real-time data insights.",
+        title: "BI & Analytics India | Mith Tech",
+        description: "Real-time dashboards, n8n automation & enterprise analytics. Drive smarter decisions with Mith Tech.",
+        images: ["/assets/og-shared.png"],
     },
 };
 

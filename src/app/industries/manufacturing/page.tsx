@@ -2,29 +2,39 @@
 import ManufacturingPage from "./ManufacturingPageClient";
 
 export const metadata: Metadata = {
-    title: "ERPNext for Manufacturing Company India | Production Planning Software",
-    description: "Mith Tech provides the best ERPNext for manufacturing companies in India. Our production planning software and BOM management solutions optimize shop floors in Bangalore. Reduce TCO by 70%.",
+    title: "Manufacturing ERP India | ERPNext for Production",
+    description: "Optimize your shop floor with ERPNext. Production planning, BOM management, inventory & supply chain in one ERP. 70% lower TCO than SAP. Bangalore-based.",
     keywords: [
-        "ERPNext for manufacturing company India",
-        "discrete manufacturing ERP software India",
+        "ERPNext for manufacturing companies India",
+        "ERPNext for manufacturing India",
+        "best ERP for manufacturing India",
         "production planning software India",
-        "inventory management for manufacturers India",
         "BOM management software India",
-        "manufacturing execution system India",
-        "Mith Tech"
+        "GST compliant ERP manufacturing",
+        "open source ERP for manufacturing",
+        "ERPNext vs SAP manufacturing",
+        "ERPNext implementation cost manufacturing",
+        "supply chain management India",
+        "cloud ERP for Indian manufacturers",
+        "Mith Tech manufacturing"
     ],
+    alternates: {
+        canonical: "https://mith.tech/industries/manufacturing",
+    },
     openGraph: {
-        title: "Manufacturing ERP & Production Planning Solutions India | Mith Tech",
-        description: "Optimise your production floor. Production planning, BOM management, and supply chain visibility—all connected in one enterprise ERP system in Bangalore.",
+        title: "Manufacturing ERP India | ERPNext for Production | Mith Tech",
+        description: "Production planning, BOM, inventory & supply chain in one ERP. 70% lower TCO than SAP. Trusted by manufacturers across India.",
         url: "https://mith.tech/industries/manufacturing",
         siteName: "Mith Tech",
         locale: "en_IN",
         type: "website",
+        images: [{ url: "/assets/og-shared.png", width: 1200, height: 630, alt: "Mith Tech - Manufacturing ERP India" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "ERPNext for Manufacturing India | Mith Tech",
-        description: "Scale your manufacturing operations with India's most versatile ERP.",
+        title: "Manufacturing ERP India | Mith Tech",
+        description: "ERPNext for production planning, BOM & supply chain. 70% lower TCO than SAP. Scale your manufacturing.",
+        images: ["/assets/og-shared.png"],
     },
 };
 

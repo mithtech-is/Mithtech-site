@@ -22,20 +22,20 @@ export default function About() {
                     <div className="max-w-4xl mx-auto text-center">
                         <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-black/[0.02] px-3 py-1 mb-8">
                             <span className="h-1.5 w-1.5 rounded-full bg-[#00aaff] animate-pulse" />
-                            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Our Identity</span>
+                            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Trusted by Enterprises Across India</span>
                         </div>
-                        <h1 className="text-5xl font-extrabold tracking-tight text-black sm:text-6xl lg:text-7xl mb-10 leading-[1.1] uppercase">
-                            About <br />
-                            <span className="text-[#00aaff]">Mithtech</span>
+                        <h1 className="text-4xl font-extrabold tracking-tight text-black sm:text-5xl md:text-6xl lg:text-7xl mb-10 leading-[1.1] uppercase">
+                            Your Success <br />
+                            <span className="text-[#00aaff]">Starts Here</span>
                         </h1>
                         <p className="text-xl leading-loose text-black/50 max-w-3xl mx-auto mb-14 italic font-sans font-medium">
-                            We are a software consultancy providing enterprise-grade ERP,
-                            eCommerce, and SaaS platforms. We architect foundations
-                            that scale with your ambition—not your costs.
+                            Mithtech is India's best ERPNext implementation partner and certified Frappe developer, empowering
+                            businesses with open-source cloud ERP, eCommerce, and WhatsApp
+                            automation — delivering enterprise power with zero licensing fees. From ERPNext customization to Tally migration, we do it all.
                         </p>
                         <div className="flex flex-wrap justify-center gap-6">
                             <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-black px-10 py-5 text-sm font-bold text-white transition-all hover:bg-black/90 hover:scale-105 active:scale-95 shadow-xl shadow-black/10 uppercase tracking-widest leading-none">
-                                Get in Touch
+                                Start Your Transformation
                             </Link>
                         </div>
                     </div>
@@ -46,30 +46,30 @@ export default function About() {
             <section className="py-24 lg:py-40 border-b border-black/[0.05] bg-black/[0.01]">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="max-w-5xl mx-auto">
-                        <h2 className="text-4xl font-extrabold text-black mb-16 tracking-tight uppercase">Our Mission</h2>
+                        <h2 className="text-4xl font-extrabold text-black mb-16 tracking-tight uppercase">Our Mission: Customer Success at Scale</h2>
                         <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
                             <p className="text-3xl font-extrabold text-black/20 leading-tight uppercase tracking-tighter">
-                                "Democratizing business technology through scalable, open-ecosystems."
+                                "Every business deserves enterprise-grade technology — without enterprise-grade costs."
                             </p>
                             <div className="prose prose-xl leading-loose font-sans">
                                 <p className="text-black/60 mb-6 font-medium">
-                                    Our mission is to democratize business technology by leveraging the power of scalable platforms. As a trusted <strong>ERPNext implementation partner in Bangalore</strong> and a leading <strong>Frappe development company in India</strong>, we architect systems that rival proprietary software—without the crippling per-user licensing fees or vendor lock-in.
+                                    At Mithtech, we believe the right technology should be an accelerator, not a bottleneck. As a <strong>certified ERPNext partner in Bangalore</strong> and a leading <strong>Frappe development company in India</strong>, we equip organizations with battle-tested open source ERP products that deliver the capabilities of SAP and Odoo — with full data ownership, zero licensing fees, and the freedom to innovate on your terms. Our <strong>ERPNext implementation cost</strong> is 40-60% lower than legacy alternatives.
                                 </p>
                                 <p className="text-black/60 mb-6">
-                                    We bring years of hands-on experience deploying complex business systems across diverse industries including Manufacturing, Healthcare, and Retail. Our team consists of seasoned technical architects who understand that software should adapt to your workflows, not the other way around. By leveraging fully open-source ecosystems like <strong className="text-black font-semibold">ERPNext</strong>, <strong className="text-black font-semibold">Medusa JS</strong>, and <strong className="text-black font-semibold">n8n</strong>, we guarantee comprehensive enterprise ERP solutions tailored for the Indian and global markets.
+                                    From startups evaluating the <strong className="text-black font-semibold">best ERP for small business in India</strong> to established enterprises across Manufacturing, Healthcare, Retail, and beyond — our certified architects have driven measurable outcomes for every customer we serve. We do not simply deploy software — we engineer digital foundations built on <strong className="text-black font-semibold">ERPNext</strong>, <strong className="text-black font-semibold">Medusa JS</strong>, and <strong className="text-black font-semibold">n8n</strong> that streamline operations, unlock insights, and scale without limits. Need to <strong className="text-black font-semibold">migrate from Tally to ERPNext</strong>? We handle it with zero data loss. That is the Mithtech difference — <strong>GST-compliant cloud ERP solutions</strong> designed for the Indian and global markets.
                                 </p>
                                 <ul className="text-black/60 text-lg space-y-3 mt-8">
                                     <li className="flex items-start gap-3">
                                         <CheckCircle2 className="w-6 h-6 text-[#00aaff] shrink-0 mt-1" />
-                                        <span><strong>Proven Expertise:</strong> Over dozens of successful enterprise deployments.</span>
+                                        <span><strong>70+ Products, One Partner:</strong> A comprehensive portfolio spanning ERP, eCommerce, automation, analytics, and more — all from a single trusted team.</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <CheckCircle2 className="w-6 h-6 text-[#00aaff] shrink-0 mt-1" />
-                                        <span><strong>Transparent Implementation:</strong> No hidden licensing costs, full data ownership.</span>
+                                        <span><strong>Zero Licensing, Full Ownership:</strong> No per-user fees, no vendor lock-in. You own your data, your code, and your future.</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <CheckCircle2 className="w-6 h-6 text-[#00aaff] shrink-0 mt-1" />
-                                        <span><strong>Local Support, Global Standards:</strong> Based in Bangalore, providing world-class managed services.</span>
+                                        <span><strong>Bangalore-Based, Globally Proven:</strong> Enterprise-grade Frappe development and managed services from India's open-source capital.</span>
                                     </li>
                                 </ul>
                             </div>
@@ -82,28 +82,28 @@ export default function About() {
             <section className="py-24 lg:py-40 bg-white">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-4xl mx-auto mb-24">
-                        <h2 className="text-4xl font-extrabold tracking-tight text-black mb-8 uppercase">Why Mithtech?</h2>
-                        <p className="text-xl text-black/40 leading-loose italic max-w-2xl mx-auto font-sans">We architect for ownership, customization, and infinite scale.</p>
+                        <h2 className="text-4xl font-extrabold tracking-tight text-black mb-8 uppercase">Why Trailblazers Choose Mithtech</h2>
+                        <p className="text-xl text-black/40 leading-loose italic max-w-2xl mx-auto font-sans">The outcomes that set our customers apart — ownership, agility, and limitless growth.</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                         {[
                             {
                                 icon: Shield,
-                                title: "Full Ownership",
-                                desc: "You own your data and infrastructure. Your business isn't held hostage by unpredictable SaaS pricing changes."
+                                title: "Complete Data Sovereignty",
+                                desc: "Your data belongs to you — period. With full infrastructure ownership, you are never one pricing change away from disruption. That is the confidence your business deserves."
                             },
                             {
                                 icon: Layout,
-                                title: "Infinite Customization",
-                                desc: "We mold the software to fit your unique business processes, rather than changing your business to fit the software."
+                                title: "Built Around Your Workflows",
+                                desc: "We configure every module to mirror how your teams actually work. No forcing square pegs into round holes — your ERP adapts to you, driving adoption and ROI from day one."
                             },
                             {
                                 icon: Zap,
-                                title: "Zero Licensing",
-                                desc: "Scale from 10 employees to 10,000 without base software costs multiplying via per-user licensing fees."
+                                title: "Scale Without Per-User Fees",
+                                desc: "Go from 10 users to 10,000 with zero incremental licensing costs. Open-source enterprise ERP means your growth is never taxed by a vendor's pricing model."
                             }
                         ].map((item, i) => (
-                            <div key={i} className="p-12 rounded-[3.5rem] border border-black/[0.05] bg-white hover:border-[#00aaff]/20 hover:shadow-2xl hover:shadow-black/5 transition-all duration-700 group flex flex-col gap-10">
+                            <div key={i} className="p-6 sm:p-12 rounded-2xl sm:rounded-[3.5rem] border border-black/[0.05] bg-white hover:border-[#00aaff]/20 hover:shadow-2xl hover:shadow-black/5 transition-all duration-700 group flex flex-col gap-6 sm:gap-10">
                                 <div className="w-16 h-16 rounded-3xl bg-black border border-black/[0.05] flex items-center justify-center text-[#00aaff] shadow-2xl group-hover:scale-110 transition-transform duration-700">
                                     <item.icon className="w-8 h-8" />
                                 </div>
@@ -120,17 +120,17 @@ export default function About() {
             {/* Platforms We Champion */}
             <section className="py-24 lg:py-40 bg-white">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="bg-black text-white rounded-[3rem] p-12 lg:p-24 border border-white/10 shadow-2xl overflow-hidden text-center">
-                        <div className="max-w-4xl mx-auto mb-20">
-                            <h2 className="text-4xl font-extrabold tracking-tight text-white mb-10 tracking-tighter uppercase">Platforms We <span className="text-[#00aaff]">Champion.</span></h2>
-                            <p className="text-xl text-white/40 leading-loose italic max-w-2xl mx-auto font-sans">We specialize in technologies with proven reliability and rapid development cycles.</p>
+                    <div className="bg-black text-white rounded-2xl sm:rounded-[3rem] p-6 sm:p-12 lg:p-24 border border-white/10 shadow-2xl overflow-hidden text-center">
+                        <div className="max-w-4xl mx-auto mb-10 sm:mb-20">
+                            <h2 className="text-4xl font-extrabold tracking-tight text-white mb-10 tracking-tighter uppercase">The Technology <span className="text-[#00aaff]">Behind Your Edge.</span></h2>
+                            <p className="text-xl text-white/40 leading-loose italic max-w-2xl mx-auto font-sans">We have certified deep expertise in the platforms driving the next generation of enterprise innovation.</p>
                         </div>
                         <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
                             {["Frappe", "ERPNext", "MedusaJS", "n8n", "Mautic", "Listmonk", "Schedulr", "Directorist", "Next.js", "Odoo", "Metabase", "Superset"].map(platform => (
                                 <motion.span
                                     key={platform}
                                     whileHover={{ scale: 1.05 }}
-                                    className="px-10 py-5 rounded-full border border-white/10 bg-white/5 font-extrabold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all cursor-default"
+                                    className="px-5 py-3 sm:px-10 sm:py-5 rounded-full border border-white/10 bg-white/5 font-extrabold text-[10px] sm:text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all cursor-default"
                                 >
                                     {platform}
                                 </motion.span>
@@ -141,9 +141,9 @@ export default function About() {
             </section>
 
             <CTASection
-                title="Ready to transform your operations?"
-                description="Let's build a foundation that scales with you. Talk to our architects today."
-                buttonText="Get in Touch"
+                title="Ready to become a trailblazer?"
+                description="Join the businesses across India and beyond that trust Mithtech to power their growth. Let's map your path to enterprise success — together."
+                buttonText="Talk to Our Architects"
                 buttonHref="/contact"
             />
         </div>

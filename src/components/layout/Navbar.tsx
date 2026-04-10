@@ -270,6 +270,13 @@ export function Navbar() {
                             </Link>
                         </div>
 
+                        {/* CLIENTS */}
+                        <div className="relative flex items-center h-full">
+                            <Link href="/clients" className="text-sm font-medium text-white/80 hover:text-white transition-colors">
+                                Clients
+                            </Link>
+                        </div>
+
                     </nav>
                 </div>
 
@@ -278,7 +285,7 @@ export function Navbar() {
                     <Button
                         asChild
                         variant="outline"
-                        className="hidden md:flex rounded-full border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white px-6 font-medium transition-[background-color,border-color,transform] duration-150 ease-[var(--ease-out)] active:scale-[0.95]"
+                        className="hidden lg:flex rounded-full border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white px-6 font-medium transition-[background-color,border-color,transform] duration-150 ease-[var(--ease-out)] active:scale-[0.95]"
                     >
                         <Link href="/contact">Book Consultation</Link>
                     </Button>
@@ -340,6 +347,7 @@ export function Navbar() {
                                     </MobileAccordion>
 
                                     <Link href="/industries" onClick={() => setMobileMenuOpen(false)} className="block py-4 border-b border-white/10">Industries</Link>
+                                    <Link href="/clients" onClick={() => setMobileMenuOpen(false)} className="block py-4 border-b border-white/10">Clients</Link>
                                 </div>
                                 <div className="p-6 border-t border-white/10">
                                     <Button asChild className="w-full rounded-full h-12 bg-primary hover:bg-primary/90 text-white font-bold">

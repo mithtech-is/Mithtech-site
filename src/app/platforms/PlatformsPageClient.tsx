@@ -112,7 +112,7 @@ export default function Platforms() {
                     >
                         <PlatformCard
                             name="MedusaJS"
-                            imageSrc="/assets/medusa-logo.png"
+                            imageSrc="/assets/medusajs-logo.png"
                             description="Headless commerce platform for building scalable storefronts."
                             href="/solutions/commerce"
                             delay={0.1}

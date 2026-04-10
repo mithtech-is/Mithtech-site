@@ -159,16 +159,16 @@ export default function Partners() {
                     <div className="max-w-4xl mx-auto text-center">
                         <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-black/[0.02] px-3 py-1 mb-8">
                             <span className="h-1.5 w-1.5 rounded-full bg-[#00aaff] animate-pulse" />
-                            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Global Network</span>
+                            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">Partner Ecosystem</span>
                         </div>
                         <h1 className="text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl mb-8 leading-[1.1] uppercase">
-                            Partner With <br />
-                            <span className="text-[#00aaff]">Mithtech.</span>
+                            Grow Faster <br />
+                            <span className="text-[#00aaff]">Together.</span>
                         </h1>
                         <p className="text-xl leading-loose text-black/50 max-w-3xl mx-auto mb-12 italic">
-                            Join our network of resellers and system integrators. Deliver
-                            world-class enterprise solutions with our technical support
-                            and white-label options.
+                            Join a global network of ERPNext resellers and system integrators.
+                            Deliver enterprise solutions India businesses trust -- backed by Mithtech's
+                            technical depth, white-label flexibility, and zero-licensing open-source platforms.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link href="#apply" className="inline-flex items-center justify-center rounded-full bg-black px-10 py-4 text-sm font-bold text-white transition-all hover:bg-black/80 hover:translate-y-[-2px] active:scale-95">
@@ -184,12 +184,12 @@ export default function Partners() {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                         <div>
-                            <h2 className="text-4xl font-extrabold text-black mb-12 tracking-tight uppercase">Why Partner With Us?</h2>
+                            <h2 className="text-4xl font-extrabold text-black mb-12 tracking-tight uppercase">Why Leading Firms Choose Mithtech</h2>
                             <div className="space-y-8">
                                 {[
-                                    { step: "01", title: "Revenue Growth", desc: "Earn recurring commissions on SaaS products and high margins on enterprise services." },
-                                    { step: "02", title: "White Label Options", desc: "We handle the backend technical complexity while you own the direct client relationship." },
-                                    { step: "03", title: "Architecture Support", desc: "Get priority support and architectural training for your deployment and sales teams." },
+                                    { step: "01", title: "Accelerated Revenue", desc: "Unlock recurring commissions on 70+ SaaS products and high-margin ERPNext implementation services with zero licensing overhead." },
+                                    { step: "02", title: "White-Label Flexibility", desc: "We power the technology; you own the client relationship. Deliver Frappe-based enterprise solutions under your own brand." },
+                                    { step: "03", title: "End-to-End Enablement", desc: "From technical certification to sales playbooks, our partner success team equips you to win deals and deliver business automation at scale." },
                                 ].map((item, i) => (
                                     <div key={i} className="flex items-start gap-6 group">
                                         <div className="text-4xl font-black text-[#00aaff]/20 group-hover:text-[#00aaff] transition-colors duration-500 leading-none">{item.step}</div>
@@ -218,12 +218,12 @@ export default function Partners() {
             {/* Strategic Value Proposition */}
             <section className="py-24 lg:py-32 bg-black text-white">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
-                    <h2 className="text-4xl font-extrabold tracking-tight text-white mb-20 tracking-tighter uppercase">Success Metrics</h2>
+                    <h2 className="text-4xl font-extrabold tracking-tight text-white mb-20 tracking-tighter uppercase">Partner Success by the Numbers</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
-                            { stat: "25+", label: "Active Global Partners" },
-                            { stat: "15+", label: "Countries Represented" },
-                            { stat: "40%", label: "Avg Partner Revenue Growth" },
+                            { stat: "25+", label: "Active Partners Worldwide" },
+                            { stat: "15+", label: "Countries Served" },
+                            { stat: "40%", label: "Avg. Partner Revenue Growth" },
                         ].map((item, i) => (
                             <div key={i} className="group p-12 rounded-[3.5rem] bg-white border border-black/5 hover:bg-black transition-all duration-500 hover:translate-y-[-8px] shadow-sm hover:shadow-2xl">
                                 <div className="text-6xl font-extrabold text-[#00aaff] mb-4 group-hover:text-white transition-colors tracking-tighter">{item.stat}</div>
@@ -235,9 +235,9 @@ export default function Partners() {
             </section>
 
             <CTASection
-                title="Looking for Success Stories?"
-                description="See how businesses across the globe have scaled using our platforms and partner network."
-                buttonText="Read Business Case Studies"
+                title="See What Our Partners Have Achieved"
+                description="Explore how businesses across India and globally have accelerated growth with Mithtech-powered enterprise solutions."
+                buttonText="View Customer Success Stories"
                 buttonHref="/about"
             />
         </div>

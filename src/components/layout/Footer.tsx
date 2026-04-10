@@ -67,15 +67,13 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <h3 className="mb-6 text-sm font-bold uppercase tracking-[0.2em] text-white">Blogs</h3>
+                        <h3 className="mb-6 text-sm font-bold uppercase tracking-[0.2em] text-white">Company</h3>
                         <ul className="space-y-4">
-                            {demoBlogLinks.map((blog) => (
-                                <li key={blog.label}>
-                                    <Link href={blog.href} className="text-sm font-medium text-white/60 transition-colors duration-150 hover:text-white">
-                                        {blog.label}
-                                    </Link>
-                                </li>
-                            ))}
+                            <li><Link href="/about" className="text-sm font-medium text-white/60 transition-colors duration-150 hover:text-white">About Us</Link></li>
+                            <li><Link href="/clients" className="text-sm font-medium text-white/60 transition-colors duration-150 hover:text-white">Clients</Link></li>
+                            <li><Link href="/blog" className="text-sm font-medium text-white/60 transition-colors duration-150 hover:text-white">Blog</Link></li>
+                            <li><Link href="/partners" className="text-sm font-medium text-white/60 transition-colors duration-150 hover:text-white">Partners</Link></li>
+                            <li><Link href="/contact" className="text-sm font-medium text-white/60 transition-colors duration-150 hover:text-white">Contact</Link></li>
                         </ul>
                     </div>
                 </div>

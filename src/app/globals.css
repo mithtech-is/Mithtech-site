@@ -8,7 +8,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-space-grotesk);
-  --font-mono: var(--font-geist-mono);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -118,14 +118,13 @@
     @apply font-sans;
     width: 100%;
     height: 100%;
-    scroll-behavior: smooth;
     overflow-x: hidden;
   }
 }
 
 @layer utilities {
   .text-responsive-h1 {
-    @apply text-4xl sm:text-6xl md:text-7xl lg:text-8xl;
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-8xl;
     line-height: 1.1;
   }
   .text-responsive-h2 {
@@ -200,6 +199,55 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
+/* Infinite scrolling marquee for client logos */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 35s linear infinite;
+}
+
+.hover-pause:hover .animate-marquee,
+.hover-pause:hover .animate-marquee-reverse {
+  animation-play-state: paused;
+}
+
+/* Staggered fade-in for list items */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+  opacity: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
 
   *,
@@ -209,7 +257,6 @@
     animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
     background-attachment: initial !important;
-    scroll-behavior: auto !important;
     transition-duration: 0s !important;
     transition-delay: 0s !important;
   }
