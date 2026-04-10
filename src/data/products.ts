@@ -511,16 +511,16 @@ export const products: Product[] = [
     },
     // Operations & Business Management additions
     {
-        slug: "marely-health",
-        title: "marely Health",
-        icon: "/assets/marley healtcare-logo.png",
+        slug: "marley-health",
+        title: "Marley Health",
+        icon: "/assets/marley-healthcare-logo.png",
         description: "Healthcare Operations ERP",
         longDescription: "A specialized healthcare ERP designed for managing clinics, patient records, and hospital operations with clinical precision.",
         features: ["Patient Records", "Lab Integration", "Clinic Management"],
         externalHref: "",
         category: "Operations",
         type: "service",
-        useCase: "Healthcare providers use marely Health to digitize patient journeys and automate clinical reporting."
+        useCase: "Healthcare providers use Marley Health to digitize patient journeys and automate clinical reporting."
     },
     {
         slug: "frappe-lending",

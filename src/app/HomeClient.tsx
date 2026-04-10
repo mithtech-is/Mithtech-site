@@ -73,7 +73,7 @@ export default function HomeClient() {
     let lastScrollTime = 0;
     let isSceneAnimating = false;
     let wheelDeltaAccumulator = 0;
-    let wheelGestureResetTimer: ReturnType<typeof window.setTimeout> | null = null;
+    let wheelGestureResetTimer: any = null;
     const lastSceneEnd = SCENES[SCENES.length - 1]?.r[1] ?? 1;
 
     const getCanvasBounds = () => {

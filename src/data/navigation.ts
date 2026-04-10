@@ -148,8 +148,9 @@ export const PLATFORMS = [
 ];
 
 export const SOLUTIONS = [
-  { title: "Enterprise Implementation", href: "/solutions/enterprise" },
-  { title: "Custom Development", href: "/solutions/custom" },
-  { title: "Consulting", href: "/solutions/consulting" },
-  { title: "Cloud Hosting", href: "/solutions/hosting" },
+  { title: "Frappe & ERPNext", href: "/solutions/frappe" },
+  { title: "eCommerce & Retail", href: "/solutions/commerce" },
+  { title: "Marketing Automation", href: "/solutions/marketing-automation" },
+  { title: "Analytics & BI", href: "/solutions/analytics" },
+  { title: "Learning Management", href: "/solutions/lms" },
 ];
