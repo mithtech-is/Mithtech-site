@@ -187,7 +187,7 @@ export default function HomeClient() {
           window.clearTimeout(wheelGestureResetTimer);
           wheelGestureResetTimer = null;
         }
-        animateScrollTo(top + maxScroll + 2);
+        animateScrollTo(top + height);
         return;
       }
 
@@ -231,7 +231,7 @@ export default function HomeClient() {
 
       if (deltaY > 0 && isLastScene) {
         e.preventDefault();
-        animateScrollTo(top + maxScroll + 2);
+        animateScrollTo(top + height);
         touchStartY = touchEndY;
         return;
       }

@@ -173,38 +173,39 @@ const OTHER_CLIENTS: ClientProject[] = [
     },
 ];
 
-/* Scrolling logo data — duplicated for seamless infinite scroll */
+/* Scrolling logo data — featured clients (3M, Kinara, P91, Futura, Polemarch) in center */
 const CLIENT_LOGOS = [
-    { name: "Polemarch", initial: "P" },
-    { name: "Futura Sink", initial: "FS" },
-    { name: "Risitex", initial: "R" },
-    { name: "3M", initial: "3M" },
-    { name: "Kinara Capital", initial: "KC" },
-    { name: "Polemarch", initial: "P" },
-    { name: "Futura Sink", initial: "FS" },
-    { name: "Risitex", initial: "R" },
-    { name: "3M", initial: "3M" },
-    { name: "Kinara Capital", initial: "KC" },
+    { name: "Stek", src: "/assets/clients/stek-logo.png" },
+    { name: "iAdda", src: "/assets/clients/iadda.png" },
+    { name: "Nasiol", src: "/assets/clients/nasiol-logo-650x415.webp" },
+    { name: "3M", src: "/assets/clients/3M.png" },
+    { name: "Kinara Capital", src: "/assets/clients/kinara-logo.png" },
+    { name: "P91", src: "/assets/clients/p91-logo.png" },
+    { name: "Futura Sink", src: "/assets/clients/futura_sink.png" },
+    { name: "Polemarch", src: "/assets/clients/polemarch_logo.png" },
+    { name: "MDT", src: "/assets/clients/MDT-logo.png" },
+    { name: "JustSigns", src: "/assets/clients/justsigns.png" },
 ];
 
 /* ------------------------------------------------------------------ */
 /*  Scrolling Logo Marquee Component                                    */
 /* ------------------------------------------------------------------ */
 
-function LogoMarquee({ reverse = false }: { reverse?: boolean }) {
+function LogoMarquee() {
     return (
-        <div className="flex gap-8 sm:gap-12 items-center w-max">
+        <div className="flex gap-10 sm:gap-14 md:gap-20 items-center w-max">
             {CLIENT_LOGOS.map((client, idx) => (
                 <div
                     key={`${client.name}-${idx}`}
-                    className="flex items-center gap-3 sm:gap-4 px-6 sm:px-8 py-4 sm:py-5 rounded-2xl border border-black/[0.04] bg-white hover:border-[#00aaff]/20 hover:shadow-lg hover:shadow-black/[0.03] transition-all duration-300 group shrink-0"
+                    className="flex items-center justify-center shrink-0 px-2 sm:px-4 group"
                 >
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-black flex items-center justify-center text-white font-extrabold text-sm sm:text-base group-hover:bg-[#00aaff] transition-colors duration-300 shrink-0">
-                        {client.initial}
-                    </div>
-                    <span className="text-lg sm:text-xl font-extrabold text-black/70 group-hover:text-black transition-colors duration-300 whitespace-nowrap">
-                        {client.name}
-                    </span>
+                    <img
+                        src={client.src}
+                        alt={`${client.name} logo`}
+                        className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto max-w-[100px] sm:max-w-[130px] md:max-w-[160px] object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                        loading="eager"
+                        draggable={false}
+                    />
                 </div>
             ))}
         </div>
@@ -304,14 +305,14 @@ export default function ClientsPageClient() {
             </section>
 
             {/* ==================== SCROLLING LOGO MARQUEE ==================== */}
-            <section className="bg-black/[0.02] py-10 sm:py-14 border-b border-black/[0.05] overflow-hidden">
+            <section className="py-10 sm:py-14 border-b border-black/[0.05] overflow-hidden">
                 <div className="mb-8 text-center">
                     <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/30">
                         Trusted by Forward-Thinking Organisations
                     </p>
                 </div>
                 <div className="hover-pause">
-                    <div className="animate-marquee flex gap-8 sm:gap-12 w-max">
+                    <div className="animate-marquee flex gap-10 sm:gap-14 md:gap-20 w-max">
                         <LogoMarquee />
                         <LogoMarquee />
                     </div>
@@ -656,11 +657,11 @@ export default function ClientsPageClient() {
             </section>
 
             {/* ==================== SECOND MARQUEE (Reverse Direction) ==================== */}
-            <section className="bg-black/[0.02] py-10 sm:py-14 border-y border-black/[0.05] overflow-hidden">
+            <section className="py-10 sm:py-14 border-y border-black/[0.05] overflow-hidden">
                 <div className="hover-pause">
-                    <div className="animate-marquee-reverse flex gap-8 sm:gap-12 w-max">
-                        <LogoMarquee reverse />
-                        <LogoMarquee reverse />
+                    <div className="animate-marquee-reverse flex gap-10 sm:gap-14 md:gap-20 w-max">
+                        <LogoMarquee />
+                        <LogoMarquee />
                     </div>
                 </div>
             </section>

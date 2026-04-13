@@ -478,9 +478,9 @@ export default function MedusaPage() {
             </section>
 
             <ProductFAQ
-                productName="Medusa"
+                productName="Medusa JS"
                 faqs={generatePlatformFaqs({
-                    name: "Medusa",
+                    name: "Medusa JS",
                     category: "headless commerce platform",
                     description: "power custom storefronts, pricing logic, product management, and multi-channel commerce experiences",
                     features: [
@@ -490,16 +490,16 @@ export default function MedusaPage() {
                         "multi-region pricing",
                         "flexible integrations",
                     ],
-                    implementationFocus: "Medusa architecture, storefront development, checkout customization, and commerce integrations",
+                    implementationFocus: "Medusa JS architecture, storefront development, checkout customization, and commerce integrations",
                     integrations: ["ERP systems", "payment gateways", "shipping providers", "customer platforms", "analytics tools"],
                     customFaqs: [
                         {
-                            question: "When should a business choose Medusa over a traditional commerce platform?",
-                            answer: "Medusa is a strong fit when you need more control over storefront behavior, checkout logic, integrations, or multi-channel commerce. It works especially well for brands that want a custom commerce stack without platform lock-in.",
+                            question: "When should a business choose Medusa JS over a traditional commerce platform?",
+                            answer: "Medusa JS is the right fit when you need full control over storefront behaviour, checkout logic, and multi-channel commerce without platform lock-in. It works especially well for brands that want a custom commerce stack they truly own.",
                         },
                         {
-                            question: "Why do growing brands choose Medusa instead of platforms like Shopify or other closed commerce systems?",
-                            answer: "Many brands choose Medusa because it gives them full ownership of the commerce stack without platform commissions, restrictive app dependencies, or limits on how the storefront and backend can be customized. Unlike closed platforms such as Shopify, Medusa lets businesses protect margin, control customer experience, and scale on infrastructure that they truly own.",
+                            question: "Why do growing brands choose Medusa JS instead of Shopify?",
+                            answer: "Medusa JS gives brands full ownership of their commerce stack — zero platform commissions, no restrictive app dependencies, and unlimited customisation. Unlike Shopify, Medusa JS lets businesses protect margin, control the customer experience, and scale on infrastructure they own.",
                         },
                     ],
                 })}
