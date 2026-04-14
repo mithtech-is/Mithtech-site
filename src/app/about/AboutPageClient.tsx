@@ -126,7 +126,7 @@ export default function About() {
                             <p className="text-xl text-white/40 leading-loose italic max-w-2xl mx-auto font-sans">We have certified deep expertise in the platforms driving the next generation of enterprise innovation.</p>
                         </div>
                         <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
-                            {["Frappe", "ERPNext", "MedusaJS", "n8n", "Mautic", "Listmonk", "Schedulr", "Directorist", "Next.js", "Odoo", "Metabase", "Superset"].map(platform => (
+                            {["Frappe", "ERPNext", "MedusaJS", "n8n", "Mautic", "Listmonk", "Schedulr", "Directorist", "Next.js", "Metabase"].map(platform => (
                                 <motion.span
                                     key={platform}
                                     whileHover={{ scale: 1.05 }}

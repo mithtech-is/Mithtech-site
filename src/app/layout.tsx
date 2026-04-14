@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { LayoutClient } from "@/components/layout/LayoutClient";
 
@@ -260,6 +261,18 @@ export default function RootLayout({
         />
       </head>
       <body className={`${spaceGrotesk.variable} font-sans antialiased`} suppressHydrationWarning>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-6V0EHQQDL3"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-6V0EHQQDL3');
+          `}
+        </Script>
         <LayoutClient>
           {children}
         </LayoutClient>
