@@ -18,34 +18,78 @@ export const products: Product[] = [
         slug: "polygin",
         title: "Polygin WhatsApp Automation",
         icon: "/assets/polyg.png",
-        description: "Custom Storefront",
-        longDescription: "Automate your marketing, sales, and customer support on WhatsApp. Capture leads, run campaigns, and manage conversations from one unified platform built for business growth.",
-        features: ["Custom UI/UX Storefront", "High-Speed Performance", "Conversion Optimization"],
+        description: "WhatsApp Marketing Automation",
+        longDescription: "Polygin is Mith Tech's proprietary WhatsApp automation platform built for bulk marketing, lead nurturing, and customer engagement at scale. Send broadcast campaigns to opted-in contacts, automate multi-step message flows, capture inbound leads, and manage all conversations from a single dashboard — without needing technical WhatsApp API knowledge.",
+        features: [
+            "Bulk WhatsApp Broadcast Campaigns",
+            "Automated Message Flows & Drip Sequences",
+            "Lead Capture & CRM Sync",
+            "WhatsApp Bot Builder",
+            "Campaign Analytics & Delivery Reports"
+        ],
         externalHref: "https://polyg.in/",
         category: "Marketing",
         type: "proprietary",
-        useCase: "Modern eCommerce businesses use Polygin Store to deliver high-performance, custom-tailored shopping experiences.",
-        processHref: "#process"
+        useCase: "D2C brands and real estate companies use Polygin to send targeted WhatsApp broadcast campaigns to thousands of opted-in contacts, automating follow-up sequences based on user responses — converting cold leads into warm prospects on autopilot.",
+        processHref: "#process",
+        customFaqs: [
+            {
+                question: "How does Polygin compare to WATI, AiSensy, or Interakt?",
+                answer: "WATI, AiSensy, and Interakt are third-party platforms that charge per message and per user on top of WhatsApp API costs. Polygin is Mith Tech's proprietary platform — deployed on your own infrastructure with no per-message platform fees. You pay once for setup and own the system outright. For high-volume senders (10,000+ messages/month), this results in significant cost savings compared to SaaS WhatsApp tools."
+            },
+            {
+                question: "Can Polygin send bulk WhatsApp messages to large contact lists?",
+                answer: "Yes. Polygin is designed for scale — it handles broadcast campaigns to tens of thousands of opted-in contacts using the official WhatsApp Business API. Messages are sent through approved Message Templates, ensuring compliance with WhatsApp's policies. Mith Tech configures your WhatsApp Business API account, gets your message templates approved, and manages the full deployment."
+            },
+            {
+                question: "Is Polygin compliant with WhatsApp's messaging policies?",
+                answer: "Yes. Polygin operates exclusively on the official WhatsApp Business API, which means all outbound campaigns use pre-approved Message Templates and only reach contacts who have opted in. This keeps your account in good standing with Meta and ensures deliverability. Mith Tech handles the business verification, API setup, and template approval process as part of onboarding."
+            },
+            {
+                question: "What types of businesses use WhatsApp automation?",
+                answer: "WhatsApp automation is most impactful for businesses with high customer touch-points: real estate (lead follow-ups and site visit reminders), D2C brands (order updates, cart recovery, re-engagement), healthcare (appointment reminders and prescription alerts), financial services (payment reminders and loan updates), and education (admission follow-ups and fee notifications). Polygin is production-deployed across all these sectors."
+            }
+        ]
     },
     {
         slug: "polygin-wastore",
         title: "Polygin WaStore",
         icon: "/assets/polyg.png",
-        description: "Custom Storefront",
-        longDescription: "Polygin WaStore turns WhatsApp into a powerful sales channel, enabling businesses to showcase products, automate conversations, and close orders seamlessly in chat.",
-        features: ["Custom UI/UX Storefront", "High-Speed Performance", "Conversion Optimization"],
+        description: "WhatsApp Commerce Store",
+        longDescription: "Polygin WaStore turns WhatsApp into a fully functional sales channel — customers browse your product catalogue, place orders, and make payments entirely within WhatsApp chat. No app downloads, no website redirects. The entire buying journey happens inside the conversation your customers are already in.",
+        features: [
+            "WhatsApp Product Catalogue",
+            "Chat-Based Order Flow & Checkout",
+            "Automated Order Confirmation & Tracking",
+            "Payment Collection via WhatsApp",
+            "Inventory & Order Management Dashboard"
+        ],
         externalHref: "https://polyg.in/",
         category: "eCommerce",
         type: "proprietary",
-        useCase: "Modern eCommerce businesses use Polygin Store to deliver high-performance, custom-tailored shopping experiences.",
-        processHref: "#process"
+        useCase: "Retail and D2C businesses use Polygin WaStore to let customers browse products, add to cart, and pay — entirely within WhatsApp, with automated order confirmations and delivery updates sent back to the same chat thread.",
+        processHref: "#process",
+        customFaqs: [
+            {
+                question: "How is Polygin WaStore different from a regular WhatsApp catalogue?",
+                answer: "WhatsApp's native catalogue is a static product listing — customers can view items but cannot add to cart, check out, or pay within the app. Polygin WaStore adds a full commerce layer on top: dynamic cart, guided order conversation, integrated payment collection, and automated post-purchase updates. It turns a passive catalogue into an active sales channel."
+            },
+            {
+                question: "Can customers actually pay inside WhatsApp with WaStore?",
+                answer: "Yes. Polygin WaStore integrates with Indian payment gateways (Razorpay, PayU, Cashfree) to generate payment links sent directly in the WhatsApp conversation. Customers pay without leaving the chat. Once payment is confirmed, an automated order confirmation and estimated delivery message is sent — the complete purchase cycle happens inside WhatsApp."
+            },
+            {
+                question: "Is Polygin WaStore suitable for businesses without a website?",
+                answer: "Yes, that is one of its primary use cases. Businesses that rely on WhatsApp for sales but lack a formal website or app can use WaStore as their primary selling channel. You get a full product catalogue, order management dashboard, payment processing, and customer communication — all without building a website. Mith Tech sets up the entire system and syncs it with your inventory."
+            }
+        ]
     },
     {
         slug: "erpnext",
         title: "ERPNext",
         icon: "/assets/erpnext-logo.png",
         description: "Worlds No.1 Open Source ERP",
-        longDescription: "ERPNext is a comprehensive enterprise resource planning system that helps businesses manage accounting, inventory, CRM, HR, and more in a single unified platform. Known as the best ERP for SMBs in India, it stands proudly as a highly scalable Tally alternative and a cost-effective SAP alternative. Whether you need seamless ERPNext eCommerce integration or are seeking the best ERP for manufacturing in India, ERPNext offers unparalleled small business ERP benefits through maximum open-source flexibility.",
+        longDescription: "ERPNext is a comprehensive enterprise resource planning system that helps businesses manage accounting, inventory, CRM, HR, and more in a single unified platform. Known as the best ERP for SMBs in India, it stands proudly as a highly scalable, cost-effective SAP alternative. Whether you need seamless ERPNext eCommerce integration or are seeking the best ERP for manufacturing in India, ERPNext offers unparalleled small business ERP benefits through maximum open-source flexibility.",
         features: ["Accounting", "Inventory Management", "CRM & Sales", "HR & Payroll", "Manufacturing"],
         externalHref: "https://erpnext.com",
         category: "Operations",
@@ -53,8 +97,8 @@ export const products: Product[] = [
         useCase: "Thousands of businesses worldwide use ERPNext to streamline their operations and manage all departments from a single source of truth.",
         customFaqs: [
             {
-                question: "How does ERPNext compare to Tally or SAP in India?",
-                answer: "When deciding between ERPNext vs Tally in India, ERPNext offers a full-suite ERP beyond basic accounting, making it a superior Tally alternative for growing SMBs. Furthermore, ERPNext serves as a robust SAP alternative in India, providing identical enterprise-grade functionality at a fraction of the ERPNext implementation cost."
+                question: "How does ERPNext compare to SAP or Odoo in India?",
+                answer: "ERPNext offers a full-suite ERP covering accounting, inventory, HR, CRM, and manufacturing — matching SAP feature-for-feature at a fraction of the ERPNext implementation cost. Compared to Odoo, ERPNext is 100% open source with no per-user licensing fees, making it a stronger fit for growing Indian SMBs that need complete ownership and predictable costs."
             },
             {
                 question: "Does ERPNext completely support GST billing and setup?",
@@ -106,7 +150,25 @@ export const products: Product[] = [
         category: "Automation",
         type: "service",
         useCase: "Enterprises use n8n to sync data between their CRM, ERP, and communication tools, automating multi-step lead processing and financial reporting cycles.",
-        processHref: "#process"
+        processHref: "#process",
+        customFaqs: [
+            {
+                question: "Can n8n replace Zapier or Make (Integromat)?",
+                answer: "Yes. n8n covers everything Zapier and Make do — triggers, multi-step workflows, conditional logic, and 400+ app integrations — but without per-task pricing. On Zapier or Make, costs scale with every execution. n8n self-hosted has no per-workflow or per-execution fees, making it significantly cheaper at scale. The trade-off is that n8n requires a hosted server, which Mith Tech sets up and manages for you."
+            },
+            {
+                question: "Is n8n really free?",
+                answer: "n8n's core is open source and free to self-host. There is no cost per workflow, per execution, or per node. You pay only for server hosting — typically INR 2,000-5,000/month depending on workflow volume. Mith Tech deploys n8n on your own cloud infrastructure, making the total cost significantly lower than Zapier Pro or Make Business plans at equivalent usage levels."
+            },
+            {
+                question: "Does n8n support AI and LLM integrations?",
+                answer: "Yes. n8n has native nodes for OpenAI, Anthropic Claude, Google Gemini, and Ollama (for local, private LLMs). You can build AI agents that read emails, query your database, classify content, generate responses, and trigger follow-up actions — entirely without backend code. Mith Tech specializes in building AI-powered n8n workflows for document processing, lead qualification, and intelligent support automation."
+            },
+            {
+                question: "How many apps can n8n connect to?",
+                answer: "n8n has over 400 native integrations including ERPNext, Salesforce, HubSpot, Slack, Google Workspace, PostgreSQL, WhatsApp Business API, and Stripe. It also connects to any REST API, SOAP service, or webhook-based platform through its HTTP Request node — meaning it can integrate with virtually any software your business uses. Mith Tech builds custom n8n nodes for internal tools that lack standard integrations."
+            }
+        ]
     },
     {
         slug: "mautic",
@@ -125,7 +187,25 @@ export const products: Product[] = [
         category: "Marketing",
         type: "service",
         useCase: "B2B companies use Mautic to nurture leads through personalized email journeys based on user behavior on their website, significantly increasing conversion rates.",
-        processHref: "#process"
+        processHref: "#process",
+        customFaqs: [
+            {
+                question: "Is Mautic better than HubSpot or Mailchimp?",
+                answer: "Mautic matches HubSpot's core marketing automation features — email campaigns, lead scoring, behavioral segmentation, landing pages, and drip sequences — with zero per-contact fees. HubSpot Marketing Hub charges INR 4,000-40,000/month scaled to your contact list size; Mautic self-hosted has no such costs. The difference is ownership: Mautic runs on your server, so your lead data is never held by a third-party platform."
+            },
+            {
+                question: "How many contacts can Mautic handle?",
+                answer: "Mautic scales to millions of contacts on properly configured infrastructure. Performance depends on server specs and database tuning. Mith Tech configures Mautic with optimised caching, dedicated mail servers for high deliverability, and database indexing — clients typically manage 100,000 to 2 million contacts without performance issues. There are no artificial subscriber limits like HubSpot or Mailchimp impose."
+            },
+            {
+                question: "Does Mautic support WhatsApp and SMS marketing?",
+                answer: "Yes. Mautic supports multi-channel campaigns including email, SMS, and push notifications natively. WhatsApp marketing is achievable by connecting Mautic's webhook and API triggers to the WhatsApp Business API. Mith Tech builds these integrations as part of every Mautic implementation — enabling WhatsApp drip campaigns, behavioral lead nurturing, and transactional messaging from a single platform."
+            },
+            {
+                question: "Is Mautic GDPR and India DPDP compliant?",
+                answer: "Yes. Mautic gives you full control over subscriber data — stored entirely on infrastructure you own. It supports double opt-in, consent tracking, unsubscribe management, and data deletion requests out of the box. For Indian businesses, self-hosting Mautic means customer data stays within India's borders, directly supporting compliance with India's Digital Personal Data Protection Act (DPDP 2023)."
+            }
+        ]
     },
     {
         slug: "perfex",
@@ -348,7 +428,25 @@ export const products: Product[] = [
         externalHref: "",
         category: "Support",
         type: "service",
-        useCase: "Support teams use Chatwoot to handle WhatsApp, Email, and Website chat in one place."
+        useCase: "Support teams use Chatwoot to handle WhatsApp, Email, and Website chat in one place.",
+        customFaqs: [
+            {
+                question: "How does Chatwoot compare to Intercom or Zendesk?",
+                answer: "Chatwoot provides omnichannel support — WhatsApp, Email, Website Chat, Instagram, Telegram — with shared inbox, automation rules, CSAT surveys, and agent performance reports. These are the same core features as Intercom and Zendesk, which charge $55-139 per agent per month. Chatwoot self-hosted is free in licensing. Mith Tech deploys Chatwoot with WhatsApp Business API, ERPNext CRM sync, and custom automation flows included."
+            },
+            {
+                question: "Does Chatwoot support WhatsApp Business API?",
+                answer: "Yes. Chatwoot integrates directly with the WhatsApp Business API, allowing your support team to receive, respond to, and manage WhatsApp conversations from a shared inbox. Multiple agents can handle the same WhatsApp number simultaneously, with full message history, conversation labels, and assignment workflows. Mith Tech handles the WhatsApp Business API application and full Chatwoot integration as part of deployment."
+            },
+            {
+                question: "Can Chatwoot be self-hosted to keep customer data private?",
+                answer: "Yes. Chatwoot is fully open source (MIT license) and designed for self-hosted deployment. Mith Tech installs Chatwoot on your cloud server — AWS, DigitalOcean, Azure, or any VPS — and configures your domain, SSL, email channels, and messaging integrations. All customer conversation data stays on your infrastructure. No third-party platform has access to your support history."
+            },
+            {
+                question: "How many agents and conversations can Chatwoot handle?",
+                answer: "Chatwoot scales horizontally to support hundreds of concurrent agents and millions of stored conversations. With proper server sizing, it handles 10,000+ active conversations simultaneously. Mith Tech tunes the database, Redis job queues, and background workers for high-volume operations — typically serving enterprise clients managing 500+ daily customer interactions across WhatsApp, email, and web chat."
+            }
+        ]
     },
     {
         slug: "ding",
@@ -471,7 +569,25 @@ export const products: Product[] = [
         externalHref: "",
         category: "eCommerce",
         type: "service",
-        useCase: "Developers and brands use Medusa JS for a highly customizable and scalable commerce engine."
+        useCase: "Developers and brands use Medusa JS for a highly customizable and scalable commerce engine.",
+        customFaqs: [
+            {
+                question: "Is Medusa JS better than Shopify for custom commerce?",
+                answer: "For businesses with custom requirements, Medusa JS offers significantly more flexibility than Shopify. Shopify locks down checkout customization, imposes API rate limits, and charges 0.5-2% transaction fees on non-Shopify Payments. Medusa is fully open source and API-first — your storefront, checkout, pricing rules, and integrations are entirely customizable with no transaction fees. Shopify works well for standard storefronts; Medusa is the right choice for complex B2B, multi-region, or ERP-integrated commerce."
+            },
+            {
+                question: "Can Medusa JS handle B2B commerce?",
+                answer: "Yes. Medusa supports B2B commerce with company accounts, tiered pricing, quote management, net payment terms, and custom approval workflows. Mith Tech implements Medusa B2B for wholesale distributors and manufacturers who need complex pricing rules, customer-specific catalogues, and deep ERPNext integration that platforms like Shopify and WooCommerce cannot support."
+            },
+            {
+                question: "Is Medusa JS free?",
+                answer: "Yes. Medusa JS is fully open source under the MIT license — zero licensing fees, no transaction fees, and no limits on products, orders, or customers. Your only costs are server hosting and optional implementation support. Mith Tech deploys Medusa on scalable cloud infrastructure and handles all frontend development, custom plugins, and third-party integrations."
+            },
+            {
+                question: "Does Medusa integrate with ERPNext for inventory and order management?",
+                answer: "Yes. Mith Tech builds Medusa-to-ERPNext integrations that sync orders, inventory, customers, and financial data in real time. When an order is placed in Medusa, it automatically creates a sales order in ERPNext, updates stock levels, and triggers the fulfillment workflow — eliminating duplicate data entry between your commerce platform and ERP. This is one of Mith Tech's most-deployed integration patterns."
+            }
+        ]
     },
     {
         slug: "medusa-b2b",
@@ -691,18 +807,6 @@ export const products: Product[] = [
         useCase: "Teams use Vikunja to visualize workflows and track daily task progress."
     },
     {
-        slug: "lms-wp",
-        title: "LMS (WordPress)",
-        icon: "/assets/mithtech-white-logo.png",
-        description: "WordPress Learning",
-        longDescription: "Leverage the power of WordPress and LearnDash to create a scalable e-learning platform.",
-        features: ["Course Management", "Quiz System", "User Dashboards"],
-        externalHref: "",
-        category: "Education",
-        type: "service",
-        useCase: "Training companies use WordPress LMS to deliver hybrid learning experiences."
-    },
-    {
         slug: "lms-frappe",
         title: "LMS (Frappe)",
         icon: "/assets/frappelms-logo.png",
@@ -713,18 +817,6 @@ export const products: Product[] = [
         category: "Education",
         type: "service",
         useCase: "HR departments use Frappe LMS to automate employee onboarding."
-    },
-    {
-        slug: "shoilms-v2",
-        title: "School Management System",
-        icon: "/assets/schoolmanagement.png",
-        description: "Academic ERP",
-        longDescription: "Manage students, teachers, exams, and fees in one unified system designed for schools.",
-        features: ["Student Lifecycle", "Exam Management", "Fee Collection"],
-        externalHref: "",
-        category: "Education",
-        type: "service",
-        useCase: "Schools use this ERP to automate their entire administrative workflow."
     },
     {
         slug: "docuseal",

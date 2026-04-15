@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         "ERPNext WhatsApp integration",
         "ERPNext implementation cost India",
         "cloud ERP platform India",
-        "certified ERPNext partner"
+        "ERPNext implementation partner India"
     ],
     alternates: {
         canonical: "https://mith.tech/platforms/frappe-erpnext"

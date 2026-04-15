@@ -29,9 +29,9 @@ export default function About() {
                             <span className="text-[#00aaff]">Starts Here</span>
                         </h1>
                         <p className="text-xl leading-loose text-black/50 max-w-3xl mx-auto mb-14 italic font-sans font-medium">
-                            Mithtech is India's best ERPNext implementation partner and certified Frappe developer, empowering
+                            Mithtech is India's leading ERPNext implementation partner and expert Frappe developer, empowering
                             businesses with open-source cloud ERP, eCommerce, and WhatsApp
-                            automation — delivering enterprise power with zero licensing fees. From ERPNext customization to Tally migration, we do it all.
+                            automation — delivering enterprise power with zero licensing fees. From ERPNext customization to Frappe custom app development, we do it all.
                         </p>
                         <div className="flex flex-wrap justify-center gap-6">
                             <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-black px-10 py-5 text-sm font-bold text-white transition-all hover:bg-black/90 hover:scale-105 active:scale-95 shadow-xl shadow-black/10 uppercase tracking-widest leading-none">
@@ -53,10 +53,10 @@ export default function About() {
                             </p>
                             <div className="prose prose-xl leading-loose font-sans">
                                 <p className="text-black/60 mb-6 font-medium">
-                                    At Mithtech, we believe the right technology should be an accelerator, not a bottleneck. As a <strong>certified ERPNext partner in Bangalore</strong> and a leading <strong>Frappe development company in India</strong>, we equip organizations with battle-tested open source ERP products that deliver the capabilities of SAP and Odoo — with full data ownership, zero licensing fees, and the freedom to innovate on your terms. Our <strong>ERPNext implementation cost</strong> is 40-60% lower than legacy alternatives.
+                                    At Mithtech, we believe the right technology should be an accelerator, not a bottleneck. As an <strong>ERPNext implementation partner in Bangalore</strong> and a leading <strong>Frappe development company in India</strong>, we equip organizations with battle-tested open source ERP products that deliver the capabilities of SAP and Odoo — with full data ownership, zero licensing fees, and the freedom to innovate on your terms. Our <strong>ERPNext implementation cost</strong> is 40-60% lower than legacy alternatives.
                                 </p>
                                 <p className="text-black/60 mb-6">
-                                    From startups evaluating the <strong className="text-black font-semibold">best ERP for small business in India</strong> to established enterprises across Manufacturing, Healthcare, Retail, and beyond — our certified architects have driven measurable outcomes for every customer we serve. We do not simply deploy software — we engineer digital foundations built on <strong className="text-black font-semibold">ERPNext</strong>, <strong className="text-black font-semibold">Medusa JS</strong>, and <strong className="text-black font-semibold">n8n</strong> that streamline operations, unlock insights, and scale without limits. Need to <strong className="text-black font-semibold">migrate from Tally to ERPNext</strong>? We handle it with zero data loss. That is the Mithtech difference — <strong>GST-compliant cloud ERP solutions</strong> designed for the Indian and global markets.
+                                    From startups evaluating the <strong className="text-black font-semibold">best ERP for small business in India</strong> to established enterprises across Manufacturing, Healthcare, Retail, and beyond — our expert architects have driven measurable outcomes for every customer we serve. We do not simply deploy software — we engineer digital foundations built on <strong className="text-black font-semibold">ERPNext</strong>, <strong className="text-black font-semibold">Medusa JS</strong>, and <strong className="text-black font-semibold">n8n</strong> that streamline operations, unlock insights, and scale without limits. That is the Mithtech difference — <strong>GST-compliant cloud ERP solutions</strong> designed for the Indian and global markets.
                                 </p>
                                 <ul className="text-black/60 text-lg space-y-3 mt-8">
                                     <li className="flex items-start gap-3">

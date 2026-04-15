@@ -115,8 +115,8 @@ export default function Contact() {
                             <span className="text-[#00aaff]">Success Story.</span>
                         </h1>
                         <p className="text-xl leading-loose text-black/50 max-w-3xl mx-auto mb-14 italic font-sans font-medium">
-                            Whether you need ERPNext implementation, ERPNext customization, Tally-to-ERPNext migration, or a full cloud ERP deployment,
-                            our certified ERPNext consultants in Bangalore are ready to map your path to measurable growth — at the lowest ERPNext implementation cost in India.
+                            Whether you need ERPNext implementation, ERPNext customization, WhatsApp automation, or a full cloud ERP deployment,
+                            our expert ERPNext consultants in Bangalore are ready to map your path to measurable growth — at the lowest ERPNext implementation cost in India.
                         </p>
                         <div className="flex flex-wrap justify-center gap-6">
                             <Link href="mailto:hello@mith.tech" className="inline-flex items-center justify-center rounded-full bg-black px-10 py-5 text-sm font-bold text-white transition-all hover:bg-black/90 hover:scale-105 active:scale-95 shadow-xl shadow-black/10 uppercase tracking-widest leading-none">
@@ -135,10 +135,10 @@ export default function Contact() {
                             <h2 className="text-4xl font-extrabold text-black mb-10 tracking-tight uppercase">Your Growth Starts <span className="text-[#00aaff]">Here.</span></h2>
                             <div className="prose prose-xl leading-loose font-sans">
                                 <p className="text-black/60 mb-6 font-medium">
-                                    Ready to eliminate costly licensing fees and take full ownership of your enterprise stack? From <strong>ERPNext implementation</strong> and <strong>ERPNext CRM setup</strong> to <strong>Medusa JS</strong> commerce platforms and intelligent <strong>WhatsApp automation</strong> with <strong>Mautic</strong> and <strong>n8n</strong> — our <strong>certified ERPNext partners in Bangalore</strong> deliver results. Need to <strong>hire an ERPNext developer</strong>? We have got you covered.
+                                    Ready to eliminate costly licensing fees and take full ownership of your enterprise stack? From <strong>ERPNext implementation</strong> and <strong>ERPNext CRM setup</strong> to <strong>Medusa JS</strong> commerce platforms and intelligent <strong>WhatsApp automation</strong> with <strong>Mautic</strong> and <strong>n8n</strong> — our <strong>ERPNext implementation team in Bangalore</strong> delivers results. Need to <strong>hire an ERPNext developer</strong>? We have got you covered.
                                 </p>
                                 <p className="text-black/60 mb-10 text-lg">
-                                    We partner with enterprises across India — Mumbai, Delhi NCR, Pune, Ahmedabad, and globally — to deliver open-source <strong>cloud ERP</strong>, <strong>GST-compliant</strong> ERPNext, and zero-licensing-fee solutions on Frappe. Whether you are comparing <strong>ERPNext vs Odoo</strong> or looking to <strong>migrate from Tally</strong>, schedule a free consultation today and get a comprehensive technical roadmap built for your business.
+                                    We partner with enterprises across India — Mumbai, Delhi NCR, Pune, Ahmedabad, and globally — to deliver open-source <strong>cloud ERP</strong>, <strong>GST-compliant</strong> ERPNext, and zero-licensing-fee solutions on Frappe. Whether you are comparing <strong>ERPNext vs Odoo</strong> or scoping a fresh <strong>ERPNext implementation</strong>, schedule a free consultation today and get a comprehensive technical roadmap built for your business.
                                 </p>
                             </div>
 

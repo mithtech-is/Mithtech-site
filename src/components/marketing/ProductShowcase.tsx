@@ -8,7 +8,9 @@ import { motion } from "framer-motion";
 import { Product } from "@/data/products";
 
 import { ProductFAQ } from "@/components/seo/ProductFAQ";
+import { ProductAnswerBlock } from "@/components/seo/ProductAnswerBlock";
 import { generateProductFaqs } from "@/lib/seo/faq-generator";
+import { buildProductSchema } from "@/lib/seo/product-schema";
 
 interface ProductShowcaseProps {
     product: Product;
@@ -16,9 +18,16 @@ interface ProductShowcaseProps {
 
 export function ProductShowcase({ product }: ProductShowcaseProps) {
     const isProprietary = product.type === 'proprietary';
+    const productSchema = buildProductSchema(product);
 
     return (
         <div className="flex flex-col w-full min-h-screen bg-white">
+            {/* JSON-LD: SoftwareApplication/Service + HowTo + Breadcrumbs + Speakable */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+            />
+
             {/* Hero Section */}
             <section className="relative pt-8 pb-12 sm:pt-12 sm:pb-24 lg:pt-16 lg:pb-32 overflow-hidden border-b border-black/[0.05]">
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(0,0,0,0.02)_0%,transparent_100%)]" />
@@ -100,6 +109,9 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
                     </div>
                 </div>
             </section>
+
+            {/* Quick Answer Block (AEO/GEO) */}
+            <ProductAnswerBlock product={product} />
 
             {/* Use Case Section */}
             <section id="use-case" className="py-12 sm:py-24 border-b border-black/[0.05] bg-black/[0.01]">

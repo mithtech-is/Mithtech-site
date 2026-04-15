@@ -62,11 +62,11 @@ const CATEGORIES = [
     },
     {
         title: "Operations & Business Management",
-        slugs: ["erpnext", "shoilms-v2", "hospital-management", "property", "apartment", "hostel", "parking"],
+        slugs: ["erpnext", "hospital-management", "property", "apartment", "hostel", "parking"],
     },
     {
         title: "Learning & Education",
-        slugs: ["lms-wp", "lms-frappe", "shoilms", "shoilms-v2"],
+        slugs: ["lms-frappe", "shoilms"],
     },
     {
         title: "Booking & Scheduling",

@@ -7,14 +7,12 @@ export const metadata: Metadata = {
     keywords: [
         "best ERPNext implementation company in India",
         "ERPNext implementation partner India",
-        "certified ERPNext partner Bangalore",
+        "ERPNext implementation partner Bangalore",
         "ERPNext implementation cost India",
         "ERPNext vs SAP",
-        "ERPNext vs Tally",
         "ERPNext vs Odoo",
         "Frappe developer India",
         "Frappe custom app development India",
-        "migrate from Tally to ERPNext",
         "GST compliant ERP India",
         "ERPNext for manufacturing India",
         "cloud ERP India",
@@ -93,14 +91,6 @@ export default function Page() {
                                         "@type": "Offer",
                                         "itemOffered": {
                                             "@type": "Service",
-                                            "name": "ERPNext Migration from SAP/Tally/Odoo",
-                                            "description": "Seamless migration from legacy ERPs to ERPNext with zero data loss"
-                                        }
-                                    },
-                                    {
-                                        "@type": "Offer",
-                                        "itemOffered": {
-                                            "@type": "Service",
                                             "name": "ERPNext Support & Maintenance",
                                             "description": "Ongoing support, updates, and optimization for ERPNext deployments"
                                         }
@@ -147,10 +137,10 @@ export default function Page() {
                                 },
                                 {
                                     "@type": "Question",
-                                    "name": "Can I migrate from Tally to ERPNext?",
+                                    "name": "Why choose Mith Tech as your ERPNext implementation partner?",
                                     "acceptedAnswer": {
                                         "@type": "Answer",
-                                        "text": "Yes. Mith Tech provides seamless Tally to ERPNext migration services with complete data migration, parallel running, and zero business disruption. ERPNext covers accounting, inventory, HR, CRM and more — far beyond Tally's capabilities."
+                                        "text": "Mith Tech is an experienced ERPNext implementation company based in Bangalore with 70+ enterprise products in its ecosystem. We deliver end-to-end ERPNext deployments with industry-specific customization, GST compliance, integrated BI, and dedicated support — all backed by proven open-source expertise."
                                     }
                                 }
                             ]

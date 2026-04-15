@@ -51,7 +51,6 @@ export const USE_CASES: UseCase[] = [
     title: "Operations & Business Management",
     products: [
       { title: "ERPNext", slug: "erpnext" },
-      { title: "School Management System", slug: "shoilms-v2" },
       { title: "Marely Health", slug: "marely-health" },
       { title: "Frappe Lending", slug: "frappe-lending" },
       { title: "POS Billing", slug: "pos-billing" },

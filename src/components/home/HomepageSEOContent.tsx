@@ -12,7 +12,7 @@ export function HomepageSEOContent() {
         <div itemScope itemType="https://schema.org/Organization">
           <meta itemProp="name" content="Mith Tech" />
           <meta itemProp="address" content="Bangalore, India" />
-          <meta itemProp="description" content="Mith Tech is India's best ERPNext implementation partner and certified Frappe developer. Cloud ERP, GST-compliant ERPNext customization, WhatsApp automation, and Tally-to-ERPNext migration services from Bangalore." />
+          <meta itemProp="description" content="Mith Tech is India's leading ERPNext implementation partner and expert Frappe developer. Cloud ERP, GST-compliant ERPNext customization, WhatsApp automation, and Frappe custom app development from Bangalore." />
 
           <div className="text-center mb-16 sm:mb-24">
             <motion.div
@@ -43,7 +43,7 @@ export function HomepageSEOContent() {
               transition={{ delay: 0.2 }}
               className="mx-auto max-w-3xl text-base leading-relaxed text-white/50 sm:text-lg sm:leading-[1.75] italic"
             >
-              Mith Tech is India's best ERPNext implementation partner headquartered in Bangalore, delivering cloud ERP solutions, business automation, and Frappe custom app development to enterprises across India, the Middle East, Southeast Asia, and Europe. Whether you need to migrate from Tally to ERPNext, deploy a GST-compliant ERP for manufacturing, or set up WhatsApp automation for your business — we replace expensive legacy systems with powerful open-source platforms so you grow faster, spend less, and own every line of your infrastructure.
+              Mith Tech is India's best ERPNext implementation partner headquartered in Bangalore, delivering cloud ERP solutions, business automation, and Frappe custom app development to enterprises across India, the Middle East, Southeast Asia, and Europe. Whether you need a GST-compliant ERP for manufacturing, a headless commerce platform, or intelligent WhatsApp automation for your business — we replace expensive legacy systems with powerful open-source platforms so you grow faster, spend less, and own every line of your infrastructure.
             </motion.p>
           </div>
 
@@ -56,10 +56,10 @@ export function HomepageSEOContent() {
             <h3 className="mb-6 text-2xl sm:text-3xl font-extrabold tracking-tight text-white uppercase">Why Industry Leaders Choose Mithtech for ERPNext Implementation</h3>
             <div className="space-y-6 text-[15px] leading-relaxed text-white/50 sm:text-base sm:leading-[1.8] [&_strong]:text-white/80">
               <p>
-                Mith Tech is the #1 rated <strong>ERPNext implementation partner in India</strong> trusted by enterprises across India, the Gulf, and Europe. From manufacturing plants running 24/7 to high-growth SaaS companies scaling globally — we deploy <strong>open source ERP for SMEs</strong> that deliver 40-60% cost savings over proprietary alternatives. Whether you need a powerful <strong>SAP alternative</strong>, a modern <strong>cloud ERP India</strong> solution, or end-to-end <strong>business automation</strong>, our certified ERPNext team delivers results — not just software. Businesses choose us over Odoo because ERPNext offers zero licensing fees and native GST compliance.
+                Mith Tech is the #1 rated <strong>ERPNext implementation partner in India</strong> trusted by enterprises across India, the Gulf, and Europe. From manufacturing plants running 24/7 to high-growth SaaS companies scaling globally — we deploy <strong>open source ERP for SMEs</strong> that deliver 40-60% cost savings over proprietary alternatives. Whether you need a powerful <strong>SAP alternative</strong>, a modern <strong>cloud ERP India</strong> solution, or end-to-end <strong>business automation</strong>, our expert ERPNext team delivers results — not just software. Businesses choose us over Odoo because ERPNext offers zero licensing fees and native GST compliance.
               </p>
               <p>
-                Legacy ERP vendors trap you with per-seat licensing, rigid modules, and costly upgrades that never end. With Mithtech and the <strong>Frappe development</strong> ecosystem, you get enterprise-grade capability you actually own. Looking to <strong>migrate from Tally to ERPNext</strong>? Or evaluating <strong>ERPNext vs Odoo</strong> for your business? We help you make the right choice. No vendor lock-in. No per-user fees. Just the agility to adapt to any market, any compliance requirement, and any growth stage — backed by a <strong>certified ERPNext partner</strong> with a 98% client retention rate.
+                Legacy ERP vendors trap you with per-seat licensing, rigid modules, and costly upgrades that never end. With Mithtech and the <strong>Frappe development</strong> ecosystem, you get enterprise-grade capability you actually own. Evaluating <strong>ERPNext vs Odoo</strong> or scoping a fresh <strong>ERPNext implementation</strong> for your business? We help you make the right choice. No vendor lock-in. No per-user fees. Just the agility to adapt to any market, any compliance requirement, and any growth stage — backed by a <strong>trusted ERPNext partner</strong> with a 98% client retention rate.
               </p>
             </div>
           </motion.div>
@@ -80,8 +80,8 @@ export function HomepageSEOContent() {
               },
               {
                 Icon: TrendingUp,
-                title: "Migrate from Tally, SAP & Legacy — Risk-Free",
-                body: "Migrate from Tally to ERPNext or switch from SAP with our battle-tested migration framework. Move your data, workflows, and reporting to modern cloud ERP infrastructure with guaranteed zero data loss. Go live faster with full team training included.",
+                title: "Own Your Stack. No Vendor Lock-In.",
+                body: "Skip per-seat licensing and proprietary upgrades. Deploy ERPNext and the Frappe ecosystem on infrastructure you control, with full source access, complete data ownership, and the freedom to customize every workflow as your business evolves.",
                 delay: 0.3,
               },
               {
@@ -122,7 +122,7 @@ export function HomepageSEOContent() {
               <ul className="space-y-4 text-[14px] text-white/50 [&_strong]:text-white/80">
                 {[
                   ["Workflow Discovery & Optimization:", "We map your existing processes, pinpoint revenue leaks, and architect an ERPNext implementation that eliminates bottlenecks from day one."],
-                  ["Zero-Loss Data Migration:", "Moving from SAP, Tally, Zoho, or Odoo? Our proven ETL framework for Tally-to-ERPNext migration and SAP-to-ERPNext migration handles millions of records with guaranteed data integrity — so you never skip a beat."],
+                  ["GST & Global Compliance Built-In:", "Our ERPNext deployments ship with GST e-invoicing, e-way bills, TDS, and TCS configured out of the box — plus VAT and GAAP presets for UAE, GCC, and Western markets."],
                   ["Custom Frappe App Development:", "Need ERPNext API integration or a capability that does not exist out of the box? Our Frappe developer team in India builds production-grade custom apps and ERPNext WhatsApp integrations deployed globally."],
                   ["24/7 Global Support:", "From WhatsApp automation to on-site consulting, we deliver enterprise-grade support across every time zone your business operates in."],
                 ].map(([label, desc]) => (
@@ -143,7 +143,7 @@ export function HomepageSEOContent() {
               <h3 className="mb-6 text-2xl font-extrabold tracking-tight text-white uppercase">A Global Partner. A Local Presence.</h3>
               <div className="space-y-6 text-[15px] leading-relaxed text-white/50 [&_strong]:text-white/80">
                 <p>
-                  Headquartered in Bangalore — India's technology capital — Mith Tech has delivered enterprise <strong>ERPNext implementation</strong> and <strong>business automation</strong> projects for clients across India, UAE, Saudi Arabia, Singapore, the UK, and the US. Whether you need an <strong>ERPNext partner in Mumbai</strong>, Bangalore, or Delhi NCR, our distributed team structure means you get the responsiveness of a local <strong>certified ERPNext partner</strong> with the depth of a global <strong>Frappe development</strong> company.
+                  Headquartered in Bangalore — India's technology capital — Mith Tech has delivered enterprise <strong>ERPNext implementation</strong> and <strong>business automation</strong> projects for clients across India, UAE, Saudi Arabia, Singapore, the UK, and the US. Whether you need an <strong>ERPNext partner in Mumbai</strong>, Bangalore, or Delhi NCR, our distributed team structure means you get the responsiveness of a local <strong>trusted ERPNext partner</strong> with the depth of a global <strong>Frappe development</strong> company.
                 </p>
                 <p>
                   The enterprise shift to <strong>open source ERP</strong> is accelerating. Industry leaders evaluating <strong>ERPNext vs Odoo</strong> or <strong>ERPNext vs SAP</strong> are asking: why pay per seat, per module, and per upgrade — forever? Partner with Mithtech and get India's best ERPNext ecosystem, <strong>WhatsApp automation</strong>, <strong>ERPNext hosting</strong>, and <strong>Frappe custom app development</strong> expertise that turns your technology spend from a cost center into a competitive advantage. Own your <strong>cloud ERP</strong>. Scale without limits.

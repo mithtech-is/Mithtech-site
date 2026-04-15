@@ -16,9 +16,8 @@ export const metadata: Metadata = {
     "cloud ERP India",
     "GST compliant ERP software India",
     "WhatsApp automation for business India",
-    "migrate from Tally to ERPNext",
     "ERPNext for manufacturing India",
-    "certified ERPNext partner Bangalore",
+    "ERPNext implementation partner Bangalore",
     "business automation India",
     "Mith Tech"
   ],

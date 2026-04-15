@@ -54,7 +54,7 @@ export const MEGA_MENU_DATA: MegaMenuCategory[] = [
         label: "Operations & Business Management",
         description: "Core ERP and specialized admin tools.",
         icon: Briefcase,
-        productSlugs: ["erpnext-finance", "school-management", "marely-health", "frappe-lending", "pos-billing", "shoilms", "lms-wp", "lms-frappe", "shoilms-v2"]
+        productSlugs: ["erpnext-finance", "school-management", "marely-health", "frappe-lending", "pos-billing", "shoilms", "lms-frappe"]
     },
     {
         id: "booking",

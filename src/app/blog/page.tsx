@@ -13,7 +13,6 @@ export const metadata: Metadata = {
         "ERPNext vs SAP comparison",
         "ERPNext implementation guide India",
         "Frappe development guides",
-        "migrate from Tally to ERPNext",
         "ERPNext for small business India",
         "open source ERP articles",
         "ERPNext manufacturing guide",

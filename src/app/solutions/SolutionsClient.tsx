@@ -195,7 +195,7 @@ export default function SolutionsClient() {
 
             <CTASection
                 title="Ready to Transform Your Enterprise?"
-                description="Connect with India's best ERPNext implementation partner for a strategic consultation. Our certified Frappe developers in Bangalore will design a cloud ERP roadmap tailored to your growth objectives — with ERPNext implementation cost 40-60% lower than SAP or Odoo."
+                description="Connect with India's best ERPNext implementation partner for a strategic consultation. Our expert Frappe developers in Bangalore will design a cloud ERP roadmap tailored to your growth objectives — with ERPNext implementation cost 40-60% lower than SAP or Odoo."
                 buttonText="Book a Consultation"
                 buttonHref="/contact"
             />

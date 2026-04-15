@@ -9,7 +9,7 @@ export const metadata: Metadata = {
         "ERPNext implementation partner Bangalore",
         "best ERPNext partner in India",
         "Frappe development company India",
-        "certified ERPNext partner India",
+        "trusted ERPNext partner India",
         "open source ERP company India",
         "ERPNext consulting Bangalore",
         "cloud ERP India",

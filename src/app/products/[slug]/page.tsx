@@ -32,6 +32,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
         title,
         description,
+        keywords: [
+            product.title,
+            `${product.title} implementation India`,
+            `${product.title} Bangalore`,
+            `${product.category} solutions India`,
+            `${product.title} consulting`,
+            "Mith Tech",
+            "Mithtech",
+        ],
+        alternates: {
+            canonical: `https://mith.tech/products/${slug}`,
+        },
         openGraph: {
             title,
             description,

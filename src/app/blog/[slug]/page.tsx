@@ -65,24 +65,43 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
     const comments = getComments(slug);
 
-    // Structured Data (JSON-LD) — Enhanced for AEO citation
+    // Structured Data (JSON-LD) — Enhanced for AEO citation and GEO
+    // (Generative Engine Optimization). Named author + publisher + speakable
+    // summary + WebPage entity help ChatGPT, Perplexity, Claude, and Gemini
+    // cite this article with proper attribution.
+    const authorName = post.author === "Mithtech Team" ? "Mith Tech" : post.author;
+    const isNamedAuthor = post.author !== "Mithtech Team" && post.author !== "Mith Tech";
+
     const jsonLd = [
         {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
+            "@id": `https://mith.tech/blog/${post.slug}#article`,
             "headline": post.title,
             "description": post.description,
             "datePublished": post.date,
             "dateModified": post.date,
-            "image": `https://mith.tech${post.coverImage}`,
+            "image": [`https://mith.tech${post.coverImage}`],
             "url": `https://mith.tech/blog/${post.slug}`,
             "inLanguage": "en-IN",
-            "author": {
-                "@type": "Organization",
-                "name": post.author === "Mithtech Team" ? "Mith Tech" : post.author,
-                "url": "https://mith.tech",
-                "logo": "https://mith.tech/assets/logo.png"
-            },
+            "isAccessibleForFree": true,
+            "author": isNamedAuthor
+                ? {
+                    "@type": "Person",
+                    "name": authorName,
+                    "affiliation": {
+                        "@type": "Organization",
+                        "name": "Mith Tech",
+                        "url": "https://mith.tech"
+                    },
+                    "knowsAbout": ["ERPNext", "Frappe Framework", "Business Automation", "Open Source ERP"]
+                }
+                : {
+                    "@type": "Organization",
+                    "name": "Mith Tech",
+                    "url": "https://mith.tech",
+                    "logo": "https://mith.tech/assets/logo.png"
+                },
             "publisher": {
                 "@type": "Organization",
                 "name": "Mith Tech",
@@ -96,7 +115,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 "@type": "WebPage",
                 "@id": `https://mith.tech/blog/${post.slug}`
             },
-            "keywords": post.category
+            "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": ["h1", ".prose p:first-of-type"]
+            },
+            "about": [
+                { "@type": "Thing", "name": "ERPNext" },
+                { "@type": "Thing", "name": "Frappe Framework" },
+                { "@type": "Thing", "name": "Open Source ERP" }
+            ],
+            "keywords": [post.category, "ERPNext", "Mith Tech", "Frappe", "open source ERP"].join(", ")
         },
         {
             "@context": "https://schema.org",

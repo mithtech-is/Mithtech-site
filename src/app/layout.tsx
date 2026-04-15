@@ -30,11 +30,10 @@ export const metadata: Metadata = {
     "GST compliant ERP India",
     "WhatsApp automation for business India",
     "ERPNext customization",
-    "migrate from Tally to ERPNext",
     "ERPNext for manufacturing India",
     "Frappe developer India",
     "business automation Bangalore",
-    "certified ERPNext partner",
+    "ERPNext implementation partner India",
     "Mith Tech"
   ],
   authors: [{ name: "Mith Tech" }],
@@ -89,7 +88,7 @@ export default function RootLayout({
                 "description": "India's leading ERPNext implementation partner and business automation company. 70+ enterprise products with zero licensing fees and 70% lower TCO than legacy ERPs.",
                 "foundingLocation": "Bangalore, India",
                 "slogan": "Transform Your Business with Open Source Enterprise Solutions",
-                "knowsAbout": ["ERPNext", "Frappe Framework", "Business Automation", "Headless eCommerce", "WhatsApp Automation", "Marketing Automation", "Open Source ERP", "ERPNext Implementation", "ERPNext Customization", "Cloud ERP India", "GST Compliant ERP", "Tally to ERPNext Migration", "ERPNext for Manufacturing", "ERPNext HRMS", "ERPNext CRM", "Frappe Custom App Development"],
+                "knowsAbout": ["ERPNext", "Frappe Framework", "Business Automation", "Headless eCommerce", "WhatsApp Automation", "Marketing Automation", "Open Source ERP", "ERPNext Implementation", "ERPNext Customization", "Cloud ERP India", "GST Compliant ERP", "ERPNext for Manufacturing", "ERPNext HRMS", "ERPNext CRM", "Frappe Custom App Development"],
                 "sameAs": [
                   "https://linkedin.com/company/mithtech"
                 ],
@@ -216,10 +215,10 @@ export default function RootLayout({
                   },
                   {
                     "@type": "Question",
-                    "name": "Is ERPNext better than Tally or Odoo for Indian businesses?",
+                    "name": "Is ERPNext better than Odoo for Indian businesses?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "ERPNext offers full ERP capabilities including accounting, inventory, HR, CRM, and manufacturing — unlike Tally which is limited to accounting. Compared to Odoo, ERPNext has zero licensing fees and is fully open source. Mith Tech helps businesses migrate from Tally and Odoo to ERPNext seamlessly."
+                      "text": "ERPNext offers full ERP capabilities including accounting, inventory, HR, CRM, and manufacturing at zero licensing cost. Compared to Odoo, ERPNext has no per-user fees and is fully open source. Mith Tech helps businesses implement ERPNext with complete customization and GST compliance."
                     }
                   },
                   {
@@ -235,15 +234,7 @@ export default function RootLayout({
                     "name": "How much does ERPNext implementation cost in India?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "ERPNext implementation for a typical small business in India costs between INR 2-8 lakhs as a one-time expense, depending on complexity, modules, and customization. There are zero licensing fees. Annual costs include hosting (INR 1.5-5 lakhs/year) and optional managed support. This is 40-60% lower than SAP Business One or Odoo Enterprise over 3 years. Mith Tech in Bangalore provides certified ERPNext implementation with guaranteed timelines."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "Can I migrate from Tally to ERPNext?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "Yes. ERPNext has dedicated Tally migration tools that import your chart of accounts, opening balances, customer and vendor masters, and historical transactions with zero data loss. Most Tally-to-ERPNext migrations for small businesses complete in 2-4 weeks through a certified ERPNext partner like Mith Tech in Bangalore."
+                      "text": "ERPNext implementation for a typical small business in India costs between INR 2-8 lakhs as a one-time expense, depending on complexity, modules, and customization. There are zero licensing fees. Annual costs include hosting (INR 1.5-5 lakhs/year) and optional managed support. This is 40-60% lower than SAP Business One or Odoo Enterprise over 3 years. Mith Tech in Bangalore provides expert ERPNext implementation with guaranteed timelines."
                     }
                   },
                   {
@@ -251,7 +242,7 @@ export default function RootLayout({
                     "name": "Is ERPNext good for manufacturing companies in India?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "ERPNext is one of the best ERP solutions for Indian manufacturers. It includes BOM management, production planning, work orders, job cards, subcontracting, quality inspection, and full GST compliance with e-invoicing — all at zero licensing cost. Many manufacturing SMEs in India have switched from SAP and Tally to ERPNext for its lower cost and comprehensive manufacturing module."
+                      "text": "ERPNext is one of the best ERP solutions for Indian manufacturers. It includes BOM management, production planning, work orders, job cards, subcontracting, quality inspection, and full GST compliance with e-invoicing — all at zero licensing cost. Manufacturing SMEs across India use ERPNext for its comprehensive manufacturing module and lower total cost of ownership."
                     }
                   }
                 ]
